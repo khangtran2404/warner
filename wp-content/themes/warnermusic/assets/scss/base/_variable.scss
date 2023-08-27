@@ -1,0 +1,60 @@
+/* variable color */
+$color__main: #72e887;
+$color__primary: #ffbd1e;
+$color__primary-1: #45feec;
+$color__primary-2: #fe4bc3;
+$color__primary-3: #ecff43;
+$color__text: #1b1719;
+$color__dark: #000000;
+$color__light: #ffffff;
+$color__bg: #1c171b;
+$color__bg-primary: #2b262a;
+
+/* fonts */
+@font-face {
+    font-family: 'GraphikBlack';
+    src: url('../fonts/font-graphik/GraphikBlack.otf');
+    src: url('../fonts/font-graphik/GraphikBlack.otf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GraphikBold';
+    src: url('../fonts/font-graphik/GraphikBold.otf');
+    src: url('../fonts/font-graphik/GraphikBold.otf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'GraphikMedium';
+    src: url('../fonts/font-graphik/GraphikMedium.otf');
+    src: url('../fonts/font-graphik/GraphikMedium.otf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'GraphikRegular';
+    src: url('../fonts/font-graphik/GraphikRegular.otf');
+    src: url('../fonts/font-graphik/GraphikRegular.otf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'GraphikSemibold';
+    src: url('../fonts/font-graphik/GraphikSemibold.otf');
+    src: url('../fonts/font-graphik/GraphikSemibold.otf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+$font__grap-black: 'GraphikBlack', sans-serif;
+$font__grap-bold: 'GraphikBold', sans-serif;
+$font__grap-semi: 'GraphikSemibold', sans-serif;
+$font__grap-med: 'GraphikMedium', sans-serif;
+$font__grap-reg: 'GraphikRegular', sans-serif;
