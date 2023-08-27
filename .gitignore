@@ -1,0 +1,38 @@
+#log files
+*.log
+wp-content/debug.log
+#config files
+wp-config.php
+#cache files
+wp-content/cache
+wp-content/advanced-cache.php
+wp-content/webtoffee_export/*
+wp-content/wp-cache-config.php
+wp-content/w3tc-config/
+#backup files
+wp-content/backup-db/*
+wp-content/wp-rocket-config/*
+wp-content/backups/*
+wp-content/updraft
+#upload and upgrade files
+wp-content/uploads/*
+wp-content/upgrade/*
+#cutom size map files
+/sitemap.xml
+/sitemap.xml.gz
+#language files
+wp-content/languages/*
+#other lib files
+nbproject
+.idea
+REPLACEDB/*
+# htaccess/password files
+.htaccess
+.htpasswd
+# worldfence logs
+wp-content/wflogs
+wp-snapshots/*
+# idea
+.idea
+# staging folder
+staging/*
