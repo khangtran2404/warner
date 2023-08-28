@@ -7,24 +7,26 @@ html {
 }
 
 body {
-    padding: 0;
-    margin: 0;
-    font-size: 16px;
-    color: $color__text;
-    font-family: $font__grap-reg;
+    padding: 0 !important;
+    margin: 0 !important;
+    font-size: 16px !important;
+    color: $color__light !important;
+    font-family: $font__mulish;
     font-weight: 400;
-
+    background-color: $color__bg !important;
     h1,h2,h3,h4,h5,h6 {
-        font-family: $font__grap-semi;
-        font-weight: bold;
+        font-family: $font__mulish !important;
+        color: $color__light !important;
     }
-    
     p {
-        font-family: $font__grap-reg;
+        color: $color__light !important;
+        font-size: 16px;
+        font-family: $font__mulish;
         font-weight: 400;
     }
-    
     a {
+        color: $color__light !important;
+        font-family: $font__mulish !important;
         @include transition(all .3s ease-in-out);
         &:-webkit-any-link:focus {
             outline-offset: unset;
@@ -32,16 +34,21 @@ body {
         }
         &:focus-visible,
         &:focus {
-            outline: none;
-            outline-offset: unset;
+            color: inherit !important;
+            outline: none !important;
+            outline-offset: unset !important;
+            text-decoration: none !important;
+            background: transparent !important;
         }
         &:hover {
-            color: $color__main;
+            color: $color__main !important;
+            text-decoration-style: solid !important;
         }
     }
+    .entry-footer {
+        color: $color__light;
+    }
 }
-
-
 
 /* button hamburger*/
 // .btn-hamburger {
