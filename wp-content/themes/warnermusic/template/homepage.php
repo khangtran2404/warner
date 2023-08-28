@@ -4,7 +4,7 @@
  */
 
 get_header(); ?>
-    <main id="main" class="site-main site-home-page" role="main">
+    <div id="site-home-page" class="site-home-page">
         <div class="container">
             <section class="banner-slider">
                 <div class="list-banner-slider">
@@ -86,6 +86,6 @@ get_header(); ?>
                 </div>
             </section>
         </div>
-    </main>
+    </div>
 <?php
 get_footer();
