@@ -24,7 +24,7 @@
                     "name": "social_network",
                     "aria-label": "",
                     "type": "repeater",
-                    "instructions": "You can connect to this link: https:\/\/icons8.com\/icons\/set\/facebook to find your icon.\r\nNotice: Please choose an icon (no square or circle).",
+                    "instructions": "Please connect to this link: \"https:\/\/fontawesome.com\/search\" to find your icon. (no square or circle)",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -45,7 +45,7 @@
                             "label": "Icon",
                             "name": "icon",
                             "aria-label": "",
-                            "type": "image",
+                            "type": "text",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -54,16 +54,11 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "return_format": "url",
-                            "library": "all",
-                            "min_width": "",
-                            "min_height": "",
-                            "min_size": "",
-                            "max_width": "",
-                            "max_height": "",
-                            "max_size": "",
-                            "mime_types": "jpg;png;svg",
-                            "preview_size": "thumbnail",
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "<i class=\"fa-brands fa-facebook-f\"><\/i>",
+                            "prepend": "",
+                            "append": "",
                             "parent_repeater": "field_64eb75742cd60"
                         },
                         {
@@ -107,5 +102,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1693153661
+    "modified": 1693242062
 }

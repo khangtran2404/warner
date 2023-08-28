@@ -17,10 +17,10 @@
    </div>
    <div class="col-right">
       <div class="group-content hiden-on-mobile">
-         <div class="group-infor group-infor-desktop">
-            <?php get_template_part( '/inc/views/header/header-information' ); ?>
+         <div class="group-social-network-desktop">
+            <?php get_template_part( '/inc/views/header/header-social' ); ?>
          </div>
-         <div class="group-navigation">
+         <div class="group-navigation-desktop">
             <?php get_template_part( '/inc/views/header/header-nav' ); ?>
          </div>
       </div>

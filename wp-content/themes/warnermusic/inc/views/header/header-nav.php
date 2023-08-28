@@ -1,5 +1,5 @@
 <?php if ( has_nav_menu( 'main-menu' ) ) : ?>
-    <nav id="navigation" class="navigation">
+    <nav id="navigation-desktop" class="navigation-desktop">
         <?php
         wp_nav_menu(
             array(

@@ -11,7 +11,6 @@ function warnermusic() {
     // Add Library CSS
     wp_enqueue_style( 'parent-style', THEME_URI. '/style.css' );
     wp_enqueue_style('bootstrap', THEME_URI. '/assets/css/lib/bootstrap/bootstrap.min.css');
-    wp_enqueue_style('font-awesome6', THEME_URI. '/assets/fonts/font-awesome/css/font-awesome-storefront.min.css','','', true);
     wp_enqueue_style('slick', THEME_URI. '/assets/css/lib/slick/slick.css');
     wp_enqueue_style('wow-animation', THEME_URI. '/assets/css/lib/animate/animate.min.css');
 
