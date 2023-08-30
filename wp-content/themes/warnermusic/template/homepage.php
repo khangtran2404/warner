@@ -12,7 +12,7 @@ get_header(); ?>
 					$args      = array(
 						'post_status'    => 'publish',
 						'post_type'      => 'song',
-						'posts_per_page' => - 1,
+						'posts_per_page' => 10,
 					);
 					$the_query = new WP_Query( $args );
 					if ( $the_query->have_posts() ) :

@@ -78,6 +78,16 @@
   }
 }
 
+@keyframes show_block {
+  0% {
+    opacity: 0;
+  
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 /* Screen breakpoint width*/
 $big-width: 1199px;
 $desktop-width: 991px;  

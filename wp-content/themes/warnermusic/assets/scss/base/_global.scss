@@ -7,13 +7,19 @@ html {
 }
 
 body {
-    padding: 0 !important;
+    padding: 110px 0 0 0 !important;
     margin: 0 !important;
     font-size: 16px !important;
     color: $color__light !important;
     font-family: $font__mulish;
     font-weight: 400;
     background-color: $color__bg !important;
+    @include desktop {
+        padding: 70px 0 0 0 !important;
+    }
+    @include tablet {
+        padding: 60px 0 0 0 !important;
+    }
     h1,h2,h3,h4,h5,h6 {
         font-family: $font__mulish !important;
         color: $color__light !important;
@@ -54,57 +60,58 @@ body {
 }
 
 /* button hamburger*/
-// .btn-hamburger {
-//     width: 22px;
-//     height: 14px;
-//     align-items: center;
-//     cursor: pointer;
-//     position: relative;
-//     @include desktop {
-//         display: block;
-//     }
-//     span {
-//         height: 2px;
-//         width: 100%;
-//         position: absolute;
-//         @include transition (all .2s ease-in-out);
-//         &:first-child {
-//             top: 0;
-//         }
-//         &:nth-child(2) {
-//             top: 50%;
-//             transform: translate(0, -50%);
-//         }
-//         &:last-child {
-//             bottom: 0;
-//         }
-//     }
-// }
+.btn-hamburger {
+    width: 22px;
+    height: 14px;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    @include desktop {
+        display: block;
+    }
+    span {
+        height: 2px;
+        width: 100%;
+        position: absolute;
+        background-color: $color__bg;
+        @include transition (all .2s ease-in-out);
+        &:first-child {
+            top: 0;
+        }
+        &:nth-child(2) {
+            top: 50%;
+            transform: translate(0, -50%);
+        }
+        &:last-child {
+            bottom: 0;
+        }
+    }
+}
 
-// .hamburger-active {
-//     span {
-//         &:first-child {
-//             top: 6px;
-//             transition-delay: .1s;
-//             transform: rotate(45deg);
-//         }
-//         &:nth-child(2) {
-//             opacity: 0;
-//         }
-//         &:last-child {
-//             transform: rotate(-45deg);
-//             bottom: 6px;
-//             transition-delay: .1s;
-//         }
-//     }
-// }
+.hamburger-active {
+    span {
+        &:first-child {
+            top: 6px;
+            transition-delay: .1s;
+            transform: rotate(45deg);
+        }
+        &:nth-child(2) {
+            opacity: 0;
+        }
+        &:last-child {
+            transform: rotate(-45deg);
+            bottom: 6px;
+            transition-delay: .1s;
+        }
+    }
+}
 
 #overlayer {
     width: 100vw;
     height: 100vh;
     position: fixed;
     z-index: 100000;
-    background: $color__light;
+    background: $color__bg;
     top: 0;
     left: 0;
     display: flex;
@@ -116,14 +123,14 @@ body {
     width: 70px;
     height: 70px;
     border-radius: 50%;
-    background: conic-gradient($color__light 10%, $color__main);
+    background: conic-gradient($color__bg 10%, $color__main);
     position: relative;
     animation: load_spin 0.8s infinite linear;
     &:after {
         position: absolute;
         width: 55px;
         height: 55px;
-        background-color: $color__light;
+        background-color: $color__bg;
         content: '';
         top: 50%;
         left: 50%;
@@ -133,9 +140,8 @@ body {
 }
 
 .scroll-top {
-    display: none !important;
     position: fixed;
-    bottom: 75px;
+    bottom: 130px;
     right: -50px;
     width: 36px;
     height: 36px;
@@ -145,16 +151,18 @@ body {
     background-color: $color__bg;
     z-index: 999;
     cursor: pointer;
-    opacity: 0.7;
     @include transition(all .3s ease-in-out);
     img {
-        @include rotate(-180);
-        filter: invert(1) brightness(1);
-        width: 10px;
+        @include rotate(-90);
+        width: 8px;
         height: auto;
+        @include transition(all .3s ease-in-out);
     }
     &:hover {
-        opacity: 1;
+        background-color: $color__main;
+        img {
+            filter: brightness(0);
+        }
     }
     @include tablet {
         bottom: 107px;
@@ -163,7 +171,10 @@ body {
     }
 }
 .active-scroll-top {
-    right: 34px;
+    right: 50px;
+    @include big_screen {
+        right: 30px;
+    }
     @include mobile {
         right: 15px;
     }
@@ -185,6 +196,6 @@ body {
 /*container 1240 on screen 1440px*/
 @media screen and (min-width: 1440px) {
     .container {
-        max-width: 1270px;
+        max-width: 1210px;
     }
 }

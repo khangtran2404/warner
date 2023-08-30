@@ -5,7 +5,7 @@ if ( ! empty( $artists ) && ! is_wp_error( $artists ) ) {
 		$artistImage = get_field( 'artist_image', 'artist_' . $artist->term_id ); ?>
         <div class="event-artist event-artist-id-<?= $artist->term_id ?>">
             <a href="#">
-                <div class="image" style="background-image: <?= $artistImage ?>"></div>
+                <div class="image"><img src="<?= $artistImage ?>" alt="<?= $artist->name ?>"></div>
                 <div class="name"><?= $artist->name ?></div>
             </a>
         </div>

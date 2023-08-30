@@ -40,7 +40,7 @@
 			<?php get_template_part( '/inc/views/header/header-main' ); ?>
 		</div>
 	</header> <!-- #masthead -->
-	<?php //get_template_part( '/inc/views/header/header-nav-action' ); ?>
+	<?php get_template_part( '/inc/views/header/header-nav-action' ); ?>
 
 	<div id="content" class="site-content">
 		<div id="primary" class="content-area">

@@ -13,7 +13,7 @@ class wp_custom_navwalker extends Walker_Nav_Menu {
         if (in_array('menu-item-has-children', $item->classes)) {
             // Add a class for dropdown menu
             $output .= '<li class="nav-item '.$class_names.'" data-depth='.$depth.'>';
-            $output .= '<a class="nav-item-link dropdown-toggle-custom" href="' . $item->url . '">' . $item->title . '<span class="menu-toggle" data-depth='.$depth.'><img width="10" src="'.DF_IMAGE.'/icon/arrow-bottom.png'.'" alt="arrow-icon"></span></a>';
+            $output .= '<a class="nav-item-link dropdown-toggle-custom" href="' . $item->url . '">' . $item->title . '<span class="menu-toggle" data-depth='.$depth.'><img width="12" src="'.DF_IMAGE.'/icon/arrow-bottom.png'.'" alt="arrow-icon"></span></a>';
         } else {
             // Generate a regular navigation menu item
             $output .= '<li class="nav-item '.$class_names.'" data-depth='.$depth.'>';

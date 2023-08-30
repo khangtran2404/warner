@@ -6,7 +6,7 @@ for ($i = 0; $i < 3; $i++){
 	?>
 	<div class="artist-item homepage-artist-item-<?= $artist->term_id ?>">
 		<a href="#">
-			<div class="image" style="background-image: <?= $artistImage ? $artistImage['url'] : ''?>"></div>
+			<div class="image"><img src="<?= $artistImage ? $artistImage['url'] : ''?>" alt="<?= $artist->name ?>"></div>
 			<div class="name"><?= $artist->name ?></div>
 		</a>
 	</div>

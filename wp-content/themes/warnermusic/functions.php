@@ -27,6 +27,30 @@ function warnermusic() {
 }
 add_action( 'wp_enqueue_scripts', 'warnermusic');
 
+function disable_editor_on_selected_templates() {
+    // Get the current post ID
+    $post_id = $_GET['post'] ?? $_POST['post_ID'] ?? false;
+
+    if (!$post_id) {
+        return;
+    }
+
+    // Get the page template file name
+    $template = get_post_meta($post_id, '_wp_page_template', true);
+
+    // List of templates to disable the editor for
+    $disabled_templates = array(
+        'homepage.php', // Replace with actual template file names
+        // Add more template file names as needed
+    );
+
+    if (in_array($template, $disabled_templates)) {
+        remove_post_type_support('page', 'editor');
+    }
+}
+add_action('admin_init', 'disable_editor_on_selected_templates');
+
+
 // Register an menu custom for Header
 register_nav_menus(
     array(

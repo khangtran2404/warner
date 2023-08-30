@@ -18,7 +18,9 @@
    <div class="col-right">
       <div class="group-content hiden-on-mobile">
          <div class="group-social-network-desktop">
+            <ul class="list-item-socials">
             <?php get_template_part( '/inc/views/header/header-social' ); ?>
+            </ul>
          </div>
          <div class="group-navigation-desktop">
             <?php get_template_part( '/inc/views/header/header-nav' ); ?>
