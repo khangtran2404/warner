@@ -7,6 +7,7 @@ $(window).load(function() {
 
 $(window).resize(function() {
     headerMobileDistance();
+    adapterWidthHeigth();
 });
 
 $(window).scroll(function() {
@@ -22,7 +23,15 @@ $(document).ready(function(){
     scrollTop('.scroll-top');
     headerMobileDistance();
     bannerSlider();
+    adapterWidthHeigth();
 });
+
+function adapterWidthHeigth() {
+    let itemNoSquare = $('.gird-item-no-square img');
+    let itemSquare = $('.gird-item-square img');
+    itemNoSquare.css('height', (itemNoSquare.innerWidth())*(3/2));
+    itemSquare.css('height', itemSquare.innerWidth());
+}
 
 function bannerSlider() {
     let listSlider = $('.banner-slider .list-banner-slider');

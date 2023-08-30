@@ -109,6 +109,29 @@ body {
     }
 }
 
+.button-link-warner {
+    width: fit-content;
+    a {
+        width: auto;
+        min-width: 150px;
+        display: block;
+        padding: 10px 15px;
+        border-radius: 12px;
+        text-align: center;
+        background-color: $color__bg-priamry-1;
+        color: $color__gray !important;
+        font-weight: 700;
+        @media screen and (max-width: 400px) {
+            font-size: 13px;
+        }
+        &:hover {
+            text-decoration: none;
+            color: $color__bg !important;
+            background-color: $color__primary;
+        }
+    }
+}
+
 #overlayer {
     width: 100vw;
     height: 100vh;
@@ -151,7 +174,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: $color__bg;
+    background-color: $color__dark;
     z-index: 999;
     cursor: pointer;
     @include transition(all .3s ease-in-out);
@@ -162,10 +185,7 @@ body {
         @include transition(all .3s ease-in-out);
     }
     &:hover {
-        background-color: $color__main;
-        img {
-            filter: brightness(0);
-        }
+        background-color: $color__bg;
     }
     @include tablet {
         bottom: 107px;
@@ -249,7 +269,15 @@ body {
             background-color: $color__orange !important;
         }
     }
-}   
+}  
+.text-decoration-none {
+    &:hover {
+        text-decoration: none !important;
+    }
+}
+.color-main {
+    color: $color__main;
+}
 
 /*container 1240 on screen 1440px*/
 @media screen and (min-width: 1440px) {

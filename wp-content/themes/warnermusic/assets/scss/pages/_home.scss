@@ -267,3 +267,168 @@
         }
     }
 }
+
+.artists {
+    padding: 150px 0 0 0;
+    .list-artist {
+        display: flex;
+        margin: 0 -10px;
+        @include desktop {
+            flex-wrap: wrap;
+        }
+        @include mobile {
+            margin: 0 -5px;
+        }
+        .artist-item {
+            width: calc(100% /4);
+            margin-bottom: 20px;
+            @include desktop {
+                width: calc(100%/2);
+            }
+            .content-box {
+                padding: 0 10px;
+                width: 100%;
+                @include mobile {
+                    padding: 0 5px;
+                }
+            }
+            .image-feature {
+                width: 100%;
+                img {
+                    width: 100% !important;
+                    object-fit: cover;
+                }
+            }
+            &:first-child {
+                order: 4;
+                @include desktop {
+                    order: unset;
+                }
+            }
+            &:last-child {
+                order: 1;
+                @include desktop {
+                    order: unset;
+                }
+            }
+        }
+        .artist-item-title {
+            font-size: 70px;
+            font-weight: 800;
+            text-align: right;
+            line-height: 1.2;
+            @include desktop {
+                text-align: left;
+            }
+            @include tablet {
+                font-size: 40px;
+            }
+            @include mobile {
+                font-size: 35px;
+            }
+        }
+        .name {
+            margin-top: 20px;
+            @include mobile {
+                margin-top: 10px;
+            }
+            a {
+                font-size: 22px;
+                font-weight: 800;
+                line-height: 1.2;
+                @include tablet {
+                    font-size: 18px;
+                }
+                @include mobile {
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+    .button-link-warner {
+        margin-top: 30px;
+        margin-left: auto;
+        @include desktop {
+            margin-right: auto;
+        }
+    }
+}
+
+.news {
+    padding: 150px 0 0 0;
+    .list-news {
+        display: flex;
+        margin: 0 -10px;
+        @include desktop {
+            flex-wrap: wrap;
+        }
+        @include mobile {
+            margin: 0 -5px;
+        }
+        .highlights-news-item {
+            position: relative;
+            width: calc(100% /4);
+            margin-bottom: 20px;
+            z-index: 1;
+            @include desktop {
+                width: calc(100%/2);
+            }
+            .content-box {
+                padding: 0 10px;
+                width: 100%;
+                @include mobile {
+                    padding: 0 5px;
+                }
+            }
+            .image-feature {
+                width: 100%;
+                img {
+                    width: 100% !important;
+                    object-fit: cover;
+                }
+            }
+        }
+        .highlights-news-item-title {
+            font-size: 70px;
+            font-weight: 800;
+            text-align: left;
+            line-height: 1.2;
+            position: relative;
+            z-index: 2;
+            @include tablet {
+                font-size: 40px;
+            }
+            @include mobile {
+                font-size: 35px;
+            }
+        }
+        .name {
+            margin-top: 20px;
+            margin-bottom: 10px;
+            @include mobile {
+                margin-top: 10px;
+            }
+            a {
+                font-size: 18px;
+                font-weight: 800;
+                line-height: 1.2;
+                @include tablet {
+                    font-size: 16px;
+                }
+                @include mobile {
+                    font-size: 14px;
+                }
+            }
+        }
+        .description {
+            color: $color__gray;
+        }
+    }
+    .button-link-warner {
+        margin-top: 30px;
+        @include desktop {
+            margin-right: auto;
+            margin-left: auto;
+        }
+    }
+}
