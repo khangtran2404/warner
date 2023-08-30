@@ -292,23 +292,60 @@
                     padding: 0 5px;
                 }
             }
+            &:last-child {
+                .content-box {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    height: 100%;
+                }
+            }
             .image-feature {
                 width: 100%;
+                position: relative;
                 img {
                     width: 100% !important;
                     object-fit: cover;
+                    filter: grayscale(100%);
+                    @include transition(all .3s ease-in-out);
                 }
             }
-            &:first-child {
-                order: 4;
-                @include desktop {
-                    order: unset;
+            .cont-feature-icon {
+                position: relative;
+            }
+            .triangle-right {
+                width: 0; 
+                height: 0; 
+                border-top: 60px solid transparent;
+                border-bottom: 0px solid transparent;
+                border-left: 70px solid $color__primary;
+                position: absolute;
+                bottom: 0;
+                opacity: 0;
+                visibility: hidden;
+                @include transition(all .3s ease-in-out);
+                img {
+                    position: absolute;
+                    bottom: 14px;
+                    left: -52px;
+                }
+                @include mobile {
+                    border-left: 50px solid $color__primary;
+                    img {
+                        bottom: 6px;
+                        left: -42px;
+                    }
                 }
             }
-            &:last-child {
-                order: 1;
-                @include desktop {
-                    order: unset;
+            &:hover {
+                .triangle-right {
+                    opacity: 1;
+                    visibility: visible;
+                }
+                .image-feature {
+                    img {
+                        filter: grayscale(0);
+                    }
                 }
             }
         }
@@ -317,9 +354,6 @@
             font-weight: 800;
             text-align: right;
             line-height: 1.2;
-            @include desktop {
-                text-align: left;
-            }
             @include tablet {
                 font-size: 40px;
             }
@@ -348,9 +382,6 @@
     .button-link-warner {
         margin-top: 30px;
         margin-left: auto;
-        @include desktop {
-            margin-right: auto;
-        }
     }
 }
 
@@ -381,10 +412,51 @@
                 }
             }
             .image-feature {
+                position: relative;
                 width: 100%;
                 img {
                     width: 100% !important;
                     object-fit: cover;
+                }
+            }
+            &:first-child {
+                .content-box {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    height: 100%;
+                }
+            }
+            &:nth-child(2),
+            &:nth-child(3),
+            &:nth-child(4) {
+                .image-feature {
+                    &::after {
+                        position: absolute;
+                        content: '';
+                        width: 100%;
+                        height: 10px;
+                        background-color: $color__primary-1;
+                        bottom: 0;
+                        left: 0;
+                        @include mobile {
+                            height: 7px;
+                        }
+                    }
+                }
+            }
+            &:nth-child(3) {
+                .image-feature {
+                    &::after {
+                        background-color: $color__primary-2;
+                    }
+                }
+            }
+            &:nth-child(4) {
+                .image-feature {
+                    &::after {
+                        background-color: $color__primary-3;
+                    }
                 }
             }
         }
@@ -426,9 +498,160 @@
     }
     .button-link-warner {
         margin-top: 30px;
+    }
+}
+.events {
+    padding-top: 150px;
+    .event-artist {
+        width: 100%;
+        height: 100%;
+        padding: 100px;
         @include desktop {
-            margin-right: auto;
-            margin-left: auto;
+            padding: 100px 60px 100px 0;
+        }
+        @include tablet {
+            padding: 80px 50px 80px 0;
+        }
+        background-color: $color__main;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        position: relative;
+        .image {
+            width: 300px;
+            height: 300px;
+            @include mobile {
+                width: 200px;
+                height: 200px;
+            }
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+        .name {
+            margin-top: 10px;
+            font-size: 34px;
+            line-height: 1.4;
+            font-weight: 800;
+            a {
+                color: $color__bg !important;
+                &:hover {
+                    color: $color__bg !important;
+                }
+            }
+        }
+        .triangle-right {
+            width: 0; 
+            height: 0; 
+            border-top: 60px solid transparent;
+            border-bottom: 0px solid transparent;
+            border-left: 70px solid $color__primary;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+    }
+    .event-item {
+        display: flex;
+        justify-content: space-between;
+        padding-left: 50px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        @include tablet {
+            padding-left: 15px;
+        }
+    }
+    .event-list {
+        .title {
+            text-align: right !important;
+            font-size: 70px;
+            font-weight: 800;
+            text-align: left;
+            line-height: 1.2;
+            position: relative;
+            z-index: 2;
+            margin-bottom: 40px;
+            @include tablet {
+                font-size: 40px;
+                margin-top: 40px;
+            }
+            @include mobile {
+                font-size: 35px;
+            }
+        }
+        .date {
+            font-size: 22px;
+            color: $color__main;
+            @include tablet {
+                font-size: 18px;
+            }
+        }
+        .position {
+            font-weight: bold;
+        }
+    }
+}
+.playlists {
+    padding: 100px 0 60px 0;
+    position: relative;
+    .bg-over {
+        background-color: $color__bg-priamry-2;
+        padding: 50px 60px 30px 60px;
+        margin: 0 -60px 0 -60px;
+        @media screen and (max-width: 1210px) {
+            padding: 40px 50px 20px 50px;
+            margin: 0;
+        }
+        @include mobile {
+            padding: 30px 20px 10px 20px;
+        }
+    }
+    .title-playlist {
+        font-size: 70px;
+        font-weight: 800;
+        text-align: left;
+        line-height: 1.2;
+        position: relative;
+        z-index: 2;
+        margin-bottom: 30px;
+        @include tablet {
+            font-size: 40px;
+        }
+        @include mobile {
+            font-size: 35px;
+        }
+    }
+    .list-playlist {
+        display: flex;
+        margin: 0 -10px;
+        justify-content: center;
+        @include desktop {
+            flex-wrap: wrap;
+        }
+        .title {
+            font-weight: 800;
+        }
+        .sub-title {
+            color: $color__gray;
+            margin-bottom: 30px;
+        }
+        .playlist-item {
+            width: calc(100% /3);
+            margin-bottom: 20px;
+            @include desktop {
+                width: calc(100% /2);
+            }
+            @include tablet {
+                width: 100%;
+            }
+            .content-box {
+                padding: 0 10px;
+            }
+        }
+        iframe {
+            border-radius: 0 !important;
         }
     }
 }

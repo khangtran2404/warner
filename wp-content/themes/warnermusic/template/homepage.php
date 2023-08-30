@@ -27,20 +27,20 @@ get_header(); ?>
         <section class="artists">
             <div class="container">
                 <div class="list-artist">
+                    <?php
+                    get_template_part( 'inc/views/loop/homepage/homepage', 'artist-item', [ 'page_id' => get_the_ID() ] );
+                    ?>
                     <div class="artist-item artist-item-title">
                         <div class="content-box">
                             <a href="#" class="text-decoration-none">
                                 <span><?= __( 'Intl' ) ?><br/><?= __( '& Local' ) ?><br/>
                                 <span class="color-main"><?= __( 'Artists' ) ?></span>
                             </a>
+                            <div class="see-more button-link-warner">
+                                <a href="#"><?= __( 'See more' ) ;?></a>
+                            </div>
                         </div>
                     </div>
-                    <?php
-                    get_template_part( 'inc/views/loop/homepage/homepage', 'artist-item', [ 'page_id' => get_the_ID() ] );
-                    ?>
-                </div>
-                <div class="see-more button-link-warner">
-                    <a href="#"><?= __( 'See more' ) ;?></a>
                 </div>
             </div>
         </section>
@@ -53,35 +53,35 @@ get_header(); ?>
                                 <span><?= __( 'Highlight' ) ?></span><br/>
                                 <span class="color-main"><?= __( 'News' ) ?></span>
                             </a>
+                            <div class="see-more button-link-warner">
+                                <a href="#"><?= __( 'See more' ) ;?></a>
+                            </div>
                         </div>
                     </div>
                     <?php
                         get_template_part( 'inc/views/loop/homepage/homepage', 'highlight-news-item', [ 'page_id' => get_the_ID() ] );
                     ?>
                 </div>
-                <div class="see-more button-link-warner">
-                    <a href="#"><?= __( 'See more' ) ;?></a>
-                </div>
             </div>
         </section>
         <section class="events">
             <div class="list-event">
-                <div class="title">
-                    <a href="#">
-                        <span><?= __( 'Event' ) ?></span>
-                        <span><?= __( 'Schedule' ) ?></span>
-                    </a>
-                </div>
                 <?php
                 get_template_part( 'inc/views/loop/homepage/homepage', 'event-item' );
                 ?>
             </div>
         </section>
         <section class="playlists">
-            <div class="list-playlist">
-                <?php
-                //get_template_part( 'inc/views/loop/homepage/homepage', 'playlist-item', [ 'page_id' => get_the_ID() ] );
-                ?>
+            <div class="bg-playlists"></div>
+            <div class="container">
+                <div class="bg-over">
+                    <div class="title-playlist">Playlists</div>
+                    <div class="list-playlist">
+                        <?php
+                        get_template_part( 'inc/views/loop/homepage/homepage', 'playlist-item', [ 'page_id' => get_the_ID() ] );
+                        ?>
+                    </div>
+                </div>
             </div>
         </section>
     </div>

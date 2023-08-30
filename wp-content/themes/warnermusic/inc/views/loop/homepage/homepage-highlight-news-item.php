@@ -10,7 +10,7 @@ for ( $i = 0; $i < 3; $i ++ ) {
                     <img src="<?= get_the_post_thumbnail_url( $news->ID ) ?>" alt="<?= $news->post_title ?>">
                 </a>
             </div>
-            <div class="name" class="text-decoration-none">
+            <div class="name text-decoration-none">
 				<a href="#"><?= $news->post_title ?></a>
 			</div>
             <div class="description">
