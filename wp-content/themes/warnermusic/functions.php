@@ -13,11 +13,13 @@ function warnermusic() {
     wp_enqueue_style('bootstrap', THEME_URI. '/assets/css/lib/bootstrap/bootstrap.min.css');
     wp_enqueue_style('slick', THEME_URI. '/assets/css/lib/slick/slick.css');
     wp_enqueue_style('wow-animation', THEME_URI. '/assets/css/lib/animate/animate.min.css');
+    wp_enqueue_style('slick-animation', THEME_URI. '/assets/css/lib/animate/animation.min.css');
 
     // Add Library JS
     wp_enqueue_script('jquery', THEME_URI. '/assets/js/lib/jquery.min.js', '','' , true);
     wp_enqueue_script('slick', THEME_URI. '/assets/js/lib/slick.min.js', '','' , true);
     wp_enqueue_script( 'Wow-animation', THEME_URI. '/assets/js/lib/WOW.js', '','' , true);
+    wp_enqueue_script('slick-animation', THEME_URI. '/assets/js/lib/slick-animation.min.js', '','' , false);
 
     // Add Main CSS
     wp_enqueue_style('main-style', THEME_URI. '/assets/css/main.css');

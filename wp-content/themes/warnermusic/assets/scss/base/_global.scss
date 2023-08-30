@@ -57,6 +57,9 @@ body {
     .entry-footer {
         color: $color__light;
     }
+    #main {
+        padding: 0;
+    }
 }
 
 /* button hamburger*/
@@ -192,6 +195,61 @@ body {
         display: none !important;
     }
 }
+
+.slick-dots {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: fit-content;
+    li {
+        display: flex;
+        align-items: center;
+        margin: 0 6px;
+        @include tablet {
+            margin:  0 4px;
+        }
+        &:first-child {
+            margin-left: 0;
+        }
+        &:last-child {
+            margin-right: 0;
+        }
+        button {
+            width: 10px;
+            height: 10px;
+            font-size: 0 !important;
+            padding: 0 !important;
+            border-radius: 50%;
+            color: $color__light;
+            background-color: $color__light !important;
+            @include transition(all .3s ease-in-out);
+            @include tablet {
+                width: 8px;
+                height: 8px;
+            }
+            @include mobile {
+                width: 7px;
+                height: 7px;
+            }
+            &:focus {
+                outline: none;
+            }
+            &:hover {
+                color: $color__orange;
+                background-color: $color__orange !important;
+            }
+        }
+        button[aria-label="1 of 1"] {
+            display: none;
+        }
+    }
+    .slick-active {
+        button {
+            background-color: $color__orange !important;
+        }
+    }
+}   
 
 /*container 1240 on screen 1440px*/
 @media screen and (min-width: 1440px) {
