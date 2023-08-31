@@ -55,7 +55,7 @@ function bannerSlider() {
         arrows: false,
         dots: true,
         infinite: true,
-        autoplay: false,
+        autoplay: true,
         fade: true,
         cssEase: 'linear',
         speed: 600,
