@@ -32,8 +32,6 @@ function adapterWidthHeigth() {
     let itemNoSquare = $('.gird-item-no-square .image-feature img');
     let triangleNoSquare = $('.gird-item-no-square .triangle-right');
     let events = $('.events .event-artist');
-    let eventList = $('.events .event-list .event-item');
-    let eventTitle = $('.events .event-list .title');
     let triangleEvents = $('.event-artist .triangle-right');
     let itemSquare = $('.gird-item-square .image-feature img');
 
@@ -41,9 +39,7 @@ function adapterWidthHeigth() {
     itemNoSquare.css('height', (itemNoSquare.innerWidth())*(3/2));
     itemSquare.css('height', itemSquare.innerWidth());
     triangleNoSquare.css('border-top-width', (itemNoSquare.innerWidth()/2 + 30));
-    triangleEvents.css('border-top-width', (events.innerHeight()/4 + 30));
-    eventList.css('padding-right',distance);
-    eventTitle.css('padding-right',distance); 
+    triangleEvents.css('border-top-width', (events.innerHeight()/4 + 40));
 }
 
 function bannerSlider() {

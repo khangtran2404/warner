@@ -32,10 +32,10 @@ get_header(); ?>
                     ?>
                     <div class="artist-item artist-item-title">
                         <div class="content-box">
-                            <a href="#" class="text-decoration-none">
+                            <h2 class="title-warner-h2">
                                 <span><?= __( 'Intl' ) ?><br/><?= __( '& Local' ) ?><br/>
                                 <span class="color-main"><?= __( 'Artists' ) ?></span>
-                            </a>
+                            </h2>
                             <div class="see-more button-link-warner">
                                 <a href="#"><?= __( 'See more' ) ;?></a>
                             </div>
@@ -47,12 +47,12 @@ get_header(); ?>
         <section class="news">
             <div class="container">
                 <div class="list-news">
-                    <div class="highlights-news-item highlights-news-item-title">
+                    <div class="highlights-news-item news-item-title">
                         <div class="content-box">
-                            <a href="#" class="text-decoration-none">
+                            <h2 class="title-warner-h2">
                                 <span><?= __( 'Highlight' ) ?></span><br/>
                                 <span class="color-main"><?= __( 'News' ) ?></span>
-                            </a>
+                            </h2>
                             <div class="see-more button-link-warner">
                                 <a href="#"><?= __( 'See more' ) ;?></a>
                             </div>
@@ -75,7 +75,7 @@ get_header(); ?>
             <div class="bg-playlists"></div>
             <div class="container">
                 <div class="bg-over">
-                    <div class="title-playlist">Playlists</div>
+                    <h2 class="title-warner-h2">Playlists</h2>
                     <div class="list-playlist">
                         <?php
                         get_template_part( 'inc/views/loop/homepage/homepage', 'playlist-item', [ 'page_id' => get_the_ID() ] );

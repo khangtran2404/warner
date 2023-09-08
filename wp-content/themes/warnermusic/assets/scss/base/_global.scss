@@ -24,6 +24,23 @@ body {
         font-family: $font__mulish !important;
         color: $color__light !important;
     }
+    h2.title-warner-h2 {
+        font-size: 70px;
+        font-weight: 800;
+        line-height: 1.2;
+        @include big_screen {
+            font-size: 50px;
+        }
+        @include desktop {
+            font-size: 65px
+        }
+        @include tablet {
+            font-size: 40px;
+        }
+        @include mobile {
+            font-size: 35px;
+        }
+    }
     p {
         color: $color__light !important;
         font-size: 16px;
