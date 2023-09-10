@@ -20,7 +20,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800;900&display=swap">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
 	<?php wp_head(); ?>
 </head>
@@ -36,9 +36,7 @@
 		?>
 	</a>
 	<header id="masthead" class="site-header header">
-		<div class="container">
-			<?php get_template_part( '/inc/views/header/header-main' ); ?>
-		</div>
+		<?php get_template_part( '/inc/views/header/header-main' ); ?>
 	</header> <!-- #masthead -->
 	<?php get_template_part( '/inc/views/header/header-nav-action' ); ?>
 

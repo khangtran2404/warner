@@ -1,5 +1,4 @@
 <div class="navigation-menu-action" data-height="0">
-    <div class="container">
     <?php if ( has_nav_menu( 'main-menu' ) ) : ?>
         <nav id="mobile-navigation" class="mobile-navigation">
             <div class="group-from-search-header-mobile">
@@ -27,5 +26,4 @@
             </ul>
         </nav><!-- #site-navigation -->
     <?php endif; ?>
-    </div>
 </div>

@@ -1,5 +1,5 @@
 <div class="header-main">
-   <div class="col-logo col-left">
+   <div class="col-logo">
       <!-- logo -->
       <div class="custom-logo-link">
          <?php if ( has_custom_logo()):?>
@@ -15,23 +15,19 @@
          <?php endif;?>
       </div>
    </div>
-   <div class="col-right">
-      <div class="group-content hiden-on-mobile">
-         <div class="group-social-network-desktop">
-            <ul class="list-item-socials">
-            <?php get_template_part( '/inc/views/header/header-social' ); ?>
-            </ul>
-         </div>
-         <div class="group-navigation-desktop">
-            <?php get_template_part( '/inc/views/header/header-nav' ); ?>
-         </div>
-      </div>
-      <!-- Button Hamburger -->
-      <div class="btn-hamburger show-on-mobile">
-            <span></span>
-            <span></span>
-            <span></span>
-      </div>
+   <div class="group-navigation-desktop hiden-on-mobile">
+      <?php get_template_part( '/inc/views/header/header-nav' ); ?>
+   </div>
+   <div class="group-social-network-desktop hiden-on-mobile">
+      <ul class="list-item-socials">
+       <?php get_template_part( '/inc/views/header/header-social' ); ?>
+      </ul>
+   </div>
+   <!-- Button Hamburger -->
+   <div class="btn-hamburger show-on-mobile">
+      <span></span>
+      <span></span>
+      <span></span>
    </div>
 </div>
 

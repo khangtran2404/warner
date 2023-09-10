@@ -9,7 +9,7 @@
     .main-footer {
         padding: 50px 0 50px 0;
         margin: 0;
-        background-color: $color__bg-primary;
+        background-color: $color__bg;
     }
     .group-row-footer {
         display: flex;
@@ -130,6 +130,7 @@
     .footer-copyright {
         margin: 0;
         padding: 15px 0;
+        background-color: $color__dark;
     }
     .copyright {
         color: $color__gray;

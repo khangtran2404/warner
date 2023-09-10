@@ -3,23 +3,29 @@
 */
 $header_height: 55px;
 #masthead {
-    background-color: $color__main;
+    background-color: $color__dark;
     width: 100%;
     max-width: 100%;
     margin: 0;
-    padding: 0;
+    padding: 15px 40px;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 99998;
+    @media screen and (min-width: 1600px) {
+        padding: 15px 100px;
+    }
+    @media screen and (min-width: 1900px) {
+        padding: 15px 150px;
+    }
+    @include tablet {
+        padding: 5px 15px;
+    }
     .site-logo {
         margin: 10px 0 !important;
         img {
-            height: 65px !important;
+            height: 52px !important;
             width: auto !important;
-            @include big_screen {
-                height: 50px !important;
-            }
             @include tablet {
                 height: 40px !important;
             }
@@ -27,25 +33,9 @@ $header_height: 55px;
     }
     .header-main {
         display: flex;
-        .col-left {
-            width: 25%;
-            display: flex;
-            align-items: center;
-            @include big_screen  {
-                width: 20%;
-            }
-        }
-        .col-right {
-            width: 75%;
-            @include big_screen  {
-                width: 80%;
-            }
-            @include desktop {
-                display: flex;
-                align-items: center;
-                justify-content: flex-end;
-            }
-        }
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
     }
 }
 .admin-bar #masthead {
@@ -91,50 +81,15 @@ $header_height: 55px;
     }
 }
 .group-navigation-desktop {
-    background-color: $color__bg;
-    position: relative;
-    height: auto;
-    min-height: $header_height;
-    justify-content: flex-end;
-    align-items: center;
     display: flex;
-    padding-left: 55px;
-    &::after {
-        position: absolute;
-        z-index: 1;
-        content: '';
-        width: 200%;
-        height: 100%;
-        background-color: $color__bg;
-        left: 0;
-        top: 0;
-    }
-    &::before {
-        position: absolute;
-        left: -1px;
-        top: -1px;
-        content: '';
-        width: 55px;
-        height: 55px;
-        border-left: 0px solid transparent;
-        border-right: 40px solid transparent;
-        border-top: 56px solid $color__main;
-        z-index: 2;
-        @include transition(all .4s ease-in-out);
-    }
-    &.run {
-        &::before {
-            width: 60%;
-            @include big_screen {
-                width: 55%;
-            }
-        }
-    }
+    justify-content: center;
+    align-items: center;
 }
 .search-action {
     position: relative;
     z-index: 2;
     margin-left: 50px;
+    margin-right: 22px;
     @include big_screen {
         margin-left: 36px;
     }
@@ -146,9 +101,17 @@ $header_height: 55px;
     .open-search {
         animation: show_block .5s forwards;
     }
+    &:hover {
+        i {
+            color: $color__main;
+        }
+    }
+}
+.button-search-action {
     .close-search {
-        display: none;
-        animation: show_block .5s forwards;
+        margin-left: 20px;
+        cursor: pointer;
+        font-size: 19px;
     }
     &:hover {
         i {
@@ -158,27 +121,23 @@ $header_height: 55px;
 }
 .group-from-search-header,
 .group-from-search-header-mobile {
-    position: relative;
-    z-index: 3;
     display: none;
+    justify-content: center;
+    align-items: center;
     animation: show_block .6s forwards;
     label {
         display: none;
     }
     form {
         position: relative;
-        height: 35px;
-        right: -39px;
-        @include big_screen {
-            right: -25px;
-        }
+        height: 40px;
     }
     input[type=search] {
-        width: 250px;
+        width: 350px;
         position: relative;
         margin: 0;
-        height: 35px;
-        padding-left: 40px;
+        height: 40px;
+        padding-left: 42px;
         border-radius: 10px;
         background-color: $color__light;
         border: none;
@@ -193,8 +152,8 @@ $header_height: 55px;
         width: 30px;
         height: 30px;
         position: absolute;
-        left: 6px;
-        top: 3px;
+        left: 8px;
+        top: 6px;
         border: none !important;
         z-index: 3;
         &:focus,
@@ -214,7 +173,10 @@ $header_height: 55px;
     }
 }
 .group-from-search-header.active {
-    display: block;
+    display: flex;
+    position: relative;
+    left: 50%;
+    @include translate(-50%, 0);
 }
 .main-navigation-desktop {
     align-items: center;
@@ -236,11 +198,13 @@ $header_height: 55px;
                 font-size: 16px;
                 padding: 15px 13px;
             }
+            &:hover {
+                text-decoration: underline;
+            }
         }
     }
     .current-menu-item {
         &>a {
-            font-weight: 600;
             color: $color__main !important;
             text-decoration: underline;
         }
@@ -306,62 +270,19 @@ $header_height: 55px;
         left: 0;
     }
 }
-.list-item-over-6 {
-    .main-navigation-desktop {
-        li {
-            a {
-                padding: 13px 15px;
-                font-size: 16px;
-                @include big_screen  {
-                    font-size: 14px;
-                    padding: 15px 13px;
-                }
-            }
-        }
-        .nav-item-link {
-            .menu-toggle[data-depth="0"] {
-                right: 0;
-            }
-        }
-    }
-    .search-action {
-        margin-left: 36px;
-    }
-    .group-from-search-header {
-        form {
-            right: -25px;
-        }
-    }
-}
-#masthead.list-item-over-7 {
-    .header-main {
-        .col-left {
-            width: 15%;
-        }
-        .col-right {
-            width: 85%;
-        }
-    }
-    .main-navigation-desktop {
-        li {
-            a {
-                @include big_screen  {
-                    font-size: 13px;
-                    padding: 15px 13px;
-                }
-            }
-        }
-    }
-}
 
 .navigation-menu-action {
     margin-top: -1px;
-    background-color: rgba($color: $color__dark, $alpha: 0.8);
+    background-color: rgba($color: $color__dark, $alpha: 0.85);
     position: fixed;
     z-index: 998;
     width: 100%;
     height: 0;
     overflow: hidden;
+    padding: 0 40px;
+    @include mobile {
+        padding: 0 15px;
+    }
     @include transition(all .3s ease-in-out);
     .group-from-search-header-mobile {
         display: block;
@@ -403,7 +324,7 @@ $header_height: 55px;
             align-items: center;
             justify-content: center;
             i {
-                font-size: 25px;
+                font-size: 22px;
                 color: $color__main;
                 @include mobile {
                     font-size: 20px;

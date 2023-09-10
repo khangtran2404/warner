@@ -12,7 +12,7 @@
     </nav><!-- #site-navigation -->
 <?php endif; ?>
 
-<div class="group-from-search-header">
+<div class="group-from-search-header hiden-on-mobile">
     <?php 
     $twentytwentyone_unique_id = wp_unique_id( 'search-form-' );
     $twentytwentyone_aria_label = ! empty( $args['aria_label'] ) ? 'aria-label="' . esc_attr( $args['aria_label'] ) . '"' : '';
@@ -22,11 +22,13 @@
         <input placeholder="Search..." type="search" id="<?php echo esc_attr( $twentytwentyone_unique_id ); ?>" class="search-field" value="<?php echo get_search_query(); ?>" name="s" />
         <button title="Search" type="submit" class="search-submit"> <i class="fa-solid fa-magnifying-glass"></i></button>
     </form>
+    <div class="button-search-action">
+        <span class="close-search"><i class="fa-solid fa-xmark"></i></span>
+    </div>
 </div>
 
-<div class="search-action">
+<div class="search-action hiden-on-mobile">
     <div class="button-search-action">
         <span class="open-search"><i class="fa-solid fa-magnifying-glass"></i></span>
-        <span class="close-search"><i class="fa-solid fa-xmark"></i></span>
     </div>
 </div>

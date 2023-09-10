@@ -64,14 +64,14 @@ function bannerSlider() {
         afterSlickEvent();
     });
     function afterSlickEvent() {
-        let widthContainer = $('.header-main').innerWidth();
+        let widthContainer = $('.group-row-footer').innerWidth();
         let body = $('body').innerWidth();
         let slickDots = $('.site-home-page .slick-dots');
         let btnLast = $('.banner-slider .latest-releases');
         let contInforMobile = $('.left-information-mobile');
 
         distance = (body - widthContainer)/2;
-        slickDots.css('right',distance + (btnLast.innerWidth() + 26));
+        slickDots.css('right',distance + (btnLast.innerWidth() + 40));
         btnLast.css('right',distance);
         contInforMobile.css({
             'padding-left': distance+'px',
@@ -82,13 +82,13 @@ function bannerSlider() {
             slickDots.css('left', distance);
         } else {
             slickDots.css('left', 'unset');
-            slickDots.css('right',distance + (btnLast.innerWidth() + 26));
+            slickDots.css('right',distance + (btnLast.innerWidth() + 40));
         }
     }
 }
 
 function headerAction() {
-    let closeSearch =  $('.search-action .button-search-action .close-search')
+    let closeSearch =  $('.button-search-action .close-search')
     let openSearch = $('.search-action .button-search-action .open-search');
     let groupNavDesktop = $('.navigation-desktop');
     let groupSearchHeader = $('.group-from-search-header');
@@ -99,30 +99,18 @@ function headerAction() {
         $(this).hide();
         closeSearch.show();
         groupNavDesktop.css('display','none');
-        groupSearchHeader.show();
-        iconTriangle.addClass('run');
+        groupSearchHeader.addClass('active');
     });
     closeSearch.click(function() {
         $(this).hide()
         openSearch.show();
         groupNavDesktop.css('display','flex');
-        groupSearchHeader.hide();
-        iconTriangle.removeClass('run');
+        groupSearchHeader.removeClass('active');
     });
-    if(totalItemNav > 6) {
-        header.addClass('list-item-over-6');
-    } else {
-        header.removeClass('list-item-over-6');
-    }
-    if(totalItemNav > 7) {
-        header.addClass('list-item-over-7');
-    } else {
-        header.removeClass('list-item-over-7');
-    }
 }
 
 function containerCustom() {
-    let widthContainer = $('.header-main').innerWidth();
+    let widthContainer = $('.group-row-footer').innerWidth();
     let body = $('body').innerWidth();
     let paddingLeft = $('.padding-left-container');
     let paddingRight = $('.padding-right-container');

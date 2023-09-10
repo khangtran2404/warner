@@ -7,21 +7,18 @@ html {
 }
 
 body {
-    padding: 110px 0 0 0 !important;
+    padding: 102px 0 0 0 !important;
     margin: 0 !important;
     font-size: 16px !important;
     color: $color__light !important;
-    font-family: $font__mulish;
+    font-family: $font__global;
     font-weight: 400;
-    background-color: $color__bg !important;
-    @include desktop {
+    background-color: $color__dark !important;
+    @include tablet {
         padding: 70px 0 0 0 !important;
     }
-    @include tablet {
-        padding: 60px 0 0 0 !important;
-    }
     h1,h2,h3,h4,h5,h6 {
-        font-family: $font__mulish !important;
+        font-family: $font__global !important;
         color: $color__light !important;
     }
     h2.title-warner-h2 {
@@ -44,12 +41,12 @@ body {
     p {
         color: $color__light !important;
         font-size: 16px;
-        font-family: $font__mulish;
+        font-family: $font__global;
         font-weight: 400;
     }
     a {
         color: $color__light !important;
-        font-family: $font__mulish !important;
+        font-family: $font__global !important;
         @include transition(all .3s ease-in-out);
         &:-webkit-any-link:focus {
             outline-offset: unset;
@@ -93,7 +90,7 @@ body {
         height: 2px;
         width: 100%;
         position: absolute;
-        background-color: $color__bg;
+        background-color: $color__light;
         @include transition (all .2s ease-in-out);
         &:first-child {
             top: 0;
@@ -156,7 +153,7 @@ body {
     height: 100vh;
     position: fixed;
     z-index: 100000;
-    background: $color__bg;
+    background: $color__dark;
     top: 0;
     left: 0;
     display: flex;
@@ -168,14 +165,14 @@ body {
     width: 70px;
     height: 70px;
     border-radius: 50%;
-    background: conic-gradient($color__bg 10%, $color__main);
+    background: conic-gradient($color__dark 10%, $color__main);
     position: relative;
     animation: load_spin 0.8s infinite linear;
     &:after {
         position: absolute;
         width: 55px;
         height: 55px;
-        background-color: $color__bg;
+        background-color: $color__dark;
         content: '';
         top: 50%;
         left: 50%;
@@ -194,6 +191,7 @@ body {
     justify-content: center;
     align-items: center;
     background-color: $color__dark;
+    border: 1px solid $color__bg;
     z-index: 999;
     cursor: pointer;
     @include transition(all .3s ease-in-out);
@@ -244,9 +242,9 @@ body {
     li {
         display: flex;
         align-items: center;
-        margin: 0 6px;
+        margin: 0 7px;
         @include tablet {
-            margin:  0 4px;
+            margin:  0 6px;
         }
         &:first-child {
             margin-left: 0;
@@ -255,8 +253,8 @@ body {
             margin-right: 0;
         }
         button {
-            width: 10px;
-            height: 10px;
+            width: 13px;
+            height: 13px;
             font-size: 0 !important;
             padding: 0 !important;
             border-radius: 50%;
@@ -264,19 +262,15 @@ body {
             background-color: $color__light !important;
             @include transition(all .3s ease-in-out);
             @include tablet {
-                width: 8px;
-                height: 8px;
-            }
-            @include mobile {
-                width: 7px;
-                height: 7px;
+                width: 10px;
+                height: 10px;
             }
             &:focus {
                 outline: none;
             }
             &:hover {
-                color: $color__orange;
-                background-color: $color__orange !important;
+                color: $color__main;
+                background-color: $color__main !important;
             }
         }
         button[aria-label="1 of 1"] {
@@ -285,7 +279,7 @@ body {
     }
     .slick-active {
         button {
-            background-color: $color__orange !important;
+            background-color: $color__main !important;
         }
     }
 }  
@@ -303,5 +297,17 @@ body {
 @media screen and (min-width: 1440px) {
     .container {
         max-width: 1210px;
+    }
+}
+
+@media screen and (min-width: 1600px) {
+    .container {
+        max-width: 1310px;
+    }
+}
+
+@media screen and (min-width: 1800px) {
+    .container {
+        max-width: 1450px;
     }
 }

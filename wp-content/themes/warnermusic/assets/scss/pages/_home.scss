@@ -3,15 +3,12 @@
 */
 .banner-slider {
     width: 100%;
-    height: calc(100vh - 110px);
-    @include desktop {
+    height: calc(100vh - 102px);
+    @include tablet {
         height: calc(100vh - 70px);
     }
-    @include tablet {
-        height: calc(100vh - 60px);
-    }
-    @include tablet {
-        height: calc(93vh - 60px);
+    @include mobile {
+        height: calc(93vh - 70px);
     }
     .list-banner-slider {
         width: 100%;
@@ -41,6 +38,9 @@
         bottom: 40px;
         width: fit-content;
         z-index: 2;
+        @media screen and (min-width: 1480px) and (min-height: 750px) {
+            bottom: calc(40px + 30px);
+        }
         @include desktop {
             bottom: calc(45% + 15px);
         }
@@ -53,7 +53,7 @@
             padding: 10px;
             border-radius: 12px;
             text-align: center;
-            background-color: $color__primary;
+            background-color: $color__light;
             color: $color__bg !important;
             font-weight: 800;
             position: relative;
@@ -80,8 +80,11 @@
     }
     .slick-dots {
         position: absolute;
-        bottom: 56px;
+        bottom: 55px;
         z-index: 2;
+        @media screen and (min-width: 1480px) and (min-height: 750px) {
+            bottom: calc(55px + 30px);
+        }
         @include desktop {
             bottom: calc(45% + 30px);
         }
@@ -91,13 +94,23 @@
         position: absolute;
         left: 0;
         height: 100%;
-        width: 100%;
         width: 350px;
-        background-color: rgba($color: $color__bg, $alpha: 0.85);
+        background-color: rgba($color: $color__dark, $alpha: 0.85);
         padding: 40px 45px 0 45px;
+        @media screen and (min-width: 1480px) and (min-height: 750px) {
+            width: 400px;
+        }
         .square-image {
             width: calc(350px - 100px);
             height: calc(350px - 100px);
+            margin: 0 auto;
+            @media screen and (min-width: 1480px) and (min-height: 750px) {
+                width: calc(400px - 100px);
+                height: calc(400px - 100px);
+            }
+            @include desktop {
+                margin: 0 0 0 auto;
+            }
             border: 10px solid rgba($color: $color__bg-priamry-1, $alpha: .8);
             img {
                 width: 100%;
@@ -108,27 +121,24 @@
         .artist {
             margin-bottom: 12px;
             font-size: 30px;
-            font-weight: 800;
+            font-weight: 500;
             line-height: 1.2;
-            padding: 0 10px;
-        }
-        .sub-title {
-            margin-top: 12px;
-            margin-bottom: 3px;
-            line-height: 1.2;
-            color: $color__main;
-            font-size: 20px;
             padding: 0 10px;
         }
         .title {
+            margin-top: 30px;
             line-height: 1.2;
             font-size: 22px;
-            font-weight: 800;
+            font-weight: 500;
             padding: 0 10px;
         }
         .content-box {
             height: calc(100% - 100px);
             overflow-y: auto;
+            @media screen and (min-width: 1480px) and (min-height: 750px) {
+                height: auto;
+                margin-bottom: 100px;
+            }
             &*{
                 scrollbar-width: thin; // (variable: none, thin, auto)
                 scrollbar-color: $color__bg-primary $color__bg-priamry-1;
@@ -153,6 +163,9 @@
             left: 0;
             bottom: 40px;
             padding: 0 10px;
+            @media screen and (min-width: 1480px) and (min-height: 750px) {
+                position: static;
+            }
             img {
                 width: 25px !important;
             }
@@ -183,7 +196,7 @@
         height: 45%;
         padding: 40px 35px 0 35px;
         bottom: 0;
-        background-color: $color__bg;
+        background-color: $color__dark;
         @include tablet {
             padding: 30px 30px 0 30px;
         }
@@ -258,18 +271,15 @@
 }
 .admin-bar {
     .banner-slider {
-        height: calc(100vh - 142px);
-        @include desktop {
-            height: calc(100vh - 102px);
-        }
+        height: calc(100vh - 134px);
         @media screen and (max-width: 782px) {
-            height: calc(100vh - 116px);
+            height: calc(100vh - 148px);
         }
         @include tablet {
-            height: calc(100vh - 106px);
+            height: calc(100vh - 116px);
         }
         @include mobile {
-            height: calc(93vh - 106px);
+            height: calc(93vh - 116px);
         }
     }
 }
@@ -583,18 +593,6 @@
 .playlists {
     padding: 100px 0 60px 0;
     position: relative;
-    .bg-over {
-        background-color: $color__bg-priamry-2;
-        padding: 50px 60px 30px 60px;
-        margin: 0 -60px 0 -60px;
-        @media screen and (max-width: 1210px) {
-            padding: 40px 50px 20px 50px;
-            margin: 0;
-        }
-        @include mobile {
-            padding: 30px 20px 10px 20px;
-        }
-    }
     .title-warner-h2 {
         text-align: left;
         line-height: 1.2;
