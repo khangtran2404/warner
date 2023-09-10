@@ -23,7 +23,7 @@ body {
     }
     h2.title-warner-h2 {
         font-size: 70px;
-        font-weight: 800;
+        font-weight: 500;
         line-height: 1.2;
         @include big_screen {
             font-size: 50px;
@@ -130,10 +130,10 @@ body {
         min-width: 150px;
         display: block;
         padding: 10px 15px;
-        border-radius: 12px;
+        border-radius: 40px;
         text-align: center;
-        background-color: $color__bg-priamry-1;
-        color: $color__gray !important;
+        background-color: $color__light;
+        color: $color__bg !important;
         font-weight: 700;
         font-size: 16px !important;
         line-height: 1.5 !important;
@@ -143,7 +143,7 @@ body {
         &:hover {
             text-decoration: none;
             color: $color__bg !important;
-            background-color: $color__primary;
+            background-color: $color__main
         }
     }
 }
@@ -283,6 +283,42 @@ body {
         }
     }
 }  
+.slick-arrow {
+    position: absolute;
+    background-image: url('../images/icon/arrow-right.png');
+    font-size: 0;
+    background-color: rgba($color: $color__bg-priamry-1, $alpha: 0.9) !important;
+    background-size: 10px 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    padding: 0;
+    border: none;
+    top: 50%;
+    right: -8px;
+    @include mobile {
+        right: -4px;
+    }
+    @include translate(0, -50%);
+    z-index: 4;
+    @include transition(all .3s ease-in-out);
+    z-index: 10;
+}
+.slick-arrow.slick-prev {
+    background-image: url('../images/icon/arrow-left.png');
+    right: unset;
+    left: -6px;
+    @include mobile {
+        left: -2px;
+    }
+}
+.slick-arrow[aria-disabled="true"] {
+    opacity: 0.6;
+    cursor: no-drop;
+}
+
 .text-decoration-none,
 .text-decoration-none a {
     &:hover {

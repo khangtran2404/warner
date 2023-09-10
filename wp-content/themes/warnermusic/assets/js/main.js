@@ -23,23 +23,20 @@ $(document).ready(function(){
     scrollTop('.scroll-top');
     headerMobileDistance();
     bannerSlider();
+    sliderGrid();
     adapterWidthHeigth();
 });
 
 function adapterWidthHeigth() {
     let widthContainer = $('.header-main').innerWidth();
     let body = $('body').innerWidth();
-    let itemNoSquare = $('.gird-item-no-square .image-feature img');
-    let triangleNoSquare = $('.gird-item-no-square .triangle-right');
+    let itemNoSquare = $('.gird-item-no-square .image-feature');
     let events = $('.events .event-artist');
-    let triangleEvents = $('.event-artist .triangle-right');
-    let itemSquare = $('.gird-item-square .image-feature img');
+    let itemSquare = $('.gird-item-square .image-feature');
 
     distance = (body - widthContainer)/2;
     itemNoSquare.css('height', (itemNoSquare.innerWidth())*(3/2));
     itemSquare.css('height', itemSquare.innerWidth());
-    triangleNoSquare.css('border-top-width', (itemNoSquare.innerWidth()/2 + 30));
-    triangleEvents.css('border-top-width', (events.innerHeight()/4 + 40));
 }
 
 function bannerSlider() {
@@ -86,7 +83,40 @@ function bannerSlider() {
         }
     }
 }
+function sliderGrid() {
+    let listLayoutWarner = $('.list-layout-warner');
 
+    listLayoutWarner.slick({
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        arrows: true,
+        dots: false,
+        infinite: false,
+        autoplay: false,
+        speed: 600,
+        autoplaySpeed: 5000,
+        responsive: [
+            {
+              breakpoint: 992,
+              settings: {
+                slidesToShow: 3
+              }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                  slidesToShow: 2
+                }
+              },
+            {
+              breakpoint: 480,
+              settings: {
+                slidesToShow: 1
+              }
+            }
+        ]
+    })
+}
 function headerAction() {
     let closeSearch =  $('.button-search-action .close-search')
     let openSearch = $('.search-action .button-search-action .open-search');

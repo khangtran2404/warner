@@ -24,7 +24,7 @@ get_header(); ?>
 				?>
             </div>
         </section>
-        <section class="artists">
+        <!--<section class="artists">
             <div class="container">
                 <div class="artist-title"><a href="#"><?= __( 'Artist' ) ?></a></div>
                 <div class="list-artist">
@@ -33,25 +33,33 @@ get_header(); ?>
 					?>
                 </div>
             </div>
-        </section>
+        </section>-->
         <section class="news">
             <div class="container">
-                <div class="news-title"><a href="#"><?= __( 'News' ) ?></a></div>
-                <div class="news-see-more"><a href="#"><?= __("See more") ?></a></div>
-                <div class="list-news">
+                <div class="group-title-button">
+                    <h2 class="news-title title-warner-h2"><?= __( 'News' ) ?></h2>
+                    <div class="news-see-more button-link-warner"><a href="#"><?= __("See more") ?></a></div>
+                </div>    
+                <div class="list-news list-layout-warner">
 					<?php
 					get_template_part( 'inc/views/loop/homepage/homepage', 'highlight-news-item', [ 'page_id' => get_the_ID() ] );
 					?>
                 </div>
             </div>
         </section>
-        <!--<section class="events">
-            <div class="list-event">
-				<?php
-				get_template_part( 'inc/views/loop/homepage/homepage', 'event-item' );
-				?>
+        <section class="events">
+            <div class="container">
+                <div class="group-title-button">
+                    <h2 class="events-title title-warner-h2"><?= __( 'Events' ) ?></h2>
+                    <div class="events-see-more button-link-warner"><a href="#"><?= __("See more") ?></a></div>
+                </div>  
+                <div class="list-event">
+                    <?php
+                    get_template_part( 'inc/views/loop/homepage/homepage', 'event-item' );
+                    ?>
+                </div>
             </div>
-        </section>-->
+        </section>
         <section class="playlists">
             <div class="container">
                 <h2 class="title-warner-h2">Playlists</h2>

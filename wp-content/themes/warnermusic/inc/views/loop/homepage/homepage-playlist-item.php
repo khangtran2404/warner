@@ -5,8 +5,6 @@ if ($playlistItems){
 		?>
 		<div class="playlist-item">
 			<div class="content-box">
-				<div class="title color-main">GET IN THE MIX</div>
-				<div class="sub-title">ATL: Presents</div>
 				<?php
 				echo $playlistItem;
 				?>
