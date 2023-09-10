@@ -6,7 +6,7 @@ if ( ! empty( $selectedDomesticArtist ) ): ?>
 	        $artist = get_term( $item );
 	        $artistImage = get_field( 'artist_image', 'artist_' . $artist->term_id );
             ?>
-            <div class="artist-item gird-item-no-square homepage-artist-item-<?= $artist->term_id ?>">
+            <div class="artist-item homepage-artist-item-<?= $artist->term_id ?>">
                 <div class="content-box">
                     <div class="cont-feature-icon">
                         <div class="image-feature">
@@ -37,7 +37,7 @@ if ( ! empty( $selectedInternationalArtistList ) ): ?>
 		    $artist = get_term( $item );
 		    $artistImage = get_field( 'artist_image', 'artist_' . $artist->term_id );
 		    ?>
-            <div class="artist-item gird-item-no-square homepage-artist-item-<?= $artist->term_id ?>">
+            <div class="artist-item homepage-artist-item-<?= $artist->term_id ?>">
                 <div class="content-box">
                     <div class="cont-feature-icon">
                         <div class="image-feature">

@@ -31,7 +31,6 @@ function adapterWidthHeigth() {
     let widthContainer = $('.header-main').innerWidth();
     let body = $('body').innerWidth();
     let itemNoSquare = $('.gird-item-no-square .image-feature');
-    let events = $('.events .event-artist');
     let itemSquare = $('.gird-item-square .image-feature');
 
     distance = (body - widthContainer)/2;
@@ -84,9 +83,10 @@ function bannerSlider() {
     }
 }
 function sliderGrid() {
-    let listLayoutWarner = $('.list-layout-warner');
+    let listLayoutWarnerFour = $('.list-layout-warner-4');
+    let listLayoutWarnerThree = $('.list-layout-warner-3');
 
-    listLayoutWarner.slick({
+    listLayoutWarnerFour.slick({
         slidesToShow: 4,
         slidesToScroll: 1,
         arrows: true,
@@ -102,6 +102,31 @@ function sliderGrid() {
                 slidesToShow: 3
               }
             },
+            {
+                breakpoint: 768,
+                settings: {
+                  slidesToShow: 2
+                }
+              },
+            {
+              breakpoint: 480,
+              settings: {
+                slidesToShow: 1
+              }
+            }
+        ]
+    });
+
+    listLayoutWarnerThree.slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        arrows: true,
+        dots: false,
+        infinite: false,
+        autoplay: false,
+        speed: 600,
+        autoplaySpeed: 5000,
+        responsive: [
             {
                 breakpoint: 768,
                 settings: {

@@ -24,7 +24,7 @@ get_header(); ?>
 				?>
             </div>
         </section>
-        <!--<section class="artists">
+        <section class="artists">
             <div class="container">
                 <div class="artist-title"><a href="#"><?= __( 'Artist' ) ?></a></div>
                 <div class="list-artist">
@@ -33,14 +33,14 @@ get_header(); ?>
 					?>
                 </div>
             </div>
-        </section>-->
+        </section>
         <section class="news">
             <div class="container">
                 <div class="group-title-button">
                     <h2 class="news-title title-warner-h2"><?= __( 'News' ) ?></h2>
                     <div class="news-see-more button-link-warner"><a href="#"><?= __("See more") ?></a></div>
                 </div>    
-                <div class="list-news list-layout-warner">
+                <div class="list-news list-layout-warner-4">
 					<?php
 					get_template_part( 'inc/views/loop/homepage/homepage', 'highlight-news-item', [ 'page_id' => get_the_ID() ] );
 					?>
