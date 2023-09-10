@@ -28,6 +28,8 @@ get_header(); ?>
             <div class="container">
                 <div class="artist-title"><a href="#"><?= __( 'Artist' ) ?></a></div>
                 <div class="list-artist">
+                    <button data-id="domestic-artist-list" class="domestic-artist-filter-btn active"><?= __('Domestic') ?></button>
+                    <button  data-id="international-artist-list" class="international-artist-filter-btn"><?= __('International') ?></button>
 					<?php
 					get_template_part( 'inc/views/loop/homepage/homepage', 'artist-item', [ 'page_id' => get_the_ID() ] );
 					?>
@@ -57,6 +59,19 @@ get_header(); ?>
                     <?php
                     get_template_part( 'inc/views/loop/homepage/homepage', 'event-item' );
                     ?>
+                </div>
+            </div>
+        </section>
+        <section class="merchandise">
+            <div class="container">
+                <div class="group-title-button">
+                    <h2 class="events-title title-warner-h2"><?= __( 'Merchandise' ) ?></h2>
+                    <div class="events-see-more button-link-warner"><a href="//lpclub.vn/collections/all/chillies"><?= __("See more") ?></a></div>
+                </div>
+                <div class="list-merchandise list-layout-warner-4">
+				    <?php
+				    get_template_part( 'inc/views/loop/homepage/homepage', 'merchandise-item' );
+				    ?>
                 </div>
             </div>
         </section>
