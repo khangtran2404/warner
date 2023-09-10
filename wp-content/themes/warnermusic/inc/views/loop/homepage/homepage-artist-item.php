@@ -1,11 +1,11 @@
 <?php $selectedDomesticArtist = get_field( 'homepage_domestic_artist_list', $args['page_id'] );
 if ( ! empty( $selectedDomesticArtist ) ): ?>
-    <div class="domestic-artist-list">
+    <div class="domestic-artist-list active">
 		<?php
-		for ( $i = 0; $i < 3; $i ++ ):
-			$artist = get_term( $selectedDomesticArtist[ $i ] );
-			$artistImage = get_field( 'artist_image', 'artist_' . $artist->term_id );
-			?>
+        foreach ($selectedDomesticArtist as $item ):
+	        $artist = get_term( $item );
+	        $artistImage = get_field( 'artist_image', 'artist_' . $artist->term_id );
+            ?>
             <div class="artist-item gird-item-no-square homepage-artist-item-<?= $artist->term_id ?>">
                 <div class="content-box">
                     <div class="cont-feature-icon">
@@ -23,7 +23,7 @@ if ( ! empty( $selectedDomesticArtist ) ): ?>
                     </div>
                 </div>
             </div>
-		<?php endfor; ?>
+        <?php endforeach; ?>
         <div class="domestic-artist-label"><?= __('Domestic') ?></div>
     </div>
 <?php endif; ?>
@@ -32,11 +32,11 @@ if ( ! empty( $selectedDomesticArtist ) ): ?>
 if ( ! empty( $selectedInternationalArtistList ) ): ?>
     <div class="international-artist-list">
         <div class="international-artist-label"><?= __('International') ?></div>
-		<?php
-		for ( $i = 0; $i < 3; $i ++ ):
-			$artist = get_term( $selectedInternationalArtistList[ $i ] );
-			$artistImage = get_field( 'artist_image', 'artist_' . $artist->term_id );
-			?>
+	    <?php
+	    foreach ($selectedInternationalArtistList as $item ):
+		    $artist = get_term( $item );
+		    $artistImage = get_field( 'artist_image', 'artist_' . $artist->term_id );
+		    ?>
             <div class="artist-item gird-item-no-square homepage-artist-item-<?= $artist->term_id ?>">
                 <div class="content-box">
                     <div class="cont-feature-icon">
@@ -54,7 +54,6 @@ if ( ! empty( $selectedInternationalArtistList ) ): ?>
                     </div>
                 </div>
             </div>
-		<?php endfor;
-		?>
+	    <?php endforeach; ?>
     </div>
 <?php endif; ?>
