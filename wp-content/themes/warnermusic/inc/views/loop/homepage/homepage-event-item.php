@@ -2,7 +2,7 @@
 $artists = get_terms( 'artist' );
 if ( ! empty( $artists ) && ! is_wp_error( $artists ) ) {
 	foreach ( $artists as $key=>$artist ):
-		if($key > 2) {
+		if($key > 0) {
 			break;
 		}
 		$artistImage = get_field( 'artist_image', 'artist_' . $artist->term_id ); ?>

@@ -285,115 +285,59 @@
     }
 }
 
-.artists {
-    padding: 150px 0 0 0;
-    .list-artist {
-        display: flex;
-        margin: 0 -10px;
+.artists,
+.events,
+.news {
+    padding-top: 150px;
+    @include tablet {
+        padding-top: 100px;
+    }
+}
+.group-events-item {
+    .name {
+        font-size: 70px;
+        line-height: 1;
+        font-weight: 400;
+        text-align: right;
+        @include big_screen {
+            font-size: 50px;
+        }
         @include desktop {
-            flex-wrap: wrap;
+            font-size: 65px
+        }
+        @include tablet {
+            font-size: 40px;
         }
         @include mobile {
-            margin: 0 -5px;
-        }
-        .artist-item {
-            width: calc(100% /4);
-            margin-bottom: 20px;
-            @include desktop {
-                width: calc(100%/2);
-            }
-            .content-box {
-                padding: 0 10px;
-                width: 100%;
-                @include mobile {
-                    padding: 0 5px;
-                }
-            }
-            &:last-child {
-                .content-box {
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: space-between;
-                    height: 100%;
-                }
-            }
-            .image-feature {
-                width: 100%;
-                position: relative;
-                img {
-                    width: 100% !important;
-                    object-fit: cover;
-                    filter: grayscale(100%);
-                    @include transition(all .3s ease-in-out);
-                }
-            }
-            .cont-feature-icon {
-                position: relative;
-            }
-            .triangle-right {
-                width: 0; 
-                height: 0; 
-                border-top: 60px solid transparent;
-                border-bottom: 0px solid transparent;
-                border-left: 70px solid $color__primary;
-                position: absolute;
-                bottom: 0;
-                opacity: 0;
-                visibility: hidden;
-                @include transition(all .3s ease-in-out);
-                img {
-                    position: absolute;
-                    bottom: 14px;
-                    left: -52px;
-                }
-                @include mobile {
-                    border-left: 50px solid $color__primary;
-                    img {
-                        bottom: 6px;
-                        left: -42px;
-                    }
-                }
-            }
-            &:hover {
-                .triangle-right {
-                    opacity: 1;
-                    visibility: visible;
-                }
-                .image-feature {
-                    img {
-                        filter: grayscale(0);
-                    }
-                }
-            }
-        }
-        .title-warner-h2 {
-            text-align: right;
-        }
-        .artist-item-title {
-            position: relative;
-            z-index: 2;
-        }
-        .name {
-            margin-top: 20px;
-            @include mobile {
-                margin-top: 10px;
-            }
-            a {
-                font-size: 22px;
-                font-weight: 800;
-                line-height: 1.2;
-                @include tablet {
-                    font-size: 18px;
-                }
-                @include mobile {
-                    font-size: 15px;
-                }
-            }
+            font-size: 35px;
         }
     }
-    .button-link-warner {
-        margin-top: 30px;
-        margin-left: auto;
+    .event-artist {
+       
+    }
+    .event-item {
+        display: flex;
+        align-items: center;
+    }
+    .date {
+        font-size: 35px;
+        width: 130px;
+        margin-right: 20px;
+    }
+    .location {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width: calc(100% - 300px);
+        font-size: 24px;
+    }
+    .button-link-warner.radius-none {
+        margin-left: 20px;
+        a {
+            border-radius: 0;
+            padding: 10px 15px;
+            min-width: 130px;
+        }
     }
 }
 
@@ -405,10 +349,6 @@
     h2 {
         margin-right: 15px;
     }
-}
-
-.news {
-   padding-top: 150px;
 }
 
 .list-layout-warner-4,
@@ -490,10 +430,6 @@
     }
 }
 
-.events {
-    padding-top: 150px;
-
-}
 .playlists {
     padding: 100px 0 40px 0;
     position: relative;

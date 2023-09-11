@@ -24,7 +24,7 @@ get_header(); ?>
 				?>
             </div>
         </section>
-        <section class="artists">
+        <!--<section class="artists">
             <div class="container">
                 <div class="artist-title"><a href="#"><?= __( 'Artist' ) ?></a></div>
                 <div class="list-artist">
@@ -33,7 +33,7 @@ get_header(); ?>
 					?>
                 </div>
             </div>
-        </section>
+        </section>-->
         <section class="news">
             <div class="container">
                 <div class="group-title-button">
