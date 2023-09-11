@@ -5,8 +5,8 @@ $args = array(
 	'post_status'    => 'publish',
 	'post_type'      => 'post',
 	'posts_per_page' => 7,
-	'orderby' => 'date',
-	'order' => 'DESC',
+	`'orderby' => 'date',
+	'order' => 'DESC',`
 );
 $the_query = new WP_Query( $args );
 if ( $the_query->have_posts() ) :
