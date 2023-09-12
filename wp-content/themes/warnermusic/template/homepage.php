@@ -63,11 +63,7 @@ get_header(); ?>
                     <h2 class="events-title title-warner-h2"><?= __( 'Events' ) ?></h2>
                     <div class="events-see-more button-link-warner"><a href="<?= get_page_link_by_template_name('events'); ?>"><?= __("See more") ?></a></div>
                 </div>  
-                <div class="list-event">
-                    <?php
-                    get_template_part( 'inc/views/loop/homepage/homepage', 'event-item' );
-                    ?>
-                </div>
+                <?php get_template_part( 'inc/views/loop/homepage/homepage', 'event-item' );?>
             </div>
         </section>
         <section class="merchandise">
