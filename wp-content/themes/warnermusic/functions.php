@@ -27,6 +27,7 @@ function warnermusic() {
 	// Add Main JS
 	wp_enqueue_script( 'main-script', THEME_URI . '/assets/js/main.js?' . $date, '', '', true );
 	wp_enqueue_script( 'homepage-script', THEME_URI . '/assets/js/homepage.js?' . $date, '', '', true );
+	wp_enqueue_script( 'pagination-script', THEME_URI . '/assets/js/pagination.js?' . $date, '', '', true );
 }
 
 add_action( 'wp_enqueue_scripts', 'warnermusic' );
