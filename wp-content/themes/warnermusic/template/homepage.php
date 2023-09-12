@@ -48,7 +48,7 @@ get_header(); ?>
             <div class="container">
                 <div class="group-title-button">
                     <h2 class="news-title title-warner-h2"><?= __( 'News' ) ?></h2>
-                    <div class="news-see-more button-link-warner"><a href="#"><?= __("See more") ?></a></div>
+                    <div class="news-see-more button-link-warner"><a href="<?= get_page_link_by_template_name('news'); ?>"><?= __("See more") ?></a></div>
                 </div>    
                 <div class="list-news list-layout-warner-4">
 					<?php
@@ -61,7 +61,7 @@ get_header(); ?>
             <div class="container">
                 <div class="group-title-button">
                     <h2 class="events-title title-warner-h2"><?= __( 'Events' ) ?></h2>
-                    <div class="events-see-more button-link-warner"><a href="#"><?= __("See more") ?></a></div>
+                    <div class="events-see-more button-link-warner"><a href="<?= get_page_link_by_template_name('events'); ?>"><?= __("See more") ?></a></div>
                 </div>  
                 <div class="list-event">
                     <?php
