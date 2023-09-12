@@ -26,7 +26,10 @@ get_header(); ?>
         </section>
         <section class="artists">
             <div class="container">
-                <h2 class="artist-title title-warner-h2 margin-bottom"><?= __( 'Artist' ) ?></h2>
+                <div class="group-title-button">
+                    <h2 class="artist-title title-warner-h2 margin-bottom"><?= __( 'Artist' ) ?></h2>
+                    <div class="artist-see-more button-link-warner"><a href="<?= get_page_link_by_template_name('artist'); ?>"><?= __("See more") ?></a></div>
+                </div>
                 <div class="row">
                     <div class="col-lg-2">
                         <ul class="list-filter-artist">
@@ -61,7 +64,7 @@ get_header(); ?>
             <div class="container">
                 <div class="group-title-button">
                     <h2 class="events-title title-warner-h2"><?= __( 'Events' ) ?></h2>
-                    <div class="events-see-more button-link-warner"><a href="<?= get_page_link_by_template_name('events'); ?>"><?= __("See more") ?></a></div>
+                    <div class="events-see-more button-link-warner"><a href="<?= get_page_link_by_template_name('event'); ?>"><?= __("See more") ?></a></div>
                 </div>  
                 <?php get_template_part( 'inc/views/loop/homepage/homepage', 'event-item' );?>
             </div>

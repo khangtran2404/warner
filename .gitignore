@@ -36,3 +36,6 @@ wp-snapshots/*
 .idea
 # staging folder
 staging/*
+*.txt
+/date,
+/DESC,
