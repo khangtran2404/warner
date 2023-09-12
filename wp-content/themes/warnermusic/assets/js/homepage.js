@@ -1,9 +1,9 @@
 $(document).ready(function () {
     //run function
-    filterArtist();
+    filterHomepageArtist();
 });
 
-function filterArtist() {
+function filterHomepageArtist() {
     let btnFilter = $('.list-filter-artist li');
 
     btnFilter.click(function() {
