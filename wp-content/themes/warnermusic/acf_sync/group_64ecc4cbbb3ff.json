@@ -19,7 +19,7 @@
             "taxonomy": "artist",
             "add_term": 0,
             "save_terms": 1,
-            "load_terms": 1,
+            "load_terms": 0,
             "return_format": "id",
             "field_type": "multi_select",
             "allow_null": 0,
@@ -44,7 +44,7 @@
             "taxonomy": "artist",
             "add_term": 0,
             "save_terms": 1,
-            "load_terms": 1,
+            "load_terms": 0,
             "return_format": "id",
             "field_type": "multi_select",
             "allow_null": 0,
@@ -177,5 +177,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1694104451
+    "modified": 1694534984
 }
