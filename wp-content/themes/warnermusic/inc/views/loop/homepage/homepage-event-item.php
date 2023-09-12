@@ -1,18 +1,27 @@
 <?php
 $artists = get_terms( 'artist' );
 if ( ! empty( $artists ) && ! is_wp_error( $artists ) ):?>
-	<div class="list-event">
+	<div class="list-nav-artist-img">
 		<?php
 		foreach ( $artists as $key=>$artist ):
 			if($key > 3) {
 				break;
 			}
-			$artistImage = get_field( 'artist_image', 'artist_' . $artist->term_id ); ?>
+			$artistImage = get_field( 'artist_image', 'artist_' . $artist->term_id );?>
+			<div class="data-image" type="hidden" hidden="hidden" data-img="<?= $artistImage['url'] ?>"></div>
+			<img src="<?= $artistImage['url'] ?>" alt="">
+		<?php endforeach;?>
+	</div>
+	<div class="list-event">
+		<?php
+		foreach ( $artists as $key=>$artist ):
+			if($key > 3) {
+				break;
+			}?>
 			<div class="group-events-item">
 				<div class="row">
 					<div class="col-lg-4 col-md-12 col-sm-12 col-12">
 						<div class="group-col">
-							<div class="data-image" type="hidden" hidden="hidden" data-img="<?= $artistImage['url'] ?>"></div>
 							<div class="name text-decoration-none"><a href="#"><?= $artist->name ?></a></div>
 						</div>
 					</div>
