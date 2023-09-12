@@ -30,12 +30,12 @@ $(document).ready(function(){
 function adapterWidthHeigth() {
     let widthContainer = $('.header-main').innerWidth();
     let body = $('body').innerWidth();
-    let itemNoSquare = $('.gird-item-no-square .image-feature');
-    let itemSquare = $('.gird-item-square .image-feature');
+    let itemNoSquareThree = $('.list-layout-warner-3 .gird-item-no-square .image-feature');
+    let itemNoSquareFour = $('.list-layout-warner-4 .gird-item-no-square .image-feature');
 
     distance = (body - widthContainer)/2;
-    itemNoSquare.css('height', (itemNoSquare.innerWidth())*(3/2));
-    itemSquare.css('height', itemSquare.innerWidth());
+    itemNoSquareThree.css('height', (itemNoSquareThree.innerWidth())*(3/2));
+    itemNoSquareFour.css('height', (itemNoSquareFour.innerWidth())*(3/2));
 }
 
 function bannerSlider() {

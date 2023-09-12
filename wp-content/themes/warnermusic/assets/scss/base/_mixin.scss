@@ -72,9 +72,25 @@
     transform-origin: $origin;
 }
 
-@keyframes load_spin {
-  to {
-    transform: rotate(1turn);
+
+@keyframes stretch {
+  0%, 20%, 49% { 
+    transform: scaleY(0.4);
+    background-color: $color__light;
+  }
+  
+  10% { 
+    transform: scaleY(1.0);
+  }
+  
+  50%, 70%, 100% { 
+    transform: scaleY(0.4);
+    background-color: $color__main;
+  }
+  
+  60% { 
+    transform: scaleY(1.0);
+    background-color: $color__main;
   }
 }
 

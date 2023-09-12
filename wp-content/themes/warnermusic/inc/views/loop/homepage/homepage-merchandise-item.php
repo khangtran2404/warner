@@ -15,11 +15,12 @@ for ($i = 0; $i < 4; $i++):
 	<div class="merchandise-item gird-item-no-square homepage-merchandise-item">
 		<div class="content-box">
 			<div class="group-content">
-                <div class="brand"><?= $category ?></div>
-                <a href="<?= $link ?>"> <div class="image-feature" style="background-image: url(<?= $image ?>)"></div></a>
-                <div class="price"><?= $price ?></div>
-				<div class="name text-decoration-none">
-					<a href="<?= $link ?>"><?= $title ?></a>
+                <a class="link-box" href="<?= $link ?>" title="<?= $title ?>" target="_blank"></a>
+                <div class="brand"><?=__( 'Brand: ' );?><span class="cate"><?= $category;?></span></div>
+				<div class="image-feature" style="background-image: url(<?= $image ?>)"></div>
+				<div class="group-text">
+					<div class="price"><?= $price ?></div>
+					<div class="description"><?= $title ?></div>
 				</div>
 			</div>
 		</div>

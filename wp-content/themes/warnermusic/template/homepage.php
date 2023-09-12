@@ -24,18 +24,26 @@ get_header(); ?>
 				?>
             </div>
         </section>
-        <!--<section class="artists">
+        <section class="artists">
             <div class="container">
-                <div class="artist-title"><a href="#"><?= __( 'Artist' ) ?></a></div>
-                <div class="list-artist">
-                    <button data-id="domestic-artist-list" class="domestic-artist-filter-btn active"><?= __('Domestic') ?></button>
-                    <button  data-id="international-artist-list" class="international-artist-filter-btn"><?= __('International') ?></button>
-					<?php
-					get_template_part( 'inc/views/loop/homepage/homepage', 'artist-item', [ 'page_id' => get_the_ID() ] );
-					?>
+                <h2 class="artist-title title-warner-h2 margin-bottom"><?= __( 'Artist' ) ?></h2>
+                <div class="row">
+                    <div class="col-lg-2">
+                        <ul class="list-filter-artist">
+                            <li data-id="domestic-artist-list" class="domestic-artist-filter item-filter active"><?= __('Domestic') ?></li>
+                            <li data-id="international-artist-list" class="international-artist-filter item-filter"><?= __('International') ?></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-10 col-md-12">
+                        <div class="col-group-action-filter">
+                            <?php
+                                get_template_part( 'inc/views/loop/homepage/homepage', 'artist-item', [ 'page_id' => get_the_ID() ] );
+                            ?>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </section>-->
+        </section>
         <section class="news">
             <div class="container">
                 <div class="group-title-button">
@@ -77,7 +85,7 @@ get_header(); ?>
         </section>
         <section class="playlists">
             <div class="container">
-                <h2 class="title-warner-h2">Playlists</h2>
+                <h2 class="title-warner-h2 margin-bottom">Playlists</h2>
                 <div class="list-playlist">
                     <?php
                     get_template_part( 'inc/views/loop/homepage/homepage', 'playlist-item', [ 'page_id' => get_the_ID() ] );
