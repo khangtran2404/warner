@@ -26,7 +26,10 @@ get_header(); ?>
         </section>
         <section class="artists">
             <div class="container">
-                <h2 class="artist-title title-warner-h2 margin-bottom"><?= __( 'Artist' ) ?></h2>
+                <div class="group-title-button">
+                    <h2 class="artist-title title-warner-h2 margin-bottom"><?= __( 'Artist' ) ?></h2>
+                    <div class="artists-see-more button-link-warner"><a href="<?= get_field( 'artist_see_more',  get_the_ID() );?>"><?= __("See more") ?></a></div>
+                </div>  
                 <div class="row">
                     <div class="col-lg-2">
                         <ul class="list-filter-artist">
@@ -48,7 +51,7 @@ get_header(); ?>
             <div class="container">
                 <div class="group-title-button">
                     <h2 class="news-title title-warner-h2"><?= __( 'News' ) ?></h2>
-                    <div class="news-see-more button-link-warner"><a href="#"><?= __("See more") ?></a></div>
+                    <div class="news-see-more button-link-warner"><a href="<?= get_field( 'news_see_more',  get_the_ID() );?>"><?= __("See more") ?></a></div>
                 </div>    
                 <div class="list-news list-layout-warner-4">
 					<?php
@@ -61,7 +64,7 @@ get_header(); ?>
             <div class="container">
                 <div class="group-title-button">
                     <h2 class="events-title title-warner-h2"><?= __( 'Events' ) ?></h2>
-                    <div class="events-see-more button-link-warner"><a href="#"><?= __("See more") ?></a></div>
+                    <div class="events-see-more button-link-warner"><a href="<?= get_field( 'event_see_more',  get_the_ID() );?>"><?= __("See more") ?></a></div>
                 </div>  
                 <?php get_template_part( 'inc/views/loop/homepage/homepage', 'event-item' );?>
             </div>
@@ -70,11 +73,11 @@ get_header(); ?>
             <div class="container">
                 <div class="group-title-button">
                     <h2 class="events-title title-warner-h2"><?= __( 'Merchandise' ) ?></h2>
-                    <div class="events-see-more button-link-warner"><a href="//lpclub.vn/collections/all/chillies"><?= __("See more") ?></a></div>
+                    <div class="events-see-more button-link-warner"><a href="<?= get_field( 'merchandise_see_more',  get_the_ID() );?>" target="_blank"><?= __("See more") ?></a></div>
                 </div>
                 <div class="list-merchandise list-layout-warner-4">
 				    <?php
-				    get_template_part( 'inc/views/loop/homepage/homepage', 'merchandise-item' );
+				    get_template_part( 'inc/views/loop/homepage/homepage', 'merchandise-item', [ 'page_id' => get_the_ID() ] );
 				    ?>
                 </div>
             </div>

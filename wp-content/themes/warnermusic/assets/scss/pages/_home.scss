@@ -392,8 +392,9 @@
             border-radius: 0;
             padding: 10px 15px;
             min-width: 130px;
-            &:hover {
-                background-color: $color__primary-4;
+            &:hover,
+            &:focus {
+                background-color: $color__primary-4 !important;
                 color: $color__light !important;
             }
         }

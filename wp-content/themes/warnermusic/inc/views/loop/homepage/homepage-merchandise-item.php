@@ -1,6 +1,9 @@
 <?php
-$url = 'https://lpclub.vn/collections/all/chillies';
-$baseUrl = 'https://lpclub.vn';
+$merchandiseURl = get_field( 'merchandise_see_more', $args['page_id'] );
+$merchandiseBaseURl = get_field( 'merchandise_base_url', $args['page_id'] );
+
+$url = ''.$merchandiseURl .'';
+$baseUrl = ''.$merchandiseBaseURl.'';
 $html = file_get_html($url);
 $items = $html->find('.item-inner');
 

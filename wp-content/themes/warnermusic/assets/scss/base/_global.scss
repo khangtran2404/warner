@@ -143,10 +143,11 @@ body {
         @media screen and (max-width: 400px) {
             font-size: 13px !important;
         }
-        &:hover {
-            text-decoration: none;
+        &:hover,
+        &:focus {
+            text-decoration: none !important;
             color: $color__bg !important;
-            background-color: $color__main
+            background-color: $color__main !important;
         }
     }
 }

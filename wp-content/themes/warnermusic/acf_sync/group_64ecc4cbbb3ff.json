@@ -3,6 +3,31 @@
     "title": "Homepage Custom Fields",
     "fields": [
         {
+            "key": "field_650098aa69eb1",
+            "label": "Artist see more",
+            "name": "artist_see_more",
+            "aria-label": "",
+            "type": "page_link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "page"
+            ],
+            "post_status": [
+                "publish"
+            ],
+            "taxonomy": "",
+            "allow_archives": 1,
+            "multiple": 0,
+            "allow_null": 0
+        },
+        {
             "key": "field_64ecc4cbfc945",
             "label": "Domestic Artist Homepage List",
             "name": "homepage_domestic_artist_list",
@@ -19,7 +44,7 @@
             "taxonomy": "artist",
             "add_term": 0,
             "save_terms": 1,
-            "load_terms": 0,
+            "load_terms": 1,
             "return_format": "id",
             "field_type": "multi_select",
             "allow_null": 0,
@@ -44,13 +69,38 @@
             "taxonomy": "artist",
             "add_term": 0,
             "save_terms": 1,
-            "load_terms": 0,
+            "load_terms": 1,
             "return_format": "id",
             "field_type": "multi_select",
             "allow_null": 0,
             "bidirectional": 0,
             "multiple": 0,
             "bidirectional_target": []
+        },
+        {
+            "key": "field_6500993069eb2",
+            "label": "News see more",
+            "name": "news_see_more",
+            "aria-label": "",
+            "type": "page_link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "page"
+            ],
+            "post_status": [
+                "publish"
+            ],
+            "taxonomy": "",
+            "allow_archives": 1,
+            "multiple": 0,
+            "allow_null": 0
         },
         {
             "key": "field_64ecce59d6dc1",
@@ -79,6 +129,65 @@
             "bidirectional": 0,
             "ui": 1,
             "bidirectional_target": []
+        },
+        {
+            "key": "field_6500994469eb3",
+            "label": "Event see more",
+            "name": "event_see_more",
+            "aria-label": "",
+            "type": "page_link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "page"
+            ],
+            "post_status": [
+                "publish"
+            ],
+            "taxonomy": "",
+            "allow_archives": 1,
+            "multiple": 0,
+            "allow_null": 0
+        },
+        {
+            "key": "field_6500998069eb4",
+            "label": "Merchandise see more",
+            "name": "merchandise_see_more",
+            "aria-label": "",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "https:\/\/lpclub.vn\/collections\/all\/chillies",
+            "placeholder": ""
+        },
+        {
+            "key": "field_650099f769eb5",
+            "label": "Merchandise base url",
+            "name": "merchandise_base_url",
+            "aria-label": "",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "https:\/\/lpclub.vn",
+            "placeholder": ""
         },
         {
             "key": "field_64ecd91adfec9",
@@ -177,5 +286,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1694534984
+    "modified": 1694538338
 }
