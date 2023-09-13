@@ -1,9 +1,15 @@
 <?php
-$artists = get_terms( 'artist' );
+$artists = get_terms( array(
+	'taxonomy'   => 'artist',
+	'hide_empty' => false,
+));
 if ( ! empty( $artists ) && ! is_wp_error( $artists ) ):?>
 	<div class="list-nav-artist-img">
 		<?php
 		foreach ( $artists as $key=>$artist ):
+            if ($artist->parent == 0){
+                continue;
+            }
 			if($key > 3) {
 				break;
 			}
@@ -15,6 +21,9 @@ if ( ! empty( $artists ) && ! is_wp_error( $artists ) ):?>
 	<div class="list-event">
 		<?php
 		foreach ( $artists as $key=>$artist ):
+			if ($artist->parent == 0){
+				continue;
+			}
 			if($key > 3) {
 				break;
 			}?>
