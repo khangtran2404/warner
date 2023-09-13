@@ -24,6 +24,7 @@ $(document).ready(function(){
     headerMobileDistance();
     bannerSlider();
     sliderGrid();
+    sliderSyncing();
     adapterWidthHeigth();
 });
 
@@ -32,10 +33,12 @@ function adapterWidthHeigth() {
     let body = $('body').innerWidth();
     let itemNoSquareThree = $('.list-layout-warner-3 .gird-item-no-square .image-feature');
     let itemNoSquareFour = $('.list-layout-warner-4 .gird-item-no-square .image-feature');
+    let itemThreePertwo = $('.gird-item-three-per-two .image-feature');
 
     distance = (body - widthContainer)/2;
     itemNoSquareThree.css('height', (itemNoSquareThree.innerWidth())*(3/2));
     itemNoSquareFour.css('height', (itemNoSquareFour.innerWidth())*(3/2));
+    itemThreePertwo.css('height', (itemThreePertwo.innerWidth())*(2/3));
 }
 
 function bannerSlider() {
@@ -142,6 +145,35 @@ function sliderGrid() {
         ]
     })
 }
+
+function sliderSyncing() {
+    let listnavItem = $('.list-nav-sliderSyncing');
+    let listMainItem = $('.list-main-sliderSyncing');
+
+    listMainItem.slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        asNavFor: listnavItem
+    });
+
+    listnavItem.slick({
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        asNavFor: listMainItem,
+        dots: false,
+        focusOnSelect: true,
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                  slidesToShow: 2
+                }
+            }
+        ]
+    });
+}
+
 function headerAction() {
     let closeSearch =  $('.button-search-action .close-search')
     let openSearch = $('.search-action .button-search-action .open-search');

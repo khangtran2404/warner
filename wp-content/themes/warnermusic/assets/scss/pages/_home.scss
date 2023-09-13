@@ -525,7 +525,65 @@
         }
     }
 }
-
+.list-nav-artist-img {
+    margin: 0 -15px;
+    @include desktop {
+        margin: 0 -10px;
+    }
+    .gird-item-three-per-two {
+        .content-box {
+            padding: 0 15px;
+            @include desktop {
+                padding: 10px;
+            }
+        }
+        .group-content {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            background-color: $color__dark;
+            &::after {
+                position: absolute;
+                content: '';
+                width: 100%;
+                height: 8px;
+                background: $color__primary-4;
+                left: 0;
+                bottom: 0;
+                z-index: 2;
+                opacity: 0;
+                @include transition(all .3s ease-in-out);
+            }
+            .image-feature {
+                z-index: 1;
+                opacity: 0.6;
+                cursor: pointer;
+                position: relative;
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                @include transition(all .3s ease);
+            }
+            &:hover {
+                .image-feature {
+                    @include scale(1.1);
+                    opacity: 1;
+                }
+            }
+        }
+        &.slick-current {
+            .group-content {
+                &::after {
+                    opacity: 1;
+                }
+                .image-feature {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
 .playlists {
     .list-playlist {
         display: flex;
