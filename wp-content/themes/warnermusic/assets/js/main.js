@@ -26,17 +26,33 @@ $(document).ready(function(){
     sliderGrid();
     sliderSyncing();
     adapterWidthHeigth();
+    animationWow();
 });
+
+function animationWow() {
+    wow = new WOW(
+        {
+        boxClass:     'wow',      
+        animateClass: 'animated',
+        offset:       0,         
+        mobile:       false,      
+        live:         true    
+        }
+    )
+    wow.init();
+}
 
 function adapterWidthHeigth() {
     let widthContainer = $('.header-main').innerWidth();
     let body = $('body').innerWidth();
     let itemNoSquareThree = $('.list-layout-warner-3 .gird-item-no-square .image-feature');
+    let itemNoSquareThreeNoSlide  = $('.list-layout-warner-3-no-slider .gird-item-no-square .image-feature');
     let itemNoSquareFour = $('.list-layout-warner-4 .gird-item-no-square .image-feature');
     let itemThreePertwo = $('.gird-item-three-per-two .image-feature');
 
     distance = (body - widthContainer)/2;
     itemNoSquareThree.css('height', (itemNoSquareThree.innerWidth())*(3/2));
+    itemNoSquareThreeNoSlide.css('height', (itemNoSquareThreeNoSlide.innerWidth())*(3/2));
     itemNoSquareFour.css('height', (itemNoSquareFour.innerWidth())*(3/2));
     itemThreePertwo.css('height', (itemThreePertwo.innerWidth())*(2/3));
 }
@@ -63,7 +79,7 @@ function bannerSlider() {
         afterSlickEvent();
     });
     function afterSlickEvent() {
-        let widthContainer = $('.group-row-footer').innerWidth();
+        let widthContainer = $('.header-main').innerWidth();
         let body = $('body').innerWidth();
         let slickDots = $('.site-home-page .slick-dots');
         let btnLast = $('.banner-slider .latest-releases');

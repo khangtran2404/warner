@@ -21,10 +21,30 @@ body {
         font-family: $font__global !important;
         color: $color__light !important;
     }
+    h1.main-title {
+        font-size: 75px;
+        font-weight: 500;
+        line-height: 1;
+        background: -webkit-linear-gradient(135deg, $color__bg, $color__light);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        @include big_screen {
+            font-size: 55px;
+        }
+        @include desktop {
+            font-size: 70px
+        }
+        @include tablet {
+            font-size: 45px;
+        }
+        @include mobile {
+            font-size: 40px;
+        }
+    }
     h2.title-warner-h2 {
         font-size: 70px;
         font-weight: 400;
-        line-height: 1.2;
+        line-height: 1;
         @include big_screen {
             font-size: 50px;
         }
@@ -76,6 +96,9 @@ body {
     }
     #main {
         padding: 0;
+    }
+    .padding-page {
+        padding: 50px 0;
     }
 }
 

@@ -5,35 +5,49 @@
 
 get_header();
 ?>
-    <div>
-        <div class="filter-section">
-            <ul class="filter-list">
-                <li class="all active" data-id="all"><?= __( 'All Artist' ) ?></li>
-                <li class="international" data-id="international"><?= __( 'Intl Artists' ) ?></li>
-                <li class="domestic" data-id="domestic"><?= __( 'Domestic Artists' ) ?></li>
-                <li class="domestic-exclusive"
-                    data-id="domestic-exclusive"><?= __( 'Domestic Exclusive Distribution' ) ?></li>
-            </ul>
-        </div>
-        <div class="artist-list-section">
-			<?php
-			$artists = get_terms( array(
-				'taxonomy'   => 'artist',
-				'hide_empty' => false,
-			) );
-			foreach ( $artists as $artist ):
-                if (empty($artist->parent)) continue;
-                $artistUrl = get_term_link($artist->term_id,'artist');
-				$artistImageUrl = get_field( 'artist_image', 'artist_' . $artist->term_id );
-                $artistParentSlug = get_term($artist->parent)->slug;
-				?>
-                <div class="artist-item artist-parent-<?= $artistParentSlug ?> artist-item-<?= $artist->term_id ?>">
-                    <a href="<?= $artistUrl ?: '#' ?>">
-                        <img src="<?= $artistImageUrl ?: '' ?>" alt="artist-image">
-                        <div class="artist-title"><?= $artist->name ?></div>
-                    </a>
+    <div id="site-artist-page" class="site-artist-page padding-page">
+        <div class="container">
+            <?php the_title( '<h1 class="main-title">', '</h1>' );?>
+            <div class="main-content"><?php the_content();?></div>
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="filter-section">
+                        <ul class="filter-list list-filter-artist">
+                            <li class="all item-filter active" data-id="all"><?= __( 'All Artist' ) ?></li>
+                            <li class="international item-filter" data-id="international"><?= __( 'Intl Artists' ) ?></li>
+                            <li class="domestic item-filter" data-id="domestic"><?= __( 'Domestic Artists' ) ?></li>
+                            <li class="domestic-exclusive item-filter"
+                                data-id="domestic-exclusive"><?= __( 'Domestic Exclusive Distribution' ) ?></li>
+                        </ul>
+                    </div>
                 </div>
-			<?php endforeach; ?>
+                <div class="col-lg-9 col-md-12">
+                    <div class="artist-list-section list-layout-warner-3-no-slider">
+                        <?php
+                        $artists = get_terms( array(
+                            'taxonomy'   => 'artist',
+                            'hide_empty' => false,
+                        ) );
+                        foreach ( $artists as $key=>$artist ):
+                            if (empty($artist->parent)) continue;
+                            $artistUrl = get_term_link($artist->term_id,'artist');
+                            $artistImageUrl = get_field( 'artist_image', 'artist_' . $artist->term_id );
+                            $artistParentSlug = get_term($artist->parent)->slug;
+                            ?>
+                            <div class="artist-item gird-item-no-square artist-parent-<?= $artistParentSlug ?> artist-item-<?= $artist->term_id ?>">
+                                <div class="content-box">
+                                    <div class="group-content">
+                                        <a class="link-box" href="<?= $artistUrl ?: '#' ?>"></a>
+                                        <div class="image-feature"
+                                            style="background-image: url('<?= $artistImageUrl ? $artistImageUrl['url']: '' ?>')"></div>
+                                        <div class="name text-decoration-none"><?= $artist->name ?></div>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 <?php

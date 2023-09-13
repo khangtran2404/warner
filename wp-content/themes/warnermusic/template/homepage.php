@@ -27,7 +27,7 @@ get_header(); ?>
         <section class="artists">
             <div class="container">
                 <div class="group-title-button">
-                    <h2 class="artist-title title-warner-h2 margin-bottom"><?= __( 'Artist' ) ?></h2>
+                    <h2 class="artist-title title-warner-h2"><?= __( 'Artist' ) ?></h2>
                     <div class="artists-see-more button-link-warner"><a href="<?= get_field( 'artist_see_more',  get_the_ID() );?>"><?= __("See more") ?></a></div>
                 </div>  
                 <div class="row">

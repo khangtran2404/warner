@@ -182,6 +182,7 @@
                 position: relative;
                 &:hover {
                     text-decoration: none;
+                    background-color: $color__main-bold;
                 }
                 .icon-play {
                     position: absolute;
@@ -303,8 +304,8 @@
     li {
         text-transform: uppercase;
         font-size: 14px;
-        line-height: 1.1;
-        margin-bottom: 40px;
+        line-height: 1.5;
+        margin-bottom: 35px;
         text-underline-offset: 2px;
         @include transition(all .2s ease-in-out);
         cursor: pointer;
@@ -341,6 +342,7 @@
         left: 0;
         top: 0;
         width: 100%;
+        @include transition(all .3s ease-in-out);
         &.active {
             opacity: 1;
             position: relative;
@@ -412,17 +414,19 @@
 }
 
 .list-layout-warner-4,
-.list-layout-warner-3 {
+.list-layout-warner-3,
+.list-layout-warner-3-no-slider {
     margin: 0 -15px;
     position: relative;
     @include desktop {
         margin: 0 -10px;
     }
     .gird-item-no-square {
+        animation: show_block 1s forwards;
         .content-box {
             padding: 0 15px;
             @include desktop {
-                padding: 10px;
+                padding: 0 10px;
             }
         }
         .group-content {
@@ -525,6 +529,22 @@
         }
     }
 }
+
+.list-layout-warner-3-no-slider {
+    display: flex;
+    flex-wrap: wrap;
+    .gird-item-no-square {
+        margin-bottom: 30px;
+        width: calc(100%/3);
+        @include tablet {
+            width: calc(100%/2);
+        }
+        @include mobile {
+            width: 100%;
+        }
+    }
+}
+
 .list-nav-artist-img {
     margin: 0 -15px;
     @include desktop {

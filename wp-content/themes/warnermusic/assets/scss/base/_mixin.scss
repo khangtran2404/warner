@@ -85,12 +85,13 @@
   
   50%, 70%, 100% { 
     transform: scaleY(0.4);
-    background-color: $color__main;
+    background: -webkit-linear-gradient(135deg, $color__main, $color__main-bold);
+    
   }
   
   60% { 
     transform: scaleY(1.0);
-    background-color: $color__main;
+    background: -webkit-linear-gradient(135deg, $color__main-bold, $color__main);
   }
 }
 

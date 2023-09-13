@@ -12,9 +12,7 @@ if ( ! empty( $selectedDomesticArtist ) ): ?>
                             <a class="link-box" href="#"></a>
                             <div class="image-feature"
                                 style="background-image: url('<?= $artistImage ? $artistImage['url'] : '' ?>')"></div>
-                            <div class="name text-decoration-none">
-                                <a href="#"><?= $artist->name ?></a>
-                            </div>
+                            <div class="name text-decoration-none"><?= $artist->name ?></div>
                         </div>
                     </div>
                 </div>
@@ -37,9 +35,7 @@ if ( ! empty( $selectedInternationalArtistList ) ): ?>
                             <a class="link-box" href="#"></a>
                             <div class="image-feature"
                                 style="background-image: url('<?= $artistImage ? $artistImage['url'] : '' ?>')"></div>
-                            <div class="name text-decoration-none">
-                                <a href="#"><?= $artist->name ?></a>
-                            </div>
+                            <div class="name text-decoration-none"><?= $artist->name ?></div>
                         </div>
                     </div>
                 </div>
