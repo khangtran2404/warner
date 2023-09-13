@@ -25,8 +25,9 @@ get_header();
                 if (empty($artist->parent)) continue;
                 $artistUrl = get_term_link($artist->term_id,'artist');
 				$artistImageUrl = get_field( 'artist_image', 'artist_' . $artist->term_id );
+                $artistParentSlug = get_term($artist->parent)->slug;
 				?>
-                <div class="artist-item artist-parent-<?= $artist->parent ?> artist-item-<?= $artist->term_id ?>">
+                <div class="artist-item artist-parent-<?= $artistParentSlug ?> artist-item-<?= $artist->term_id ?>">
                     <a href="<?= $artistUrl ?: '#' ?>">
                         <img src="<?= $artistImageUrl ?: '' ?>" alt="artist-image">
                         <div class="artist-title"><?= $artist->name ?></div>
