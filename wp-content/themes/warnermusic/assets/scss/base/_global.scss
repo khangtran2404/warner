@@ -101,6 +101,7 @@ body {
         &:hover {
             color: $color__main !important;
             text-decoration-style: solid !important;
+            text-underline-offset: 2px;
         }
     }
     .entry-footer {

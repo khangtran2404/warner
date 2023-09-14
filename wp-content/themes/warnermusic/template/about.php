@@ -28,25 +28,35 @@ get_header();
                 } ?>
             </div>
         </div>
-        <div class="main-content-after"><?= get_field('section_content_after_gallery')?></div>
+        <div class="main-content-after" style="padding-bottom: 30px"><?= get_field('section_content_after_gallery')?></div>
+        <div class="contact-us">
+            <div class="main-content-after">
+                <?= get_field('section_content_contact');?>
+            </div>
+            <div class="contact-form-section">
+                <div class="row">
+                    <div class="col-lg-8 col-md-12 col-left">
+                        <?php
+                            $contactForm = get_field('contact_form_shortcode');
+                            if ($contactForm){
+                                echo do_shortcode($contactForm);
+                            }
+                        ?>
+                    </div>
+                    <div class="col-lg-4 col-right">
+                        <div class="contact-sidebar">
+                            <?= get_field('sidebar_contact');?>
+                        </div>
+                        <div class="col-social-icon">
+                            <ul class="list-item-socials">
+                                <?php get_template_part( '/inc/views/header/header-social' ); ?>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
-
-
-
-        <!--<div class="page-title">
-            <h1><?= get_the_title() ?></h1>
-        </div>
-        <div class="page-content">
-			
-        </div>
-        <div class="contact-form-section">
-            <?php
-            $contactForm = get_field('contact_form_shortcode');
-            if ($contactForm){
-                echo do_shortcode($contactForm);
-            }
-            ?>
-        </div>-->
+</div> 
 <?php
 get_footer();

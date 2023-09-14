@@ -3,6 +3,23 @@
     "title": "Page About Us Custom Fields",
     "fields": [
         {
+            "key": "field_6502c5aa6d8b0",
+            "label": "About us",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
             "key": "field_64ff3e83e94c8",
             "label": "List Gallery Image",
             "name": "list_gallery_image",
@@ -51,9 +68,46 @@
             "delay": 0
         },
         {
+            "key": "field_6502c5c16d8b1",
+            "label": "Contact us",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
             "key": "field_6502bf2b07517",
             "label": "section content contact",
             "name": "section_content_contact",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
+            "key": "field_6502c55533266",
+            "label": "sidebar contact",
+            "name": "sidebar_contact",
             "aria-label": "",
             "type": "wysiwyg",
             "instructions": "",
@@ -109,5 +163,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1694678862
+    "modified": 1694680534
 }
