@@ -5,30 +5,40 @@
 
 get_header();
 ?>
-    <div>
-        <div class="page-title">
+<div id="site-about-page" class="site-about-page padding-page">
+    <div class="container">
+        <?php the_title( '<h1 class="main-title">', '</h1>' );?>
+        <div class="main-content"><?php the_content();?></div>
+        <div class="group-list-gallery">
+            <div class="about-gallery-list list-layout-warner-1">
+                <?php
+                $gallerys = get_field( 'list_gallery_image' );
+                if ( $gallerys ) {
+                    foreach ( $gallerys as $gallery ): ?>
+                        <div class="about-gallery-item gird-item-no-square">
+                            <div class="content-box">
+                                <div class="group-content">
+                                    <div class="image-feature no-scale"
+                                        style="background-image: url('<?= $gallery ? $gallery['url'] : '' ?>')"></div>
+                                    <div class="name padding-20"><?= $gallery['title'] ?></div>
+                                </div>
+                            </div>
+                        </div>
+                    <?php endforeach;
+                } ?>
+            </div>
+        </div>
+        <div class="main-content-after"><?= get_field('section_content_after_gallery')?></div>
+    </div>
+</div>
+
+
+
+        <!--<div class="page-title">
             <h1><?= get_the_title() ?></h1>
         </div>
         <div class="page-content">
-			<?php
-			$contentList = get_field( 'content_section' );
-			if ( $contentList ) {
-				foreach ( $contentList as $content ): ?>
-                    <div class="content-item">
-                        <h2 class="title"><?= $content['label'] ?: '' ?></h2>
-                        <div class="information"><?= $content['content'] ?></div>
-						<?php
-						if ( $content['gallery'] ) : ?>
-							<div class="gallery-list gallery-slider">
-								<?php foreach ( $content['gallery'] as $image ):
-                                    ?>
-                                    <img class="gallery-slider-item" src="<?= $image['url'] ?>" alt="<?= $image['filename'] ?>">
-								<?php endforeach; ?>
-                            </div>
-						<?php endif; ?>
-                    </div>
-				<?php endforeach;
-			} ?>
+			
         </div>
         <div class="contact-form-section">
             <?php
@@ -37,7 +47,6 @@ get_header();
                 echo do_shortcode($contactForm);
             }
             ?>
-        </div>
-    </div>
+        </div>-->
 <?php
 get_footer();

@@ -413,6 +413,7 @@
     }
 }
 
+.list-layout-warner-1,
 .list-layout-warner-4,
 .list-layout-warner-3,
 .list-layout-warner-3-no-slider {
@@ -469,6 +470,7 @@
             .image-feature {
                 position: relative;
                 z-index: 1;
+                width: 100%;
                 background-repeat: no-repeat;
                 background-position: center;
                 background-size: cover;
@@ -514,6 +516,9 @@
             &:hover {
                 .image-feature {
                     @include scale(1.1);
+                }
+                .image-feature.no-scale {
+                    @include scale(1);
                 }
                 .brand {
                     .cate {

@@ -5,20 +5,22 @@
 
 get_header();
 ?>
-    <div id="site-artist-page" class="site-artist-page padding-page">
+    <div id="site-artist-page" class="site-artist-page layout-filter-side-bar padding-page">
         <div class="container">
             <?php the_title( '<h1 class="main-title">', '</h1>' );?>
             <div class="main-content"><?php the_content();?></div>
             <div class="row">
-                <div class="col-lg-3">
-                    <div class="filter-section">
-                        <ul class="filter-list list-filter-artist">
-                            <li class="all item-filter active" data-id="all"><?= __( 'All Artist' ) ?></li>
-                            <li class="international item-filter" data-id="international"><?= __( 'Intl Artists' ) ?></li>
-                            <li class="domestic item-filter" data-id="domestic"><?= __( 'Domestic Artists' ) ?></li>
-                            <li class="domestic-exclusive item-filter"
-                                data-id="domestic-exclusive"><?= __( 'Domestic Exclusive Distribution' ) ?></li>
-                        </ul>
+                <div class="col-lg-3 col-sticky">
+                    <div class="col-sticky">
+                        <div class="filter-section">
+                            <ul class="filter-list list-filter-artist">
+                                <li class="all item-filter active" data-id="all"><?= __( 'All Artist' ) ?></li>
+                                <li class="international item-filter" data-id="international"><?= __( 'Intl Artists' ) ?></li>
+                                <li class="domestic item-filter" data-id="domestic"><?= __( 'Domestic Artists' ) ?></li>
+                                <li class="domestic-exclusive item-filter"
+                                    data-id="domestic-exclusive"><?= __( 'Domestic Exclusive Distribution' ) ?></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-9 col-md-12">

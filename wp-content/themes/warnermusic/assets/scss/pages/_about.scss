@@ -1,0 +1,23 @@
+.group-list-gallery {
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto 40px auto;
+    padding: 0 15px;
+    @include desktop {
+        padding: 0 5px;
+    }
+    .gird-item-no-square {
+        .group-content {
+            .name {
+                font-size: 15px;
+            }
+        }
+    }
+}
+.main-content-after {
+    p {
+        width: 100%;
+        max-width: 720px;
+        margin-right: auto;
+    }
+}

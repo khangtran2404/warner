@@ -1,19 +1,14 @@
-.site-artist-page {
-    .main-title {
-        margin-bottom: 20px;
-    }
-    .main-content {
-        padding: 0 0 40px 0;
-        margin-bottom: 40px;
-        position: relative;
-        &::after {
-            position: absolute;
-            content: '';
-            width: 50px;
-            height: 8px;
-            background: -webkit-linear-gradient(135deg, $color__main-bold, $color__main);
-            bottom: 0;
-            left: 0;
+.layout-filter-side-bar {
+    .col-sticky {
+        position: sticky;
+        position: -webkit-sticky;
+        top: calc(102px + 30px);
+        height: 100vh;
+        @include desktop {
+            height: unset;
+            top: unset;
+            position: static;
+            position: -webkit-static;
         }
     }
     .filter-section {

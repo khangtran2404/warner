@@ -48,6 +48,7 @@ function adapterWidthHeigth() {
     let itemNoSquareThree = $('.list-layout-warner-3 .gird-item-no-square .image-feature');
     let itemNoSquareThreeNoSlide  = $('.list-layout-warner-3-no-slider .gird-item-no-square .image-feature');
     let itemNoSquareFour = $('.list-layout-warner-4 .gird-item-no-square .image-feature');
+    let itemNoSquareOne = $('.list-layout-warner-1 .gird-item-no-square .image-feature');
     let itemThreePertwo = $('.gird-item-three-per-two .image-feature');
 
     distance = (body - widthContainer)/2;
@@ -55,6 +56,7 @@ function adapterWidthHeigth() {
     itemNoSquareThreeNoSlide.css('height', (itemNoSquareThreeNoSlide.innerWidth())*(3/2));
     itemNoSquareFour.css('height', (itemNoSquareFour.innerWidth())*(3/2));
     itemThreePertwo.css('height', (itemThreePertwo.innerWidth())*(2/3));
+    itemNoSquareOne.css('height', (itemNoSquareOne.innerWidth())*(2/3));
 }
 
 function bannerSlider() {
@@ -104,6 +106,7 @@ function bannerSlider() {
 function sliderGrid() {
     let listLayoutWarnerFour = $('.list-layout-warner-4');
     let listLayoutWarnerThree = $('.list-layout-warner-3');
+    let listLayoutWarnerOne = $('.list-layout-warner-1');
 
     listLayoutWarnerFour.slick({
         slidesToShow: 4,
@@ -160,6 +163,17 @@ function sliderGrid() {
             }
         ]
     })
+
+    listLayoutWarnerOne.slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: true,
+        dots: false,
+        infinite: false,
+        autoplay: false,
+        speed: 600,
+        autoplaySpeed: 5000,
+    });
 }
 
 function sliderSyncing() {
