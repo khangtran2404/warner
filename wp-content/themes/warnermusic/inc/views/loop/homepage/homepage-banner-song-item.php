@@ -45,7 +45,7 @@
     </div>
     <div class="latest-releases">
         <div class="button-link-lastest-releases">
-            <a href="<?= get_field('song_homepage_latest_releases') ?? '#' ?>">
+            <a href="<?= get_field('song_homepage_latest_releases') ?? '#' ?>" target="_blank">
             <?= __('Latest Releases') ?>
             <span class="icon-arrow-btn">
                 <img width="20" src="<?= DF_IMAGE .'/icon/arrow-right-btn.png';?>" alt="icon-arrow-btn"/>

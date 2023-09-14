@@ -184,7 +184,14 @@ function sliderSyncing() {
         slidesToShow: 1,
         slidesToScroll: 1,
         arrows: false,
-        asNavFor: listnavItem
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    asNavFor: listnavItem
+                }
+            }
+        ]
     });
 
     listnavItem.slick({
@@ -192,16 +199,46 @@ function sliderSyncing() {
         slidesToScroll: 1,
         asNavFor: listMainItem,
         dots: false,
-        focusOnSelect: true,
+        focusOnSelect: false,
         responsive: [
             {
                 breakpoint: 768,
                 settings: {
-                  slidesToShow: 2
+                    slidesToShow: 2,
+                    focusOnSelect: true,
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    focusOnSelect: true,
                 }
             }
         ]
     });
+    disableScrollNavOnDesktop();
+    $(window).resize(function() {
+        disableScrollNavOnDesktop();
+    });
+
+    function disableScrollNavOnDesktop() {
+        if($(window).width() > 768) {
+            listMainItem.on('afterChange', function(event, slick, currentSlide) {
+                let currrentNavSlideElem = '.list-nav-sliderSyncing .slick-slide[data-slick-index="' + currentSlide + '"]';
+                $('.list-nav-sliderSyncing .slick-slide.slick-current').removeClass('slick-current');
+                $(currrentNavSlideElem).addClass('slick-current');
+            });
+        
+            listnavItem.find('.slick-slide').on('click', function (event) {
+                $(this).parent().find('.slick-current').removeClass('slick-current');
+                $(this).addClass('slick-current');
+                listMainItem.slick('slickGoTo', $(this).data('slickIndex'));
+            });
+        } else {
+            return;
+        }
+    }
 }
 
 function headerAction() {

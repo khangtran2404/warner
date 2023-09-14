@@ -64,9 +64,10 @@
                 width: 150px;
                 font-size: 13px;
             }
-            &:hover {
+            &:hover,
+            &:focus {
                 text-decoration: none;
-                background-color: $color__main;
+                background-color: $color__main !important;
             }
             .icon-arrow-btn {
                 position: absolute;
@@ -180,9 +181,10 @@
                 color: $color__bg !important;
                 font-weight: 800;
                 position: relative;
-                &:hover {
+                &:hover,
+                &:focus {
                     text-decoration: none;
-                    background-color: $color__main-bold;
+                    background-color: $color__main-bold !important;
                 }
                 .icon-play {
                     position: absolute;
@@ -353,16 +355,29 @@
 }
 
 .group-events-item {
+    padding: 0 2px;
     .name {
-        font-size: 70px;
-        line-height: 1;
         font-weight: 400;
+        font-size: 100px;
+        letter-spacing: -4px;
+        line-height: .85;
         text-align: right;
+        text-transform: uppercase;
+        word-break: break-all;
+        padding-right: 10px;
+        background: -webkit-linear-gradient(135deg, $color__bg, $color__light);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
         @include big_screen {
-            font-size: 50px;
+            font-size: 75px;
         }
         @include desktop {
-            font-size: 65px
+            font-size: 50px;
+            text-align: left;
+            letter-spacing: -0.02em;
+            word-break: break-word;
+            line-height: 1;
+            margin-bottom: 20px;
         }
         @include tablet {
             font-size: 40px;
@@ -375,25 +390,49 @@
         display: flex;
         align-items: center;
         margin-bottom: 20px;
+        justify-content: space-between;
+    }
+    .group-text {
+        display: flex;
+        align-items: center;
+        width: calc(100% - 140px);
+        @include desktop {
+            padding-left: 5px;
+        }
+        @include tablet {
+            display: block;
+        }
     }
     .date {
         font-size: 35px;
-        width: 130px;
-        margin-right: 20px;
+        width: 120px;
+        margin-right: 25px;
+        @include tablet {
+            font-size: 22px;
+            margin-bottom: 5px;
+            line-height: 1;
+            width: 100%;
+        }
     }
     .location {
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
-        width: calc(100% - 300px);
+        width: calc(100% - 150px);
         font-size: 24px;
+        padding-right: 20px;
+        @include tablet {
+            font-size: 18px;
+            width: calc(100% - 10px);
+        }
     }
     .button-link-warner.radius-none {
-        margin-left: 20px;
         a {
             border-radius: 0;
             padding: 10px 15px;
-            min-width: 130px;
+            width: 130px !important;
+            min-width: unset  !important;
+            margin-left: auto;
             &:hover,
             &:focus {
                 background-color: $color__primary-4 !important;
@@ -407,6 +446,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
     margin-bottom: 30px;
     h2 {
         margin-right: 15px;

@@ -47,6 +47,7 @@ body {
         font-size: 68px;
         font-weight: 400;
         line-height: 1;
+        margin-bottom: 0;
         @include big_screen {
             font-size: 50px;
         }
