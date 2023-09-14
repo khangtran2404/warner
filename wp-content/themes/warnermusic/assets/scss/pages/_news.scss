@@ -1,0 +1,38 @@
+.highlight-news {
+    margin-bottom: 40px;
+    .information {
+        display: flex;
+        align-items: center;
+        padding-right: 80px;
+        height: 100%;
+        .group-content {
+            margin-top: -35%;
+        }
+        .publish-date {
+            font-size: 25px;
+            line-height: 1;
+        }
+        a {
+            font-size: 25px;
+            line-height: 1;
+        }
+        @include desktop {
+            padding-right: 0;
+        }
+        @include tablet {
+            display: block;
+            .group-content {
+                margin-top: 0;
+                margin-bottom: 20px;
+                .publish-date {
+                    font-size: 18px;
+                    line-height: 1;
+                }
+                a {
+                    font-size: 18px;
+                    line-height: 1;
+                }
+            }
+        }
+    }
+}

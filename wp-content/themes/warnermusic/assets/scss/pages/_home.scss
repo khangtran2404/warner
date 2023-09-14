@@ -553,6 +553,14 @@
                     font-size: 28px;
                 }
             }
+            .publish-date {
+                position: absolute;
+                z-index: 2;
+                padding: 10px;
+                top: 0;
+                left: 0;
+                font-size: 20px;
+            }
             &:hover {
                 .image-feature {
                     @include scale(1.1);

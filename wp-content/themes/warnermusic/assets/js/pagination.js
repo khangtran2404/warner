@@ -12,7 +12,12 @@ $(document).ready(function() {
     var totalPages = Math.ceil(totalItems / itemsPerPage);
 
     for (var i = 1; i <= totalPages; i++) {
-        $('#pagination').append('<a href="#" class="page-link">' + i + '</a>');
+        if(i == 1) {
+            $class="current-pagin";
+        } else {
+            $class="";
+        }
+        $('#pagination').append('<a href="#" class="page-link '+$class+'">' + i + '</a>');
     }
 
     $('.page-link').on('click', function(e) {
@@ -22,5 +27,7 @@ $(document).ready(function() {
         var startIndex = (pageNumber - 1) * itemsPerPage;
         var endIndex = startIndex + itemsPerPage;
         $divs.slice(startIndex, endIndex).show();
+        $(this).parent().find('.current-pagin').removeClass('current-pagin');
+        $(this).addClass('current-pagin');
     });
 });

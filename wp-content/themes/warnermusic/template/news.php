@@ -5,48 +5,60 @@
 
 get_header();
 ?>
-    <div>
+<div id="site-news-page" class="site-news-page padding-page">
+    <div class="container">
         <div class="highlight-news">
-			<?php
-			$highlightNewsId  = get_field( 'highlight_news' );
-			if ( $highlightNewsId ):
-				$highlightPost = get_post( $highlightNewsId );
-				$thumbnailUrl = get_the_post_thumbnail_url( $highlightNewsId );
-				$postLink = get_post_permalink( $highlightNewsId ) ?: '#';
-				?>
-                <div class="information">
-                    <div class="publish-date"><?= $highlightPost->post_date ?></div>
-                    <div class="title">
-                        <a href="<?= $postLink ?>">
-                            <?= $highlightPost->post_title ?>
-                        </a>
+            <?php
+            $highlightNewsId  = get_field( 'highlight_news' );
+            if ( $highlightNewsId ):
+                $highlightPost = get_post( $highlightNewsId );
+                $thumbnailUrl = get_the_post_thumbnail_url( $highlightNewsId );
+                $postLink = get_post_permalink( $highlightNewsId ) ?: '#';
+                ?>
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                        <div class="information">
+                           <div class="group-content">
+                            <div class="publish-date"><?= $highlightPost->post_date; ?></div>
+                                <div class="title">
+                                    <a href="<?= $postLink ?>">
+                                        <?= $highlightPost->post_title; ?>
+                                    </a>
+                                </div>
+                           </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                        <div class="image-square">
+                            <a href="<?= $postLink ?>">
+                                <img src="<?= $thumbnailUrl ?>" alt="highlight-news-thumbnail">
+                            </a>
+                        </div>
                     </div>
                 </div>
-                <a href="<?= $postLink ?>">
-                    <img src="<?= $thumbnailUrl ?>" alt="highlight-news-thumbnail">
-                </a>
-			<?php endif;
-			?>
+            <?php endif;
+            ?>
         </div>
-        <div class="news-list" id="news-list">
+        <div class="news-list list-layout-warner-3-no-slider" id="news-list">
             <?php
             $args      = array(
-	            'post_status'    => 'publish',
-	            'post_type'      => 'post',
-	            'posts_per_page' => -1,
-	            'orderby' => 'date',
-	            'order' => 'DESC',
+                'post_status'    => 'publish',
+                'post_type'      => 'post',
+                'posts_per_page' => -1,
+                'orderby' => 'date',
+                'order' => 'DESC',
             );
             $the_query = new WP_Query( $args );
             if ( $the_query->have_posts() ) :
-	            while ( $the_query->have_posts() ) : $the_query->the_post();
-		            get_template_part( 'inc/views/loop/news/list', 'news-item' );
-	            endwhile;
-	            wp_reset_postdata();
+                while ( $the_query->have_posts() ) : $the_query->the_post();
+                    get_template_part( 'inc/views/loop/news/list', 'news-item' );
+                endwhile;
+                wp_reset_postdata();
             endif;
             ?>
         </div>
         <div id="pagination"></div>
     </div>
+</div>
 <?php
 get_footer();

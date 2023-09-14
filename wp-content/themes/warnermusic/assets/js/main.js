@@ -50,6 +50,7 @@ function adapterWidthHeigth() {
     let itemNoSquareFour = $('.list-layout-warner-4 .gird-item-no-square .image-feature');
     let itemNoSquareOne = $('.list-layout-warner-1 .gird-item-no-square .image-feature');
     let itemThreePertwo = $('.gird-item-three-per-two .image-feature');
+    let imgSquare = $('.image-square');
 
     distance = (body - widthContainer)/2;
     itemNoSquareThree.css('height', (itemNoSquareThree.innerWidth())*(3/2));
@@ -57,6 +58,7 @@ function adapterWidthHeigth() {
     itemNoSquareFour.css('height', (itemNoSquareFour.innerWidth())*(3/2));
     itemThreePertwo.css('height', (itemThreePertwo.innerWidth())*(2/3));
     itemNoSquareOne.css('height', (itemNoSquareOne.innerWidth())*(2/3));
+    imgSquare.css('height',imgSquare.innerWidth());
 }
 
 function bannerSlider() {
