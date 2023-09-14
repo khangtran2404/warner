@@ -1,23 +1,8 @@
 $(document).ready(function () {
     //run function
     filterInitiation();
-    // filterArtistAfterClick();
     filterOnClick();
 });
-
-// function filterArtistAfterClick() {
-//     let btnFilter = $('.filter-section .filter-list li');
-//
-//     btnFilter.click(function() {
-//         let filterData = 'artist-parent-' + $(this).attr('data-id');
-//         let artistListSectionElement = $('.artist-list-section');
-//         artistListSectionElement.children('.artist-item').hide();
-//         $('.'+filterData).show();
-        if ($(this).attr('data-id') === 'all'){
-            artistListSectionElement.children('.artist-item').show();
-        }
-//     });
-// }
 
 function filterInitiation(){
     let filterElement = $('.list-filter-group');
