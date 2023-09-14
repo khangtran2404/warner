@@ -13,7 +13,7 @@ get_header();
                 <div class="col-lg-3 col-sticky">
                     <div class="col-sticky">
                         <div class="filter-section">
-                            <ul class="filter-list list-filter-artist">
+                            <ul class="filter-list list-filter-artist list-filter-group">
                                 <li class="all item-filter active" data-id="all"><?= __( 'All Artist' ) ?></li>
                                 <li class="international item-filter" data-id="international"><?= __( 'Intl Artists' ) ?></li>
                                 <li class="domestic item-filter" data-id="domestic"><?= __( 'Domestic Artists' ) ?></li>
@@ -36,7 +36,7 @@ get_header();
                             $artistImageUrl = get_field( 'artist_image', 'artist_' . $artist->term_id );
                             $artistParentSlug = get_term($artist->parent)->slug;
                             ?>
-                            <div class="artist-item gird-item-no-square artist-parent-<?= $artistParentSlug ?> artist-item-<?= $artist->term_id ?>">
+                            <div class="artist-item filter-item term-all gird-item-no-square term-<?= $artistParentSlug ?> artist-parent-<?= $artistParentSlug ?> artist-item-<?= $artist->term_id ?>">
                                 <div class="content-box">
                                     <div class="group-content">
                                         <a class="link-box" href="<?= $artistUrl ?: '#' ?>"></a>
