@@ -1,7 +1,12 @@
 <?php
+$events = get_posts(array(
+	'post_type' => 'event',
+	'numberposts' => -1,
+));
+$event_ids = wp_list_pluck($events, 'ID');
 $artists = get_terms( array(
 	'taxonomy'   => 'artist',
-	'hide_empty' => false,
+	'object_ids' => $event_ids
 ));
 if ( ! empty( $artists ) && ! is_wp_error( $artists ) ):?>
 	<div class="list-nav-artist-img list-nav-sliderSyncing">

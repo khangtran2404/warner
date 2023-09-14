@@ -7,28 +7,45 @@ get_header();
 ?>
     <div>
 		<?php
+		$events = get_posts(array(
+			'post_type' => 'event',
+			'numberposts' => -1,
+		));
+		$event_ids = wp_list_pluck($events, 'ID');
 		$artists = get_terms( array(
 			'taxonomy'   => 'artist',
-			'hide_empty' => false,
-		) );
+			'object_ids' => $event_ids
+		));
 		if ( ! empty( $artists ) && ! is_wp_error( $artists ) ):?>
-            <div class="list-nav-artist-img">
+            <div class="list-nav-artist-img list-nav-sliderSyncing">
 				<?php
-				foreach ( $artists as $key => $artist ):
-					if ( $artist->parent == 0 ) {
+				foreach ( $artists as $key=>$artist ):
+					if ($artist->parent == 0){
 						continue;
 					}
-					$artistImage = get_field( 'artist_image', 'artist_' . $artist->term_id ); ?>
-                    <div class="data-image" type="hidden" hidden="hidden" data-img="<?= $artistImage['url'] ?>"></div>
-                    <img src="<?= $artistImage['url'] ?>" alt="">
-				<?php endforeach; ?>
+					if($key > 3) {
+						break;
+					}
+					$artistImage = get_field( 'artist_image', 'artist_' . $artist->term_id );?>
+                    <div class="list-nav-item-artist gird-item-three-per-two">
+                        <div class="content-box">
+                            <div class="group-content">
+                                <div class="image-feature"
+                                     style="background-image: url('<?= $artistImage ? $artistImage['url'] : '' ?>')"></div>
+                            </div>
+                        </div>
+                    </div>
+				<?php endforeach;?>
             </div>
-            <div class="list-event">
+            <div class="list-event list-main-sliderSyncing">
 				<?php
-				foreach ( $artists as $key => $artist ):
-					if ( $artist->parent == 0 ) {
+				foreach ( $artists as $key=>$artist ):
+					if ($artist->parent == 0){
 						continue;
-					} ?>
+					}
+					if($key > 3) {
+						break;
+					}?>
                     <div class="group-events-item">
                         <div class="row">
                             <div class="col-lg-4 col-md-12 col-sm-12 col-12">
@@ -62,9 +79,9 @@ get_header();
                             </div>
                         </div>
                     </div>
-				<?php endforeach; ?>
+				<?php endforeach;?>
             </div>
-		<?php endif; ?>
+		<?php endif;?>
     </div>
 <?php
 get_footer();
