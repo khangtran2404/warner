@@ -133,6 +133,9 @@
             font-size: 22px;
             font-weight: 500;
             padding: 0 10px;
+            @include mobile {
+                margin-top: 15px;
+            }
         }
         .content-box {
             height: calc(100% - 100px);
@@ -463,6 +466,7 @@
         margin: 0 -10px;
     }
     .gird-item-no-square {
+        animation: show_block 1s forwards;
         .content-box {
             padding: 0 15px;
             @include desktop {
@@ -585,29 +589,8 @@
 .list-layout-warner-3-no-slider {
     display: flex;
     flex-wrap: wrap;
-    position: relative;
     .gird-item-no-square {
         margin-bottom: 30px;
-        width: calc(100%/3);
-        position: absolute;
-        top: 0;
-        left: 0;
-        visibility: hidden;
-        opacity: 0;
-        z-index: -1;
-        @include transition(all .3s ease-in-out);
-        @include tablet {
-            width: calc(100%/2);
-        }
-        @include mobile {
-            width: 100%;
-        }
-        &.active-item {
-            opacity: 1;
-            position: static;
-            visibility: visible;
-            z-index: 1;
-        }
     }
 }
 

@@ -46,7 +46,6 @@ function adapterWidthHeigth() {
     let widthContainer = $('.header-main').innerWidth();
     let body = $('body').innerWidth();
     let itemNoSquareThree = $('.list-layout-warner-3 .gird-item-no-square .image-feature');
-    let itemNoSquareThreeNoSlide  = $('.list-layout-warner-3-no-slider .gird-item-no-square .image-feature');
     let itemNoSquareFour = $('.list-layout-warner-4 .gird-item-no-square .image-feature');
     let itemNoSquareOne = $('.list-layout-warner-1 .gird-item-no-square .image-feature');
     let itemThreePertwo = $('.gird-item-three-per-two .image-feature');
@@ -54,11 +53,34 @@ function adapterWidthHeigth() {
 
     distance = (body - widthContainer)/2;
     itemNoSquareThree.css('height', (itemNoSquareThree.innerWidth())*(3/2));
-    itemNoSquareThreeNoSlide.css('height', (itemNoSquareThreeNoSlide.innerWidth())*(3/2));
     itemNoSquareFour.css('height', (itemNoSquareFour.innerWidth())*(3/2));
     itemThreePertwo.css('height', (itemThreePertwo.innerWidth())*(2/3));
     itemNoSquareOne.css('height', (itemNoSquareOne.innerWidth())*(2/3));
     imgSquare.css('height',imgSquare.innerWidth());
+
+    //case no slider
+    let groupItemNoSlider = $('.list-layout-warner-3-no-slider').innerWidth();
+    console.log(groupItemNoSlider);
+    let itemNoSquareThreeNoSlide  = $('.list-layout-warner-3-no-slider .gird-item-no-square .image-feature');
+    let widthItemNoSlider = (groupItemNoSlider - 90)/3;
+    itemNoSquareThreeNoSlide.css('width', widthItemNoSlider);
+    itemNoSquareThreeNoSlide.css('height', (widthItemNoSlider)*(3/2));
+
+    if($(window).width() < 991) {
+        let widthItemNoSlider = (groupItemNoSlider - 60)/3;
+        itemNoSquareThreeNoSlide.css('width', widthItemNoSlider);
+        itemNoSquareThreeNoSlide.css('height', (widthItemNoSlider)*(3/2));
+    }
+     if($(window).width() < 768) {
+        let widthItemNoSlider = (groupItemNoSlider - 60)/2;
+        itemNoSquareThreeNoSlide.css('width', widthItemNoSlider);
+        itemNoSquareThreeNoSlide.css('height', (widthItemNoSlider)*(3/2));
+    }
+    if($(window).width() < 480) {
+        let widthItemNoSlider = groupItemNoSlider - 20;
+        itemNoSquareThreeNoSlide.css('width', widthItemNoSlider);
+        itemNoSquareThreeNoSlide.css('height', (widthItemNoSlider)*(3/2));
+    }
 }
 
 function bannerSlider() {
