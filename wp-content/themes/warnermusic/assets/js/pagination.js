@@ -11,14 +11,20 @@ $(document).ready(function() {
     var totalItems = $divs.length;
     var totalPages = Math.ceil(totalItems / itemsPerPage);
 
-    for (var i = 1; i <= totalPages; i++) {
-        if(i == 1) {
-            $class="current-pagin";
-        } else {
-            $class="";
+    if(totalPages <= 1) {
+        $('#pagination').hide();
+    } else {
+        for (var i = 1; i <= totalPages; i++) {
+            if(i == 1) {
+                $class="current-pagin";
+            } else {
+                $class="";
+            }
+            $('#pagination').show();
+            $('#pagination').append('<a href="#" class="page-link '+$class+'">' + i + '</a>');
         }
-        $('#pagination').append('<a href="#" class="page-link '+$class+'">' + i + '</a>');
     }
+    
 
     $('.page-link').on('click', function(e) {
         e.preventDefault();

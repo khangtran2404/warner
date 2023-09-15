@@ -5,7 +5,7 @@
 
 get_header();
 ?>
-    <div id="site-artist-page" class="site-artist-page layout-filter-side-bar padding-page">
+    <div id="site-partners-page" class="site-partners-page layout-filter-side-bar padding-page">
         <div class="container">
 			<?php the_title( '<h1 class="main-title">', '</h1>' ); ?>
             <div class="main-content"><?php the_content(); ?></div>
