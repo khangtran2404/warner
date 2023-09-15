@@ -3,7 +3,7 @@
         position: sticky;
         position: -webkit-sticky;
         top: calc(102px + 30px);
-        height: 100vh;
+        height: 100%;
         @include desktop {
             height: unset;
             top: unset;
