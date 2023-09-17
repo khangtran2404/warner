@@ -56,6 +56,10 @@ if ( ! empty( $artists ) && ! is_wp_error( $artists ) ):?>
 										'terms'    => $artist->slug,
 									),
 								),
+								'meta_key' => 'event_date',
+								'orderby' => 'meta_value',
+								'order' => 'DESC',
+								'meta_type' => 'DATETIME',
 							);
 
 							$query = new WP_Query( $args );
