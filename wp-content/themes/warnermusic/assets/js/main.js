@@ -60,26 +60,41 @@ function adapterWidthHeigth() {
 
     //case no slider
     let groupItemNoSlider = $('.list-layout-warner-3-no-slider').innerWidth();
-    console.log(groupItemNoSlider);
+    let groupItemNoSliderFour = $('.list-layout-warner-4-no-slider').innerWidth();
     let itemNoSquareThreeNoSlide  = $('.list-layout-warner-3-no-slider .gird-item-no-square .image-feature');
+    let itemNoSquareFourNoSlide  = $('.list-layout-warner-4-no-slider .gird-item-no-square .image-feature');
     let widthItemNoSlider = (groupItemNoSlider - 90)/3;
+    let widthItemNoSliderFour = (groupItemNoSliderFour - 120)/4;
+
     itemNoSquareThreeNoSlide.css('width', widthItemNoSlider);
     itemNoSquareThreeNoSlide.css('height', (widthItemNoSlider)*(3/2));
 
+    itemNoSquareFourNoSlide.css('width', widthItemNoSliderFour);
+    itemNoSquareFourNoSlide.css('height', (widthItemNoSliderFour)*(3/2));
+
     if($(window).width() < 991) {
         let widthItemNoSlider = (groupItemNoSlider - 60)/3;
+        let widthItemNoSliderFour = (groupItemNoSliderFour - 60)/3;
         itemNoSquareThreeNoSlide.css('width', widthItemNoSlider);
         itemNoSquareThreeNoSlide.css('height', (widthItemNoSlider)*(3/2));
+        itemNoSquareFourNoSlide.css('width', widthItemNoSliderFour);
+        itemNoSquareFourNoSlide.css('height', (widthItemNoSliderFour)*(3/2));
     }
      if($(window).width() < 768) {
         let widthItemNoSlider = (groupItemNoSlider - 60)/2;
+        let widthItemNoSliderFour = (groupItemNoSliderFour - 60)/2;
         itemNoSquareThreeNoSlide.css('width', widthItemNoSlider);
         itemNoSquareThreeNoSlide.css('height', (widthItemNoSlider)*(3/2));
+        itemNoSquareFourNoSlide.css('width', widthItemNoSliderFour);
+        itemNoSquareFourNoSlide.css('height', (widthItemNoSliderFour)*(3/2));
     }
     if($(window).width() < 480) {
         let widthItemNoSlider = groupItemNoSlider - 20;
+        let widthItemNoSliderFour = groupItemNoSliderFour - 20;
         itemNoSquareThreeNoSlide.css('width', widthItemNoSlider);
         itemNoSquareThreeNoSlide.css('height', (widthItemNoSlider)*(3/2));
+        itemNoSquareFourNoSlide.css('width', widthItemNoSliderFour);
+        itemNoSquareFourNoSlide.css('height', (widthItemNoSliderFour)*(3/2));
     }
 }
 

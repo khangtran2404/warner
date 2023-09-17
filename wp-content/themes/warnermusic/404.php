@@ -11,17 +11,16 @@
 
 get_header();
 ?>
+<div class="default-page-404">
 	<div class="container">
-		<header class="page-header alignwide">
-			<h1 class="page-title"><?php esc_html_e( 'Nothing here', 'twentytwentyone' ); ?></h1>
-		</header><!-- .page-header -->
-
-		<div class="error-404 not-found default-max-width">
-			<div class="page-content">
-				<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try a search?', 'twentytwentyone' ); ?></p>
-				<?php get_search_form(); ?>
-			</div><!-- .page-content -->
-		</div><!-- .error-404 -->
+		<div class="default-page-404-content"> 
+			<h1 class="main-title">Something is missing</h1>
+			<div class="description">This page is missing or you assembled the link incorrectly.</div>
+			<div class="button-link-warner">
+				<a href="/">Back To HOME</a>
+			</div>
+		</div>
 	</div>
+</div>
 <?php
 get_footer();

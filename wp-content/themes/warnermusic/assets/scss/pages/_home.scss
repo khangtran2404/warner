@@ -459,7 +459,8 @@
 .list-layout-warner-1,
 .list-layout-warner-4,
 .list-layout-warner-3,
-.list-layout-warner-3-no-slider {
+.list-layout-warner-3-no-slider,
+.list-layout-warner-4-no-slider {
     margin: 0 -15px;
     position: relative;
     @include desktop {
@@ -497,6 +498,10 @@
                 }
                 @include mobile {
                     font-size: 28px;
+                }
+                @include small_screen  {
+                    font-size: 18px;
+                    line-height: 1.2;
                 }
                 a {
                     color: $color__light !important;
@@ -586,7 +591,8 @@
     }
 }
 
-.list-layout-warner-3-no-slider {
+.list-layout-warner-3-no-slider,
+.list-layout-warner-4-no-slider {
     display: flex;
     flex-wrap: wrap;
     .gird-item-no-square {

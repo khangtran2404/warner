@@ -1,0 +1,50 @@
+.default-page-404 {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    &::after {
+        color: transparent;
+        content: "404";
+        font-size: 45vw;
+        right: 40px;
+        position: absolute;
+        top: 50%;
+        @include translate(0, -50%);
+        -webkit-text-stroke: 1px #393939;
+        z-index: -1;
+        line-height: 1;
+        opacity: 0.8;
+    }
+    h1 {
+        margin: 15px 0 20px 0;
+        font-size: 50px !important;
+        text-transform: uppercase;
+        @include tablet {
+            font-size: 45px !important;
+        }
+        @include mobile {
+            font-size: 40px !important;
+        }
+    }
+    .button-link-warner {
+        margin-top: 25px;
+        a {
+            background-color: $color__main;
+            &:hover {
+                background-color: $color__main-bold !important;
+            }
+        }
+    }
+}
+
+.error404 {
+    #main.site-main {
+        height: auto;
+        min-height: 90vh;
+        display: flex;
+        align-items: center;
+        @include mobile {
+            min-height: 60vh;
+        }
+    }
+}
