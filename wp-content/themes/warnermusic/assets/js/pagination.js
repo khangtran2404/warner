@@ -1,8 +1,8 @@
 $(document).ready(function() {
-    var itemsPerPage = 1;
+    var itemsPerPage = 9;
     var currentPage = 1;
 
-    var $postList = $('#news-list');
+    var $postList = $('.post-list-pagination');
     var $divs = $postList.children('div');
 
     $divs.hide();

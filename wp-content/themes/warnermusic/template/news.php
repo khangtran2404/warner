@@ -40,7 +40,7 @@ get_header();
 				<?php endif;
 				?>
             </div>
-            <div class="news-list list-layout-warner-3-no-slider" id="news-list">
+            <div class="news-list post-list-pagination list-layout-warner-3-no-slider" id="news-list">
 				<?php
 				$args      = array(
 					'post_status'    => 'publish',
