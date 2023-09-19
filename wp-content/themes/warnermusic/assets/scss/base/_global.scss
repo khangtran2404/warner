@@ -227,9 +227,18 @@ body {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    padding: 20px 15px;
+    padding: 20px 100px;
     height: auto;
     min-height: 70px;
+    position: relative;
+    @include tablet {
+        padding: 20px 90px;
+        min-height: 50px;
+    }
+    @include mobile {
+        padding: 15px 70px;
+        margin: 20px 0 10px 0;
+    }
     .page-link {
         display: block;
         background-color: transparent;
@@ -239,6 +248,9 @@ body {
         @include tablet {
             font-size: 16px;
             padding: 0 8px;
+        }
+        @include mobile {
+            font-size: 14px;
         }
         &:hover,
         &:focus {
@@ -254,6 +266,36 @@ body {
         color: $color__main !important;
         @include tablet {
             font-size: 18px;
+        }
+        @include mobile {
+            font-size: 16px;
+        }
+    }
+    .prev-page,
+    .next-page {
+        position: absolute;
+        right: 15px;
+        cursor: pointer;
+        animation: show_block 1s forwards;
+        @include transition(all .3s ease-in-out);
+        text-transform: capitalize;
+        @include tablet {
+            right: 0;
+        }
+        @include mobile {
+            font-size: 14px;
+        }
+        &:hover {
+            text-decoration: underline;
+            text-underline-offset: 2px;
+            color: $color__main;
+        }
+    }
+    .prev-page {
+        left: 15px;
+        right: unset;
+        @include tablet {
+            left: 0;
         }
     }
 }

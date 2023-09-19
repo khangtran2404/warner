@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    var itemsPerPage = 9;
+    var itemsPerPage = 12;
     var currentPage = 1;
 
     var $postList = $('.post-list-pagination');
@@ -35,6 +35,7 @@ $(document).ready(function() {
             currentPage--;
             updatePage();
         }
+        $('html,body').animate({scrollTop: 500}, 700);
     });
 
     $('.next-page').on('click', function() {
@@ -42,12 +43,14 @@ $(document).ready(function() {
             currentPage++;
             updatePage();
         }
+        $('html,body').animate({scrollTop: 500}, 700);
     });
 
     $('.page-link').on('click', function(e) {
         e.preventDefault();
         currentPage = parseInt($(this).text());
         updatePage();
+        $('html,body').animate({scrollTop: 500}, 700);
     });
 
     function updatePage() {
