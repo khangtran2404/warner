@@ -20,6 +20,9 @@ if ( $the_query->have_posts() ) :
                     <div class="name text-decoration-none">
                         <a href="#"><?= $news->post_title ?></a>
                     </div>
+                    <div class="description">
+                        <p><?= $news->post_excerpt ?: wp_trim_words($news->post_content,20) ?></p>
+                    </div>
                 </div>
             </div>
         </div>
