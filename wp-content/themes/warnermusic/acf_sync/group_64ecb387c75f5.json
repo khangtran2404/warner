@@ -121,11 +121,11 @@
             "endpoint": 0
         },
         {
-            "key": "field_64ecb7627270c",
-            "label": "Spotify link",
-            "name": "song_spotify_link",
+            "key": "field_6511bdc6b619f",
+            "label": "Media Links",
+            "name": "song_media_links",
             "aria-label": "",
-            "type": "link",
+            "type": "group",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -134,87 +134,105 @@
                 "class": "",
                 "id": ""
             },
-            "return_format": "url"
-        },
-        {
-            "key": "field_64ecb7ec7270d",
-            "label": "Apple Music link",
-            "name": "song_apple_music_link",
-            "aria-label": "",
-            "type": "link",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "url"
-        },
-        {
-            "key": "field_64ecb7ff7270e",
-            "label": "Youtube Music link",
-            "name": "song_youtube_music_link",
-            "aria-label": "",
-            "type": "link",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "url"
-        },
-        {
-            "key": "field_64ecb8157270f",
-            "label": "Amazon Music link",
-            "name": "song_amazon_music_link",
-            "aria-label": "",
-            "type": "link",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "url"
-        },
-        {
-            "key": "field_64ecb82572710",
-            "label": "Deezer link",
-            "name": "song_deezer_link",
-            "aria-label": "",
-            "type": "link",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "url"
-        },
-        {
-            "key": "field_64ecb83572711",
-            "label": "Claro Musica link",
-            "name": "song_claro_musica_link",
-            "aria-label": "",
-            "type": "link",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "url"
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_64ecb7627270c",
+                    "label": "Spotify link",
+                    "name": "song_spotify_link",
+                    "aria-label": "",
+                    "type": "link",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "url"
+                },
+                {
+                    "key": "field_64ecb7ec7270d",
+                    "label": "Apple Music link",
+                    "name": "song_apple_music_link",
+                    "aria-label": "",
+                    "type": "link",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "url"
+                },
+                {
+                    "key": "field_64ecb7ff7270e",
+                    "label": "Youtube Music link",
+                    "name": "song_youtube_music_link",
+                    "aria-label": "",
+                    "type": "link",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "url"
+                },
+                {
+                    "key": "field_64ecb8157270f",
+                    "label": "Amazon Music link",
+                    "name": "song_amazon_music_link",
+                    "aria-label": "",
+                    "type": "link",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "url"
+                },
+                {
+                    "key": "field_64ecb83572711",
+                    "label": "Claro Musica link",
+                    "name": "song_claro_musica_link",
+                    "aria-label": "",
+                    "type": "link",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "url"
+                },
+                {
+                    "key": "field_64ecb82572710",
+                    "label": "Deezer link",
+                    "name": "song_deezer_link",
+                    "aria-label": "",
+                    "type": "link",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "url"
+                }
+            ]
         },
         {
             "key": "field_6509c628a966e",
@@ -309,5 +327,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1695139816
+    "modified": 1695661561
 }

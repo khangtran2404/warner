@@ -109,7 +109,7 @@ $mainImg  = get_field( 'artist_image', 'artist_' . $termData->term_id );
                         <div class="video-item">
                             <div class="thumbnail"><img src="<?= get_the_post_thumbnail_url() ?>"
                                                         alt="video-thumbnail"></div>
-                            <div class="name"><?= $videoLabel ?: '' ?></div>
+                            <div class="name"><a href="#"><?= $videoLabel ?: '' ?></a></div>
                             <div class="release-date"><?= $videoReleaseDate ?: '' ?></div>
                         </div>
 					<?php endif; endwhile;
@@ -117,37 +117,6 @@ $mainImg  = get_field( 'artist_image', 'artist_' . $termData->term_id );
 			wp_reset_postdata();
 			?>
         </div>
-        <div class="group-artist-related-news">
-			<?php
-			$args  = array(
-				'post_type' => 'post',
-				'tax_query' => array(
-					array(
-						'taxonomy' => 'artist',
-						'field'    => 'ID',
-						'terms'    => $termData->term_id,
-					),
-				),
-			);
-			$query = new WP_Query( $args );
-			if ( $query->have_posts() ) :
-				while ( $query->have_posts() ) : $query->the_post(); ?>
-                    <div class="related-news-item">
-                        <a href="<?= get_the_permalink() ?>">
-                            <div class="thumbnail" style="background-image: <?= get_the_post_thumbnail_url() ?>">
-                                <div class="publish-date">
-                                    <div class="day"><?= get_the_date( 'd' ) ?></div>
-                                    <div class="month-year"><?= get_the_date( 'F Y' ) ?></div>
-                                </div>
-                                <div class="title"><a href="<?= get_the_permalink() ?>"><?= get_the_title() ?></a></div>
-                            </div>
-                        </a>
-                    </div>
-				<?php endwhile;
-			endif; ?>
-
-        </div>
-
     </div>
 
 <?php
