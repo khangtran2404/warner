@@ -10,6 +10,7 @@ $color__bg: #1c171b;
 $color__bg-primary: #2b262a;
 $color__bg-priamry-1: #3f3a3e;
 $color__bg-priamry-2: #373737;
+$color__bg-priamry-3: #222222;
 $color__orange: #fd8158;
 $color__red: #ee3723;
 $color__text: #1b1719;
@@ -18,4 +19,31 @@ $color__light: #ffffff;
 $color__gray: #cccccc;
 
 /* fonts */
-$font__global: 'Roboto', sans-serif;
+@font-face {
+    font-family: 'wmg-reg';
+    src: url('../fonts/wmg/WMGDazzed-Reggular.otf') format('opentype'),
+         url('../fonts/wmg/WMGDazzed-Reggular.ttf')  format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'wmg-bd';
+    src: url('../fonts/wmg/WMGDazzed-Bold.otf') format('opentype'),
+         url('../fonts/wmg/WMGDazzed-Bold.ttf')  format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'wmg-semi';
+    src: url('../fonts/wmg/WMGDazzed-SemiBold.otf') format('opentype'),
+         url('../fonts/wmg/WMGDazzed-SemiBold.ttf')  format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+$font__global: 'Be Vietnam Pro', sans-serif;
+$font_head_reg: 'wmg-reg', sans-serif;
+$font_head_bd: 'wmg-bd', sans-serif;
+$font_head_semi: 'wmg-semi', sans-serif;

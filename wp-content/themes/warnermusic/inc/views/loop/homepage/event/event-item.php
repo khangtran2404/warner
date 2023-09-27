@@ -10,7 +10,7 @@
         ?>
         <div class="location"><?= get_field( 'event_position' ) ?></div>
     </div>
-    <div class="learn-more button-link-warner radius-none">
+    <div class="learn-more button-link-warner">
         <a href="#"><?= __( 'Learn more' ) ?></a>
     </div>
 </div>
