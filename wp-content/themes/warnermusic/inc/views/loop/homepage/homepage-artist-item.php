@@ -9,7 +9,7 @@ if ( ! empty( $selectedDomesticArtist ) ): ?>
                 <div class="artist-item gird-item-no-square homepage-artist-item-<?= $artist->term_id ?>">
                     <div class="content-box">
                         <div class="group-content">
-                            <a class="link-box" href="#"></a>
+                            <a class="link-box" href="<?= get_term_link($artist->term_id,'artist');?>"></a>
                             <div class="image-feature"
                                 style="background-image: url('<?= $artistImage ? $artistImage['url'] : '' ?>')"></div>
                             <div class="name text-decoration-none"><?= $artist->name ?></div>
@@ -32,7 +32,7 @@ if ( ! empty( $selectedInternationalArtistList ) ): ?>
                 <div class="artist-item gird-item-no-square homepage-artist-item-<?= $artist->term_id ?>">
                     <div class="content-box">
                         <div class="group-content">
-                            <a class="link-box" href="#"></a>
+                            <a class="link-box" href="<?= get_term_link($artist->term_id,'artist');?>"></a>
                             <div class="image-feature"
                                 style="background-image: url('<?= $artistImage ? $artistImage['url'] : '' ?>')"></div>
                             <div class="name text-decoration-none"><?= $artist->name ?></div>

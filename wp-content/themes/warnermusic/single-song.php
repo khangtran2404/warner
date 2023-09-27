@@ -15,7 +15,8 @@ get_header();
 while ( have_posts() ) :
 	the_post();
 	$socialLinks = get_field( 'song_media_links', get_the_ID() );
-	$thumbnail   = get_the_post_thumbnail_url(); ?>
+	$thumbnail   = get_the_post_thumbnail_url();
+	$title = get_the_title(); ?>
     <article>
 		<?php if ( $socialLinks ) {
 			foreach ( $socialLinks as $key => $socialLink ): if ( ! empty( $socialLink ) ):
@@ -24,12 +25,13 @@ while ( have_posts() ) :
 				?>
                 <div class="social-link-item <?= $matches[1] ?>">
                     <a href="<?= $socialLink ?>">
-                        <button><?= $matches[1] ?></button>
+                        <button><i class="fa-brands fa-apple"></i><?= $matches[1] ?></button>
                     </a>
                 </div>
 			<?php endif; endforeach;
 		} ?>
         <div class="song-thumbnail"><img src="<?= $thumbnail ?>" alt="song-detail-thumbnail"></div>
+		<div class="title"><?= $title;?></div>
     </article>
 <?php endwhile; // End of the loop.
 
