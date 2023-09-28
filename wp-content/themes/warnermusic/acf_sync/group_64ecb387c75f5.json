@@ -201,9 +201,9 @@
                     "return_format": "url"
                 },
                 {
-                    "key": "field_64ecb83572711",
-                    "label": "Claro Musica link",
-                    "name": "song_claro_musica_link",
+                    "key": "field_64ecb82572710",
+                    "label": "Deezer link",
+                    "name": "song_deezer_link",
                     "aria-label": "",
                     "type": "link",
                     "instructions": "",
@@ -217,9 +217,9 @@
                     "return_format": "url"
                 },
                 {
-                    "key": "field_64ecb82572710",
-                    "label": "Deezer link",
-                    "name": "song_deezer_link",
+                    "key": "field_64ecb83572711",
+                    "label": "Claro Musica link",
+                    "name": "song_claro_musica_link",
                     "aria-label": "",
                     "type": "link",
                     "instructions": "",
@@ -327,5 +327,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1695661561
+    "modified": 1695921580
 }

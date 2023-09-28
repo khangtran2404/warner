@@ -43,8 +43,14 @@ body {
             font-size: 40px;
         }
     }
+    h1.main-title-small { 
+        font-size: 28px;
+        @include big_screen {
+            font-size: 25px;
+        }
+    }
     h2.title-warner-h2 {
-        font-size: 68px;
+        font-size: 60px;
         font-weight: 400;
         line-height: 1;
         margin-bottom: 0;
@@ -222,7 +228,11 @@ body {
         }
     }
 }
-
+#wpadminbar {
+    @media screen and (max-width: 600px) {
+        position: fixed;
+    }
+}
 #pagination {
     border-top: 1px solid $color__light;
     margin: 30px 0 10px 0;

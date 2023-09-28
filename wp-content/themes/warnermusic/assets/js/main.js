@@ -325,10 +325,8 @@ function OnScroll() {
 
     if(top > heightOfHeader*5) {
         btnScrollTop.addClass('active-scroll-top');
-        masthead.addClass('active-box-shadow');
     } else {
         btnScrollTop.removeClass('active-scroll-top');
-        masthead.removeClass('active-box-shadow');
     }
 }
 
