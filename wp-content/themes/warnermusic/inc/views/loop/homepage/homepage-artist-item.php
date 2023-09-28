@@ -3,7 +3,7 @@ if ( ! empty( $selectedDomesticArtist ) ): ?>
     <div class="group-action-filter domestic-artist-list active" data-id="domestic-artist-list">
         <div class="artist-list-layout list-layout-warner-3">
             <?php
-            for ( $i = 0; $i < count($selectedDomesticArtist); $i ++ ):
+            for ( $i = 0, $iMax = count( $selectedDomesticArtist ); $i < $iMax; $i ++ ):
                 $artist = get_term( $selectedDomesticArtist[ $i ] );
                 $artistImage = get_field( 'artist_image', 'artist_' . $artist->term_id ); ?>
                 <div class="artist-item gird-item-no-square homepage-artist-item-<?= $artist->term_id ?>">
@@ -26,7 +26,7 @@ if ( ! empty( $selectedInternationalArtistList ) ): ?>
     <div class="group-action-filter international-artist-list" data-id="international-artist-list">
         <div class="artist-list-layout list-layout-warner-3">
             <?php
-            for ( $i = 0; $i < count($selectedInternationalArtistList); $i ++ ):
+            for ( $i = 0, $iMax = count( $selectedInternationalArtistList ); $i < $iMax; $i ++ ):
                 $artist = get_term( $selectedInternationalArtistList[ $i ] );
                 $artistImage = get_field( 'artist_image', 'artist_' . $artist->term_id ); ?>
                 <div class="artist-item gird-item-no-square homepage-artist-item-<?= $artist->term_id ?>">

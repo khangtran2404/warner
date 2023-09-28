@@ -16,7 +16,15 @@ while ( have_posts() ) :
 	the_post();
 	$socialLinks = get_field( 'song_media_links', get_the_ID() );
 	$thumbnail   = get_the_post_thumbnail_url();
-	$title = get_the_title(); ?>
+	$title       = get_the_title();
+	$artists     = wp_get_post_terms( get_the_ID(), 'artist', array( 'fields' => 'ids' ) );
+	if ( isset( $artists ) ) {
+		$artistId    = $artists[0];
+		$artistLabel = get_term( $artistId )->name;
+		$artistUrl   = get_term_link( $artistId, 'artist' );
+	}
+
+	?>
     <article>
 		<?php if ( $socialLinks ) {
 			foreach ( $socialLinks as $key => $socialLink ): if ( ! empty( $socialLink ) ):
@@ -31,7 +39,13 @@ while ( have_posts() ) :
 			<?php endif; endforeach;
 		} ?>
         <div class="song-thumbnail"><img src="<?= $thumbnail ?>" alt="song-detail-thumbnail"></div>
-		<div class="title"><?= $title;?></div>
+        <div class="title"><?= $title; ?></div>
+        <div class="artist">
+			<?php
+			if ( isset( $artistId ) ):?>
+                <a href="<?= $artistUrl ?>"><?= $artistLabel ?></a>
+			<?php endif; ?>
+        </div>
     </article>
 <?php endwhile; // End of the loop.
 

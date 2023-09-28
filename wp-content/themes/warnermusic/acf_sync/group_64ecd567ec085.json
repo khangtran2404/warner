@@ -37,8 +37,25 @@
                 "id": ""
             },
             "display_format": "F j, Y g:i a",
-            "return_format": "j F",
+            "return_format": "Y-m-d H:i:s",
             "first_day": 1
+        },
+        {
+            "key": "field_6515aa12f95a4",
+            "label": "Event Link",
+            "name": "event_link",
+            "aria-label": "",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
         }
     ],
     "location": [
@@ -59,5 +76,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1693534316
+    "modified": 1695918620
 }
