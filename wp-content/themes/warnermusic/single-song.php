@@ -15,7 +15,13 @@ while ( have_posts() ) :
 	the_post();
 	$socialLinks = get_field( 'song_media_links', get_the_ID() );
 	$thumbnail   = get_the_post_thumbnail_url();
-	$title = get_the_title(); ?>
+	$title = get_the_title();
+	$artists = wp_get_post_terms( get_the_ID(), 'artist', array( 'fields' => 'ids' ) );
+	if ( isset( $artists ) ) {
+		$artistId    = $artists[0];
+		$artistLabel = get_term( $artistId )->name;
+		$artistUrl   = get_term_link( $artistId, 'artist' );
+	} ?>
 	<div class="song-detail-template">
 		<div class="container">
 			<div class="single-song-row">
@@ -25,7 +31,9 @@ while ( have_posts() ) :
 				<div class="group-lists-social-link">
 					<div class="infor-head">
 						<h1 class="main-title main-title-small"><?= $title;?></h1>
-						<a class="artist-link" href="#">Piso 21</a>
+						<?php if ( isset( $artistId ) ):?>
+							<a class="artist-link" href="<?= $artistUrl ?>"><?= $artistLabel ?></a>
+						<?php endif; ?>
 					</div>
 					<div class="plataformas">
 						<ul class="lists-social-link">
