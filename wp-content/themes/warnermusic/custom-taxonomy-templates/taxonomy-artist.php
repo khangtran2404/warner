@@ -7,65 +7,68 @@ $termData = get_queried_object();
 $name     = $termData->name;
 $mainImg  = get_field( 'artist_image', 'artist_' . $termData->term_id );
 ?>
-
-    <div id="container">
-        <h1 class="title"><?= $termData->name ?></h1>
-        <div class="group-images">
-			<?php if ( $mainImg ): ?>
-                <img src="<?= $mainImg['url'] ?>" alt="artist-main-image">
-			<?php endif; ?>
-        </div>
-        <div class="group-social-links">
-            <div class="listen-on">
-				<?= __( 'Listen on' ) ?>
-                <div class="listen-on-icons">
-					<?php
-					$mediaLinks = get_field( 'artist_media_links', 'artist_' . $termData->term_id );
-					if ( $mediaLinks ) {
-						$links        = $mediaLinks['artist_media_link_repeater'];
-						if ( $links ) {
-							foreach ( $links as $link ):
-								$icon = $link['media_icon'];
-								$link = $link['media_link']; ?>
-                                <div class="media-link">
-                                    <a href="<?= $link ?: '#' ?>"><img src="<?= $icon ?>" alt="media-icon"></a>
-                                </div>
-							<?php endforeach;
-						}
-					}
-					?>
-                </div>
-            </div>
-            <div class="connect-with">
-				<?= __( 'Connect with ' ) . $termData->name ?>
-                <div class="social-icons">
-					<?php
-					$socialLinks = get_field( 'artist_social_links', 'artist_' . $termData->term_id );
-					if ( $socialLinks ) {
-						$links        = $socialLinks['artist_social_link_repeater'];
-						if ( $links ) {
-							foreach ( $links as $link ):
-								$icon = $link['social_icon'];
-								$link = $link['social_link']; ?>
-                                <div class="social-link">
-                                    <a href="<?= $link ?: '#' ?>"><img src="<?= $icon ?>" alt="social-icon"></a>
-                                </div>
-							<?php endforeach;
-						}
-					}
-					?>
-                </div>
-            </div>
-        </div>
-        <div class="group-information">
-            <div class="biography">
-                <h2 class="title"><?= __( 'Biography' ) ?></h2>
-                <div class="description">
-					<?= $termData->description ?>
-                </div>
-            </div>
-        </div>
+<div class="taxonomy-singer-template">
+	<div class="container">
+		<h1 class="main-title"><?= $termData->name ?></h1>
+		<div class="row">
+			<div class="col-lg-4 col-md-5 col-sm-12 col-12">
+				<div class="col-content-image">
+					<?php if ( $mainImg ): ?>
+						<img src="<?= $mainImg['url'] ?>" alt="artist-main-image">
+					<?php endif; ?>
+				</div>
+			</div>
+			<div class="col-lg-8 col-md-7 col-sm-12 col-12">
+				<div class="col-main-content">
+					<h2 class="small-title"><?= __( 'Listen on' ) ?>
+					<div class="listen-on-icons">
+						<ul class="list-media-icons">
+							<?php
+							$mediaLinks = get_field( 'artist_media_links', 'artist_' . $termData->term_id );
+							if ( $mediaLinks ) {
+								$links        = $mediaLinks['artist_media_link_repeater'];
+								if ( $links ) {
+									foreach ( $links as $link ):
+										$icon = $link['media_icon'];
+										$link = $link['media_link']; ?>
+										<li class="media-link-item">
+											<a href="<?= $link ?: '#' ?>"><img src="<?= $icon ?>" alt="media-icon"></a>
+										</li>
+									<?php endforeach;
+								}
+							}
+							?>
+						</ul>
+					</div>
+					<h2 class="small-title"><?= __( 'Connect with ' ) . $termData->name ?></h2>
+					<div class="social-icons">
+						<ul class="list-social-icons">
+							<?php
+							$socialLinks = get_field( 'artist_social_links', 'artist_' . $termData->term_id );
+							if ( $socialLinks ) {
+								$links        = $socialLinks['artist_social_link_repeater'];
+								if ( $links ) {
+									foreach ( $links as $link ):
+										$icon = $link['social_icon'];
+										$link = $link['social_link']; ?>
+										<li class="social-link-item">
+											<a href="<?= $link ?: '#' ?>"><img src="<?= $icon ?>" alt="social-icon"></a>
+										</li>
+									<?php endforeach;
+								}
+							}
+							?>
+						</ul>
+					</div>
+					<h2 class="small-title"><?= __( 'Biography' ) ?></h2>
+					<div class="main-content-singer">
+						<?= $termData->description ?>
+					</div>
+				</div>
+			</div>
+		</div>
         <div class="group-artist-playlists">
+			<h2 class="small-title"><?= __( 'Playlist' ) ?></h2>
 			<?php
 			$args  = array(
 				'post_type' => 'playlist',
@@ -81,12 +84,15 @@ $mainImg  = get_field( 'artist_image', 'artist_' . $termData->term_id );
 			if ( $query->have_posts() ) :
 				while ( $query->have_posts() ) : $query->the_post(); ?>
                     <div class="playlist-item">
-						<?= get_field( 'playlist_embed_code', get_the_ID() ) ?>
+						<div class="content-box">
+							<?= get_field( 'playlist_embed_code', get_the_ID() ) ?>
+						</div>
                     </div>
 				<?php endwhile;
 			endif; ?>
         </div>
         <div class="group-artist-videos">
+			<h2 class="small-title"><?= __( 'Videos' ) ?></h2>
 			<?php
 			$args  = array(
 				'post_type' => 'song',
@@ -118,6 +124,6 @@ $mainImg  = get_field( 'artist_image', 'artist_' . $termData->term_id );
 			?>
         </div>
     </div>
-
+</div>
 <?php
 get_footer();
