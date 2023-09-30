@@ -36,12 +36,12 @@
                 "class": "",
                 "id": ""
             },
-            "display_format": "F j, Y g:i a",
-            "return_format": "Y-m-d H:i:s",
+            "display_format": "j F",
+            "return_format": "j F",
             "first_day": 1
         },
         {
-            "key": "field_6515aa12f95a4",
+            "key": "field_65184e8ca396c",
             "label": "Event Link",
             "name": "event_link",
             "aria-label": "",
@@ -76,5 +76,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1695918620
+    "modified": 1696091815
 }

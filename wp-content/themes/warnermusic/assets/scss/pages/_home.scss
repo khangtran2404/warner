@@ -411,9 +411,9 @@
         }
     }
     .date {
-        font-size: 30px;
+        font-size: 35px;
         width: 120px;
-        margin-right: 25px;
+        margin-right: 20px;
         @include tablet {
             font-size: 22px;
             margin-bottom: 5px;
@@ -492,6 +492,7 @@
                 font-weight: 400;
                 line-height: 1;
                 text-transform: capitalize;
+                font-family: $font_head_reg;
                 @include big_screen {
                     font-size: 22px;
                 }
@@ -515,6 +516,7 @@
                     font-weight: 300;
                     line-height: 1.2;
                     -webkit-line-clamp: 2;
+                    font-family: $font__global;
                     -webkit-box-orient: vertical;
                     overflow: hidden;
                     text-overflow: ellipsis;
