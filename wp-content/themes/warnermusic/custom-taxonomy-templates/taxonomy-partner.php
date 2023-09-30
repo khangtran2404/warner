@@ -7,7 +7,6 @@ $termData = get_queried_object();
 $name     = $termData->name;
 $mainImg  = get_field( 'artist_image', 'artist_' . $termData->term_id );
 ?>
-
     <div id="container">
         <h1 class="title"><?= $termData->name ?></h1>
         <div class="group-images">

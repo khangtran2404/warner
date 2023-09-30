@@ -50,6 +50,8 @@ function adapterWidthHeigth() {
     let itemNoSquareOne = $('.list-layout-warner-1 .gird-item-no-square .image-feature');
     let itemThreePertwo = $('.gird-item-three-per-two .image-feature');
     let imgSquare = $('.image-square');
+    let imgNoSquare = $('.image-no-square');
+    let imgNoSquareRate4_2 = $('.image-no-spuare-4-2');
 
     distance = (body - widthContainer)/2;
     itemNoSquareThree.css('height', (itemNoSquareThree.innerWidth())*(3/2));
@@ -57,6 +59,8 @@ function adapterWidthHeigth() {
     itemThreePertwo.css('height', (itemThreePertwo.innerWidth())*(2/3));
     itemNoSquareOne.css('height', (itemNoSquareOne.innerWidth())*(2/3));
     imgSquare.css('height',imgSquare.innerWidth());
+    imgNoSquare.find('img').css('height', (imgNoSquare.innerWidth()*16)/9);
+    imgNoSquareRate4_2.find('img').css('height', (imgNoSquareRate4_2.innerWidth())*(1/2) + 20);
 
     //case no slider
     let groupItemNoSlider = $('.list-layout-warner-3-no-slider').innerWidth();
@@ -146,6 +150,8 @@ function sliderGrid() {
     let listLayoutWarnerFour = $('.list-layout-warner-4');
     let listLayoutWarnerThree = $('.list-layout-warner-3');
     let listLayoutWarnerOne = $('.list-layout-warner-1');
+    let listPlayList = $('.list-playlist');
+    let listVideo = $('.list-videos');
 
     listLayoutWarnerFour.slick({
         slidesToShow: 4,
@@ -212,6 +218,56 @@ function sliderGrid() {
         autoplay: false,
         speed: 600,
         autoplaySpeed: 5000,
+    });
+
+    listPlayList.slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        arrows: false,
+        dots: true,
+        infinite: false,
+        autoplay: false,
+        speed: 600,
+        autoplaySpeed: 5000,
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                  slidesToShow: 2
+                }
+              },
+            {
+              breakpoint: 480,
+              settings: {
+                slidesToShow: 1
+              }
+            }
+        ]
+    });
+
+    listVideo.slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        arrows: false,
+        dots: true,
+        infinite: false,
+        autoplay: false,
+        speed: 600,
+        autoplaySpeed: 5000,
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                  slidesToShow: 2
+                }
+              },
+            {
+              breakpoint: 480,
+              settings: {
+                slidesToShow: 1
+              }
+            }
+        ]
     });
 }
 
