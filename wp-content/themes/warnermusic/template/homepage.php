@@ -24,7 +24,7 @@ get_header(); ?>
 				?>
             </div>
         </section>
-        <section class="artists">
+        <section class="artists padding-top-section">
             <div class="container">
                 <div class="group-title-button">
                     <h2 class="artist-title title-warner-h2"><?= __( 'Artist' ) ?></h2>
@@ -47,7 +47,7 @@ get_header(); ?>
                 </div>
             </div>
         </section>
-        <section class="news">
+        <section class="news padding-top-section">
             <div class="container">
                 <div class="group-title-button">
                     <h2 class="news-title title-warner-h2"><?= __( 'News' ) ?></h2>
@@ -60,7 +60,7 @@ get_header(); ?>
                 </div>
             </div>
         </section>
-        <section class="events">
+        <section class="events padding-top-section">
             <div class="container">
                 <div class="group-title-button">
                     <h2 class="events-title title-warner-h2"><?= __( 'Events' ) ?></h2>
@@ -69,7 +69,7 @@ get_header(); ?>
                 <?php get_template_part( 'inc/views/loop/homepage/homepage', 'event-item' );?>
             </div>
         </section>
-        <section class="merchandise">
+        <section class="merchandise padding-top-section">
             <div class="container">
                 <div class="group-title-button">
                     <h2 class="events-title title-warner-h2"><?= __( 'Merchandise' ) ?></h2>
@@ -82,7 +82,7 @@ get_header(); ?>
                 </div>
             </div>
         </section>
-        <section class="playlists">
+        <section class="playlists padding-top-section">
             <div class="container">
                 <h2 class="title-warner-h2 margin-bottom">Playlists</h2>
                 <div class="list-playlist">

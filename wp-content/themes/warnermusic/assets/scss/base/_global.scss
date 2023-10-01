@@ -17,13 +17,14 @@ body {
     @include tablet {
         padding: 70px 0 0 0 !important;
     }
+    // heading and heading special
     h1,h2,h3,h4,h5,h6 {
-        font-family: $font_head_bd !important;
+        font-family: $font_head_semi !important;
         color: $color__light !important;
         margin-bottom: 20px;
     }
     h1.main-title {
-        font-size: 60px;
+        font-size: 70px;
         font-weight: 500;
         line-height: 1;
         background: -webkit-linear-gradient(135deg, $color__bg, $color__light);
@@ -55,7 +56,7 @@ body {
         }
     }
     h2.title-warner-h2 {
-        font-size: 55px;
+        font-size: 68px;
         font-weight: 400;
         line-height: 1;
         margin-bottom: 0;
@@ -82,15 +83,15 @@ body {
         font-weight: 600;
     }
     h1 {
-        font-size: 65px;
+        font-size: 60px;
         font-weight: 500;
-        line-height: 1;
+        line-height: 1.2;
         margin-bottom: 25px;
         @include big_screen {
             font-size: 55px;
         }
         @include desktop {
-            font-size: 70px
+            font-size: 60px
         }
         @include tablet {
             font-size: 45px;
@@ -101,7 +102,7 @@ body {
     }
     h2 {
         font-size: 40px;
-        line-height: 1;
+        line-height: 1.2;
         @include desktop {
             font-size: 36px;
         }
@@ -109,14 +110,13 @@ body {
             font-size: 30px;
         }
     }
-    .font-global {
-        font-family: $font__global !important;
-    }
+    // tags
     p {
         color: $color__light !important;
         font-size: 16px;
         font-family: $font__global;
         font-weight: 400;
+        margin-bottom: 20px !important;
     }
     a {
         color: $color__light !important;
@@ -146,9 +146,8 @@ body {
     li {
         font-family: $font__global !important;
     }
-    .entry-footer {
-        color: $color__light;
-    }
+
+    //variable class and ID main content
     #main {
         padding: 0;
         height: auto;
@@ -160,6 +159,17 @@ body {
     .main-content {
         margin-bottom: 40px;
     }
+    .entry-footer {
+        color: $color__light;
+    }
+    // font class
+    .font-global {
+        font-family: $font__global !important;
+    }
+    .font-head-reg {
+        font-family: $font_head_reg !important;
+    }
+    // margin padding class
     .padding-page {
         padding: 50px 0;
     }
@@ -169,6 +179,38 @@ body {
             padding: 15px !important;
         }
     }
+    .margin-none {
+        margin: none !important;
+    }
+    .padding-none {
+        padding: none !important;
+    }
+    .margin-bottom-section {
+        padding: 0;
+        margin-bottom: 70px;
+        @include desktop {
+            margin-bottom: 50px;
+        }
+    }
+    .padding-top-section {
+        padding-top: 110px;
+        @include desktop {
+            padding-top: 80px;
+        }
+        @include tablet {
+            padding-top: 70px;
+        }
+    }
+    // width and height class
+    .max-width-custom {
+        width: 100%;
+        max-width: 720px;
+    }
+    // float
+    .float-right {
+        float: right;
+    }
+    // Special class
     .separator-left-warner,
     .separator-right-warner,
     .separator-center-warner {
@@ -183,17 +225,6 @@ body {
     .separator-center-warner {
         margin: 25px auto 0 auto !important;
     }
-    .max-width-custom {
-        width: 100%;
-        max-width: 720px;
-    }
-    .margin-bottom-section {
-        padding: 0;
-        margin-bottom: 70px;
-        @include desktop {
-            margin-bottom: 50px;
-        }
-    }
     .image-square,
     .image-no-square,
     .image-no-spuare-4-2 {
@@ -202,6 +233,44 @@ body {
             height: 100%;
             object-fit: cover;
         }
+    }
+    .breadcrumbs {
+        ul {
+            display: flex;
+            padding: 0;
+            margin-bottom: 25px;
+            align-items: center;
+            list-style: none;
+            li {
+                &::after {
+                    content: '/';
+                    margin: 0 3px;
+                }
+                &:last-child {
+                    &::after {
+                        content: '';
+                    }
+                }
+            }
+        }
+    }
+    .col-sticky {
+        position: sticky;
+        position: -webkit-sticky;
+        top: calc(102px + 30px);
+        height: 100%;
+        @include desktop {
+            height: unset;
+            top: unset;
+            position: static;
+            position: -webkit-static;
+        }
+    }
+}
+
+.logged-in {
+    .col-sticky {
+        top: calc(102px + 62px);
     }
 }
 

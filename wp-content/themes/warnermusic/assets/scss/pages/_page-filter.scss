@@ -1,16 +1,4 @@
 .layout-filter-side-bar {
-    .col-sticky {
-        position: sticky;
-        position: -webkit-sticky;
-        top: calc(102px + 30px);
-        height: 100%;
-        @include desktop {
-            height: unset;
-            top: unset;
-            position: static;
-            position: -webkit-static;
-        }
-    }
     .filter-section {
         background-color: $color__bg;
         padding: 15px;

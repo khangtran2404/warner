@@ -52,6 +52,8 @@ function adapterWidthHeigth() {
     let imgSquare = $('.image-square');
     let imgNoSquare = $('.image-no-square');
     let imgNoSquareRate4_2 = $('.image-no-spuare-4-2');
+    let imgNoSquareRate4_3 = $('.image-no-spuare-4-3');
+    let imgNoSquareRate3_4 = $('.image-no-spuare-3-4');
 
     distance = (body - widthContainer)/2;
     itemNoSquareThree.css('height', (itemNoSquareThree.innerWidth())*(3/2));
@@ -61,6 +63,8 @@ function adapterWidthHeigth() {
     imgSquare.css('height',imgSquare.innerWidth());
     imgNoSquare.find('img').css('height', (imgNoSquare.innerWidth()*16)/9);
     imgNoSquareRate4_2.find('img').css('height', (imgNoSquareRate4_2.innerWidth())*(1/2) + 20);
+    imgNoSquareRate4_3.find('img').css('height', (imgNoSquareRate4_3.innerWidth())*(4/3));
+    imgNoSquareRate3_4.find('img').css('height', (imgNoSquareRate3_4.innerWidth())*(3/4) - 15);
 
     //case no slider
     let groupItemNoSlider = $('.list-layout-warner-3-no-slider').innerWidth();

@@ -121,7 +121,7 @@
             }
         }
         .artist {
-            font-family: $font_head_bd;
+            font-family: $font_head_semi;
             margin-bottom: 12px;
             font-size: 30px;
             font-weight: 500;
@@ -135,7 +135,7 @@
             font-weight: 500;
             padding: 0 10px;
             a {
-                font-family: $font_head_bd !important;
+                font-family: $font_head_semi !important;
                 &:hover {
                     text-decoration: none !important;
                 }
@@ -298,16 +298,16 @@
     }
 }
 
-.artists,
-.events,
-.merchandise,
-.news,
-.playlists {
-    padding: 100px 0 40px 0;
-    @include tablet {
-        padding-top: 80px 0 20px 0;
-    }
-}
+// .artists,
+// .events,
+// .merchandise,
+// .news,
+// .playlists {
+//     padding: 100px 0 40px 0;
+//     @include tablet {
+//         padding-top: 80px 0 20px 0;
+//     }
+// }
 
 .list-filter-artist {
     list-style: none;
@@ -367,7 +367,7 @@
 .group-events-item {
     padding: 0 2px;
     .name {
-        font-weight: 400;
+        font-weight: 500;
         font-size: 70px;
         letter-spacing: -4px;
         line-height: .95;
@@ -512,7 +512,7 @@
                 }
                 .excerpt {
                     margin-top: 10px;
-                    font-size: 18px;
+                    font-size: 16px;
                     font-weight: 300;
                     line-height: 1.2;
                     -webkit-line-clamp: 2;
@@ -521,6 +521,16 @@
                     overflow: hidden;
                     text-overflow: ellipsis;
                     display: -webkit-box;
+                    @include small_screen  {
+                        font-size: 15px;
+                    }
+                }
+                .title {
+                    line-height: 1.1;
+                    font-size: 24px;
+                    @include small_screen  {
+                        font-size: 18px;
+                    }
                 }
             }
             .link-box {
@@ -676,7 +686,7 @@
     }
 }
 .playlists {
-    margin-bottom: 40px;
+    margin-bottom: 50px;
     .list-playlist {
         margin: 0 -10px;
         .title {

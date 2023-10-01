@@ -19,7 +19,9 @@ if ( $the_query->have_posts() ) :
                     <div class="image-feature" style="background-image: url('<?= get_the_post_thumbnail_url($news->ID) ?>')"></div>
                     <div class="name text-decoration-none">
                         <div class="title"><?= $news->post_title ?></div>
+                        <?php if($news->post_excerpt || $news->post_content):?>
                         <div class="excerpt"><?= $news->post_excerpt ?: wp_trim_words($news->post_content,20) ?></div>
+                        <?php endif;?>
                     </div>
                 </div>
             </div>
