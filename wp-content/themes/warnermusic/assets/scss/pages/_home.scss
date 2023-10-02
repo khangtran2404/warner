@@ -3,10 +3,7 @@
 */
 .banner-slider {
     width: 100%;
-    height: calc(100vh - 102px);
-    @include tablet {
-        height: calc(100vh - 70px);
-    }
+    height: 100vh;
     @include mobile {
         height: calc(93vh - 70px);
     }
@@ -20,6 +17,7 @@
         height: 100%;
     }
     .banner-image {
+        background-color: $color__dark;
         position: absolute;
         height: 100%;
         width: 100%;
@@ -31,6 +29,7 @@
             height: 100%;
             object-fit: cover;
             object-position: center;
+            opacity: 0.68;
         }
     }
     .latest-releases {
@@ -98,7 +97,10 @@
         height: 100%;
         width: 350px;
         background-color: rgba($color: $color__dark, $alpha: 0.85);
-        padding: 40px 45px 0 45px;
+        padding: calc(40px + 90px) 45px 0 45px;
+        @include tablet {
+            padding: calc(40px + 60px) 45px 0 45px;
+        }
         @media screen and (min-width: 1480px) and (min-height: 750px) {
             width: 400px;
         }
@@ -283,31 +285,42 @@
         }
     }
 }
-.admin-bar {
+.site-has-addverstising {
     .banner-slider {
-        height: calc(100vh - 134px);
-        @media screen and (max-width: 782px) {
-            height: calc(100vh - 148px);
-        }
+        height: calc(100vh - 41px);
         @include tablet {
-            height: calc(100vh - 116px);
+            height: calc(100vh - 30px);
         }
         @include mobile {
-            height: calc(93vh - 116px);
+            height: calc(93vh - 50px);
         }
     }
 }
-
-// .artists,
-// .events,
-// .merchandise,
-// .news,
-// .playlists {
-//     padding: 100px 0 40px 0;
-//     @include tablet {
-//         padding-top: 80px 0 20px 0;
-//     }
-// }
+.admin-bar {
+    .banner-slider {
+        height: calc(100vh - 32px);
+        @media screen and (max-width: 782px) {
+            height: calc(100vh - 46px);
+        }
+        @include mobile {
+            height: calc(93vh - 50px);
+        }
+    }
+    .site-has-addverstising { 
+        .banner-slider {
+            height: calc(100vh - 72px);
+            @media screen and (max-width: 782px) {
+                height: calc(100vh - 86px);
+            }
+            @include tablet {
+                height: calc(100vh - 76px);
+            }
+            @include mobile {
+                height: calc(93vh - 100px);
+            }
+        }
+    }
+}
 
 .list-filter-artist {
     list-style: none;

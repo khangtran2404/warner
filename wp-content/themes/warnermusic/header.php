@@ -28,7 +28,9 @@
 <body <?php body_class(); ?>>
 <?php get_template_part( '/inc/views/objects/loader' ); ?>
 <?php wp_body_open(); ?>
-<div id="page" class="site">
+<?php $group_setting_marquee = get_field('header_warner','option')['marquee_advertising'];
+		$switch =  $group_setting_marquee['disable_or_enable_advertising'];	?>
+<div id="page" class="site <?php if($switch === '1') { echo 'site-has-addverstising';};?>">
 	<a class="skip-link screen-reader-text" href="#content">
 		<?php
 		/* translators: Hidden accessibility text. */
@@ -36,6 +38,7 @@
 		?>
 	</a>
 	<header id="masthead" class="site-header header">
+		<?php get_template_part( '/inc/views/header/header-top' ); ?>
 		<?php get_template_part( '/inc/views/header/header-main' ); ?>
 	</header> <!-- #masthead -->
 	<?php get_template_part( '/inc/views/header/header-nav-action' ); ?>

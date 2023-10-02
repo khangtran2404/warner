@@ -95,6 +95,7 @@
   }
 }
 
+/* Animation Show Element*/
 @keyframes show_block {
   0% {
     opacity: 0;
@@ -103,6 +104,40 @@
   100% {
     opacity: 1;
   }
+}
+
+@-webkit-keyframes show_block {
+  0% {
+    opacity: 0;
+    
+  }
+  100% {
+    opacity: 1;
+    
+  }
+}
+
+@-moz-keyframes show_block {
+  0% {
+    opacity: 0;
+  
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes marqueeText {
+  0% { left: 0; }
+  100% { left: -100%; }
+}
+@-moz-keyframes marqueeText {
+  0% { left: 0; }
+  100% { left: -100%; }
+}
+@-webkit-keyframes marqueeText {
+  0% { left: 0; }
+  100% { left: -100%; }
 }
 
 /* Screen breakpoint width*/

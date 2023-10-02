@@ -7,19 +7,15 @@ $header_height: 55px;
     width: 100%;
     max-width: 100%;
     margin: 0;
-    padding: 15px 40px;
+    padding: 0;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 99998;
-    @media screen and (min-width: 1600px) {
-        padding: 15px 100px;
-    }
-    @media screen and (min-width: 1900px) {
-        padding: 15px 150px;
-    }
-    @include tablet {
-        padding: 5px 15px;
+    display: block;
+    @include transition(all .5s ease-in-out);
+    &.background-active {
+        background-color: rgba($color: $color__dark, $alpha: .95);
     }
     .site-logo {
         margin: 10px 0 !important;
@@ -29,6 +25,20 @@ $header_height: 55px;
             @include tablet {
                 height: 40px !important;
             }
+        }
+    }
+    .group-site-header {
+        width: 100%;
+        max-width: 100%;
+        padding: 9px 40px;
+        @media screen and (min-width: 1600px) {
+            padding: 9px 100px;
+        }
+        @media screen and (min-width: 1900px) {
+            padding: 9px 150px;
+        }
+        @include tablet {
+            padding: 5px 15px;
         }
     }
     .header-main {
@@ -414,6 +424,22 @@ $header_height: 55px;
                 visibility: visible;
                 opacity: 1;
             }
+        }
+    }
+}
+
+.header-top {
+    width: 100%;
+    background-color: $color__bg-priamry-4;
+}
+
+.page-template-homepage {
+    padding-top: 0 !important;
+    #masthead {
+        background-color: transparent;
+        @include transition(all .5s ease-in-out);
+        &.background-active {
+            background-color: rgba($color: $color__dark, $alpha: .95);
         }
     }
 }

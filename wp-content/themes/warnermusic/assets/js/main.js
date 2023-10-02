@@ -382,7 +382,11 @@ function OnScroll() {
     let masthead = $('#masthead');
     let btnScrollTop = $('.scroll-top');
     let heightOfHeader = $('#masthead').innerHeight();
-
+    if(top > heightOfHeader/2) {
+        masthead.addClass('background-active');
+    } else {
+        masthead.removeClass('background-active');
+    }
     if(top > heightOfHeader*5) {
         btnScrollTop.addClass('active-scroll-top');
     } else {

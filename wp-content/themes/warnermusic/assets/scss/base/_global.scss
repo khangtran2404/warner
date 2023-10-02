@@ -7,7 +7,7 @@ html {
 }
 
 body {
-    padding: 102px 0 0 0 !important;
+    padding: 90px 0 0 0 !important;
     margin: 0 !important;
     font-size: 16px !important;
     color: $color__light !important;
@@ -16,6 +16,12 @@ body {
     background-color: $color__bg-priamry-3 !important;
     @include tablet {
         padding: 70px 0 0 0 !important;
+    }
+    .site-has-addverstising {
+        padding-top: 41px;
+        @include tablet {
+            padding-top: 30px;
+        }
     }
     // heading and heading special
     h1,h2,h3,h4,h5,h6 {
@@ -257,7 +263,7 @@ body {
     .col-sticky {
         position: sticky;
         position: -webkit-sticky;
-        top: calc(102px + 30px);
+        top: calc(90px + 30px);
         height: 100%;
         @include desktop {
             height: unset;
@@ -266,14 +272,21 @@ body {
             position: -webkit-static;
         }
     }
-}
-
-.logged-in {
-    .col-sticky {
-        top: calc(102px + 62px);
+    .text-decoration-none,
+    .text-decoration-none a {
+        &:hover {
+            text-decoration: none !important;
+        }
+    }
+    .color-main {
+        color: $color__main;
     }
 }
-
+.logged-in {
+    .col-sticky {
+        top: calc(90px + 62px);
+    }
+}
 /* button hamburger*/
 .btn-hamburger {
     width: 22px;
@@ -631,14 +644,49 @@ body {
     cursor: no-drop;
 }
 
-.text-decoration-none,
-.text-decoration-none a {
-    &:hover {
-        text-decoration: none !important;
+.marquee {
+    overflow: hidden;
+    position: relative;
+    height: 41px;
+    @include tablet {
+        height: 30px;
     }
-}
-.color-main {
-    color: $color__main;
+    .list-link-marquee {
+        display: block;
+        width: 200%;
+        position: absolute; 
+        overflow: hidden;
+        animation: marqueeText 13s linear infinite;
+        @include tablet {
+            animation: marqueeText 6s linear infinite;
+        }
+        .item-left,
+        .item-right {
+            float: left;
+            width: 50%;
+            a,
+            span {
+                text-align: center;
+                font-size: 14px;
+                display: inline-block;
+                padding: 10px 12px;
+                @include tablet {
+                    font-size: 12px;
+                    padding: 6px 10px;
+                }
+                &:hover {
+                    text-decoration: none !important;
+                }
+            }
+            img {
+                height: 23px;
+                width: auto;
+                @include tablet {
+                    height: 15px;
+                }
+            }
+        }
+    }
 }
 
 /*container 1240 on screen 1440px*/
