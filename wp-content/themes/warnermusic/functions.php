@@ -29,6 +29,7 @@ function warnermusic() {
 	wp_enqueue_script( 'homepage-script', THEME_URI . '/assets/js/homepage.js?' . $date, '', '', true );
 	wp_enqueue_script( 'filter-script', THEME_URI . '/assets/js/filter.js?' . $date, '', '', true );
 	wp_enqueue_script( 'pagination-script', THEME_URI . '/assets/js/pagination.js?' . $date, '', '', true );
+	wp_enqueue_script( 'video-popup-script', THEME_URI . '/assets/js/video-popup.js?' . $date, '', '', true );
 }
 
 add_action( 'wp_enqueue_scripts', 'warnermusic' );

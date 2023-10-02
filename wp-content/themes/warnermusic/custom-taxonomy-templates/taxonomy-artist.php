@@ -124,15 +124,13 @@ $mainImg  = get_field( 'artist_image', 'artist_' . $termData->term_id );
 						if ( $videoUrl ):
 							?>
 							<div class="video-item">
-								<div class="content-box">
+								<div data-id="<?= $videoUrl ?>" class="content-box">
 									<div class="thumbnail image-no-spuare-4-2">
-										<a href="<?= $videoUrl;?>">
-										<img src="<?= get_the_post_thumbnail_url() ?>"
-																alt="video-thumbnail">
-										</a>
+                                        <img src="<?= get_the_post_thumbnail_url() ?>"
+                                             alt="video-thumbnail">
 									</div>
 									<div class="content-text">
-										<div class="name"><a href="<?= $videoUrl;?>"><?= $videoLabel ?: '' ?></a></div>
+										<div class="name"><?= $videoLabel ?: '' ?></div>
 										<div class="release-date"><?= $videoReleaseDate ?: '' ?></div>
 									</div>
 								</div>
@@ -143,6 +141,10 @@ $mainImg  = get_field( 'artist_image', 'artist_' . $termData->term_id );
 				?>
 			</div>
         </div>
+    </div>
+    <div class="song-video-popup hidden">
+        <i class="fa fa-window-close close-popup-btn" aria-hidden="true"></i>
+        <iframe src="#" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </div>
 </div>
 <?php
