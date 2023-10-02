@@ -15,12 +15,6 @@ while ( have_posts() ) :
 	the_post(); ?>
 	<div class="single-post-template padding-page">
 		<div class="container">
-			<div class="breadcrumbs">
-				<ul class="list-items">
-					<li class="item"><span><a href="<?= get_page_link_by_template_name('news') ?>"><?= __('News') ?></a></span></li>
-					<li class="item"><a href="#"><?= get_the_title() ?></a></li>
-				</ul>
-			</div>
 			<div class="row">
 				<div class="col-lg-8 col-md-7 col-sm-12 col-12">
 					<article class="main-single-post">

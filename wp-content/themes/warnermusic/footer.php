@@ -76,6 +76,7 @@
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
+<?php get_template_part( '/inc/views/objects/popup-video' ); ?>
 <?php get_template_part( '/inc/views/objects/scroll-top' ); ?>
 <?php get_template_part( '/inc/views/objects/background-action' ); ?>
 </body>

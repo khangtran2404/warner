@@ -96,7 +96,7 @@
         left: 0;
         height: 100%;
         width: 350px;
-        background-color: rgba($color: $color__dark, $alpha: 0.85);
+        background-color: rgba($color: $color__dark, $alpha: .85);
         padding: calc(40px + 90px) 45px 0 45px;
         @include tablet {
             padding: calc(40px + 60px) 45px 0 45px;
@@ -724,19 +724,21 @@
 }
 .list-videos {
     margin: 0 -10px;
-    .content-box {
-        padding: 0 10px;
-    }
     .thumbnail {
         margin-bottom: 10px;
     }
     .name {
         margin-bottom: 5px;
         line-height: 1.1;
-        a {
-            font-size: 15px;
-            &:hover {
-                text-decoration: none;
+        font-size: 15px;
+        @include transition(all .3s ease-in-out);
+    }
+    .content-box {
+        padding: 0 10px;
+        cursor: pointer;
+        &:hover {
+            .name {
+                color: $color__main;
             }
         }
     }

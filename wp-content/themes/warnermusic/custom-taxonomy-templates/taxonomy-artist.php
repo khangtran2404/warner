@@ -142,10 +142,6 @@ $mainImg  = get_field( 'artist_image', 'artist_' . $termData->term_id );
 			</div>
         </div>
     </div>
-    <div class="song-video-popup hidden">
-        <i class="fa fa-window-close close-popup-btn" aria-hidden="true"></i>
-        <iframe src="#" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-    </div>
 </div>
 <?php
 get_footer();

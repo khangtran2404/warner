@@ -281,6 +281,9 @@ body {
     .color-main {
         color: $color__main;
     }
+    .hidden {
+        display: none;
+    }
 }
 .logged-in {
     .col-sticky {
@@ -459,6 +462,45 @@ body {
             background-color: $color__main !important;
         }
     }
+}
+
+.modal-popup {
+    animation: show_block .5s forwards;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100000;
+    background: rgba($color: $color__bg-priamry-4, $alpha: .95);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .button-close {
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        cursor: pointer;
+        @include tablet {
+            right: 15px;
+        }
+    }
+    .group-content-popup {
+        padding: 15px;
+        width: 100%;
+        max-width: 800px;
+        height: 464px;
+        @include mobile {
+            height: 260px;
+        }
+        iframe {
+            background-color: $color__dark;
+            border: none;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
 }
 
 #overlayer {

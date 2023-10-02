@@ -13,7 +13,7 @@ $header_height: 55px;
     left: 0;
     z-index: 99998;
     display: block;
-    @include transition(all .5s ease-in-out);
+    @include transition(all .4s ease-in-out);
     &.background-active {
         background-color: rgba($color: $color__dark, $alpha: .95);
     }
@@ -437,7 +437,7 @@ $header_height: 55px;
     padding-top: 0 !important;
     #masthead {
         background-color: transparent;
-        @include transition(all .5s ease-in-out);
+        @include transition(all .4s ease-in-out);
         &.background-active {
             background-color: rgba($color: $color__dark, $alpha: .95);
         }
