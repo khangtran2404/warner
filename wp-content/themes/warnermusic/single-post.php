@@ -17,8 +17,8 @@ while ( have_posts() ) :
 		<div class="container">
 			<div class="breadcrumbs">
 				<ul class="list-items">
-					<li class="item"><span><?= __('News');?></span></li>
-					<li class="item"><a href="#"><?= __('Recent News');?></a></li>
+					<li class="item"><span><a href="<?= get_page_link_by_template_name('news') ?>"><?= __('News') ?></a></span></li>
+					<li class="item"><a href="#"><?= get_the_title() ?></a></li>
 				</ul>
 			</div>
 			<div class="row">
@@ -41,7 +41,6 @@ while ( have_posts() ) :
 				<div class="col-lg-4 col-md-5 col-sm-12 col-12 col-sticky">
 					<div class="sidebar">
 						<div class="related-news">
-							<h2 class="small-title font-global"><?= __('Related News');?></h2>
 							<?php
 							$terms = wp_get_post_terms( get_the_ID(), 'artist', array( 'fields' => 'ids' ) );
 							if ( ! empty( $terms ) ) {
@@ -61,6 +60,7 @@ while ( have_posts() ) :
 								$related_posts = new WP_Query( $args );
 
 								if ( $related_posts->have_posts() ) {?>
+                                    <h2 class="small-title font-global"><?= __('Related News');?></h2>
 									<div class="list-related">
 									<?php while ( $related_posts->have_posts() ) :
 										$related_posts->the_post(); ?>
@@ -83,15 +83,21 @@ while ( have_posts() ) :
 							?>
 						</div>
 						<div class="related-artists">
-							<h2 class="small-title font-global"><?= __('Related Artists');?></h2>
 							<?php
-							if ( $terms ) {?>
+							if ( $terms ) {
+                                $termPool = [];
+                                ?>
+                                <h2 class="small-title font-global"><?= __('Related Artists');?></h2>
 								<div class="list-related">
 								<?php foreach ( $terms as $term ) {
 									$parentTerm = wp_get_term_taxonomy_parent_id( $term, 'artist' );
 									$childTerms = get_term_children( $parentTerm, 'artist' );
 									if ( $childTerms ) {
 										foreach ( $childTerms as $childTerm ):
+                                            if ( in_array( $childTerm, $termPool, true ) ){
+                                                continue;
+                                            }
+											$termPool[] = $childTerm;
 											$childTermData = get_term( $childTerm );
 											$artistUrl = get_term_link($childTerm,'artist');
 											$artistImageUrl = get_field( 'artist_image', 'artist_' . $childTerm );

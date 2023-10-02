@@ -17,6 +17,7 @@ function get_page_link_by_template_name( $templateName ): string {
 			}
 		}
 	}
+	wp_reset_postdata();
 
 	return $url;
 }
