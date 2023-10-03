@@ -19,7 +19,6 @@ get_header(); ?>
 					while ( $the_query->have_posts() ) : $the_query->the_post();
 						get_template_part( 'inc/views/loop/homepage/homepage', 'banner-song-item' );
 					endwhile;
-					wp_reset_postdata();
 				endif;
 				?>
             </div>
@@ -28,20 +27,45 @@ get_header(); ?>
             <div class="container">
                 <div class="group-title-button">
                     <h2 class="artist-title title-warner-h2"><?= __( 'Artist' ) ?></h2>
-                    <div class="artists-see-more button-link-warner"><a href="<?= get_field( 'artist_see_more',  get_the_ID() );?>"><?= __("See more") ?></a></div>
-                </div>  
+                    <div class="artists-see-more button-link-warner"><a
+                                href="<?= get_field( 'artist_see_more', get_the_ID() ); ?>"><?= __( "See more" ) ?></a>
+                    </div>
+                </div>
                 <div class="row">
                     <div class="col-lg-2">
                         <ul class="list-filter-artist">
-                            <li data-id="domestic-artist-list" class="domestic-artist-filter item-filter active"><?= __('Domestic') ?></li>
-                            <li data-id="international-artist-list" class="international-artist-filter item-filter"><?= __('International') ?></li>
+                            <li data-id="domestic-artist-list"
+                                class="domestic-artist-filter item-filter active"><?= __( 'Domestic' ) ?></li>
+                            <li data-id="international-artist-list"
+                                class="international-artist-filter item-filter"><?= __( 'International' ) ?></li>
                         </ul>
                     </div>
                     <div class="col-lg-10 col-md-12">
                         <div class="col-group-action-filter">
-                            <?php
-                                get_template_part( 'inc/views/loop/homepage/homepage', 'artist-item', [ 'page_id' => get_the_ID() ] );
-                            ?>
+							<?php
+							$selectedSongs    = $the_query->get_posts();
+							$highlightArtists = [];
+							foreach ( $selectedSongs as $song ) {
+								$terms = wp_get_post_terms( $song->ID, 'artist', array( 'fields' => 'ids' ) );
+								if ( $terms ) {
+									foreach ( $terms as $term ) {
+										$artist = get_term( $term );
+										if ( $artist && $artist->parent !== 0 ) {
+											$artistParent = get_term( $artist->parent, 'artist' );
+											if ( ! is_wp_error( $artistParent ) ) {
+                                                if (isset($highlightArtists[$artistParent->slug][$artist->term_id])){
+                                                    continue;
+                                                }
+												$highlightArtists[ $artistParent->slug ][$artist->term_id] = $artist;
+											}
+										}
+									}
+								}
+							}
+//                            var_dump($highlightArtists);
+							get_template_part( 'inc/views/loop/homepage/homepage', 'artist-item', [ 'highlight_artists' => $highlightArtists ] );
+							wp_reset_postdata();
+							?>
                         </div>
                     </div>
                 </div>
@@ -51,8 +75,10 @@ get_header(); ?>
             <div class="container">
                 <div class="group-title-button">
                     <h2 class="news-title title-warner-h2"><?= __( 'News' ) ?></h2>
-                    <div class="news-see-more button-link-warner"><a href="<?= get_field( 'news_see_more',  get_the_ID() );?>"><?= __("See more") ?></a></div>
-                </div>    
+                    <div class="news-see-more button-link-warner"><a
+                                href="<?= get_field( 'news_see_more', get_the_ID() ); ?>"><?= __( "See more" ) ?></a>
+                    </div>
+                </div>
                 <div class="list-news list-layout-warner-4">
 					<?php
 					get_template_part( 'inc/views/loop/homepage/homepage', 'highlight-news-item', [ 'page_id' => get_the_ID() ] );
@@ -64,21 +90,25 @@ get_header(); ?>
             <div class="container">
                 <div class="group-title-button">
                     <h2 class="events-title title-warner-h2"><?= __( 'Events' ) ?></h2>
-                    <div class="events-see-more button-link-warner"><a href="<?= get_field( 'event_see_more',  get_the_ID() );?>"><?= __("See more") ?></a></div>
-                </div>  
-                <?php get_template_part( 'inc/views/loop/homepage/homepage', 'event-item' );?>
+                    <div class="events-see-more button-link-warner"><a
+                                href="<?= get_field( 'event_see_more', get_the_ID() ); ?>"><?= __( "See more" ) ?></a>
+                    </div>
+                </div>
+				<?php get_template_part( 'inc/views/loop/homepage/homepage', 'event-item' ); ?>
             </div>
         </section>
         <section class="merchandise padding-top-section">
             <div class="container">
                 <div class="group-title-button">
                     <h2 class="events-title title-warner-h2"><?= __( 'Merchandise' ) ?></h2>
-                    <div class="events-see-more button-link-warner"><a href="<?= get_field( 'merchandise_see_more',  get_the_ID() );?>" target="_blank"><?= __("See more") ?></a></div>
+                    <div class="events-see-more button-link-warner"><a
+                                href="<?= get_field( 'merchandise_see_more', get_the_ID() ); ?>"
+                                target="_blank"><?= __( "See more" ) ?></a></div>
                 </div>
                 <div class="list-merchandise list-layout-warner-4">
-				    <?php
-				    get_template_part( 'inc/views/loop/homepage/homepage', 'merchandise-item', [ 'page_id' => get_the_ID() ] );
-				    ?>
+					<?php
+					get_template_part( 'inc/views/loop/homepage/homepage', 'merchandise-item', [ 'page_id' => get_the_ID() ] );
+					?>
                 </div>
             </div>
         </section>
@@ -86,9 +116,9 @@ get_header(); ?>
             <div class="container">
                 <h2 class="title-warner-h2 margin-bottom">Playlists</h2>
                 <div class="list-playlist">
-                    <?php
-                    get_template_part( 'inc/views/loop/homepage/homepage', 'playlist-item', [ 'page_id' => get_the_ID() ] );
-                    ?>
+					<?php
+					get_template_part( 'inc/views/loop/homepage/homepage', 'playlist-item', [ 'page_id' => get_the_ID() ] );
+					?>
                 </div>
             </div>
         </section>
