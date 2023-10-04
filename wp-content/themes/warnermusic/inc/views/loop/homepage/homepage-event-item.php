@@ -19,7 +19,7 @@ if ( ! empty( $artists ) && ! is_wp_error( $artists ) ):?>
 				break;
 			}
 			$artistImage = get_field( 'artist_image', 'artist_' . $artist->term_id );?>
-			<div class="list-nav-item-artist gird-item-three-per-two">
+			<div class="list-nav-item-artist gird-item-three-per-two wow fadeInUp" data-wow-delay="0.2s" data-wow-duration="1s">
 				<div class="content-box">
 					<div class="group-content">
 						<div class="image-feature"
@@ -40,12 +40,12 @@ if ( ! empty( $artists ) && ! is_wp_error( $artists ) ):?>
 			}?>
 			<div class="group-events-item">
 				<div class="row">
-					<div class="col-lg-4 col-md-12 col-sm-12 col-12">
+					<div class="col-lg-4 col-md-12 col-sm-12 col-12 wow fadeInUp" data-wow-delay="0.4s" data-wow-duration="1s">
 						<div class="group-col">
 							<div class="name text-decoration-none"><a href="#"><?= $artist->name ?></a></div>
 						</div>
 					</div>
-					<div class="col-lg-8 col-md-12 col-sm-12 col-12">
+					<div class="col-lg-8 col-md-12 col-sm-12 col-12 wow fadeInUp" data-wow-delay="0.6s" data-wow-duration="1s">
 						<div class="event-artist event-artist-id<?= $artist->term_id ?>-list">
 							<?php $args = array(
 								'post_type' => 'event',
