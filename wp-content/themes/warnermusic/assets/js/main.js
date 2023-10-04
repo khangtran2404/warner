@@ -227,8 +227,8 @@ function sliderGrid() {
     listPlayList.slick({
         slidesToShow: 3,
         slidesToScroll: 1,
-        arrows: false,
-        dots: true,
+        arrows: true,
+        dots: false,
         infinite: false,
         autoplay: false,
         speed: 600,
@@ -252,8 +252,8 @@ function sliderGrid() {
     listVideo.slick({
         slidesToShow: 3,
         slidesToScroll: 1,
-        arrows: false,
-        dots: true,
+        arrows: true,
+        dots: false,
         infinite: false,
         autoplay: false,
         speed: 600,
