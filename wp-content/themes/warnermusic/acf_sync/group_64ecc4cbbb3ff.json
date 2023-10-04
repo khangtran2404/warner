@@ -28,56 +28,6 @@
             "allow_null": 0
         },
         {
-            "key": "field_64ecc4cbfc945",
-            "label": "Domestic Artist Homepage List",
-            "name": "homepage_domestic_artist_list",
-            "aria-label": "",
-            "type": "taxonomy",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "taxonomy": "artist",
-            "add_term": 0,
-            "save_terms": 1,
-            "load_terms": 0,
-            "return_format": "id",
-            "field_type": "multi_select",
-            "allow_null": 0,
-            "bidirectional": 0,
-            "multiple": 0,
-            "bidirectional_target": []
-        },
-        {
-            "key": "field_64f9f8936f45d",
-            "label": "International Artist Homepage List",
-            "name": "homepage_international_artist_list",
-            "aria-label": "",
-            "type": "taxonomy",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "taxonomy": "artist",
-            "add_term": 0,
-            "save_terms": 1,
-            "load_terms": 0,
-            "return_format": "id",
-            "field_type": "multi_select",
-            "allow_null": 0,
-            "bidirectional": 0,
-            "multiple": 0,
-            "bidirectional_target": []
-        },
-        {
             "key": "field_6500993069eb2",
             "label": "News see more",
             "name": "news_see_more",
@@ -286,5 +236,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1694571737
+    "modified": 1696354473
 }
