@@ -17,12 +17,6 @@ body {
     @include tablet {
         padding: 70px 0 0 0 !important;
     }
-    .site-has-addverstising {
-        padding-top: 41px;
-        @include tablet {
-            padding-top: 30px;
-        }
-    }
     // heading and heading special
     h1,h2,h3,h4,h5,h6 {
         font-family: $font_head_semi !important;
@@ -272,6 +266,15 @@ body {
             position: -webkit-static;
         }
     }
+    .site-has-addverstising {
+        padding-top: 40px;
+        @include tablet {
+            padding-top: 30px;
+        } 
+        .col-sticky {
+            top: calc(90px + 70px);
+        }
+    }
     .text-decoration-none,
     .text-decoration-none a {
         &:hover {
@@ -288,6 +291,11 @@ body {
 .logged-in {
     .col-sticky {
         top: calc(90px + 62px);
+    }
+    .site-has-addverstising {
+        .col-sticky {
+            top: calc(90px + 102px);
+        }
     }
 }
 /* button hamburger*/
@@ -613,6 +621,9 @@ body {
         @include tablet {
             margin:  0 6px;
         }
+        @include mobile {
+            margin: 0 4px;
+        }
         &:first-child {
             margin-left: 0;
         }
@@ -631,6 +642,10 @@ body {
             @include tablet {
                 width: 10px;
                 height: 10px;
+            }
+            @include mobile {
+                width: 7px;
+                height: 7px;
             }
             &:focus {
                 outline: none;
@@ -689,7 +704,7 @@ body {
 .marquee {
     overflow: hidden;
     position: relative;
-    height: 41px;
+    height: 40px;
     @include tablet {
         height: 30px;
     }
@@ -721,7 +736,7 @@ body {
                 }
             }
             img {
-                height: 23px;
+                height: 20px;
                 width: auto;
                 @include tablet {
                     height: 15px;

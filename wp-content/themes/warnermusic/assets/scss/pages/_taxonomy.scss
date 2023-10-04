@@ -4,6 +4,11 @@
     .connect-with-singer {
         margin-bottom: 30px;
     }
+    .col-main-content {
+        @include tablet {
+            margin-top: 30px;
+        }
+    }
     .list-media-icons,
     .list-social-icons {
         list-style: none;
@@ -23,7 +28,7 @@
             position: -webkit-static;
         }
     }
-    .social-link-item {
+    .media-link-item{
         margin: 0 15px 15px 0;
         position: relative;
         top: 0;
@@ -47,7 +52,7 @@
             top: -2px;
         }
     }
-    .media-link-item {
+    .social-link-item {
         margin: 0 25px 15px 0;
         position: relative;
         top: 0;

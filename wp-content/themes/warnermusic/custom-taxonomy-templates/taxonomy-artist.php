@@ -23,44 +23,44 @@ $mainImg  = get_field( 'artist_image', 'artist_' . $termData->term_id );
 					<div class="col-main-content">
 						<div class="listent-on">
 							<h2 class="small-title font-global"><?= __( 'Listen on' ) ?></h2>
-							<div class="social-icons">
-								<ul class="list-social-icons">
+							<div class="listen-on-icons">
+								<ul class="list-media-icons">
 									<?php
-									$socialLinks = get_field( 'artist_social_links', 'artist_' . $termData->term_id );
-									if ( $socialLinks ) {
-										$links        = $socialLinks['artist_social_link_repeater'];
-										if ( $links ) {
-											foreach ( $links as $link ):
-												$icon = $link['social_icon'];
-												$link = $link['social_link']; ?>
-												<li class="social-link-item">
-													<a href="<?= $link ?: '#' ?>"><img src="<?= $icon ?>" alt="social-icon"></a>
-												</li>
-											<?php endforeach;
+										$mediaLinks = get_field( 'artist_media_links', 'artist_' . $termData->term_id );
+										if ( $mediaLinks ) {
+											$links_media        = $mediaLinks['artist_media_link_repeater'];
+											if ( $links_media ) {
+												foreach ( $links_media as $link_media ):
+													$icon_med = $link_media['media_icon'];
+													$link_med = $link_media['media_link']; ?>
+													<li class="media-link-item">
+														<a href="<?= $link_med ?: '#' ?>"><img src="<?= $icon_med; ?>" alt="media-icon"></a>
+													</li>
+												<?php endforeach;
+											}
 										}
-									}
 									?>
 								</ul>
 							</div>
 						</div>
 						<div class="connect-with-singer">
 							<h2 class="small-title font-global"><?= __( 'Connect with ' ) . $termData->name ?></h2>
-							<div class="listen-on-icons">
-								<ul class="list-media-icons">
+							<div class="social-icons">
+								<ul class="list-social-icons">
 									<?php
-									$mediaLinks = get_field( 'artist_media_links', 'artist_' . $termData->term_id );
-									if ( $mediaLinks ) {
-										$links        = $mediaLinks['artist_media_link_repeater'];
-										if ( $links ) {
-											foreach ( $links as $link ):
-												$icon = $link['media_icon'];
-												$link = $link['media_link']; ?>
-												<li class="media-link-item">
-													<a href="<?= $link ?: '#' ?>"><img src="<?= $icon ?>" alt="media-icon"></a>
-												</li>
-											<?php endforeach;
+										$socialLinks = get_field( 'artist_social_links', 'artist_' . $termData->term_id );
+										if ( $socialLinks ) {
+											$links_social        = $socialLinks['artist_social_link_repeater'];
+											if ( $links_social ) {
+												foreach ( $links_social as $link_social ):
+													$icon_so = $link_social['social_icon'];
+													$link_so = $link_social['social_link']; ?>
+													<li class="social-link-item">
+														<a href="<?= $link_so ?: '#' ?>"><img src="<?= $icon_so ?>" alt="social-icon"></a>
+													</li>
+												<?php endforeach;
+											}
 										}
-									}
 									?>
 								</ul>
 							</div>

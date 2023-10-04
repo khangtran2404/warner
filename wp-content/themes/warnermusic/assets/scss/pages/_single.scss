@@ -229,10 +229,24 @@
     .related-artist-item  {
         .name-related {
             margin-top: 5px;
-            width: calc(35% + 15px);
+            width: 100%;
+        }
+        .thumbnail {
+            width: 100%;
         }
         a {
+            width: calc(35% + 15px);
             display: block;
+            &:hover {
+                img {
+                    @include scale(1.1);
+                }
+            }
+        }
+        &:hover {
+            img {
+                @include scale(1);
+            }
         }
     }
     .group-cont-text {

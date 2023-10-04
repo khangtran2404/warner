@@ -28,7 +28,7 @@ while ( have_posts() ) :
 							<img src="<?= get_the_post_thumbnail_url() ?>" alt="news-thumbnail">
 						</div>
 						<div class="main-content">
-							<?= get_the_content() ?>
+							<?php the_content() ;?>
 						</div>
 					</article>
 				</div>
