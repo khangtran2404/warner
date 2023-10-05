@@ -123,7 +123,7 @@
             }
         }
         .artist {
-            font-family: $font_head_semi;
+            font-family: $font__global;
             margin-bottom: 12px;
             font-size: 30px;
             font-weight: 500;
@@ -137,7 +137,7 @@
             font-weight: 500;
             padding: 0 10px;
             a {
-                font-family: $font_head_semi !important;
+                font-family: $font__global !important;
                 &:hover {
                     text-decoration: none !important;
                 }
@@ -505,7 +505,7 @@
                 font-weight: 400;
                 line-height: 1;
                 text-transform: capitalize;
-                font-family: $font_head_reg;
+                font-family: $font__global;
                 @include big_screen {
                     font-size: 22px;
                 }

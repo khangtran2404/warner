@@ -30,7 +30,7 @@ while ( have_posts() ) :
 				</div>
 				<div class="group-lists-social-link">
 					<div class="infor-head">
-						<h1 class="main-title main-title-small"><?= $title;?></h1>
+						<h1 class="main-title"><?= $title;?></h1>
 						<?php if ( isset( $artistId ) ):?>
 							<a class="artist-link" href="<?= $artistUrl ?>"><?= $artistLabel ?></a>
 						<?php endif; ?>
