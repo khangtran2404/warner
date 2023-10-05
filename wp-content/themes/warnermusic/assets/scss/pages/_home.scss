@@ -97,9 +97,9 @@
         height: 100%;
         width: 350px;
         background-color: rgba($color: $color__dark, $alpha: .85);
-        padding: calc(40px + 90px) 45px 0 45px;
+        padding: calc(30px + 90px) 45px 0 45px;
         @include tablet {
-            padding: calc(40px + 60px) 45px 0 45px;
+            padding: calc(30px + 60px) 45px 0 45px;
         }
         @media screen and (min-width: 1480px) and (min-height: 750px) {
             width: 400px;
@@ -125,13 +125,13 @@
         .artist {
             font-family: $font__global;
             margin-bottom: 12px;
-            font-size: 30px;
+            font-size: 28px;
             font-weight: 500;
             line-height: 1.2;
             padding: 0 10px;
         }
         .title {
-            margin-top: 30px;
+            margin-top: 20px;
             line-height: 1.2;
             font-size: 22px;
             font-weight: 500;

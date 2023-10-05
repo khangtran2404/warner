@@ -31,14 +31,22 @@
             object-position: center;
         }
     }
-    h1 {
-        margin-bottom: 5px !important;
+    h1.main-title {
+        margin-bottom: 0 !important;
         font-family: $font__global !important;
+        font-size: 26px !important;
+        font-weight: 600;
+        @include desktop {
+            font-size: 25px !important;
+        }
     }
     .artist-link {
         text-decoration: underline;
         text-underline-offset: 6px;
-        font-size: 25px;
+        font-size: 23px;
+        @include desktop {
+            font-size: 20px;
+        }
     }
     .group-lists-social-link {
         width: 40%;
@@ -130,11 +138,12 @@
     .infor-head {
         width: 100%;
         max-width: 392px;
-        margin-bottom: 50px;
+        margin-bottom: 40px;
         @include desktop {
             text-align: center;
             margin-left: auto;
             margin-right: auto;
+            margin-bottom: 35px;
         }
     }
 }

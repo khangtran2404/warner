@@ -21,7 +21,7 @@
         },
         {
             "key": "field_64ecc192d8d48",
-            "label": "Homepage Latest Releases",
+            "label": "Latest Releases URL",
             "name": "song_homepage_latest_releases",
             "aria-label": "",
             "type": "url",
@@ -88,11 +88,11 @@
         },
         {
             "key": "field_64ecb3875e777",
-            "label": "Homepage Url",
+            "label": "Permalink",
             "name": "song_homepage_url",
             "aria-label": "",
             "type": "url",
-            "instructions": "",
+            "instructions": "The permalink is below the song's title.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -293,7 +293,7 @@
         },
         {
             "key": "field_6509c635a966f",
-            "label": "Video URL",
+            "label": "Video URL embed",
             "name": "song_video_url",
             "aria-label": "",
             "type": "url",
@@ -327,5 +327,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1696007711
+    "modified": 1696520769
 }
