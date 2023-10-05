@@ -1,5 +1,10 @@
 .highlight-news {
     margin-bottom: 40px;
+    .image-square {
+        img {
+            object-position: bottom;
+        }
+    }
     .information {
         display: flex;
         align-items: center;
