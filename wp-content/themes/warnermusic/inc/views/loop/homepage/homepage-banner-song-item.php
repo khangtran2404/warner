@@ -1,6 +1,7 @@
 <div class="item-slider banner-song-item-<?= get_the_ID() ?>">
     <?php
     $artist = wp_get_post_terms(get_the_ID(),'artist');
+    $latestReleaseLink = $args['latest_release_link'];
     ?>
     <div class="banner-image"><img src="<?= get_field('song_homepage_banner_image') ?? '' ?>" alt="<?= ($artist[0]) ? $artist[0]->name : '' ?>"/></div>
     <div class="left-information hiden-on-mobile" data-animation-in="animate__fadeInLeft"  data-duration-in="0.5">
@@ -11,7 +12,7 @@
                 <div class="title"><a href="<?= get_the_permalink() ?>"><?= get_the_title() ?></a></div>
             </div>
             <div class="listen-link">
-                <a href="<?= get_field('song_homepage_url') ?? '#' ?>">
+                <a href="<?= get_the_permalink() ?? '#' ?>">
                     <?= __('Listen now') ?>
                     <span class="icon-play">
                         <img width="20" src="<?= DF_IMAGE .'/icon/icon-play.png';?>" alt="icon-play"/>
@@ -28,7 +29,7 @@
                     <div class="title"><a href="<?= get_the_permalink() ?>"><?= get_the_title() ?></a></div>
                 </div>
                 <div class="listen-link">
-                    <a href="<?= get_field('song_homepage_url') ?? '#' ?>">
+                    <a href="<?= get_the_permalink() ?? '#' ?>">
                         <?= __('Listen now') ?>
                         <span class="icon-play">
                             <img width="20" src="<?= DF_IMAGE .'/icon/icon-play.png';?>" alt="icon-play"/>
@@ -45,7 +46,7 @@
     </div>
     <div class="latest-releases">
         <div class="button-link-lastest-releases">
-            <a href="<?= get_field('song_homepage_latest_releases') ?? '#' ?>" target="_blank">
+            <a href="<?= $latestReleaseLink ?>" target="_blank">
             <?= __('Latest Releases') ?>
             <span class="icon-arrow-btn">
                 <img width="20" src="<?= DF_IMAGE .'/icon/arrow-right-btn.png';?>" alt="icon-arrow-btn"/>
