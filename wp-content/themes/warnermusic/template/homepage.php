@@ -18,13 +18,14 @@ get_header();
 				);
 
                 $bannerSongGroup = get_field('homepage_banner_song_group');
-                if ( ! empty( $bannerSongGroup ) && ! empty( $bannerSongGroup['highlight_songs'] ) ) {
+                if ( !empty( $bannerSongGroup ) && !empty( $bannerSongGroup['highlight_songs'] ) ) {
                     $args['post__in'] = $bannerSongGroup['highlight_songs'];
                     $args['orderby'] = 'post__in';
-                    if (!empty($bannerSongGroup['latest_release_link'])){
-                        $latestReleaseLink = $bannerSongGroup['latest_release_link'];
-                    }
                 }
+
+				if (!empty( $bannerSongGroup ) && !empty($bannerSongGroup['latest_release_link'])){
+					$latestReleaseLink = $bannerSongGroup['latest_release_link'];
+				}
 
 				$the_query = new WP_Query( $args );
 				if ( $the_query->have_posts() ) :
@@ -91,7 +92,7 @@ get_header();
                                 href="<?= get_field( 'news_see_more', get_the_ID() ); ?>"><?= __( "See more" ) ?></a>
                     </div>
                 </div>
-                <div class="list-news list-layout-warner-4 wow fadeInUp" data-wow-delay="0.2s" data-wow-duration="1s"> 
+                <div class="list-news list-layout-warner-4 wow fadeInUp" data-wow-delay="0.2s" data-wow-duration="1s">
 					<?php
 					get_template_part( 'inc/views/loop/homepage/homepage', 'highlight-news-item', [ 'page_id' => get_the_ID() ] );
 					?>
