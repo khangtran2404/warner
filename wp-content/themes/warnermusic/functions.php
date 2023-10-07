@@ -3,7 +3,7 @@
 define( 'THEME_URI', get_stylesheet_directory_uri() );
 define( 'THEME_DIR', get_stylesheet_directory() );
 define( 'DF_IMAGE', THEME_URI . '/assets/images' );
-
+define( 'DF_VIDEO', THEME_URI . '/assets/videos' );
 
 function warnermusic() {
 	$date = date( 'l jS \of F Y h:i:s A' );
