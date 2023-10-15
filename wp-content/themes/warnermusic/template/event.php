@@ -27,13 +27,8 @@ get_header();
 						if ($artist->parent == 0){
 							continue;
 						}
-<<<<<<< HEAD
-						$artistImage = get_field( 'artist_image', 'artist_' . $artist->term_id );?>
-						<div class="list-nav-item-artist">
-=======
 						$artistImage = get_field( 'artist_event_image', 'artist_' . $artist->term_id );?>
 						<div class="list-nav-item-artist gird-item-three-per-two">
->>>>>>> 56059bca049a7d9cf36eaafdb17bfc5ab9fe08cb
 							<div class="content-box">
 								<div class="group-content">
 									<div class="image-feature aspect-ratio-warner aspect-ratio-2-3"
