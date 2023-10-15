@@ -3,6 +3,112 @@
     "title": "Warner music settings",
     "fields": [
         {
+            "key": "field_652b55cb61547",
+            "label": "Global loader",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_652b51f03abcc",
+            "label": "Global loader",
+            "name": "global_loader",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_652b525f3abcd",
+                    "label": "Choose type loader",
+                    "name": "choose_type_loader",
+                    "aria-label": "",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": [
+                        "Default",
+                        "Loader video (Mp4)"
+                    ],
+                    "default_value": 0,
+                    "return_format": "value",
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_652b52e03abce",
+                    "label": "Loader video Mp4",
+                    "name": "loader_video_mp4",
+                    "aria-label": "",
+                    "type": "file",
+                    "instructions": "The file's size must be less than 501 KB, and the suggested width and length of the frame are 2080x1080.",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_652b525f3abcd",
+                                "operator": "==",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "url",
+                    "library": "all",
+                    "min_size": "0.001",
+                    "max_size": "0.5",
+                    "mime_types": "mp4"
+                }
+            ]
+        },
+        {
+            "key": "field_652b55d86154a",
+            "label": "Header Warner",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
             "key": "field_64eb751f2cd5f",
             "label": "Header Warner",
             "name": "header_warner",
@@ -241,5 +347,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1696213382
+    "modified": 1697339174
 }
