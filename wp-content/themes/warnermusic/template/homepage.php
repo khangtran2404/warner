@@ -39,7 +39,7 @@ get_header();
         <section class="artists padding-top-section">
             <div class="container">
                 <div class="group-title-button">
-                    <h2 class="artist-title title-warner-h2 wow fadeInLeft" data-wow-duration="1s"><?= __( 'Artist' ) ?></h2>
+                    <h2 class="artist-title title-warner-h2 wow fadeInLeft" data-wow-duration="1s"><?= __( 'Artists' ) ?></h2>
                     <div class="artists-see-more button-link-warner wow fadeInRight" data-wow-duration="1s"><a
                                 href="<?= get_field( 'artist_see_more', get_the_ID() ); ?>"><?= __( "See more" ) ?></a>
                     </div>

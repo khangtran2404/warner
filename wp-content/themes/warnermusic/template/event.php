@@ -21,7 +21,13 @@ get_header();
 				'object_ids' => $event_ids
 			));
 			if ( ! empty( $artists ) && ! is_wp_error( $artists ) ):?>
-				<div class="list-nav-artist-img list-nav-sliderSyncing">
+				<div class="list-nav-artist-img 
+					<?php if(count($events) > 4) {
+						echo 'list-nav-sliderSyncing-infinity';
+					} else {
+						echo 'list-nav-sliderSyncing';
+					};?>
+				">
 					<?php
 					foreach ( $artists as $key=>$artist ):
 						if ($artist->parent == 0){
@@ -38,7 +44,12 @@ get_header();
 						</div>
 					<?php endforeach;?>
 				</div>
-				<div class="list-event list-main-sliderSyncing">
+				<div class="list-event <?php if(count($events) > 4) {
+						echo 'list-main-sliderSyncing-infinity';
+					} else {
+						echo 'list-main-sliderSyncing';
+					};?>
+				">
 					<?php
 					foreach ( $artists as $key=>$artist ):
 						if ($artist->parent == 0){

@@ -229,7 +229,40 @@ function sliderGrid() {
 function sliderSyncing() {
   let listnavItem = $(".list-nav-sliderSyncing");
   let listMainItem = $(".list-main-sliderSyncing");
+  let listnavItemInfity = $(".list-nav-sliderSyncing-infinity");
+  let listMainItemInfinity = $(".list-main-sliderSyncing-infinity");
 
+  // use when list nav > 4 items
+  listMainItemInfinity.slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    asNavFor: listnavItemInfity,
+  });
+  listnavItemInfity.slick({
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    asNavFor: listMainItemInfinity,
+    dots: false,
+    centerMode: false,
+    focusOnSelect: true,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
+  });
+
+  // use when list nav <= 4 item
   listMainItem.slick({
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -301,9 +334,6 @@ function headerAction() {
   let openSearch = $(".search-action .button-search-action .open-search");
   let groupNavDesktop = $(".navigation-desktop");
   let groupSearchHeader = $(".group-from-search-header");
-  let iconTriangle = $(".group-navigation-desktop");
-  let totalItemNav = $('.main-navigation-desktop li[data-depth="0"]').length;
-  let header = $("#masthead");
   openSearch.click(function () {
     $(this).hide();
     closeSearch.show();

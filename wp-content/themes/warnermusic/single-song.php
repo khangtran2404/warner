@@ -26,7 +26,9 @@ while ( have_posts() ) :
 		<div class="container">
 			<div class="single-song-row">
 				<div class="song-thumbnail">
-					<img class="image-square" src="<?= $thumbnail ?>" alt="song-detail-thumbnail">
+					<div class="image-square aspect-ratio-warner aspect-ratio-1-1">
+						<img src="<?= $thumbnail ?>" alt="song-detail-thumbnail">
+					</div>
 				</div>
 				<div class="group-lists-social-link">
 					<div class="infor-head">
