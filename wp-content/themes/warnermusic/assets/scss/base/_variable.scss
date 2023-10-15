@@ -1,7 +1,7 @@
 /* variable color */
 $color__main: #acffad;
-$color__main-reg: #ACFFAD;
-$color__main-bold: #50CB93;
+$color__main-reg: #acffad;
+$color__main-bold: #50cb93;
 $color__primary: #ffbd1e;
 $color__primary-1: #45feec;
 $color__primary-2: #fe4bc3;
@@ -27,32 +27,56 @@ $color__gray: #cccccc;
 $color__gray-1: #b6b6b6;
 $color__gray-2: #e4e5e4;
 
+/* aspect ratio */
+.aspect-ratio-warner {
+  position: relative;
+  height: 0;
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+// aspect-ratio-x-y
+.aspect-ratio-1-1 {
+  padding-top: 100%;
+}
+.aspect-ratio-4-1 {
+  padding-top: 25%;
+}
+.aspect-ratio-3-4 {
+  padding-top: calc(100% * 4 / 3);
+}
+
 /* fonts */
 @font-face {
-    font-family: 'wmg-reg';
-    src: url('../fonts/wmg/WMGDazzed-Reggular.otf') format('opentype'),
-         url('../fonts/wmg/WMGDazzed-Reggular.ttf')  format('truetype');
-    font-weight: normal;
-    font-style: normal;
+  font-family: "wmg-reg";
+  src: url("../fonts/wmg/WMGDazzed-Reggular.otf") format("opentype"),
+    url("../fonts/wmg/WMGDazzed-Reggular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'wmg-bd';
-    src: url('../fonts/wmg/WMGDazzed-Bold.otf') format('opentype'),
-         url('../fonts/wmg/WMGDazzed-Bold.ttf')  format('truetype');
-    font-weight: normal;
-    font-style: normal;
+  font-family: "wmg-bd";
+  src: url("../fonts/wmg/WMGDazzed-Bold.otf") format("opentype"),
+    url("../fonts/wmg/WMGDazzed-Bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'wmg-semi';
-    src: url('../fonts/wmg/WMGDazzed-SemiBold.otf') format('opentype'),
-         url('../fonts/wmg/WMGDazzed-SemiBold.ttf')  format('truetype');
-    font-weight: normal;
-    font-style: normal;
+  font-family: "wmg-semi";
+  src: url("../fonts/wmg/WMGDazzed-SemiBold.otf") format("opentype"),
+    url("../fonts/wmg/WMGDazzed-SemiBold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
 
-$font__global: 'Be Vietnam Pro', sans-serif;
-$font_head_reg: 'wmg-reg', sans-serif;
-$font_head_bd: 'wmg-bd', sans-serif;
-$font_head_semi: 'wmg-semi', sans-serif;
+$font__global: "Be Vietnam Pro", sans-serif;
+$font_head_reg: "wmg-reg", sans-serif;
+$font_head_bd: "wmg-bd", sans-serif;
+$font_head_semi: "wmg-semi", sans-serif;

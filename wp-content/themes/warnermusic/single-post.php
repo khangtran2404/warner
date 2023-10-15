@@ -18,14 +18,18 @@ while ( have_posts() ) :
 			<div class="row">
 				<div class="col-lg-8 col-md-7 col-sm-12 col-12">
 					<article class="main-single-post">
-						<div class="float-right main-image main-image-desktop image-no-spuare-4-3">
-							<img src="<?= get_the_post_thumbnail_url() ?>" alt="news-thumbnail">
+						<div class="float-right main-image main-image-desktop">
+							<div class="aspect-ratio-warner aspect-ratio-3-4">
+								<img src="<?= get_the_post_thumbnail_url() ?>" alt="news-thumbnail">
+							</div>
 						</div>
 						<h1 class="font-global main-title-small"><?= get_the_title() ?></h1><br>
 						<p class="publish-date"><?= get_the_date( 'd/m/Y' ) ?></p>
 						<p class="hiden-on-mobile "></p>
-						<div class="float-right main-image main-image-mobile image-no-spuare-4-3">
-							<img src="<?= get_the_post_thumbnail_url() ?>" alt="news-thumbnail">
+						<div class="float-right main-image main-image-mobile">
+							<div class="aspect-ratio-warner aspect-ratio-3-4">
+								<img src="<?= get_the_post_thumbnail_url() ?>" alt="news-thumbnail">
+							</div>
 						</div>
 						<div class="main-content">
 							<?php the_content() ;?>
@@ -60,7 +64,7 @@ while ( have_posts() ) :
 										$related_posts->the_post(); ?>
 										<div class="related-news-item related-item">
 											<a href="<?= get_the_permalink();?>">
-												<div class="thumbnail image-no-spuare-3-4">
+												<div class="thumbnail aspect-ratio-warner aspect-ratio-4-1">
 													<img src="<?= get_the_post_thumbnail_url() ?>" alt="related-news-item">
 												</div>
 												<div class="group-cont-text">
@@ -99,7 +103,7 @@ while ( have_posts() ) :
 											?>
 											<div class="related-artist-item related-item">
 												<a href="<?= $artistUrl ?>">
-													<div class="thumbnail image-no-spuare-3-4">
+													<div class="thumbnail aspect-ratio-warner aspect-ratio-1-1">
 														<img src="<?= $artistImageUrl['url'] ?>" alt="related-artist-item">
 													</div>
 													<div class="name-related">
