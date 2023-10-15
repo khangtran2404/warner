@@ -27,9 +27,6 @@ get_header();
 						if ($artist->parent == 0){
 							continue;
 						}
-						if($key > 3) {
-							break;
-						}
 						$artistImage = get_field( 'artist_image', 'artist_' . $artist->term_id );?>
 						<div class="list-nav-item-artist gird-item-three-per-two">
 							<div class="content-box">
@@ -46,9 +43,6 @@ get_header();
 					foreach ( $artists as $key=>$artist ):
 						if ($artist->parent == 0){
 							continue;
-						}
-						if($key > 3) {
-							break;
 						}?>
 						<div class="group-events-item">
 							<div class="row">
