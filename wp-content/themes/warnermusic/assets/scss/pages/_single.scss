@@ -234,6 +234,9 @@
       @include transition(all 0.3s ease-in-out);
     }
   }
+  .thumbnail.aspect-ratio-1-1 {
+    padding-top: 100%;
+  }
   .related-item {
     margin-bottom: 15px;
     @include tablet {

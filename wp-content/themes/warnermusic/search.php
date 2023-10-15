@@ -65,7 +65,7 @@ if ( ! empty( $partner_terms ) && ! is_wp_error( $partner_terms ) ) {
                                 <div class="content-box">
                                     <div class="group-content">
                                         <a class="link-box" href="<?= get_the_permalink( $item->ID ) ?>"></a>
-                                        <div class="image-feature"
+                                        <div class="image-feature aspect-ratio-warner aspect-ratio-3-4"
                                              style="background-image: url('<?= get_the_post_thumbnail_url( $item->ID ) ?>')"></div>
                                         <div class="name"><?= get_the_title( $item->ID ) ?></div>
                                     </div>
@@ -78,8 +78,8 @@ if ( ! empty( $partner_terms ) && ! is_wp_error( $partner_terms ) ) {
                                     <div class="group-content">
                                         <a class="link-box"
                                            href="<?= get_term_link( $item->term_id, 'artist' ) ?>"></a>
-                                        <div class="image-feature"
-                                             style="background-image: url('<?= get_field( 'artist_image', 'artist_' . $item->term_id ) ? get_field( 'artist_image', 'artist_' . $item->term_id )['url'] : '' ?>')"></div>
+                                        <div class="image-feature aspect-ratio-warner aspect-ratio-3-4"
+                                             style="background-image: url('<?= get_field( 'artist_image', 'artist_' . $item->term_id ) ? get_field( 'artist_image', 'artist_' . $item->term_id )['url'] : DF_IMAGE.'/noimage.png' ?>')"></div>
                                         <div class="name"><?= $item->name ?></div>
                                     </div>
                                 </div>
