@@ -57,9 +57,9 @@ while ( have_posts() ) :
 
 								$related_posts = new WP_Query( $args );
 
-								if ( $related_posts->have_posts() ) {?>
-                                    <h2 class="small-title font-global"><?= __('Related News');?></h2>
-									<div class="list-related">
+								if ( $related_posts->have_posts() ) { ?>
+                                    <h2 class="small-title font-global"><?= __( 'Related News' ); ?></h2>
+                                    <div class="list-related">
 									<?php while ( $related_posts->have_posts() ) :
 										$related_posts->the_post(); ?>
 										<div class="related-news-item related-item">
@@ -74,58 +74,51 @@ while ( have_posts() ) :
 											</a>
 										</div>
 									<?php endwhile;
-									wp_reset_postdata();?>
-									</div><?php
+									wp_reset_postdata(); ?>
+                                    </div><?php
 								}
 							}
 							?>
-						</div>
-						<div class="related-artists">
+                        </div>
+                        <div class="related-artists">
 							<?php
 							if ( $terms ) {
-                                $termPool = [];
-                                ?>
-                                <h2 class="small-title font-global"><?= __('Related Artists');?></h2>
-								<div class="list-related">
-								<?php foreach ( $terms as $term ) {
-									$parentTerm = wp_get_term_taxonomy_parent_id( $term, 'artist' );
-									$childTerms = get_term_children( $parentTerm, 'artist' );
-									if ( $childTerms ) {
-										foreach ( $childTerms as $childTerm ):
-                                            if ( in_array( $childTerm, $termPool, true ) ){
-                                                continue;
-                                            }
-											$termPool[] = $childTerm;
-											$childTermData = get_term( $childTerm );
-											$artistUrl = get_term_link($childTerm,'artist');
-											$artistImageUrl = get_field( 'artist_image', 'artist_' . $childTerm );
-											$artistParentSlug = get_term($childTerm)->slug;
-											?>
-											<div class="related-artist-item related-item">
-												<a href="<?= $artistUrl ?>">
-													<div class="thumbnail aspect-ratio-warner aspect-ratio-1-1">
-														<img src="<?= $artistImageUrl['url'] ?>" alt="related-artist-item">
-													</div>
-													<div class="name-related">
-														<?= $childTermData->name ?>
-													</div>
-												</a>
-											</div>
+								$termPool = [];
+								?>
+                                <h2 class="small-title font-global"><?= __( 'Related Artists' ); ?></h2>
+                                <div class="list-related">
+									<?php
+									$relatedArtist = get_field( 'related_artists' );
+									if ( $relatedArtist ) {
+										foreach ( $relatedArtist as $artist ):
+											$artistUrl        = get_term_link( $artist->term_id, 'artist' );
+											$artistImageUrl   = get_field( 'artist_image', 'artist_' . $artist->term_idildTerm );
+                                            ?>
+                                            <div class="related-artist-item related-item">
+                                                <a href="<?= $artistUrl ?>">
+                                                    <div class="thumbnail aspect-ratio-warner aspect-ratio-1-1">
+                                                        <img src="<?= $artistImageUrl['url'] ?>"
+                                                             alt="related-artist-item">
+                                                    </div>
+                                                    <div class="name-related">
+														<?= $artist->name ?>
+                                                    </div>
+                                                </a>
+                                            </div>
 										<?php endforeach;
 									}
-								}
-								?>
-								</div>
+									?>
+                                </div>
 								<?php
 							}
 							?>
-						</div>
-					</div>
-				</div>
-			</div>
-			
-		</div>
-	</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
 <?php endwhile; // End of the loop.
 
 get_footer();

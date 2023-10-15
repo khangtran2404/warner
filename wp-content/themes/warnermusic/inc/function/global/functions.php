@@ -24,7 +24,7 @@ function get_page_link_by_template_name( $templateName ): string {
 
 function custom_search_filter( $query ) {
 	if ( $query->is_search ) {
-		$query->set( 'post_type', array( 'event', 'song', 'post', 'partner_artist' ) );
+		$query->set( 'post_type', array( 'event', 'song', 'partner_artist' ) );
 	}
 	return $query;
 }
@@ -52,3 +52,30 @@ function custom_taxonomy_template_include($template) {
 	return $template;
 }
 add_filter('template_include', 'custom_taxonomy_template_include');
+
+function getYoutubeVideoId($url) {
+	if (strpos($url, '?v=') !== false) {
+		$videoId = explode('?v=', $url);
+		if (isset($videoId[1])) {
+			return $videoId[1];
+		}
+	}
+	elseif (strpos($url, '/embed/') !== false) {
+		$videoId = explode('/embed/', $url);
+		if (isset($videoId[1])) {
+			$result = $videoId[1];
+		}
+	}
+	else {
+		$parts = explode('/', $url);
+		$result = end($parts);
+	}
+
+	$startIndex = strpos($result, '?si');
+
+	if ($startIndex !== false) {
+		return substr($result, 0, $startIndex);
+	}
+
+	return null;
+}
