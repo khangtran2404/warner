@@ -32,7 +32,7 @@ get_header();
 							<div class="content-box">
 								<div class="group-content">
 									<div class="image-feature aspect-ratio-warner aspect-ratio-2-3"
-										style="background-image: url('<?= $artistImage ? $artistImage['url'] : '' ?>')"></div>
+										style="background-image: url('<?= $artistImage ?: '' ?>')"></div>
 								</div>
 							</div>
 						</div>
