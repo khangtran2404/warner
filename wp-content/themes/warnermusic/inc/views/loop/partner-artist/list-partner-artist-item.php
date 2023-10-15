@@ -10,7 +10,7 @@ foreach ($terms as $term){
     <div class="content-box">
         <div class="group-content">
             <a class="link-box" href="<?= get_permalink() ?: '#' ?>"></a>
-            <div class="image-feature"
+            <div class="image-feature aspect-ratio-warner aspect-ratio-3-4"
                  style="background-image: url('<?= get_the_post_thumbnail_url() ?>')"></div>
             <div class="name text-decoration-none"><?= get_the_title() ?></div>
         </div>

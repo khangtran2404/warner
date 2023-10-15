@@ -28,10 +28,10 @@ get_header();
 							continue;
 						}
 						$artistImage = get_field( 'artist_image', 'artist_' . $artist->term_id );?>
-						<div class="list-nav-item-artist gird-item-three-per-two">
+						<div class="list-nav-item-artist">
 							<div class="content-box">
 								<div class="group-content">
-									<div class="image-feature"
+									<div class="image-feature aspect-ratio-warner aspect-ratio-2-3"
 										style="background-image: url('<?= $artistImage ? $artistImage['url'] : '' ?>')"></div>
 								</div>
 							</div>

@@ -12,8 +12,8 @@ if ( ! empty( $selectedDomesticArtist ) ): ?>
                     <div class="content-box">
                         <div class="group-content">
                             <a class="link-box" href="<?= get_term_link( $artist->term_id, 'artist' ); ?>"></a>
-                            <div class="image-feature"
-                                 style="background-image: url('<?= $artistImage ? $artistImage['url'] : '' ?>')"></div>
+                            <div class="image-feature aspect-ratio-warner aspect-ratio-3-4"
+                                 style="background-image: url('<?= $artistImage ? $artistImage['url'] : DF_IMAGE .'/noimage.png'; ?>')"></div>
                             <div class="name text-decoration-none"><?= $artist->name ?></div>
                         </div>
                     </div>
@@ -36,8 +36,8 @@ if ( ! empty( $selectedInternationalArtistList ) ): ?>
                     <div class="content-box">
                         <div class="group-content">
                             <a class="link-box" href="<?= get_term_link( $artist->term_id, 'artist' ); ?>"></a>
-                            <div class="image-feature"
-                                 style="background-image: url('<?= $artistImage ? $artistImage['url'] : '' ?>')"></div>
+                            <div class="image-feature aspect-ratio-warner aspect-ratio-3-4"
+                                 style="background-image: url('<?= $artistImage ? $artistImage['url'] : DF_IMAGE .'/noimage.png'; ?>')"></div>
                             <div class="name text-decoration-none"><?= $artist->name ?></div>
                         </div>
                     </div>

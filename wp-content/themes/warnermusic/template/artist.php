@@ -39,8 +39,8 @@ get_header();
                                 <div class="content-box">
                                     <div class="group-content">
                                         <a class="link-box" href="<?= $artistUrl ?: '#' ?>"></a>
-                                        <div class="image-feature"
-                                            style="background-image: url('<?= $artistImageUrl ? $artistImageUrl['url']: '' ?>')"></div>
+                                        <div class="image-feature aspect-ratio-warner aspect-ratio-3-4"
+                                            style="background-image: url('<?= $artistImageUrl ? $artistImageUrl['url']: DF_IMAGE .'/noimage.png'; ?>')"></div>
                                         <div class="name text-decoration-none"><?= $artist->name ?></div>
                                     </div>
                                 </div>

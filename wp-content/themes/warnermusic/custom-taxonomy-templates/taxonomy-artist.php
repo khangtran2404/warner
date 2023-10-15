@@ -13,7 +13,7 @@ $mainImg  = get_field( 'artist_image', 'artist_' . $termData->term_id );
                 <h1 class="title-tax font-global"><?= $termData->name ?></h1>
                 <div class="row">
                     <div class="col-lg-4 col-md-5 col-sm-12 col-12 col-sticky">
-                        <div class="col-content-image image-no-square">
+                        <div class="col-content-image aspect-ratio-warner aspect-ratio-16-9">
 							<?php if ( $mainImg ): ?>
                                 <img src="<?= $mainImg['url'] ?>" alt="artist-main-image">
 							<?php endif; ?>
@@ -132,7 +132,7 @@ $mainImg  = get_field( 'artist_image', 'artist_' . $termData->term_id );
 								?>
                                 <div class="video-item">
                                     <div data-id="<?= $videoUrl ?>" class="content-box">
-                                        <div class="thumbnail image-no-spuare-4-2">
+                                        <div class="thumbnail aspect-ratio-warner aspect-ratio-2-3-video">
                                             <img src="<?= $videoThumbnail ?? '' ?>"
                                                  alt="video-thumbnail">
                                         </div>

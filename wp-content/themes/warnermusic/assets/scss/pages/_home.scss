@@ -483,6 +483,9 @@
   @include desktop {
     margin: 0 -10px;
   }
+  .slick-track {
+    margin-left: 0;
+  }
   .gird-item-no-square {
     animation: show_block 1s forwards;
     .content-box {
@@ -643,7 +646,28 @@
   display: flex;
   flex-wrap: wrap;
   .gird-item-no-square {
+    width: calc(100% / 3);
     margin-bottom: 30px;
+    @include desktop {
+      width: calc(100% / 2);
+    }
+    @include mobile {
+      width: 100%;
+    }
+  }
+}
+.list-layout-warner-4-no-slider {
+  .gird-item-no-square {
+    width: calc(100% / 4);
+    @include big_screen {
+      width: calc(100% / 3);
+    }
+    @include desktop {
+      width: calc(100% / 2);
+    }
+    @include mobile {
+      width: 100%;
+    }
   }
 }
 
@@ -652,56 +676,54 @@
   @include desktop {
     margin: 0 -10px;
   }
-  .gird-item-three-per-two {
-    .content-box {
-      padding: 0 15px;
-      @include desktop {
-        padding: 10px;
+  .content-box {
+    padding: 0 15px;
+    @include desktop {
+      padding: 10px;
+    }
+  }
+  .group-content {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    background-color: $color__dark;
+    &::after {
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 8px;
+      background: $color__main;
+      left: 0;
+      bottom: 0;
+      z-index: 2;
+      opacity: 0;
+      @include transition(all 0.3s ease-in-out);
+    }
+    .image-feature {
+      z-index: 1;
+      opacity: 0.6;
+      cursor: pointer;
+      position: relative;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      @include transition(all 0.3s ease);
+    }
+    &:hover {
+      .image-feature {
+        @include scale(1.1);
+        opacity: 1;
       }
     }
+  }
+  .slick-current {
     .group-content {
-      position: relative;
-      overflow: hidden;
-      width: 100%;
-      height: 100%;
-      background-color: $color__dark;
       &::after {
-        position: absolute;
-        content: "";
-        width: 100%;
-        height: 8px;
-        background: $color__main;
-        left: 0;
-        bottom: 0;
-        z-index: 2;
-        opacity: 0;
-        @include transition(all 0.3s ease-in-out);
+        opacity: 1;
       }
       .image-feature {
-        z-index: 1;
-        opacity: 0.6;
-        cursor: pointer;
-        position: relative;
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        @include transition(all 0.3s ease);
-      }
-      &:hover {
-        .image-feature {
-          @include scale(1.1);
-          opacity: 1;
-        }
-      }
-    }
-    &.slick-current {
-      .group-content {
-        &::after {
-          opacity: 1;
-        }
-        .image-feature {
-          opacity: 1;
-        }
+        opacity: 1;
       }
     }
   }

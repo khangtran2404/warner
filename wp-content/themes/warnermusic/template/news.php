@@ -30,7 +30,7 @@ get_header();
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-12 col-12">
-                            <div class="image-square">
+                            <div class="image-square aspect-ratio-warner aspect-ratio-1-1">
                                 <a href="<?= $postLink ?>">
                                     <img src="<?= $thumbnailUrl ?>" alt="highlight-news-thumbnail">
                                 </a>

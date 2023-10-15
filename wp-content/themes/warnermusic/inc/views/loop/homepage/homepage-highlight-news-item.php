@@ -17,7 +17,7 @@ if ( $the_query->have_posts() ) :
                 <div class="group-content">
                     <a class="link-box" href="<?= get_post_permalink();?>"></a>
                     <div class="publish-date"><?= get_the_date('F d, Y') ?></div>
-                    <div class="image-feature" style="background-image: url('<?= get_the_post_thumbnail_url($news->ID) ?>')"></div>
+                    <div class="image-feature aspect-ratio-warner aspect-ratio-3-4" style="background-image: url('<?= get_the_post_thumbnail_url($news->ID) ?>')"></div>
                     <div class="name text-decoration-none">
                         <div class="title"><?= $news->post_title ?></div>
                         <?php if($news->post_excerpt || $news->post_content):?>

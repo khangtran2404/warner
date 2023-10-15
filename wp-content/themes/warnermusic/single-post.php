@@ -64,7 +64,7 @@ while ( have_posts() ) :
 										$related_posts->the_post(); ?>
 										<div class="related-news-item related-item">
 											<a href="<?= get_the_permalink();?>">
-												<div class="thumbnail aspect-ratio-warner aspect-ratio-4-1">
+												<div class="thumbnail">
 													<img src="<?= get_the_post_thumbnail_url() ?>" alt="related-news-item">
 												</div>
 												<div class="group-cont-text">

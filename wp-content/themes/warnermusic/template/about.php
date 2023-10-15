@@ -18,8 +18,8 @@ get_header();
                         <div class="about-gallery-item gird-item-no-square">
                             <div class="content-box">
                                 <div class="group-content">
-                                    <div class="image-feature no-scale"
-                                        style="background-image: url('<?= $gallery ? $gallery['url'] : '' ?>')"></div>
+                                    <div class="image-feature no-scale aspect-ratio-warner aspect-ratio-2-3"
+                                        style="background-image: url('<?= $gallery ? $gallery['url'] : DF_IMAGE .'/noimage.png'; ?>')"></div>
                                     <div class="name padding-20"><?= $gallery['title'] ?></div>
                                 </div>
                             </div>

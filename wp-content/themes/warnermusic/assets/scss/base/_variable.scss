@@ -40,15 +40,23 @@ $color__gray-2: #e4e5e4;
     object-fit: cover;
   }
 }
-// aspect-ratio-x-y
 .aspect-ratio-1-1 {
   padding-top: 100%;
 }
-.aspect-ratio-4-1 {
-  padding-top: 25%;
+.aspect-ratio-2-3 {
+  padding-top: 60%;
+}
+.aspect-ratio-2-3-video {
+  padding-top: 55%;
 }
 .aspect-ratio-3-4 {
-  padding-top: calc(100% * 4 / 3);
+  padding-top: calc(100% * 4 / 3 + 50px);
+  @media screen and (max-width: 991px) {
+    padding-top: calc(100% * 4 / 3 + 25px);
+  }
+}
+.aspect-ratio-16-9 {
+  padding-top: calc((100% * 16) / 9 - 50px);
 }
 
 /* fonts */

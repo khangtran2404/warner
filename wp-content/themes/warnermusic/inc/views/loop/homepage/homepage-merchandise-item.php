@@ -20,7 +20,7 @@ for ($i = 0; $i < 4; $i++):
 			<div class="group-content">
                 <a class="link-box" href="<?= $link ?>" title="<?= $title ?>" target="_blank"></a>
                 <div class="brand"><?=__( 'Brand: ' );?><span class="cate"><?= $category;?></span></div>
-				<div class="image-feature" style="background-image: url(<?= $image ?>)"></div>
+				<div class="image-feature aspect-ratio-warner aspect-ratio-3-4" style="background-image: url(<?= $image ?>)"></div>
 				<div class="group-text">
 					<div class="price"><?= $price ?></div>
 					<div class="description"><?= $title ?></div>

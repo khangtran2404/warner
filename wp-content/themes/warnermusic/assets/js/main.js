@@ -7,7 +7,6 @@ $(window).load(function () {
 
 $(window).resize(function () {
   headerMobileDistance();
-  adapterWidthHeigth();
 });
 
 $(window).scroll(function () {
@@ -25,7 +24,6 @@ $(document).ready(function () {
   bannerSlider();
   sliderGrid();
   sliderSyncing();
-  adapterWidthHeigth();
   animationWow();
 });
 
@@ -38,86 +36,6 @@ function animationWow() {
     live: true,
   });
   wow.init();
-}
-
-function adapterWidthHeigth() {
-  let widthContainer = $(".header-main").innerWidth();
-  let body = $("body").innerWidth();
-  let itemNoSquareThree = $(
-    ".list-layout-warner-3 .gird-item-no-square .image-feature"
-  );
-  let itemNoSquareFour = $(
-    ".list-layout-warner-4 .gird-item-no-square .image-feature"
-  );
-  let itemNoSquareOne = $(
-    ".list-layout-warner-1 .gird-item-no-square .image-feature"
-  );
-  let itemThreePertwo = $(".gird-item-three-per-two .image-feature");
-  let imgSquare = $(".image-square");
-  let imgNoSquare = $(".image-no-square");
-  let imgNoSquareRate4_2 = $(".image-no-spuare-4-2");
-  let imgNoSquareRate4_3 = $(".image-no-spuare-4-3");
-  let imgNoSquareRate3_4 = $(".image-no-spuare-3-4");
-
-  distance = (body - widthContainer) / 2;
-  itemNoSquareThree.css("height", itemNoSquareThree.innerWidth() * (3 / 2));
-  itemNoSquareFour.css("height", itemNoSquareFour.innerWidth() * (3 / 2));
-  itemThreePertwo.css("height", itemThreePertwo.innerWidth() * (2 / 3));
-  itemNoSquareOne.css("height", itemNoSquareOne.innerWidth() * (2 / 3));
-  imgSquare.css("height", imgSquare.innerWidth());
-  imgNoSquare.find("img").css("height", (imgNoSquare.innerWidth() * 16) / 9);
-  imgNoSquareRate4_2
-    .find("img")
-    .css("height", imgNoSquareRate4_2.innerWidth() * (1 / 2) + 20);
-  imgNoSquareRate4_3
-    .find("img")
-    .css("height", imgNoSquareRate4_3.innerWidth() * (4 / 3));
-  imgNoSquareRate3_4
-    .find("img")
-    .css("height", imgNoSquareRate3_4.innerWidth() * (3 / 4) - 15);
-
-  //case no slider
-  let groupItemNoSlider = $(".list-layout-warner-3-no-slider").innerWidth();
-  let groupItemNoSliderFour = $(".list-layout-warner-4-no-slider").innerWidth();
-  let itemNoSquareThreeNoSlide = $(
-    ".list-layout-warner-3-no-slider .gird-item-no-square .image-feature"
-  );
-  let itemNoSquareFourNoSlide = $(
-    ".list-layout-warner-4-no-slider .gird-item-no-square .image-feature"
-  );
-  let widthItemNoSlider = (groupItemNoSlider - 90) / 3;
-  let widthItemNoSliderFour = (groupItemNoSliderFour - 120) / 4;
-
-  itemNoSquareThreeNoSlide.css("width", widthItemNoSlider);
-  itemNoSquareThreeNoSlide.css("height", widthItemNoSlider * (3 / 2));
-
-  itemNoSquareFourNoSlide.css("width", widthItemNoSliderFour);
-  itemNoSquareFourNoSlide.css("height", widthItemNoSliderFour * (3 / 2));
-
-  if ($(window).width() < 991) {
-    let widthItemNoSlider = (groupItemNoSlider - 60) / 3;
-    let widthItemNoSliderFour = (groupItemNoSliderFour - 60) / 3;
-    itemNoSquareThreeNoSlide.css("width", widthItemNoSlider);
-    itemNoSquareThreeNoSlide.css("height", widthItemNoSlider * (3 / 2));
-    itemNoSquareFourNoSlide.css("width", widthItemNoSliderFour);
-    itemNoSquareFourNoSlide.css("height", widthItemNoSliderFour * (3 / 2));
-  }
-  if ($(window).width() < 768) {
-    let widthItemNoSlider = (groupItemNoSlider - 60) / 2;
-    let widthItemNoSliderFour = (groupItemNoSliderFour - 60) / 2;
-    itemNoSquareThreeNoSlide.css("width", widthItemNoSlider);
-    itemNoSquareThreeNoSlide.css("height", widthItemNoSlider * (3 / 2));
-    itemNoSquareFourNoSlide.css("width", widthItemNoSliderFour);
-    itemNoSquareFourNoSlide.css("height", widthItemNoSliderFour * (3 / 2));
-  }
-  if ($(window).width() < 480) {
-    let widthItemNoSlider = groupItemNoSlider - 20;
-    let widthItemNoSliderFour = groupItemNoSliderFour - 20;
-    itemNoSquareThreeNoSlide.css("width", widthItemNoSlider);
-    itemNoSquareThreeNoSlide.css("height", widthItemNoSlider * (3 / 2));
-    itemNoSquareFourNoSlide.css("width", widthItemNoSliderFour);
-    itemNoSquareFourNoSlide.css("height", widthItemNoSliderFour * (3 / 2));
-  }
 }
 
 function bannerSlider() {
@@ -301,7 +219,6 @@ function sliderGrid() {
     let btnArrowplayList = $(".list-playlist .slick-arrow");
     let heightCalclayList =
       (heightplayList - listPlayList.find("iframe").innerHeight()) / 2;
-    let heightListVideo = listVideo.innerHeight();
     let btnArrowplayVideo = $(".list-videos .slick-arrow");
     let heightCalclayVideo = listVideo.find(".content-text").innerHeight() / 2;
     btnArrowplayList.css("top", "calc(50% + " + heightCalclayList + "px)");
