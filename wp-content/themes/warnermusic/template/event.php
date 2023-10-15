@@ -27,7 +27,7 @@ get_header();
 						if ($artist->parent == 0){
 							continue;
 						}
-						$artistImage = get_field( 'artist_image', 'artist_' . $artist->term_id );?>
+						$artistImage = get_field( 'artist_event_image', 'artist_' . $artist->term_id );?>
 						<div class="list-nav-item-artist gird-item-three-per-two">
 							<div class="content-box">
 								<div class="group-content">

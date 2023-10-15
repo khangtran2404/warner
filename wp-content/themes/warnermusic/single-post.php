@@ -92,7 +92,7 @@ while ( have_posts() ) :
 									if ( $relatedArtist ) {
 										foreach ( $relatedArtist as $artist ):
 											$artistUrl        = get_term_link( $artist->term_id, 'artist' );
-											$artistImageUrl   = get_field( 'artist_image', 'artist_' . $artist->term_idildTerm );
+											$artistImageUrl   = get_field( 'artist_image', 'artist_' . $artist->term_id );
                                             ?>
                                             <div class="related-artist-item related-item">
                                                 <a href="<?= $artistUrl ?>">

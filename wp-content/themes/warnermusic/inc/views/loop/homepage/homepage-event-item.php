@@ -18,7 +18,7 @@ if ( ! empty( $artists ) && ! is_wp_error( $artists ) ):?>
 			if($key > 3) {
 				break;
 			}
-			$artistImage = get_field( 'artist_image', 'artist_' . $artist->term_id );?>
+			$artistImage = get_field( 'artist_event_image', 'artist_' . $artist->term_id );?>
 			<div class="list-nav-item-artist gird-item-three-per-two wow fadeInUp" data-wow-delay="0.2s" data-wow-duration="1s">
 				<div class="content-box">
 					<div class="group-content">
