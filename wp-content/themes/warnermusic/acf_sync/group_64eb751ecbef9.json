@@ -263,6 +263,68 @@
                             "save_other_choice": 0
                         },
                         {
+                            "key": "field_652b5eae10ad4",
+                            "label": "Animation Duration",
+                            "name": "animation_duration",
+                            "aria-label": "",
+                            "type": "group",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "layout": "block",
+                            "sub_fields": [
+                                {
+                                    "key": "field_652b5f9110ad6",
+                                    "label": "For Desktop",
+                                    "name": "for_desktop",
+                                    "aria-label": "",
+                                    "type": "number",
+                                    "instructions": "Unit in seconds",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "50",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": 20,
+                                    "min": 1,
+                                    "max": "",
+                                    "placeholder": "20 (Default)",
+                                    "step": "0.1",
+                                    "prepend": "",
+                                    "append": ""
+                                },
+                                {
+                                    "key": "field_652b604f10ad7",
+                                    "label": "For Mobile",
+                                    "name": "for_mobile",
+                                    "aria-label": "",
+                                    "type": "number",
+                                    "instructions": "Unit in seconds",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "50",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": 10,
+                                    "min": 1,
+                                    "max": "",
+                                    "placeholder": "10 (Default)",
+                                    "step": "0.1",
+                                    "prepend": "",
+                                    "append": ""
+                                }
+                            ]
+                        },
+                        {
                             "key": "field_651a227383bdc",
                             "label": "Content",
                             "name": "content",
@@ -347,5 +409,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1697339174
+    "modified": 1697342268
 }

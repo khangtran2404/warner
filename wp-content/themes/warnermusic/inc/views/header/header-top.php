@@ -4,6 +4,8 @@ $switch =  $group_setting_marquee['disable_or_enable_advertising'];
 $content_marquee = $group_setting_marquee['content'];
 $img_marquee = $group_setting_marquee['icon_image'];
 $url_marquee = $group_setting_marquee['url_for_content'];
+$durationDes = $group_setting_marquee['animation_duration']['for_desktop'];
+$durationMo = $group_setting_marquee['animation_duration']['for_mobile'];
 if($switch === '1'):?>
     <div class="header-top">
         <div class="marquee">
@@ -50,6 +52,7 @@ if($switch === '1'):?>
                         <?php endfor;?>
                     <?php endif;?>
                 </div>
+                <style>.marquee .list-link-marquee {animation-duration: <?= $durationDes ? $durationDes : '20'?>s;}@media screen and (max-width: 767px) {.marquee .list-link-marquee {animation-duration: <?= $durationMo ? $durationMo : '10'?>s;}}</style>
             </div>
         </div>
     </div>

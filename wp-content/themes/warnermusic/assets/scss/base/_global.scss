@@ -739,10 +739,7 @@ body {
     width: 200%;
     position: absolute;
     overflow: hidden;
-    animation: marqueeText 14s linear infinite;
-    @include tablet {
-      animation: marqueeText 7s linear infinite;
-    }
+    animation: marqueeText linear infinite;
     .item-left,
     .item-right {
       float: left;
