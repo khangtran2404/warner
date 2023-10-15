@@ -28,34 +28,6 @@
             "preview_size": "medium"
         },
         {
-            "key": "field_65087d1c29d6d",
-            "label": "Artist Gallery",
-            "name": "artist_gallery",
-            "aria-label": "",
-            "type": "gallery",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "url",
-            "library": "all",
-            "min": "",
-            "max": "",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": "",
-            "insert": "append",
-            "preview_size": "medium"
-        },
-        {
             "key": "field_6509bc64a63be",
             "label": "Social Links",
             "name": "artist_social_links",
@@ -226,6 +198,31 @@
                     ]
                 }
             ]
+        },
+        {
+            "key": "field_652bcb1891899",
+            "label": "Artist Event Image",
+            "name": "artist_event_image",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "preview_size": "medium"
         }
     ],
     "location": [
@@ -253,5 +250,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1695138707
+    "modified": 1697368925
 }
