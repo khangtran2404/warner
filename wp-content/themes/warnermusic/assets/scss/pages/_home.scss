@@ -384,21 +384,23 @@
     font-weight: 500;
     font-size: 70px;
     letter-spacing: -4px;
-    line-height: 0.95;
+    line-height: 1.1;
     text-align: right;
     text-transform: uppercase;
     word-break: break-word;
-    padding-right: 10px;
-    background: -webkit-linear-gradient(135deg, $color__bg, $color__light);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    padding: 11px 10px 0 0;
+    margin-bottom: 10px;
+    a {
+      background: -webkit-linear-gradient(113deg, $color__bg, $color__light);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
     @include desktop {
       font-size: 50px;
       text-align: left;
       letter-spacing: -0.02em;
       word-break: break-word;
       line-height: 1;
-      margin-bottom: 20px;
     }
     @include tablet {
       font-size: 40px;
@@ -446,6 +448,9 @@
       font-size: 18px;
       width: calc(100% - 10px);
     }
+  }
+  .event-artist {
+    padding-top: 11px;
   }
   .button-link-warner.radius-none {
     a {

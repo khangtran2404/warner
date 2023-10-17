@@ -181,16 +181,20 @@
   .main-image-mobile {
     position: fixed;
     z-index: -1000;
-    top: -1000px;
+    top: -100000vh;
+    visibility: hidden;
+    opacity: 0;
     @include desktop {
       position: static;
+      opacity: 1;
+      visibility: visible;
     }
   }
   .main-image-desktop {
     @include desktop {
-      position: absolute;
+      position: fixed;
       z-index: -1000;
-      top: -1000px;
+      top: -100000vh;
       opacity: 0;
       visibility: hidden;
     }
