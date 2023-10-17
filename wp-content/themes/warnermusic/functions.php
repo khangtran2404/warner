@@ -66,6 +66,36 @@ register_nav_menus(
 	)
 );
 
+// Style for BO
+function wpb_gutenberg_editor_styles() {
+    echo '
+        <style>
+            /* Width of "wide" blocks */
+            .editor-styles-wrapper .wp-block {
+				max-width: 992px !important;
+			}
+			.editor-styles-wrapper h1 {
+				font-size: 60px !important;
+				font-weight: 500 !important;
+				line-height: 1.1 !important;
+			}
+			.separator-left-warner,
+			.separator-right-warner,
+			.separator-center-warner {
+			  width: 50px !important;
+			  margin-top: 25px !important;
+			  height: 8px;
+			  background: -webkit-linear-gradient(
+				135deg,
+				#50cb93,
+				#acffad
+			  );
+			}
+        </style>
+    ';
+}
+add_action( 'admin_head', 'wpb_gutenberg_editor_styles' );
+
 // Disables the block editor from managing widgets in the Gutenberg plugin.
 add_filter( 'gutenberg_use_widgets_block_editor', '__return_false' );
 // Disables the block editor from managing widgets.
