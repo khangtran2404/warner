@@ -12,7 +12,7 @@
 get_header(); ?>
 <?php
 $searchQuery  = get_search_query();
-$results      = get_posts();
+$results      = [];
 $artist_terms = get_terms( array(
 	'taxonomy'   => 'artist',
 	'hide_empty' => false,
@@ -60,7 +60,7 @@ if ( ! empty( $partner_terms ) && ! is_wp_error( $partner_terms ) ) {
 		        <?php
 		        if ( ! empty( $results ) ):
 			        foreach ( $results as $item ):
-				        if ( is_a( $item, 'WP_Post' ) ): ?>
+				        if ( is_a( $item, 'WP_Post' ) ): continue;?>
                             <div class="search-item gird-item-no-square">
                                 <div class="content-box">
                                     <div class="group-content">
