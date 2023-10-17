@@ -24,7 +24,7 @@ function get_page_link_by_template_name( $templateName ): string {
 
 function custom_search_filter( $query ) {
 	if ( $query->is_search ) {
-		$query->set( 'post_type', array( 'event', 'song', 'partner_artist' ) );
+		$query->set( 'post_type', array( '' ) );
 	}
 	return $query;
 }
