@@ -47,14 +47,23 @@ if ( ! empty( $partner_terms ) && ! is_wp_error( $partner_terms ) ) {
             <h1 class="main-title"><?= __( 'Search results' ) ?></h1>
             <div class="main-content">
 				<?php
-				echo 'We found <span class="color-main">'.count($results).'</span> ';
-				printf(
-				/* translators: %s: Search term. */
-					esc_html__( 'results for "%s"', 'twentytwentyone' ),
-					'<span class="page-description search-term color-main">' . esc_html( get_search_query() ) . '</span>'
-				);
+				if(count($results) > 0) {
+					echo "We found <span class='color-main'>".count($results)."</span> ";
+					printf(
+					/* translators: %s: Search term. */
+						esc_html__( 'results for "%s"', 'twentytwentyone' ),
+						'<span class="page-description search-term color-main">' . esc_html( get_search_query() ) . '</span>'
+					);
+					?><div class="separator-left-warner"></div><?php
+				} else {
+					echo "We couldn't find a match ";
+					printf(
+					/* translators: %s: Search term. */
+						esc_html__( 'for "%s". Please try another search.', 'twentytwentyone' ),
+						'<span class="page-description search-term color-main">' . esc_html( get_search_query() ) . '</span>'
+					);
+				}
 				?>
-                <div class="separator-left-warner"></div>
             </div>
             <div class="list-layout-warner-4-no-slider post-list-pagination" id="search-results">
 		        <?php
