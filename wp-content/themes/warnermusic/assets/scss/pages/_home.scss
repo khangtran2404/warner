@@ -390,7 +390,7 @@
     word-break: break-word;
     padding: 11px 10px 0 0;
     margin-bottom: 10px;
-    a {
+    span {
       background: -webkit-linear-gradient(113deg, $color__bg, $color__light);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -622,7 +622,7 @@
         padding: 10px;
         top: 0;
         left: 0;
-        font-size: 20px;
+        font-size: 16px;
       }
       &:hover {
         .image-feature {
@@ -640,6 +640,28 @@
         .description {
           text-decoration: underline;
           text-underline-offset: 2px;
+        }
+      }
+    }
+  }
+}
+
+.news {
+  .gird-item-no-square {
+    .group-content {
+      .name {
+        .title {
+          font-size: 22px;
+          line-height: 1.25;
+          @include big_screen {
+            font-size: 18px;
+          }
+          @include desktop {
+            font-size: 20px;
+          }
+          @include mobile {
+            font-size: 22px;
+          }
         }
       }
     }

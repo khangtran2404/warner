@@ -12,6 +12,6 @@
         <div class="location"><?= get_field( 'event_position' ) ?></div>
     </div>
     <div class="learn-more button-link-warner">
-        <a href="<?= $eventLink ?: '#' ?>"><?= __( 'Learn more' ) ?></a>
+        <a href="<?= $eventLink ?: '#' ?>" target="_blank"><?= __( 'Learn more' ) ?></a>
     </div>
 </div>

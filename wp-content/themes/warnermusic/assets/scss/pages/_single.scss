@@ -151,19 +151,17 @@
 
 .single-post-template {
   h1 {
-    display: inline;
-    margin-bottom: 1px;
     color: $color__gray-1 !important;
-    @include desktop {
-      display: inline-block;
+    font-size: 30px !important;
+    margin-bottom: 5px;
+    @include big_screen {
+      font-size: 25px !important;
     }
   }
   .publish-date {
-    display: inline;
     color: $color__gray-1 !important;
-    @include desktop {
-      display: block;
-    }
+    font-size: 14px;
+    margin-bottom: 25px;
   }
   .main-image {
     position: relative;
@@ -210,7 +208,10 @@
     }
   }
   .sidebar {
-    padding-left: 15px;
+    padding-left: 100px;
+    @include big_screen {
+      padding-left: 70px;
+    }
     @include desktop {
       padding-left: 0;
     }
@@ -272,7 +273,7 @@
   }
   .related-artist-item {
     margin: 0 0 30px 0;
-    width: 50%;
+    width: calc(35% + 30px);
     padding: 0 15px;
     .name-related {
       margin-top: 5px;
@@ -301,14 +302,18 @@
   .group-cont-text {
     width: calc(65% - 15px);
     .title {
-      font-size: 14px;
+      font-size: 13px;
       -webkit-line-clamp: 3;
       -webkit-box-orient: vertical;
       overflow: hidden;
       text-overflow: ellipsis;
       display: -webkit-box;
+      line-height: 1.25;
       @include big_screen {
         -webkit-line-clamp: 2;
+      }
+      @include desktop {
+        -webkit-line-clamp: 3;
       }
       @include tablet {
         -webkit-line-clamp: 5;
@@ -316,12 +321,9 @@
       @include mobile {
         -webkit-line-clamp: 3;
       }
-      @include small_screen {
-        -webkit-line-clamp: 2;
-      }
     }
     .publish-date {
-      font-size: 13px;
+      font-size: 12px;
     }
   }
   .main-content {
@@ -329,11 +331,25 @@
     li {
       color: $color__gray-2 !important;
     }
+    p {
+      text-align: justify;
+    }
     ul,
     ol {
       margin-bottom: 20px;
       li {
         margin-bottom: 8px;
+      }
+    }
+    .wp-block-image {
+      figure {
+        @include desktop {
+          margin: 0 0 15px 0;
+          img {
+            width: 100% !important;
+            height: auto !important;
+          }
+        }
       }
     }
   }

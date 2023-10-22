@@ -35,10 +35,10 @@ $header_height: 55px;
     max-width: 100%;
     padding: 9px 40px;
     @media screen and (min-width: 1600px) {
-      padding: 9px 100px;
+      padding: 9px 80px;
     }
     @media screen and (min-width: 1900px) {
-      padding: 9px 150px;
+      padding: 9px 90px;
     }
     @include tablet {
       padding: 5px 15px;

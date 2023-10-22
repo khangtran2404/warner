@@ -13,7 +13,7 @@ get_header();
 /* Start the Loop */
 while ( have_posts() ) :
 	the_post(); ?>
-    <div class="taxonomy-singer-template">
+    <div class="taxonomy-singer-template single-partner-post-template">
         <div class="container">
             <div class="main-taxt-content margin-bottom-section">
                 <h1 class="title-tax font-global"><?= get_the_title() ?></h1>
@@ -84,7 +84,7 @@ while ( have_posts() ) :
                 </div>
             </div>
             <div class="group-artist-playlists playlists margin-bottom-section">
-                <h2 class="small-title font-global"><?= __( 'Playlist' ) ?></h2>
+                <h2 class="small-title font-global"><?= __( 'Playlists' ) ?></h2>
                 <div class="list-playlist">
 					<?php
 					$playlists = get_field( 'partner_artist_playlist' );

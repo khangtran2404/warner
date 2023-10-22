@@ -1,45 +1,55 @@
 .layout-filter-side-bar {
-    .filter-section {
-        background-color: $color__bg;
-        padding: 15px;
-        margin-bottom: 30px;
-        @include desktop {
-            width: fit-content;
-            margin-left: auto;
-            margin-right: auto;
-            background-color: transparent;
-        }
-        @include desktop {
-            padding: 0;
-        }
-        .list-filter-artist {
-            @include desktop {
-                width: fit-content;
-                justify-content: center;
-                margin: 0 -5px;
-            }
-            @include tablet {
-                flex-wrap: wrap;
-            }
-            li {
-                padding: 10px;
-                font-size: 14px !important;
-                text-transform: capitalize;
-                text-decoration: none !important;
-                font-weight: 700;
-                margin-bottom: 10px;
-                &:last-child {
-                    margin-bottom: 0;
-                }
-                @include desktop {
-                    margin: 0 5px 10px 5px !important;
-                    padding: 8px 15px;
-                }
-                &.active {
-                    background: -webkit-linear-gradient(135deg, $color__main-bold, $color__main);
-                    color: $color__bg;
-                }
-            }
-        }
+  .filter-section {
+    background-color: $color__bg;
+    padding: 15px;
+    margin-bottom: 30px;
+    @include desktop {
+      width: fit-content;
+      margin-left: auto;
+      margin-right: auto;
+      background-color: transparent;
     }
+    @include desktop {
+      padding: 0;
+    }
+    .list-filter-artist {
+      @include desktop {
+        width: fit-content;
+        justify-content: center;
+        margin: 0 -5px;
+      }
+      @include tablet {
+        flex-wrap: wrap;
+      }
+      li {
+        padding: 10px;
+        font-size: 14px !important;
+        text-transform: capitalize;
+        text-decoration: none !important;
+        font-weight: 700;
+        margin-bottom: 10px;
+        &:last-child {
+          margin-bottom: 0;
+        }
+        @include desktop {
+          margin: 0 5px 10px 5px !important;
+          padding: 8px 15px;
+        }
+        &.active {
+          background: -webkit-linear-gradient(
+            135deg,
+            $color__main-bold,
+            $color__main
+          );
+          color: $color__bg;
+        }
+      }
+    }
+  }
+  .desc-content {
+    font-weight: 200;
+    text-align: right;
+    margin-bottom: 25px;
+    animation: show_block 1s forwards;
+  }
 }

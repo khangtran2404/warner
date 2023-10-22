@@ -78,7 +78,7 @@ $mainImg  = get_field( 'artist_image', 'artist_' . $termData->term_id );
                 </div>
             </div>
             <div class="group-artist-playlists playlists margin-bottom-section">
-                <h2 class="small-title font-global"><?= __( 'Playlist' ) ?></h2>
+                <h2 class="small-title font-global"><?= __( 'Playlists' ) ?></h2>
                 <div class="list-playlist">
 					<?php
 					$args  = array(

@@ -18,19 +18,8 @@ while ( have_posts() ) :
 			<div class="row">
 				<div class="col-lg-8 col-md-7 col-sm-12 col-12">
 					<article class="main-single-post">
-						<div class="float-right main-image main-image-desktop">
-							<div class="aspect-ratio-warner aspect-ratio-3-4">
-								<img src="<?= get_the_post_thumbnail_url() ?>" alt="news-thumbnail">
-							</div>
-						</div>
-						<h1 class="font-global main-title-small"><?= get_the_title() ?></h1><br>
-						<p class="publish-date"><?= get_the_date( 'F d, Y' ) ?></p>
-						<p class="hiden-on-mobile "></p>
-						<div class="float-right main-image main-image-mobile">
-							<div class="aspect-ratio-warner aspect-ratio-3-4">
-								<img src="<?= get_the_post_thumbnail_url() ?>" alt="news-thumbnail">
-							</div>
-						</div>
+						<h1 class="font-global main-title-small"><?= get_the_title() ?></h1>
+						<div class="publish-date"><?= get_the_date( 'F d, Y' ) ?></div>
 						<div class="main-content">
 							<?php the_content() ;?>
 						</div>
