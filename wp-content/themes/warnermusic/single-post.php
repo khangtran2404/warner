@@ -24,7 +24,7 @@ while ( have_posts() ) :
 							</div>
 						</div>
 						<h1 class="font-global main-title-small"><?= get_the_title() ?></h1><br>
-						<p class="publish-date"><?= get_the_date( 'd/m/Y' ) ?></p>
+						<p class="publish-date"><?= get_the_date( 'F d, Y' ) ?></p>
 						<p class="hiden-on-mobile "></p>
 						<div class="float-right main-image main-image-mobile">
 							<div class="aspect-ratio-warner aspect-ratio-3-4">
@@ -69,7 +69,7 @@ while ( have_posts() ) :
 												</div>
 												<div class="group-cont-text">
 													<div class="title"><?= get_the_title() ?></div>
-													<div class="publish-date"><?= get_the_date( 'd/m/Y' ) ?></div>
+													<div class="publish-date"><?= get_the_date( 'F d, Y' ) ?></div>
 												</div>
 											</a>
 										</div>
