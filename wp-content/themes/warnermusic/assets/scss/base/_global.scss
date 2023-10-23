@@ -522,6 +522,17 @@ body {
   }
 }
 
+.animation-heading-warner {
+  letter-spacing: 1px;
+  .letter-animation {
+    opacity: 0;
+    &.active {
+      animation: letterAnimation 0.55s forwards;
+      display: inline-block;
+    }
+  }
+}
+
 #overlayer {
   width: 100vw;
   height: 100vh;

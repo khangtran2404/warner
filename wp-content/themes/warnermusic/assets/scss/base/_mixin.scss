@@ -3,10 +3,10 @@
 */
 
 @mixin transition($args...) {
-    -webkit-transition: $args;
-    -moz-transition: $args;
-    -o-transition: $args;
-    transition: $args;
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -o-transition: $args;
+  transition: $args;
 }
 
 @mixin transition-delay($seconds) {
@@ -15,91 +15,100 @@
   -o-transition-delay: $seconds;
   transition-delay: $seconds;
 }
-  
+
 @mixin border-radius($radius) {
-    border-radius: $radius;
-    -webkit-border-radius: $radius;
-    -moz-border-radius: $radius;
+  border-radius: $radius;
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
 }
-  
+
 @mixin box-shadow($top, $left, $blur, $color, $inset: false) {
-    @if $inset {
-      -webkit-box-shadow: inset $top $left $blur $color;
-      -moz-box-shadow: inset $top $left $blur $color;
-      box-shadow: inset $top $left $blur $color;
-    } @else {
-      -webkit-box-shadow: $top $left $blur $color;
-      -moz-box-shadow: $top $left $blur $color;
-      box-shadow: $top $left $blur $color;
-    }
+  @if $inset {
+    -webkit-box-shadow: inset $top $left $blur $color;
+    -moz-box-shadow: inset $top $left $blur $color;
+    box-shadow: inset $top $left $blur $color;
+  } @else {
+    -webkit-box-shadow: $top $left $blur $color;
+    -moz-box-shadow: $top $left $blur $color;
+    box-shadow: $top $left $blur $color;
+  }
 }
-  
+
 @mixin transform($transforms) {
-    -webkit-transform: $transforms;
-    -moz-transform: $transforms;
-    -ms-transform: $transforms;
-    transform: $transforms;
+  -webkit-transform: $transforms;
+  -moz-transform: $transforms;
+  -ms-transform: $transforms;
+  transform: $transforms;
 }
-  
+
 @mixin rotate($deg) {
-    @include transform(rotate(#{$deg}deg));
+  @include transform(rotate(#{$deg}deg));
 }
 
 @mixin rotate-important($deg) {
   @include transform(rotate(#{$deg}deg !important));
 }
-  
+
 @mixin scale($scale) {
-    @include transform(scale($scale));
+  @include transform(scale($scale));
 }
 
 @mixin scale2d($x, $y) {
   @include transform(scale($x, $y));
 }
-  
+
 @mixin translate($x, $y) {
-    @include transform(translate($x, $y));
-}
-  
-@mixin skew($x, $y) {
-    @include transform(skew(#{$x}deg, #{$y}deg));
-}
-  
-@mixin transform-origin($origin) {
-    -webkit-transform-origin: $origin;
-    -moz-transform-origin: $origin;
-    -ms-transform-origin: $origin;
-    transform-origin: $origin;
+  @include transform(translate($x, $y));
 }
 
+@mixin skew($x, $y) {
+  @include transform(skew(#{$x}deg, #{$y}deg));
+}
+
+@mixin transform-origin($origin) {
+  -webkit-transform-origin: $origin;
+  -moz-transform-origin: $origin;
+  -ms-transform-origin: $origin;
+  transform-origin: $origin;
+}
 
 @keyframes stretch {
-  0%, 20%, 49% { 
+  0%,
+  20%,
+  49% {
     transform: scaleY(0.4);
     background-color: $color__light;
   }
-  
-  10% { 
-    transform: scaleY(1.0);
+
+  10% {
+    transform: scaleY(1);
   }
-  
-  50%, 70%, 100% { 
+
+  50%,
+  70%,
+  100% {
     transform: scaleY(0.4);
-    background: -webkit-linear-gradient(135deg, $color__main, $color__main-bold);
-    
+    background: -webkit-linear-gradient(
+      135deg,
+      $color__main,
+      $color__main-bold
+    );
   }
-  
-  60% { 
-    transform: scaleY(1.0);
-    background: -webkit-linear-gradient(135deg, $color__main-bold, $color__main);
+
+  60% {
+    transform: scaleY(1);
+    background: -webkit-linear-gradient(
+      135deg,
+      $color__main-bold,
+      $color__main
+    );
   }
 }
 
-/* Animation Show Element*/
+//Animation Show Element
 @keyframes show_block {
   0% {
     opacity: 0;
-  
   }
   100% {
     opacity: 1;
@@ -109,65 +118,93 @@
 @-webkit-keyframes show_block {
   0% {
     opacity: 0;
-    
   }
   100% {
     opacity: 1;
-    
   }
 }
 
 @-moz-keyframes show_block {
   0% {
     opacity: 0;
-  
   }
   100% {
     opacity: 1;
   }
 }
 
+// marquee aniamtion
 @keyframes marqueeText {
-  0% { left: 0; }
-  100% { left: -100%; }
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -100%;
+  }
 }
 @-moz-keyframes marqueeText {
-  0% { left: 0; }
-  100% { left: -100%; }
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -100%;
+  }
 }
 @-webkit-keyframes marqueeText {
-  0% { left: 0; }
-  100% { left: -100%; }
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -100%;
+  }
 }
 
+// letter animation
+@keyframes letterAnimation {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 40px, 0) rotateX(-90deg);
+    transform: translate3d(0, 40px, 0) rotateX(-90deg);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0) rotateX(0deg);
+    transform: translate3d(0, 0, 0) rotateX(0);
+  }
+}
 /* Screen breakpoint width*/
 $big-width: 1199px;
-$desktop-width: 991px;  
-$tablet-width: 768px; 
-$mobile-width: 480px; 
+$desktop-width: 991px;
+$tablet-width: 768px;
+$mobile-width: 480px;
 $small-width: 375px;
 
-@mixin big_screen { @media screen and (max-width: #{$big-width}) {     
-    @content;   
-  } 
-} 
+@mixin big_screen {
+  @media screen and (max-width: #{$big-width}) {
+    @content;
+  }
+}
 
-@mixin desktop { @media screen and (max-width: #{$desktop-width}) {     
-    @content;   
-  } 
-}  
+@mixin desktop {
+  @media screen and (max-width: #{$desktop-width}) {
+    @content;
+  }
+}
 
-@mixin tablet { @media screen and (max-width: #{$tablet-width}) {     
-    @content;   
-  } 
-}  
+@mixin tablet {
+  @media screen and (max-width: #{$tablet-width}) {
+    @content;
+  }
+}
 
-@mixin mobile { @media screen and (max-width: #{$mobile-width}) {     
-    @content;   
-  } 
-}  
+@mixin mobile {
+  @media screen and (max-width: #{$mobile-width}) {
+    @content;
+  }
+}
 
-@mixin small_screen { @media screen and (max-width: #{$small-width}) {     
-    @content;   
-  } 
-}  
+@mixin small_screen {
+  @media screen and (max-width: #{$small-width}) {
+    @content;
+  }
+}

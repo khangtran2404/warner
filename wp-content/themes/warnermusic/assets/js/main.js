@@ -25,6 +25,7 @@ $(document).ready(function () {
   sliderGrid();
   sliderSyncing();
   animationWow();
+  headingAnimation();
 });
 
 function animationWow() {
@@ -37,7 +38,42 @@ function animationWow() {
   });
   wow.init();
 }
+function headingAnimation() {
+  function splitWord($object) {
+    let groupHead = $("." + $object + " .animation-heading-warner");
+    let array = groupHead.text().split("");
+    groupHead.html("");
+    for (let i = 0; i < parseInt(array.length); i++) {
+      groupHead.append(
+        "<span class='letter-animation' style='animation-delay:" +
+          (i + 1) / (parseInt(array.length) + 1) +
+          "s'>" +
+          array[i] +
+          "</span>"
+      );
+    }
+  }
+  splitWord("artists");
+  splitWord("news");
+  splitWord("events");
+  splitWord("merchandise");
+  splitWord("playlists");
 
+  function reveal() {
+    let reveal = $(".animation-heading-warner .letter-animation");
+    for (k = 0; k < reveal.length; k++) {
+      let windowHeight = $(window).innerHeight();
+      let eleTop = reveal[k].getBoundingClientRect().top;
+      if (eleTop < windowHeight - 150) {
+        reveal[k].classList.add("active");
+      } else {
+        reveal[k].classList.remove("active");
+      }
+    }
+  }
+  reveal();
+  $(window).scroll(reveal);
+}
 function bannerSlider() {
   let listSlider = $(".banner-slider .list-banner-slider");
 
