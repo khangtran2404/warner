@@ -59,7 +59,7 @@ get_header();
 							<div class="row">
 								<div class="col-lg-4 col-md-12 col-sm-12 col-12">
 									<div class="group-col">
-										<div class="name text-decoration-none"><a href="#"><?= $artist->name ?></a></div>
+										<div class="name text-decoration-none"><?= $artist->name ?></div>
 									</div>
 								</div>
 								<div class="col-lg-8 col-md-12 col-sm-12 col-12">

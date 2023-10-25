@@ -8,19 +8,24 @@
   .information {
     display: flex;
     align-items: center;
-    padding-right: 80px;
+    padding-right: 60px;
     height: 100%;
     .publish-date {
       font-size: 16px;
       line-height: 1.25;
-      margin-bottom: 3px;
+      margin-bottom: 5px;
     }
     a {
-      font-size: 25px;
-      line-height: 1.25;
+      font-size: 40px;
+      line-height: 1.2;
     }
     @include desktop {
       padding-right: 0;
+      .group-content {
+        a {
+          font-size: 25px;
+        }
+      }
     }
     @include tablet {
       display: block;
@@ -28,8 +33,7 @@
         margin-top: 0;
         margin-bottom: 20px;
         a {
-          font-size: 18px;
-          line-height: 1;
+          font-size: 22px;
         }
       }
     }

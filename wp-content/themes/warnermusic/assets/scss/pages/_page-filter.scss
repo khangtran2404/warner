@@ -51,5 +51,8 @@
     text-align: right;
     margin-bottom: 25px;
     animation: show_block 1s forwards;
+    @include desktop {
+      text-align: center;
+    }
   }
 }

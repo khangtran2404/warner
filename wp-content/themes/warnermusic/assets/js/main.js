@@ -66,8 +66,6 @@ function headingAnimation() {
       let eleTop = reveal[k].getBoundingClientRect().top;
       if (eleTop < windowHeight - 150) {
         reveal[k].classList.add("active");
-      } else {
-        reveal[k].classList.remove("active");
       }
     }
   }

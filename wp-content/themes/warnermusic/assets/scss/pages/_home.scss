@@ -124,11 +124,18 @@
     }
     .artist {
       font-family: $font__global;
+      color: $color__text-primary;
       margin-bottom: 12px;
-      font-size: 28px;
+      font-size: 32px;
       font-weight: 500;
       line-height: 1.2;
       padding: 0 10px;
+      @media screen and (min-width: 1600px) {
+        font-size: 37px;
+      }
+      @include big_screen {
+        font-size: 28px;
+      }
     }
     .title {
       margin-top: 20px;
@@ -390,11 +397,6 @@
     word-break: break-word;
     padding: 11px 10px 0 0;
     margin-bottom: 10px;
-    span {
-      background: -webkit-linear-gradient(113deg, $color__bg, $color__light);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
     @include desktop {
       font-size: 50px;
       text-align: left;
@@ -751,6 +753,17 @@
       }
       .image-feature {
         opacity: 1;
+      }
+    }
+  }
+}
+.list-merchandise {
+  .gird-item-no-square {
+    .group-content {
+      .image-feature {
+        &::after {
+          background: transparent;
+        }
       }
     }
   }

@@ -526,9 +526,15 @@ body {
   letter-spacing: 1px;
   .letter-animation {
     opacity: 0;
+    @include tablet {
+      opacity: 1;
+    }
     &.active {
-      animation: letterAnimation 0.55s forwards;
+      animation: letterAnimation 0.35s forwards;
       display: inline-block;
+      @include tablet {
+        animation: unset !important;
+      }
     }
   }
 }

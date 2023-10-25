@@ -151,10 +151,14 @@
 
 .single-post-template {
   h1 {
-    color: $color__gray-1 !important;
-    font-size: 30px !important;
-    margin-bottom: 5px;
+    color: $color__text-primary !important;
+    font-size: 40px !important;
+    margin-bottom: 3px;
+    line-height: 1.2;
     @include big_screen {
+      font-size: 30px !important;
+    }
+    @include desktop {
       font-size: 25px !important;
     }
   }
@@ -247,6 +251,9 @@
     margin-bottom: 15px;
     @include tablet {
       margin-bottom: 20px;
+      img {
+        transform: unset !important;
+      }
     }
     @include mobile {
       margin-bottom: 15px;
@@ -283,6 +290,11 @@
       width: 100%;
       margin: 0;
       border-radius: 50%;
+      img {
+        @include tablet {
+          transform: unset !important;
+        }
+      }
     }
     a {
       width: 100%;
@@ -324,6 +336,7 @@
     }
     .publish-date {
       font-size: 12px;
+      margin-bottom: 0;
     }
   }
   .main-content {

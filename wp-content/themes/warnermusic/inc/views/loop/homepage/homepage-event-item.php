@@ -43,7 +43,7 @@ if ( ! empty( $artists ) && ! is_wp_error( $artists ) ):?>
 				<div class="row">
 					<div class="col-lg-4 col-md-12 col-sm-12 col-12 wow fadeInUp" data-wow-delay="0.4s" data-wow-duration="1s">
 						<div class="group-col">
-							<div class="name text-decoration-none"><span><?= $artist->name ?></span></div>
+							<div class="name text-decoration-none"><?= $artist->name ?></div>
 						</div>
 					</div>
 					<div class="col-lg-8 col-md-12 col-sm-12 col-12 wow fadeInUp" data-wow-delay="0.6s" data-wow-duration="1s">
