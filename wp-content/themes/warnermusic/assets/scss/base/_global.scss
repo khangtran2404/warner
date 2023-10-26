@@ -760,6 +760,9 @@ body {
     position: absolute;
     overflow: hidden;
     animation: marqueeText linear infinite;
+    -webkit-animation: marqueeText linear infinite;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
     .item-left,
     .item-right {
       float: left;

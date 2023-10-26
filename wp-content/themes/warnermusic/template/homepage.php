@@ -41,7 +41,7 @@ get_header();
                 <div class="group-title-button">
                     <h2 class="artist-title title-warner-h2 animation-heading-warner"><?= __( 'Artists' ) ?></h2>
                     <div class="artists-see-more button-link-warner wow fadeInRight" data-wow-delay="1.1s" data-wow-duration="1s"><a
-                                href="<?= get_field( 'artist_see_more', get_the_ID() ); ?>"><?= __( "See more" ) ?></a>
+                                href="<?= get_field( 'artist_see_more', get_queried_object()->ID ); ?>"><?= __( "See more" ) ?></a>
                     </div>
                 </div>
                 <div class="row">
@@ -88,7 +88,7 @@ get_header();
                 <div class="group-title-button">
                     <h2 class="news-title title-warner-h2 animation-heading-warner"><?= __( 'News' ) ?></h2>
                     <div class="news-see-more button-link-warner wow fadeInRight" data-wow-delay="1.1s" data-wow-duration="1s"><a
-                                href="<?= get_field( 'news_see_more', get_the_ID() ); ?>"><?= __( "See more" ) ?></a>
+                                href="<?= get_field( 'news_see_more', get_queried_object()->ID ); ?>"><?= __( "See more" ) ?></a>
                     </div>
                 </div>
                 <div class="list-news list-layout-warner-4 wow fadeInUp" data-wow-delay="0.2s" data-wow-duration="1s">
@@ -103,7 +103,7 @@ get_header();
                 <div class="group-title-button">
                     <h2 class="events-title title-warner-h2 animation-heading-warner"><?= __( 'Events' ) ?></h2>
                     <div class="events-see-more button-link-warner wow fadeInRight" data-wow-delay="1.1s" data-wow-duration="1s"><a
-                                href="<?= get_field( 'event_see_more', get_the_ID() ); ?>"><?= __( "See more" ) ?></a>
+                                href="<?= get_field( 'event_see_more', get_queried_object()->ID ); ?>"><?= __( "See more" ) ?></a>
                     </div>
                 </div>
 				<?php get_template_part( 'inc/views/loop/homepage/homepage', 'event-item' ); ?>
@@ -114,7 +114,7 @@ get_header();
                 <div class="group-title-button">
                     <h2 class="events-title title-warner-h2 animation-heading-warner"><?= __( 'Merchandise' ) ?></h2>
                     <div class="events-see-more button-link-warner wow fadeInRight"data-wow-delay="1.1s" data-wow-duration="1s"><a
-                                href="<?= get_field( 'merchandise_see_more', get_the_ID() ); ?>"
+                                href="<?= get_field( 'merchandise_see_more', get_queried_object()->ID ); ?>"
                                 target="_blank"><?= __( "See more" ) ?></a></div>
                 </div>
                 <div class="list-merchandise list-layout-warner-4 wow fadeInUp" data-wow-delay="0.2s" data-wow-duration="1s">

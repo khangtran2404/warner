@@ -52,7 +52,18 @@ if($switch === '1'):?>
                         <?php endfor;?>
                     <?php endif;?>
                 </div>
-                <style>.marquee .list-link-marquee {animation-duration: <?= $durationDes ? $durationDes : '20'?>s;}@media screen and (max-width: 767px) {.marquee .list-link-marquee {animation-duration: <?= $durationMo ? $durationMo : '10'?>s;}}</style>
+                <style>
+                .marquee .list-link-marquee {
+                    animation-duration: <?= $durationDes ? $durationDes : '20'?>s;
+                    -webkit-animation-duration: <?= $durationDes ? $durationDes : '20'?>s;
+                }
+                @media screen and (max-width: 767px) {
+                    .marquee .list-link-marquee {
+                        -webkit-animation-duration:<?= $durationMo ? $durationMo : '10'?>s;
+                        animation-duration: <?= $durationMo ? $durationMo : '10'?>s;
+                    }
+                }
+                </style>
             </div>
         </div>
     </div>
