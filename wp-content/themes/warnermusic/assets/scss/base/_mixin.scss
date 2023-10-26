@@ -133,32 +133,6 @@
   }
 }
 
-// marquee aniamtion
-@keyframes marqueeText {
-  0% {
-    left: 0;
-  }
-  100% {
-    left: -100%;
-  }
-}
-@-moz-keyframes marqueeText {
-  0% {
-    left: 0;
-  }
-  100% {
-    left: -100%;
-  }
-}
-@-webkit-keyframes marqueeText {
-  0% {
-    left: 0;
-  }
-  100% {
-    left: -100%;
-  }
-}
-
 // letter animation
 @keyframes letterAnimation {
   0% {
