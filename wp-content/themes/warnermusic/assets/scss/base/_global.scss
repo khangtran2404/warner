@@ -749,44 +749,33 @@ body {
 
 .marquee {
   overflow: hidden;
-  position: relative;
   height: 40px;
   @include tablet {
     height: 30px;
   }
-  .list-link-marquee {
-    display: block;
-    width: 200%;
-    position: absolute;
-    overflow: hidden;
-    animation: marqueeText linear infinite;
-    -webkit-animation: marqueeText linear infinite;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-timing-function: linear;
-    .item-left,
-    .item-right {
-      float: left;
-      width: 50%;
-      a,
-      span {
-        text-align: center;
-        font-size: 14px;
-        display: inline-block;
-        padding: 10px 12px;
-        @include tablet {
-          font-size: 12px;
-          padding: 6px 10px;
-        }
-        &:hover {
-          text-decoration: none !important;
-        }
+  .js-marquee {
+    display: flex;
+  }
+  .item-marquee {
+    a,
+    span {
+      text-align: center;
+      font-size: 14px;
+      display: inline-block;
+      padding: 10px 12px;
+      @include tablet {
+        font-size: 12px;
+        padding: 6px 10px;
       }
-      img {
-        height: 20px;
-        width: auto;
-        @include tablet {
-          height: 15px;
-        }
+      &:hover {
+        text-decoration: none !important;
+      }
+    }
+    img {
+      height: 20px;
+      width: auto;
+      @include tablet {
+        height: 15px;
       }
     }
   }

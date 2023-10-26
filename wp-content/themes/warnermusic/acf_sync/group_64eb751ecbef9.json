@@ -280,8 +280,8 @@
                             "sub_fields": [
                                 {
                                     "key": "field_652b5f9110ad6",
-                                    "label": "For Desktop",
-                                    "name": "for_desktop",
+                                    "label": "Duration",
+                                    "name": "duration",
                                     "aria-label": "",
                                     "type": "number",
                                     "instructions": "Unit in seconds",
@@ -292,32 +292,10 @@
                                         "class": "",
                                         "id": ""
                                     },
-                                    "default_value": 20,
+                                    "default_value": 40,
                                     "min": 1,
                                     "max": "",
-                                    "placeholder": "20 (Default)",
-                                    "step": "0.1",
-                                    "prepend": "",
-                                    "append": ""
-                                },
-                                {
-                                    "key": "field_652b604f10ad7",
-                                    "label": "For Mobile",
-                                    "name": "for_mobile",
-                                    "aria-label": "",
-                                    "type": "number",
-                                    "instructions": "Unit in seconds",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "50",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "default_value": 10,
-                                    "min": 1,
-                                    "max": "",
-                                    "placeholder": "10 (Default)",
+                                    "placeholder": "40 (Default)",
                                     "step": "0.1",
                                     "prepend": "",
                                     "append": ""
@@ -409,5 +387,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1697342268
+    "modified": 1698341465
 }

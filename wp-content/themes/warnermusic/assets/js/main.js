@@ -26,7 +26,18 @@ $(document).ready(function () {
   sliderSyncing();
   animationWow();
   headingAnimation();
+  marqueeAnimation();
 });
+
+function marqueeAnimation() {
+  let marqueeMove = $(".marquee");
+  marqueeMove.marquee({
+    gap: 0,
+    delayBeforeStart: 0,
+    direction: "left",
+    duplicated: true,
+  });
+}
 
 function animationWow() {
   wow = new WOW({

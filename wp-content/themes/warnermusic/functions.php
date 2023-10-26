@@ -18,6 +18,7 @@ function warnermusic() {
 	// Add Library JS
 	wp_enqueue_script( 'jquery', THEME_URI . '/assets/js/lib/jquery.min.js', '', '', true );
 	wp_enqueue_script( 'slick', THEME_URI . '/assets/js/lib/slick.min.js', '', '', true );
+	wp_enqueue_script( 'marquee', THEME_URI . '/assets/js/lib/jquery.marquee.min.js', '', '', true );
 	wp_enqueue_script( 'Wow-animation', THEME_URI . '/assets/js/lib/WOW.js', '', '', true );
 	wp_enqueue_script( 'slick-animation', THEME_URI . '/assets/js/lib/slick-animation.min.js', '', '', false );
 
