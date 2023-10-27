@@ -448,7 +448,7 @@ body {
     min-width: 150px;
     display: block;
     padding: 10px 15px;
-    border-radius: 40px;
+    border-radius: 100px;
     text-align: center;
     background-color: $color__light;
     color: $color__bg !important;
@@ -466,10 +466,20 @@ body {
     }
   }
 }
+.button-link-warner-see-more {
+  a {
+    color: $color__bg !important;
+    background-color: $color__main !important;
+    &:hover,
+    &:focus {
+      background-color: $color__light !important;
+      color: $color__bg !important;
+    }
+  }
+}
 .button-link-warner.learn-more {
   a {
     min-width: 135px;
-    border-radius: 10px;
     border: 1px solid $color__light;
     background-color: transparent;
     font-weight: 600;
