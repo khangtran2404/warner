@@ -48,11 +48,8 @@
   }
   .desc-content {
     font-weight: 200;
-    text-align: right;
+    text-align: justify;
     margin-bottom: 25px;
     animation: show_block 1s forwards;
-    @include desktop {
-      text-align: center;
-    }
   }
 }
