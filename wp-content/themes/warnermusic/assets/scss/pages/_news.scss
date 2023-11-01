@@ -55,6 +55,18 @@
             }
           }
         }
+        .image-feature {
+          &::after {
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0.98), transparent);
+            background: -webkit-gradient(
+              linear,
+              left bottom,
+              left top,
+              from(rgba(0, 0, 0, 0.98)),
+              to(transparent)
+            );
+          }
+        }
       }
     }
   }

@@ -12,7 +12,7 @@
                 <div class="title"><a href="<?= get_the_permalink() ?>"><?= get_the_title() ?></a></div>
             </div>
             <div class="listen-link">
-                <a href="<?= get_the_permalink() ?? '#' ?>">
+                <a href="<?= get_the_permalink() ?? '#' ?>" target="_blank">
                     <?= __('Listen now') ?>
                     <span class="icon-play">
                         <img width="20" src="<?= DF_IMAGE .'/icon/icon-play.png';?>" alt="icon-play"/>
@@ -29,7 +29,7 @@
                     <div class="title"><a href="<?= get_the_permalink() ?>"><?= get_the_title() ?></a></div>
                 </div>
                 <div class="listen-link">
-                    <a href="<?= get_the_permalink() ?? '#' ?>">
+                    <a href="<?= get_the_permalink() ?? '#' ?>" target="_blank">
                         <?= __('Listen now') ?>
                         <span class="icon-play">
                             <img width="20" src="<?= DF_IMAGE .'/icon/icon-play.png';?>" alt="icon-play"/>
