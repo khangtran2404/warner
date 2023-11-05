@@ -1,34 +1,15 @@
 <?php
 /**
- * Template name: About Us Page (Warnermusic)
+ * Template name: Page with contact form (Warnermusic)
  */
 
 get_header();
 ?>
-<div id="site-about-page" class="site-about-page padding-page">
+<div id="site-page-with-form" class="site-page-with-form padding-page">
     <div class="container">
         <?php the_title( '<h1 class="main-title">', '</h1>' );?>
+        <div class="separator-left-warner"></div>
         <div class="main-content"><?php the_content();?></div>
-        <div class="group-list-gallery">
-            <div class="about-gallery-list list-layout-warner-1">
-                <?php
-                $gallerys = get_field( 'list_gallery_image' );
-                if ( $gallerys ) {
-                    foreach ( $gallerys as $gallery ): ?>
-                        <div class="about-gallery-item gird-item-no-square">
-                            <div class="content-box">
-                                <div class="group-content">
-                                    <div class="image-feature no-scale aspect-ratio-warner aspect-ratio-2-3"
-                                        style="background-image: url('<?= $gallery ? $gallery['url'] : DF_IMAGE .'/noimage.png'; ?>')"></div>
-                                    <div class="name padding-20"><?= $gallery['title'] ?></div>
-                                </div>
-                            </div>
-                        </div>
-                    <?php endforeach;
-                } ?>
-            </div>
-        </div>
-        <div class="main-content-after" style="padding-bottom: 30px"><?= get_field('section_content_after_gallery')?></div>
         <div class="contact-us">
             <div class="main-content-after">
                 <?= get_field('get_in_touch','option')['section_content_contact'];?>

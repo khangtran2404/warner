@@ -1,59 +1,59 @@
-
 .wpcf7 {
-    p {
-        font-size: 10px;
-    }
-    .wpcf7-spinner {
-        top: -39px;
-        left: calc(50% + 20px);
-    }
-    .wpcf7-not-valid-tip {
-        font-size: 13px;
-        padding: 0 20px;
-    }
-    .wpcf7-response-output {
-        margin: -20px 0 16px !important;
-        padding: 0.75rem 1.25rem !important;
-        border-radius: 0.25rem;
-    }
+  p {
+    font-size: 10px;
+  }
+  .wpcf7-spinner {
+    top: -39px;
+    left: calc(50% + 20px);
+  }
+  .wpcf7-not-valid-tip {
+    font-size: 13px;
+    padding: 0 20px;
+  }
+  .wpcf7-response-output {
+    margin: -20px 0 16px !important;
+    padding: 0.75rem 1.25rem !important;
+    border-radius: 0.25rem;
+    text-align: center !important;
+  }
 }
 .wpcf7-form-control-wrap {
-    display: block;
-    input[type=text], 
-    input[type=email], 
-    textarea {
-        font-size: 1.25rem;
-        line-height: 1.5;
-        border-radius: 50vh;
-        margin: 0;
-        width: 100%;
-        padding: 10px 20px !important;
-    }
-    textarea {
-        border-radius: 1.7rem !important;
-        height: 260px;
-    }
+  display: block;
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    font-size: 1.25rem;
+    line-height: 1.5;
+    border-radius: 50vh;
+    margin: 0;
+    width: 100%;
+    padding: 10px 20px !important;
+  }
+  textarea {
+    border-radius: 1.7rem !important;
+    height: 260px;
+  }
 }
 
 .wpcf7-submit {
-    width: 100%;
-    display: block;
-    padding: 8px 20px;
-    border-radius: 50vh !important;
-    text-align: center;
-    background: $color__main !important;
-    @include transition(all .3s ease-in-out);
+  width: 100%;
+  display: block;
+  padding: 8px 20px;
+  border-radius: 50vh !important;
+  text-align: center;
+  background: $color__main !important;
+  @include transition(all 0.3s ease-in-out);
+  color: $color__bg !important;
+  font-weight: 700 !important;
+  line-height: 1.4 !important;
+  text-transform: uppercase;
+  border: none !important;
+  font-size: 18px !important;
+  &:hover,
+  &:focus {
+    outline: none !important;
+    text-decoration: none !important;
     color: $color__bg !important;
-    font-weight: 700 !important;
-    line-height: 1.4 !important;
-    text-transform: uppercase;
-    border: none !important;
-    font-size: 18px !important;
-    &:hover,
-    &:focus {
-        outline: none !important;
-        text-decoration: none !important;
-        color: $color__bg !important;
-        background: $color__main-bold !important;
-    }
+    background: $color__main-bold !important;
+  }
 }
