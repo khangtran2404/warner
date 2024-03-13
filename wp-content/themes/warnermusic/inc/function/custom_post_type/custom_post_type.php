@@ -139,5 +139,5 @@ function constructor_custom_tag_create($args){
 }
 
 //==== Call post type ====//
-// require_once('post_type/post_type_service.php');
+ require_once('post_type/post_type_job.php');
 
