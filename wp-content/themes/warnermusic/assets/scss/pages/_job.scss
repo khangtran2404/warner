@@ -1,0 +1,44 @@
+.site-job-page {
+  .primary-title {
+    text-align: center;
+    margin-bottom: 70px;
+    @include desktop {
+      margin-bottom: 50px;
+    }
+  }
+}
+
+.dropdown-multi-checkbox {
+  position: relative;
+  display: inline-block;
+  .dropdown-toggle {
+    padding: 8px 16px;
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 8px;
+    z-index: 1;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .dropdown-menu.show {
+    display: block;
+  }
+
+  .checkbox {
+    margin-bottom: 4px;
+
+    input[type="checkbox"] {
+      margin-right: 8px;
+    }
+  }
+}

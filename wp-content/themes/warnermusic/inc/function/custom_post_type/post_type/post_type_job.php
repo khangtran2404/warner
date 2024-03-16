@@ -7,7 +7,7 @@ function create_job_post_type() {
         'name'      => __('Jobs', 'storefront'),
         'single'    => __('job', 'storefront'),
         'slug'      => 'jobs',
-        'menu_icon' => DF_IMAGE.'/logo/service-dashboard.png'
+        'menu_icon' => 'dashicons-portfolio'
     );
     constructor_cpt_have_permalink($post_type_args);
 }
