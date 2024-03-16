@@ -3,7 +3,7 @@
  * Plugin Name: Klaviyo
  * Plugin URI: https://wordpress.org/plugins/klaviyo/
  * Description: A plugin to automatically sync your WooCommerce sales, products and customers with Klaviyo. With Klaviyo you can set up abandoned cart emails, collect emails for your newsletter to grow your business.
- * Version: 3.3.3
+ * Version: 3.3.4
  * Author: Klaviyo, Inc.
  * Author URI: https://www.klaviyo.com
  * Requires at least: 4.4
@@ -57,7 +57,7 @@ if ( ! class_exists( 'WooCommerceKlaviyo' ) ) :
 		 *
 		 * @var string
 		 */
-		public static $version = '3.3.3';
+		public static $version = '3.3.4';
 
 		/**
 		 * Instance of the class.
@@ -80,6 +80,13 @@ if ( ! class_exists( 'WooCommerceKlaviyo' ) ) :
 		 * @var WPKlaviyoAdmin $admin Handles plugin's admin page content and functionality.
 		 */
 		public $admin;
+
+		/**
+		 * WCK_API class.
+		 *
+		 * @var WCK_API $api Handles plugin's custom api routes.
+		 */
+		public $api;
 
 		/**
 		 * Service class for sending data back to Klaviyo.
@@ -364,7 +371,7 @@ if ( is_plugin_inactive( 'wordpress-klaviyo-master/klaviyo.php' ) ) {
 
 	/** Helper Class WPKlaviyo */
 	if ( ! class_exists( 'WPKlaviyo' ) ) {
-		include_once dirname( __FILE__ ) . '/includes/class-wpklaviyo.php';
+		include_once __DIR__ . '/includes/class-wpklaviyo.php';
 	}
 
 

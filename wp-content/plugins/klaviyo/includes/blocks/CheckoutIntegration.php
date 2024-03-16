@@ -44,8 +44,8 @@ class CheckoutIntegration implements \Automattic\WooCommerce\Blocks\Integrations
 	public function initialize() {
 		$script_path = '/blocks/build/events.js';
 
-		$script_url        = plugins_url( $script_path, dirname( __FILE__ ) );
-		$script_asset_path = dirname( dirname( __FILE__ ) ) . '/blocks/build/events.asset.php';
+		$script_url        = plugins_url( $script_path, __DIR__ );
+		$script_asset_path = dirname( __DIR__ ) . '/blocks/build/events.asset.php';
 		$script_asset      = file_exists( $script_asset_path )
 			? require $script_asset_path
 			: array(

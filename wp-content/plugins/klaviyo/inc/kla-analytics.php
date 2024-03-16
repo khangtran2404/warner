@@ -17,6 +17,13 @@ class WPKlaviyoAnalytics {
 	const KLAVIYO_JS_HANDLE       = 'klaviyojs';
 
 	/**
+	 * Klaviyo account public API key.
+	 *
+	 * @var string $klaviyo_public_key Klaviyo account public API key.
+	 */
+	private $klaviyo_public_key;
+
+	/**
 	 * Constructor
 	 *
 	 * @param string $klaviyo_public_key Klaviyo public API key.

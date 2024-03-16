@@ -210,7 +210,7 @@ function load_started_checkout() {
 
 		wp_enqueue_script( 'wck_started_checkout', plugins_url( '/js/wck-started-checkout.js', __FILE__ ), null, WCK_API::VERSION, true );
 		wp_localize_script( 'wck_started_checkout', 'public_key', array( 'token' => $token ) );
-		wp_localize_script( 'wck_started_checkout', 'plugin_meta_data', array('data' => kl_get_plugin_usage_meta_data()));
+		wp_localize_script( 'wck_started_checkout', 'plugin_meta_data', array( 'data' => kl_get_plugin_usage_meta_data() ));
 		// Build started checkout event data and add inline script to html.
 		wck_started_checkout_tracking();
 	}
