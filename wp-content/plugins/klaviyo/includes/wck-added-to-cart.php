@@ -134,7 +134,7 @@ function kl_track_request( $customer_identify, $data ) {
 	$profile_data = array(
 		'data' => array(
 			'type' => 'profile',
-			'attributes' => $customer_identify
+			'attributes' => $customer_identify,
 		),
 	);
 
@@ -151,7 +151,7 @@ function kl_track_request( $customer_identify, $data ) {
 	$atc_data = array(
 		'data' => array(
 			'type' => 'event',
-			'attributes' => $attributes
+			'attributes' => $attributes,
 		),
 	);
 

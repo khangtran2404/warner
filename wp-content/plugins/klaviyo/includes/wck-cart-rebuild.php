@@ -133,15 +133,11 @@ function wck_build_cart_data( $cart ) {
 					break;
 				}
 				array_push( $composite_products, $composite_product );
-			} else {
-				if ( ! $is_composite_child && ! $is_chained_product ) {
+			} elseif ( ! $is_composite_child && ! $is_chained_product ) {
 					$normal_products[ $cart_item_key ] = normalize_normal_product( $values );
-				}
 			}
-		} else {
-			if ( ! $is_chained_product ) {
+		} elseif ( ! $is_chained_product ) {
 				$normal_products[ $cart_item_key ] = normalize_normal_product( $values );
-			}
 		}
 
 		$image = wp_get_attachment_url( get_post_thumbnail_id( $product->get_id() ) );
@@ -164,8 +160,8 @@ function wck_build_cart_data( $cart ) {
 			'URL' => $product->get_permalink(),
 			'Images' => array(
 				array(
-					'URL' => $image
-				)
+					'URL' => $image,
+				),
 			),
 			'Categories' => $categories,
 			// Default value is an empty array. See WC_Cart::add_to_cart arg, $variation.
@@ -175,7 +171,7 @@ function wck_build_cart_data( $cart ) {
 			'LineTotal' => $line_total,
 			'Tax' => $line_tax,
 			// Ensure both values are non-null e.g. zero is fine here.
-			'TotalWithTax' => isset($line_total, $line_tax) ? $line_total + $line_tax : null
+			'TotalWithTax' => isset($line_total, $line_tax) ? $line_total + $line_tax : null,
 		);
 
 		/**

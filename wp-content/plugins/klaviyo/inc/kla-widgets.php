@@ -51,10 +51,10 @@ class Klaviyo_EmailSignUp_Widget extends WP_Widget {
 		$button_text = ( ! empty( $instance['button_text'] ) ) ? $instance['button_text'] : 'Subscribe';
 		$styles      = ( ! empty( $instance['button_styles'] ) ) ? $instance['button_styles'] : '';
 
-		echo $before_widget; // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped
+		echo $before_widget; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
 		if ( trim( $title ) != '' ) {
-			echo $before_title . $title . $after_title; // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped
+			echo $before_title . $title . $after_title; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		}
 
 		echo '<form id="kla_embed_' . esc_attr($this->id) . '" class="" action="//manage.kmail-lists.com/subscriptions/subscribe" data-ajax-submit="//manage.kmail-lists.com/ajax/subscriptions/subscribe" method="GET" target="_blank" novalidate="novalidate">' . "\n";
@@ -82,7 +82,7 @@ class Klaviyo_EmailSignUp_Widget extends WP_Widget {
 		echo '  });' . "\n";
 		echo '</script>' . "\n";
 
-		echo $after_widget; // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped
+		echo $after_widget; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}
 
 	/**
@@ -167,15 +167,15 @@ class Klaviyo_EmbedEmailSignUp_Widget extends WP_Widget {
 
 		$title = $instance['title'];
 
-		echo $before_widget; // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped
+		echo $before_widget; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
 		if ( trim( $title ) != '' ) {
-			echo $before_title . $title . $after_title; // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped
+			echo $before_title . $title . $after_title; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		}
 
 		echo '<div class="klaviyo-form-' . esc_attr($form_id) . '"></div>';
 
-		echo $after_widget; // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped
+		echo $after_widget; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}
 
 	/**

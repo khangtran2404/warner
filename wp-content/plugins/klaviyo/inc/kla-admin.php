@@ -308,7 +308,7 @@ class WPKlaviyoAdmin {
 	 * @param $links
 	 * @return mixed
 	 */
-	public function plugin_settings_link( $links) {
+	public function plugin_settings_link( $links ) {
 		$settings_link = '<a href="' . KLAVIYO_ADMIN . 'admin.php?page=klaviyo_settings">Settings</a>';
 		array_unshift($links, $settings_link);
 
