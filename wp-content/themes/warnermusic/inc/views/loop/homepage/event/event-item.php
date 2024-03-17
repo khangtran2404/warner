@@ -3,9 +3,9 @@
         <?php
         $originalDate = get_field( 'event_date' );
         $eventLink = get_field('event_link');
-        $dateTime = DateTime::createFromFormat('j F', $originalDate);
+        $dateTime = strtotime($originalDate);
         if ($dateTime) {
-            $shortDate = strftime('%e %b', $dateTime->getTimestamp());
+            $shortDate = date('d M', $dateTime);
             echo '<div class="date">'.$shortDate.'</div>';
         }
         ?>
