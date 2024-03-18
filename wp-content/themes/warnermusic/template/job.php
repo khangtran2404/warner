@@ -18,7 +18,7 @@ $jobsList     = new WP_Query( $queryJobArgs );
 $jobTeams     = get_terms( 'job-team', [ 'hide_empty' => false ] );
 $jobTypes     = get_field_object( 'field_65f6cd346cdfd' );
 ?>
-    <div id="site-job-page" class="site-job-page layout-filter-side-312bar padding-page">
+    <div id="site-job-page" class="site-job-page layout-filter-side-bar padding-page">
         <div class="container">
             <h1 class="primary-title">
                 <span><?php echo get_the_title(); ?></span>
@@ -26,7 +26,7 @@ $jobTypes     = get_field_object( 'field_65f6cd346cdfd' );
             </h1>
             <div class="main-content"><?php the_content(); ?></div>
             <div class="row">
-                <div class="col-lg-4 col-sticky">
+                <div class="col-lg-4 col-md-12 col-12 col-sticky">
                     <div class="col-sticky">
                         <div class="search-section">
                             <label for="search-job-opening">
@@ -71,18 +71,20 @@ $jobTypes     = get_field_object( 'field_65f6cd346cdfd' );
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-8 col-md-12">
+                <div class="col-lg-8 col-md-12 col-12">
                     <div class="group-checkbox-tags">
                         <div class="checkbox-tags">
                             <!-- Tags will be dynamically added here -->
                         </div>
                         <button class="clear-checkbox-tags">Clear all tags</button>
                     </div>
-                    <div class="job-list-section list-layout-warner-3-no-slider">
+                    <div class="job-list-section list-layout-block-card">
 						<?php
 						if ( $jobsList->have_posts() ) :
+                            $countIndex = 0;
 							while ( $jobsList->have_posts() ) : $jobsList->the_post();
-								get_template_part( 'inc/views/loop/job/list', 'jobs-item' );
+                                $countIndex ++;
+								get_template_part( 'inc/views/loop/job/list', 'jobs-item', array('counter-index' => $countIndex ));
 							endwhile;
 							wp_reset_postdata();
 						endif;

@@ -10,32 +10,35 @@
  */
 
 get_header();
+
 /* Start the Loop */
 while ( have_posts() ) :
 	the_post(); ?>
-    <div class="taxonomy-singer-template single-job-post-template">
-        <div class="title">
-            <h1><?= get_the_title() ?></h1>
-        </div>
-        <div class="apply-job-section">
-            <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#applyJobModal">
-	            <?= __( "Apply" ) ?>
-            </button>
-        </div>
-        <div class="information-section">
-            <div class="type"><?= get_field( 'job_type' ) ?></div>
-            <div class="date-period"><?= calculatePeriodTime( get_the_date() ) ?></div>
-            <div class="location"><?= get_field( 'job_location' ) ?></div>
-            <div class="expire-date"><?= get_field( 'job_expire_date' ) ?></div>
-        </div>
-        <div class="content-section">
-            <div class="title">
-                <h3>
-					<?= __( "Job Description" ) ?>
-                </h3>
+    <div class="single-post-template single-job-template padding-page">
+        <div class="container">
+            <div class="heading-group-link">
+                <?php
+                    if(get_field('back_to_the_parent_page','option')) {
+                        echo '<div class="back-to-parent"><a href="' . esc_url(get_field('back_to_the_parent_page','option')) . '">'. __('BACK').'</a></div>';
+                    }
+                ?>
+                <h1 class="primary-title"><?= get_the_title() ?></h1>
             </div>
-            <div class="content"><?= get_the_content() ?></div>
+            <div class="apply-job-section">
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#applyJobModal">
+                    <?= __( "Apply" ) ?>
+                </button>
+            </div>
+            <div class="information-section">
+                <div class="type"><?= get_field( 'job_type' ) ?></div>
+                <div class="date-period"><?= calculatePeriodTime( get_the_date() ) ?></div>
+                <div class="location"><?= get_field( 'job_location' ) ?></div>
+                <div class="expire-date"><?= __("Expiry date: ");?><?= get_field( 'job_expire_date' ) ?></div>
+            </div>
+            <div class="content-section main-content">
+                <?php the_content() ;?>
+            </div>
         </div>
     </div>
     <!-- Modal -->

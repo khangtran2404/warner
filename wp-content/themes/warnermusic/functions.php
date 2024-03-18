@@ -75,6 +75,17 @@ function wpb_gutenberg_editor_styles() {
             .editor-styles-wrapper .wp-block {
 				max-width: 992px !important;
 			}
+			.editor-styles-wrapper [data-block] {
+				margin-top: 0 !important;
+				margin-bottom: 20px !important;
+			}
+			.editor-styles-wrapper p[aria-label="Block: Paragraph"],
+			.block-editor-block-list__layout .block-editor-block-list__block {
+				font-size: 16px;
+			}
+			.edit-post-visual-editor__post-title-wrapper h1[aria-label="Add title"] {
+				font-size: 40px !important;
+			}
 			.editor-styles-wrapper h1 {
 				font-size: 60px !important;
 				font-weight: 500 !important;

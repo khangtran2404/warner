@@ -42,3 +42,121 @@
     }
   }
 }
+
+.list-layout-block-card {
+  .block-card-item {
+    overflow: hidden;
+    padding: 15px 35px 15px 25px;
+    background-color: $color__light;
+    border-radius: 7px;
+    height: 124px;
+    color: $color__text-secondary;
+    position: relative;
+    @include tablet {
+      padding: 15px 25px;
+      height: 152px;
+    }
+    @include mobile {
+      padding: 15px 20px;
+    }
+    @include small_screen {
+      padding: 15px;
+    }
+    .title-link {
+      margin-bottom: 16px;
+      @include transition(all 0.3s ease-in-out);
+    }
+    a {
+      @include limit-line(1);
+      line-height: 1.2;
+      font-size: 15px;
+      width: fit-content;
+      font-weight: 500 !important;
+      color: $color__text-secondary !important;
+      &:hover {
+        text-decoration: underline !important;
+        color: $color__main-med !important;
+      }
+    }
+    .group-location-type {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      line-height: 12px;
+      @include tablet {
+        display: block;
+      }
+      .group-item {
+        margin-bottom: 8px;
+        &:first-child {
+          order: 2;
+          @include tablet {
+            order: 1;
+          }
+        }
+        &:last-child {
+          order: 1;
+          @include tablet {
+            order: 2;
+            display: inline-block !important;
+            white-space: nowrap;
+            width: 100%;
+            @include limit-line(1);
+          }
+        }
+      }
+      .type {
+        width: fit-content;
+        font-weight: 400;
+        padding: 4px 8px;
+        text-align: center;
+        color: $color__main-med;
+        border: 1px solid $color__main-med;
+        border-radius: 200px;
+        @include transition(all 0.3s ease-in-out);
+      }
+    }
+    .excerpt {
+      font-weight: 400;
+      line-height: 1.3;
+      font-size: 12px;
+      @include limit-line(2);
+    }
+    .tag-new {
+      position: absolute;
+      font-size: 6px;
+      background-color: $color__red-1;
+      color: $color__light;
+      width: 50px;
+      text-align: center;
+      @include rotate(38);
+      right: -14px;
+      top: 3px;
+      z-index: 1;
+    }
+    .link-overlay {
+      display: block !important;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100% !important;
+      height: 100%;
+      z-index: 2;
+    }
+    &:hover {
+      .group-location-type {
+        .type {
+          background-color: $color__main-med;
+          color: $color__light;
+        }
+      }
+      .title-link {
+        text-decoration: underline !important;
+        color: $color__main-med !important;
+      }
+      a {
+        color: $color__main-med !important;
+      }
+    }
+  }
+}

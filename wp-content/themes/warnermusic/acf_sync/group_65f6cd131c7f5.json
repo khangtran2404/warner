@@ -37,12 +37,13 @@
                 "id": ""
             },
             "choices": {
-                "fulltime": "Fulltime",
-                "parttime": "Parttime",
+                "fulltime": "Full-time",
+                "parttime": "Part-time",
+                "fresher": "Fresher",
                 "intership": "Internship & Collaboration"
             },
             "default_value": "",
-            "return_format": "value",
+            "return_format": "array",
             "allow_null": 0,
             "other_choice": 0,
             "layout": "vertical",
@@ -85,5 +86,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1710690831
+    "modified": 1710753009
 }

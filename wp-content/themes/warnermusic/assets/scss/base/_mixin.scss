@@ -72,6 +72,14 @@
   transform-origin: $origin;
 }
 
+@mixin limit-line($limit) {
+  -webkit-line-clamp: $limit;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+}
+
 @keyframes stretch {
   0%,
   20%,
