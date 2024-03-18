@@ -1,0 +1,43 @@
+<div class="modal-body body-apply-cf7">
+    <div class="input-group-modal mb-3 hidden">
+    [text your-job id:apply-job-sync class:apply-job-sync]
+    </div>
+    
+    <div class="input-group-modal mb-3">
+    [text* your-name autocomplete:name placeholder "Full name*"]
+    </div>
+    
+    <div class="input-group-modal-row mb-3">
+    <div class="input-group-modal mb-3">
+    [email* your-email autocomplete:email placeholder "Email*"]
+    </div>
+    <div class="input-group-modal mb-3">
+    [tel* your-tel placeholder "Phone Number*"]
+    </div>
+    </div>
+    
+    <div class="input-group-modal mb-3">
+    <label> CV
+    [file* your-cv limit:3000000 filetypes:pdf|doc|docx|jpeg|png|jpg|ppt| id:cv_upload_job class:cv_upload_job]
+    </lable>
+    </div>
+    
+    <div class="input-group-modal mb-3">
+    [url your-profile placeholder "Online profile and portfolio"]
+    </div>
+    
+    <div class="input-group-modal mb-3">
+    [textarea your-message placeholder "Message"]
+    </div>
+    
+    </div>
+    
+    
+    <div class="modal-footer">
+     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>              
+      <div class="button-submit-trigger">
+    <p>
+    <input class="wpcf7-form-control wpcf7-submit has-spinner" type="submit" value="Submit">
+    </p>
+    </div>
+</div>

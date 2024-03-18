@@ -21,6 +21,9 @@
   display: block;
   input[type="text"],
   input[type="email"],
+  input[type="tel"],
+  input[type="file"],
+  input[type="url"],
   textarea {
     font-size: 1.25rem;
     line-height: 1.5;
