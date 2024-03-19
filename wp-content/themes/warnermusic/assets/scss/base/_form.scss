@@ -6,7 +6,8 @@
     top: -39px;
     left: calc(50% + 20px);
   }
-  .wpcf7-not-valid-tip {
+  .wpcf7-not-valid-tip,
+  .custom-error-input-file {
     font-size: 13px;
     padding: 0 20px;
   }
@@ -31,6 +32,10 @@
     margin: 0;
     width: 100%;
     padding: 10px 20px !important;
+    &:focus,
+    &:focus-visible {
+      outline: none !important;
+    }
   }
   textarea {
     border-radius: 1.7rem !important;

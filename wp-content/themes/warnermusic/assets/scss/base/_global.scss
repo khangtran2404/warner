@@ -819,3 +819,20 @@ body {
     max-width: 1450px;
   }
 }
+
+/* scrollbar */
+//Firfox and safari
+* {
+  scrollbar-width: thin; // (variable: none, thin, auto)
+  scrollbar-color: $color__gray #f1f1f1;
+}
+/* Chrome, edge */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: $color__gray;
+}

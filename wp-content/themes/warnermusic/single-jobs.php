@@ -51,6 +51,7 @@ while ( have_posts() ) :
             <div class="modal-content">
                 <div class="modal-header">
                     <h1 class="primary-title sync-name-job-cf7"><?= get_the_title() ?></h1>
+                    <div type="button" class="close-modal" data-bs-dismiss="modal"><i class="fa fa-times"></i></div>        
                 </div>
                 <!-- details \wp-content\themes\warnermusic\inc\views\wpcf7-soure\apply-job -->
                 <?php
@@ -64,9 +65,43 @@ while ( have_posts() ) :
                     jQuery(document).ready(function() {
                         let titleJob = jQuery(".sync-name-job-cf7").html();
                         let valueCf7 = jQuery("#apply-job-sync");
-                    
+                        let inputFile = jQuery(".input-group-modal-file input[type='file']");
+                        let contValueFile = jQuery(".input-group-modal-file .support-format-and-value");
+                        let btnUpload = jQuery(".input-group-modal-file .btn-upload-file");
+
                         valueCf7.val(titleJob);
-                    });
+                        inputFile.on("change", function(e) {
+                            let uploadedFileName = e.target.files[0].name;
+                            contValueFile.html(uploadedFileName);
+                            btnUpload.html("Reupload");
+                        });
+                        function checkAndMoveErrorMessage() {
+                            var errorMessage = jQuery('.input-group-modal-file .wpcf7-not-valid-tip').text();
+                            if (errorMessage) {
+                                var label = jQuery('.input-group-modal-file label');
+                                var errorMessageElement = jQuery('.input-group-modal-file .wpcf7-form-control-wrap').find('.wpcf7-not-valid-tip'); // Find the error message element
+                                jQuery('.custom-error-input-file').remove();
+                                label.after(`<span class="custom-error-input-file">${errorMessage}</span>`);
+                                
+                            }
+                        }
+
+                        // Check for the error message when the page loads
+                        checkAndMoveErrorMessage();
+
+                        // Use MutationObserver to monitor changes in the DOM
+                        var observer = new MutationObserver(function(mutationsList) {
+                            mutationsList.forEach(function(mutation) {
+                                if (mutation.addedNodes.length > 0 && mutation.addedNodes[0].className === 'wpcf7-not-valid-tip') {
+                                    checkAndMoveErrorMessage();
+                                }
+                            });
+                        });
+
+                        // Start observing changes in the parent span element
+                        var targetNode = document.querySelector('.input-group-modal-file .wpcf7-form-control-wrap');
+                            observer.observe(targetNode, { childList: true });
+                        });
                 </script>
             </div>
         </div>

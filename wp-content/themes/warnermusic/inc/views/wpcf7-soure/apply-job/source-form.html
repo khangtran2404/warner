@@ -1,43 +1,48 @@
 <div class="modal-body body-apply-cf7">
-    <div class="input-group-modal mb-3 hidden">
-    [text your-job id:apply-job-sync class:apply-job-sync]
-    </div>
-    
-    <div class="input-group-modal mb-3">
-    [text* your-name autocomplete:name placeholder "Full name*"]
-    </div>
-    
-    <div class="input-group-modal-row mb-3">
-    <div class="input-group-modal mb-3">
-    [email* your-email autocomplete:email placeholder "Email*"]
-    </div>
-    <div class="input-group-modal mb-3">
-    [tel* your-tel placeholder "Phone Number*"]
-    </div>
-    </div>
-    
-    <div class="input-group-modal mb-3">
-    <label> CV
-    [file* your-cv limit:3000000 filetypes:pdf|doc|docx|jpeg|png|jpg|ppt| id:cv_upload_job class:cv_upload_job]
+  <div class="input-group-modal hidden">
+  [text your-job id:apply-job-sync class:apply-job-sync]
+  </div>
+  
+  <div class="input-group-modal mb-4">
+  [text* your-name autocomplete:name placeholder "Full name*"]
+  </div>
+  
+  <div class="input-group-modal-row">
+  <div class="input-group-modal mb-4">
+  [email* your-email autocomplete:email placeholder "Email*"]
+  </div>
+  <div class="input-group-modal mb-4">
+  [tel* your-tel placeholder "Phone Number*"]
+  </div>
+  </div>
+  
+  <div class="input-group-modal-file mb-4">
+    <label class="d-flex align-items-center"> 
+      <span class="d-flex">
+        <span class="lable">CV*</span>
+        <span class="support-format-and-value">Support format: PDF, DOC, DOCX, JPEG, JPG, PNG, PPT - Max size: 3MB</span> 
+      </span>
+      <span class="btn-upload-file">Upload</span>
+      <span class="hidden">
+        [file* your-cv limit:3000000 filetypes:pdf|doc|docx|jpeg|png|jpg|ppt| id:cv_upload_job class:cv_upload_job]
+      </span>
     </lable>
-    </div>
+  </div>
+  
+  <div class="input-group-modal mb-4">
+  [url your-profile placeholder "Online profile and portfolio"]
+  </div>
+  
+  <div class="input-group-modal mb-4">
+  [textarea your-message placeholder "Message"]
+  </div>    
+</div>
     
-    <div class="input-group-modal mb-3">
-    [url your-profile placeholder "Online profile and portfolio"]
-    </div>
-    
-    <div class="input-group-modal mb-3">
-    [textarea your-message placeholder "Message"]
-    </div>
-    
-    </div>
-    
-    
-    <div class="modal-footer">
-     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>              
-      <div class="button-submit-trigger">
-    <p>
+<div class="modal-footer">
+  <div class="btn-cancel btn-modal">
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>    
+  </div>          
+  <div class="btn-submit btn-modal">
     <input class="wpcf7-form-control wpcf7-submit has-spinner" type="submit" value="Submit">
-    </p>
-    </div>
+  </div>
 </div>
