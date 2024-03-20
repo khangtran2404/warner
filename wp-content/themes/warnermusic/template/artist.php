@@ -17,8 +17,8 @@ get_header();
                                 <li class="all item-filter active" data-id="all"><?= __( 'All Artist' ) ?></li>
                                 <li class="international item-filter" data-id="international"><?= __( 'Intl Artists' ) ?></li>
                                 <li class="domestic item-filter" data-id="domestic"><?= __( 'Domestic Artists' ) ?></li>
-                                <li class="domestic-exclusive item-filter"
-                                    data-id="domestic-exclusive"><?= __( 'Domestic Exclusive Distribution' ) ?></li>
+                                <li class="domestic-exclusive-distribution item-filter"
+                                    data-id="domestic-exclusive-distribution"><?= __( 'Domestic Exclusive Distribution' ) ?></li>
                             </ul>
                         </div>
                     </div>
