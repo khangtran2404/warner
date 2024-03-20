@@ -3,6 +3,8 @@ $(document).ready(function () {
     filterInitiation();
     filterTermOnClick();
     dropdownCheckbox();
+    jobFilter();
+    // searchJob();
 });
 
 function filterInitiation() {
@@ -13,12 +15,42 @@ function filterInitiation() {
     $("." + activeFilterData).show();
 }
 
-function jobTeamFilter() {
+function jobFilter() {
+    let filterElement = $('.filter-job input');
+    filterElement.on('change',function(){
+        var checkedTeamValues = $('.filter-job input:checked').map(function() {
+            return $(this).attr('team-id');
+        }).get();
 
+        var checkedTypeValues = $('.filter-job input:checked').map(function() {
+            return $(this).attr('type-id');
+        }).get();
+
+        $.ajax({
+            url: $('#ajax-url').val(),
+            type: 'POST',
+            data: {
+                action: 'filter_jobs',
+                team_filter: checkedTeamValues,
+                type_filter: checkedTypeValues,
+            },
+            success: function(response) {
+                $('.job-list-section').html(response);
+            }
+        });
+    })
 }
 
-function jobTypeFilter(){
-
+function searchJob() {
+    $('#search-job-opening').on('input', function() {
+        $('#search-results').html();
+        var searchText = $(this).val().toLowerCase();
+        $('.job-list-section .job-item').each(function() {
+            var title = $(this).find('.job-title').text().toLowerCase();
+            if (title.includes(searchText)) {
+            }
+        });
+    });
 }
 
 function filterTermOnClick() {
