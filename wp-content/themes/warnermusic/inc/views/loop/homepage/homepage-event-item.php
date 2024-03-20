@@ -59,7 +59,7 @@ if ( ! empty( $artists ) && ! is_wp_error( $artists ) ):?>
 								),
 								'meta_key' => 'event_date',
 								'orderby' => 'meta_value',
-								'order' => 'DESC',
+								'order' => 'ASC',
 								'meta_type' => 'DATETIME',
 							);
 
