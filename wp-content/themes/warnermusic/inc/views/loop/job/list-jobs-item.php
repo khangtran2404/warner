@@ -24,13 +24,6 @@ if ( $args['counter-index'] <= 3 ) {
 <div class="jobs-item gird-item-no-square <?= $jobClassStr ?>">
     <div class="content-box">
         <a href="<?= get_permalink() ?>">
-            <div class="group-content">
-                <div class="location"><?= get_field( 'job_location' ) ?></div>
-                <div class="type"><?= $typeLabel ?></div>
-                <div class="title"><?= get_the_title() ?></div>
-                <div class="excerpt"><?= get_the_excerpt() ?>
-                </div>
-            </div>
             <div class="jobs-item block-card-item <?= $jobClassStr ?> mb-3 wow fadeIn" data-wow-delay="0.5s">
                 <a class="link-overlay" href="<?= get_permalink() ?>" title="<?= get_the_title() ?>"></a>
 				<?php if ( $args['counter-index'] <= 3 ): ?>
