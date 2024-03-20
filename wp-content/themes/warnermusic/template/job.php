@@ -32,6 +32,7 @@ $jobTypes     = get_field_object( 'field_65f6cd346cdfd' );
                             <label for="search-job-opening">
                                 <input id="search-job-opening" type="search"
                                        placeholder="What job are you looking for ?">
+                                <div id="search-results"></div>
                             </label>
                         </div>
                         <div class="filter-section">
@@ -39,13 +40,13 @@ $jobTypes     = get_field_object( 'field_65f6cd346cdfd' );
                                 <button class="dropdown-toggle" type="button" id="dropdownFilterCheckbox_0">
 									<?= __( 'By Team' ) ?>
                                 </button>
-                                <div class="dropdown-menu filter-job-team" aria-labelledby="dropdownFilterCheckbox_0">
+                                <div class="dropdown-menu filter-job filter-job-team" aria-labelledby="dropdownFilterCheckbox_0">
                                     <form class="dropdown-form">
 										<?php
 										if ( $jobTeams ): foreach ( $jobTeams as $team ): ?>
                                             <div class="checkbox">
                                                 <input type="checkbox" id="<?= $team->term_id ?>"
-                                                       name="<?= $team->term_id ?>">
+                                                       team-id="<?= $team->term_id ?>">
                                                 <label for="<?= $team->term_id ?>"><?= $team->name ?></label>
                                             </div>
 										<?php endforeach; endif; ?>
@@ -56,12 +57,12 @@ $jobTypes     = get_field_object( 'field_65f6cd346cdfd' );
                                 <button class="dropdown-toggle" type="button" id="dropdownFilterCheckbox_0">
 									<?= __( 'By Type' ) ?>
                                 </button>
-                                <div class="dropdown-menu" aria-labelledby="dropdownFilterCheckbox_0">
+                                <div class="dropdown-menu filter-job filter-job-type" aria-labelledby="dropdownFilterCheckbox_0">
                                     <form class="dropdown-form">
 										<?php
 										if ( isset( $jobTypes['choices'] ) ): foreach ( $jobTypes['choices'] as $key => $typeLabel ): ?>
                                             <div class="checkbox">
-                                                <input type="checkbox" id="<?= $key ?>" name="<?= $key ?>">
+                                                <input type="checkbox" id="<?= $key ?>" type-id="<?= $key ?>">
                                                 <label for="<?= $key ?>"><?= $typeLabel ?></label>
                                             </div>
 										<?php endforeach; endif; ?>
@@ -90,6 +91,7 @@ $jobTypes     = get_field_object( 'field_65f6cd346cdfd' );
 						endif;
 						?>
                     </div>
+                    <div id="pagination"></div>
                 </div>
             </div>
         </div>
