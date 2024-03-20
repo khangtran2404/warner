@@ -76,6 +76,7 @@ while ( have_posts() ) :
                                 contValueFile.hide();
                                 contValueFile.after('<span class="name-file">'+uploadedFile.name+'</span');
                                 btnUpload.html("Reupload");
+                                jQuery('.custom-error-input-file').remove();
                             } else {
                                 btnUpload.html("Upload");
                                 contValueFile.show();
@@ -121,6 +122,7 @@ while ( have_posts() ) :
                                 jQuery(".input-group-modal-file .btn-upload-file").html("Upload");
                                 jQuery(".input-group-modal-file .support-format-and-value .support-cont").show();
                                 jQuery(".input-group-modal-file .name-file").remove();
+                                jQuery('.custom-error-input-file').remove();
                             }, false );
                             
                             document.addEventListener('wpcf7mailfailed', function(event) {
@@ -128,6 +130,7 @@ while ( have_posts() ) :
                                 jQuery(".input-group-modal-file .btn-upload-file").html("Upload");
                                 jQuery(".input-group-modal-file .support-format-and-value .support-cont").show();
                                 jQuery(".input-group-modal-file .name-file").remove();
+                                jQuery('.custom-error-input-file').remove();
                             }, false );
                         }
                     });
