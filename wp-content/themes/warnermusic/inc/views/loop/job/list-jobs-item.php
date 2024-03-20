@@ -12,17 +12,11 @@ $jobTeams = implode( ' ', $teamIds );
 if ( $jobTeams ) {
 	$jobClassStr .= $jobTeams;
 }
-if ( get_field( 'job_type' )['value'] ) {
+if ( isset( get_field( 'job_type' )['value'] ) ) {
 	$jobClassStr .= ' type-' . get_field( 'job_type' )['value'];
+	$typeLabel   = get_field( 'job_type' )['value'];
 }
-if ( get_field( 'job_type' ) ) {
-	$jobClassStr .= ' type-' . get_field( 'job_type' );
-}
-if (isset( get_field( 'job_type' )['value']) ) {
-	$jobClassStr .= ' type-' . get_field( 'job_type' )['value'];
-	$typeLabel =  get_field( 'job_type' )['value'];
-}
-if($args['counter-index'] <= 3) {
+if ( $args['counter-index'] <= 3 ) {
 	$jobClassStr .= ' new';
 }
 ?>
@@ -56,3 +50,6 @@ if($args['counter-index'] <= 3) {
                 </div>
                 <div class="excerpt"><?= get_the_excerpt() ?></div>
             </div>
+        </a>
+    </div>
+</div>
