@@ -36,6 +36,14 @@
     &:focus-visible {
       outline: none !important;
     }
+    /* Change the white to any color */
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:active {
+      -webkit-box-shadow: 0 0 0 30px $color__light inset !important;
+      -webkit-text-fill-color: $color__text !important;
+    }
   }
   textarea {
     border-radius: 1.7rem !important;

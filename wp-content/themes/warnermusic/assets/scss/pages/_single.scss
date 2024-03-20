@@ -468,6 +468,15 @@
             color: rgba($color: $color__light, $alpha: 0.5);
           }
         }
+        &:-webkit-autofill,
+        &:-webkit-autofill:hover,
+        &:-webkit-autofill:focus,
+        &:-webkit-autofill:active {
+          border: none !important;
+          border-bottom: 1px solid $color__gray-4 !important;
+          -webkit-box-shadow: 0 0 0 30px $color__bg-priamry-3 inset !important;
+          -webkit-text-fill-color: $color__light !important;
+        }
       }
       textarea {
         height: 160px;
@@ -551,8 +560,16 @@
       .wpcf7-spinner {
         margin: 0;
         position: absolute;
+        top: 10px;
+        right: 10px;
+        left: unset;
       }
     }
+  }
+  .wpcf7-response-output {
+    font-size: 16px !important;
+    font-weight: 300 !important;
+    margin: 0 25px 30px 25px !important;
   }
   .modal-dialog {
     .modal-content {
