@@ -369,11 +369,15 @@
 }
 
 .single-job-template {
+  margin-bottom: 0 !important;
   .hero-heading {
+    border-bottom: 1px solid $color__gray-4;
+    margin-bottom: 45px;
     .heading-group-link {
       position: relative;
       padding: 0 70px;
       text-align: center;
+      margin-bottom: 40px;
       @include tablet {
         padding: 0;
       }
@@ -410,6 +414,73 @@
         &::before {
           border-right-color: $color__main;
         }
+      }
+    }
+    .apply-job-section {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 25px;
+      .btn-apply-job {
+        border: none;
+        background-color: $color__light;
+        color: $color__text;
+        padding: 9px 22px 12px;
+        font-weight: 500;
+        font-size: 16px;
+        border-radius: 300px;
+        line-height: 1;
+        @include transition(all 0.3s ease-in-out);
+        &:hover {
+          background-color: $color__main;
+        }
+      }
+    }
+  }
+  .group-main-content {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .information-section {
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    @include tablet {
+      display: block;
+    }
+    .group-text-icon {
+      display: flex;
+      margin-bottom: 10px;
+      align-items: flex-start;
+      img {
+        @include mobile {
+          width: 18px;
+        }
+      }
+      span {
+        padding-left: 10px;
+        @include mobile {
+          font-size: 14px;
+        }
+      }
+    }
+    .col-cont {
+      width: 100%;
+      max-width: 330px;
+      @include tablet {
+        max-width: 100%;
+      }
+    }
+    .col-left {
+      padding-right: 20px;
+      @include tablet {
+        padding-right: 0;
+      }
+    }
+    .col-right {
+      padding-left: 20px;
+      @include tablet {
+        padding-left: 0;
       }
     }
   }

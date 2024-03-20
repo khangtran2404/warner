@@ -27,21 +27,39 @@ while ( have_posts() ) :
                 </div>
                 <div class="apply-job-section">
                     <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#applyJobModal">
+                    <button type="button" class="btn-apply-job" data-bs-toggle="modal" data-bs-target="#applyJobModal">
                         <?= __( "Apply" ) ?>
                     </button>
                 </div>
             </div>
         </div>
         <div class="container">
-            <div class="information-section">
-                <div class="type"><?= get_field( 'job_type' )['label'] ?></div>
-                <div class="date-period"><?= calculatePeriodTime( get_the_date() ) ?></div>
-                <div class="location"><?= get_field( 'job_location' ) ?></div>
-                <div class="expire-date"><?= __("Expiry date: ");?><?= get_field( 'job_expire_date' ) ?></div>
-            </div>
-            <div class="content-section main-content">
-                <?php the_content() ;?>
+            <div class="group-main-content">
+                <div class="information-section">
+                    <div class="col-left col-cont">
+                        <div class="type group-text-icon">
+                            <img width="22" src="<?= DF_IMAGE . '/icon/icon-bag.png'; ?>" alt="icon-type">
+                            <span><?= get_field( 'job_type' )['label'] ?></span>
+                        </div>
+                        <div class="location group-text-icon">
+                            <img width="22" src="<?= DF_IMAGE . '/icon/icon-location-white.png'; ?>" alt="icon-location">
+                            <span><?= get_field( 'job_location' ) ?></span>
+                        </div>
+                    </div>
+                    <div class="col-right col-cont">
+                        <div class="date-period group-text-icon">
+                            <img width="22" src="<?= DF_IMAGE . '/icon/icon-time.png'; ?>" alt="icon-time">
+                            <span><?= calculatePeriodTime( get_the_date() ) ?></span>
+                        </div>
+                        <div class="expire-date group-text-icon">
+                            <img width="22" src="<?= DF_IMAGE . '/icon/icon-calendar.png'; ?>" alt="icon-calendar">
+                            <span><?= __("Expiry date: ");?><?= get_field( 'job_expire_date' ) ?></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-section main-content">
+                    <?php the_content() ;?>
+                </div>
             </div>
         </div>
     </div>
