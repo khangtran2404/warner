@@ -26,7 +26,7 @@ if ( $args['counter-index'] <= 3 ) {
         <a href="<?= get_permalink() ?>">
             <div class="group-content">
                 <div class="location"><?= get_field( 'job_location' ) ?></div>
-                <div class="type"><?= get_field( 'job_type' ) ?></div>
+                <div class="type"><?= $typeLabel ?></div>
                 <div class="title"><?= get_the_title() ?></div>
                 <div class="excerpt"><?= get_the_excerpt() ?>
                 </div>
