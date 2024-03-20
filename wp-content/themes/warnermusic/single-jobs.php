@@ -66,23 +66,35 @@ while ( have_posts() ) :
                         let titleJob = jQuery(".sync-name-job-cf7").html();
                         let valueCf7 = jQuery("#apply-job-sync");
                         let inputFile = jQuery(".input-group-modal-file input[type='file']");
-                        let contValueFile = jQuery(".input-group-modal-file .support-format-and-value");
+                        let contValueFile = jQuery(".input-group-modal-file .support-format-and-value .support-cont");
                         let btnUpload = jQuery(".input-group-modal-file .btn-upload-file");
 
                         valueCf7.val(titleJob);
                         inputFile.on("change", function(e) {
-                            let uploadedFileName = e.target.files[0].name;
-                            contValueFile.html(uploadedFileName);
-                            btnUpload.html("Reupload");
+                            let uploadedFile = e.target.files[0];
+                            if(uploadedFile) {
+                                contValueFile.hide();
+                                contValueFile.after('<span class="name-file">'+uploadedFile.name+'</span');
+                                btnUpload.html("Reupload");
+                            } else {
+                                btnUpload.html("Upload");
+                                contValueFile.show();
+                                jQuery(".input-group-modal-file .name-file").remove();
+                            }
                         });
+
                         function checkAndMoveErrorMessage() {
                             var errorMessage = jQuery('.input-group-modal-file .wpcf7-not-valid-tip').text();
-                            if (errorMessage) {
-                                var label = jQuery('.input-group-modal-file label');
-                                var errorMessageElement = jQuery('.input-group-modal-file .wpcf7-form-control-wrap').find('.wpcf7-not-valid-tip'); // Find the error message element
+                            if (errorMessage === 'The uploaded file is too large.') {
+                                let label = jQuery('.input-group-modal-file label');
+                                let errorMessageElement = jQuery('.input-group-modal-file .wpcf7-form-control-wrap').find('.wpcf7-not-valid-tip'); // Find the error message element
                                 jQuery('.custom-error-input-file').remove();
-                                label.after(`<span class="custom-error-input-file">${errorMessage}</span>`);
-                                
+                                label.after(`<span class="custom-error-input-file">Please upload files smaller than or equal to 3 MB.</span>`); 
+                            } else {
+                                let label = jQuery('.input-group-modal-file label');
+                                let errorMessageElement = jQuery('.input-group-modal-file .wpcf7-form-control-wrap').find('.wpcf7-not-valid-tip'); // Find the error message element
+                                jQuery('.custom-error-input-file').remove();
+                                label.after(`<span class="custom-error-input-file">${errorMessage}</span>`); 
                             }
                         }
 
@@ -100,8 +112,25 @@ while ( have_posts() ) :
 
                         // Start observing changes in the parent span element
                         var targetNode = document.querySelector('.input-group-modal-file .wpcf7-form-control-wrap');
-                            observer.observe(targetNode, { childList: true });
-                        });
+                        observer.observe(targetNode, { childList: true });
+
+                        clearOutPutWpcf7();
+                        function clearOutPutWpcf7() {
+                            document.addEventListener('wpcf7mailsent', function(event) {
+                                jQuery(".input-group-modal-file input[type='file']").val("");
+                                jQuery(".input-group-modal-file .btn-upload-file").html("Upload");
+                                jQuery(".input-group-modal-file .support-format-and-value .support-cont").show();
+                                jQuery(".input-group-modal-file .name-file").remove();
+                            }, false );
+                            
+                            document.addEventListener('wpcf7mailfailed', function(event) {
+                                jQuery(".input-group-modal-file input[type='file']").val("");
+                                jQuery(".input-group-modal-file .btn-upload-file").html("Upload");
+                                jQuery(".input-group-modal-file .support-format-and-value .support-cont").show();
+                                jQuery(".input-group-modal-file .name-file").remove();
+                            }, false );
+                        }
+                    });
                 </script>
             </div>
         </div>
