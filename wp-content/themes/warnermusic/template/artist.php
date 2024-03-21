@@ -28,6 +28,7 @@ get_header();
                         <?php
                         $artists = get_terms( array(
                             'taxonomy'   => 'artist',
+                            'hide_empty' => false
                         ) );
                         foreach ( $artists as $key=>$artist ):
                             if (empty($artist->parent)) continue;
