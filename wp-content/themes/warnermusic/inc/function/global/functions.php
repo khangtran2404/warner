@@ -79,3 +79,16 @@ function getYoutubeVideoId($url) {
 
 	return null;
 }
+
+function hide_child_terms_in_parent_dropdown( $args, $taxonomies ) {
+	if ( isset( $_GET['action'] ) && $_GET['action'] === 'edit' ) {
+		return $args;
+	}
+
+	if ( in_array( 'artist', $taxonomies ) ) {
+		$args['parent'] = 0;
+	}
+
+	return $args;
+}
+add_filter( 'get_terms_args', 'hide_child_terms_in_parent_dropdown', 10, 2 );
