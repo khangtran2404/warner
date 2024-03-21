@@ -80,15 +80,16 @@ function getYoutubeVideoId($url) {
 	return null;
 }
 
-function hide_child_terms_in_parent_dropdown( $args, $taxonomies ) {
-	if ( isset( $_GET['action'] ) && $_GET['action'] === 'edit' ) {
-		return $args;
+function custom_admin_css() {
+	$taxonomy = $_GET['taxonomy'];
+	if ($taxonomy === 'artist'){
+		echo '<style>
+        #parent{
+        	.level-1{
+        		display: none;
+        	}
+        }
+    </style>';
 	}
-
-	if ( in_array( 'artist', $taxonomies ) ) {
-		$args['parent'] = 0;
-	}
-
-	return $args;
 }
-add_filter( 'get_terms_args', 'hide_child_terms_in_parent_dropdown', 10, 2 );
+add_action('admin_head', 'custom_admin_css');
