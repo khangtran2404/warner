@@ -72,11 +72,11 @@ get_header();
 													'field'    => 'slug',
 													'terms'    => $artist->slug,
 												),
-												'meta_key' => 'event_date',
-												'orderby' => 'meta_value',
-												'order' => 'ASC',
-												'meta_type' => 'DATETIME',
 											),
+											'meta_key' => 'event_date',
+											'orderby' => 'meta_value',
+											'order' => 'ASC',
+											'meta_type' => 'DATETIME',
 										);
 
 										$query = new WP_Query( $args );
