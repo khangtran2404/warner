@@ -70,7 +70,7 @@ $mainImg  = get_field( 'artist_image', 'artist_' . $termData->term_id );
                             <div class="biography">
                                 <h2 class="small-title font-global"><?= __( 'Biography' ) ?></h2>
                                 <div class="main-content-singer">
-									<?= $termData->description ?>
+									<?= nl2br($termData->description) ?>
                                 </div>
                             </div>
                         </div>
