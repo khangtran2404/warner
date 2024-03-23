@@ -27,47 +27,45 @@ $jobTypes     = get_field_object( 'field_65f6cd346cdfd' );
             <div class="main-content"><?php the_content(); ?></div>
             <div class="row">
                 <div class="col-lg-4 col-md-12 col-12 col-sticky">
-                    <div class="col-sticky">
-                        <div class="search-section">
-                            <label for="search-job-opening">
-                                <input id="search-job-opening" type="search"
-                                       placeholder="What job are you looking for ?">
-                                <div id="search-results"></div>
-                            </label>
-                        </div>
-                        <div class="filter-section">
-                            <div class="dropdown-multi-checkbox">
-                                <button class="dropdown-toggle" type="button" id="dropdownFilterCheckbox_0">
-									<?= __( 'By Team' ) ?>
-                                </button>
-                                <div class="dropdown-menu filter-job filter-job-team" aria-labelledby="dropdownFilterCheckbox_0">
-                                    <form class="dropdown-form">
-										<?php
-										if ( $jobTeams ): foreach ( $jobTeams as $team ): ?>
-                                            <div class="checkbox">
-                                                <input type="checkbox" id="<?= $team->term_id ?>"
-                                                       team-id="<?= $team->term_id ?>">
-                                                <label for="<?= $team->term_id ?>"><?= $team->name ?></label>
-                                            </div>
-										<?php endforeach; endif; ?>
-                                    </form>
-                                </div>
+                    <div class="search-section">
+                        <label for="search-job-opening">
+                            <input id="search-job-opening" type="search"
+                                    placeholder="What job are you looking for ?">
+                            <div id="search-results"></div>
+                        </label>
+                    </div>
+                    <div class="filter-section">
+                        <div class="dropdown-multi-checkbox">
+                            <button class="dropdown-toggle" type="button" id="dropdownFilterCheckbox_0">
+                                <?= __( 'By Team' ) ?>
+                            </button>
+                            <div class="dropdown-menu filter-job filter-job-team" aria-labelledby="dropdownFilterCheckbox_0">
+                                <form class="dropdown-form">
+                                    <?php
+                                    if ( $jobTeams ): foreach ( $jobTeams as $team ): ?>
+                                        <div class="checkbox">
+                                            <input type="checkbox" id="<?= $team->term_id ?>"
+                                                    team-id="<?= $team->term_id ?>">
+                                            <label for="<?= $team->term_id ?>"><?= $team->name ?></label>
+                                        </div>
+                                    <?php endforeach; endif; ?>
+                                </form>
                             </div>
-                            <div class="dropdown-multi-checkbox">
-                                <button class="dropdown-toggle" type="button" id="dropdownFilterCheckbox_0">
-									<?= __( 'By Type' ) ?>
-                                </button>
-                                <div class="dropdown-menu filter-job filter-job-type" aria-labelledby="dropdownFilterCheckbox_0">
-                                    <form class="dropdown-form">
-										<?php
-										if ( isset( $jobTypes['choices'] ) ): foreach ( $jobTypes['choices'] as $key => $typeLabel ): ?>
-                                            <div class="checkbox">
-                                                <input type="checkbox" id="<?= $key ?>" type-id="<?= $key ?>">
-                                                <label for="<?= $key ?>"><?= $typeLabel ?></label>
-                                            </div>
-										<?php endforeach; endif; ?>
-                                    </form>
-                                </div>
+                        </div>
+                        <div class="dropdown-multi-checkbox">
+                            <button class="dropdown-toggle" type="button" id="dropdownFilterCheckbox_0">
+                                <?= __( 'By Type' ) ?>
+                            </button>
+                            <div class="dropdown-menu filter-job filter-job-type" aria-labelledby="dropdownFilterCheckbox_0">
+                                <form class="dropdown-form">
+                                    <?php
+                                    if ( isset( $jobTypes['choices'] ) ): foreach ( $jobTypes['choices'] as $key => $typeLabel ): ?>
+                                        <div class="checkbox">
+                                            <input type="checkbox" id="<?= $key ?>" type-id="<?= $key ?>">
+                                            <label for="<?= $key ?>"><?= $typeLabel ?></label>
+                                        </div>
+                                    <?php endforeach; endif; ?>
+                                </form>
                             </div>
                         </div>
                     </div>
