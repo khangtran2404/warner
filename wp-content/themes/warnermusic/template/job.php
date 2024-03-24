@@ -29,7 +29,7 @@ $jobTypes     = get_field_object( 'field_65f6cd346cdfd' );
                 <div class="col-lg-4 col-md-12 col-12 col-sticky">
                     <div class="search-section">
                         <label for="search-job-opening">
-                            <input id="search-job-opening" type="search"
+                            <input class="custom-search-input" data-id="jobs" id="search-job-opening" type="search"
                                     placeholder="What job are you looking for ?">
                             <div id="search-results"></div>
                         </label>
@@ -89,8 +89,7 @@ $jobTypes     = get_field_object( 'field_65f6cd346cdfd' );
 						endif;
 						?>
                     </div>
-                    <div id="pagination"></div>
-                </div>
+                    <div id="job-pagination" class="job-pagination"></div>
             </div>
         </div>
     </div>

@@ -36,7 +36,7 @@ if ( $args['counter-index'] <= 3 ) {
                         <span class="pl-1"><?= get_field( 'job_location' ) ?></span>
                     </div>
                 </div>
-                <div class="title-link">
+                <div class="title-link">x
                     <a href="<?= get_permalink() ?>" title="<?= get_the_title() ?>">
 						<?= get_the_title() ?>
                     </a>

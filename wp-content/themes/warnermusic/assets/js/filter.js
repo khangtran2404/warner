@@ -3,7 +3,15 @@ $(document).ready(function () {
   filterInitiation();
   filterTermOnClick();
   dropdownCheckbox();
-  jobFilter();
+  $('.clear-checkbox-tags').click(function () {
+    filterJob();
+  })
+
+  let filterElement = $(".filter-job input");
+  filterElement.on("change", function () {
+    filterJob();
+  });
+
   // searchJob();
 });
 
@@ -15,33 +23,30 @@ function filterInitiation() {
   $("." + activeFilterData).show();
 }
 
-function jobFilter() {
-  let filterElement = $(".filter-job input");
-  filterElement.on("change", function () {
-    var checkedTeamValues = $(".filter-job input:checked")
+function filterJob() {
+  var checkedTeamValues = $(".filter-job input:checked")
       .map(function () {
         return $(this).attr("team-id");
       })
       .get();
 
-    var checkedTypeValues = $(".filter-job input:checked")
+  var checkedTypeValues = $(".filter-job input:checked")
       .map(function () {
         return $(this).attr("type-id");
       })
       .get();
 
-    $.ajax({
-      url: $("#ajax-url").val(),
-      type: "POST",
-      data: {
-        action: "filter_jobs",
-        team_filter: checkedTeamValues,
-        type_filter: checkedTypeValues,
-      },
-      success: function (response) {
-        $(".job-list-section").html(response);
-      },
-    });
+  $.ajax({
+    url: $("#ajax-url").val(),
+    type: "POST",
+    data: {
+      action: "filter_jobs",
+      team_filter: checkedTeamValues,
+      type_filter: checkedTypeValues,
+    },
+    success: function (response) {
+      $(".job-list-section").html(response);
+    },
   });
 }
 
@@ -126,4 +131,13 @@ function dropdownCheckbox() {
       $(".clear-checkbox-tags").hide();
     }
   }
+}
+
+function renderPagination(totalPages, currentPage) {
+  var paginationHtml = '';
+  for (var i = 1; i <= totalPages; i++) {
+    var activeClass = i === currentPage ? 'active' : '';
+    paginationHtml += '<a href="#" class="page-link ' + activeClass + '" data-page="' + i + '">' + i + '</a>';
+  }
+  $('#job-pagination').html(paginationHtml);
 }
