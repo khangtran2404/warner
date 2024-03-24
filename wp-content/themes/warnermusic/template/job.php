@@ -75,7 +75,7 @@ $jobTypes     = get_field_object( 'field_65f6cd346cdfd' );
                         <div class="checkbox-tags">
                             <!-- Tags will be dynamically added here -->
                         </div>
-                        <button class="clear-checkbox-tags">Clear all tags</button>
+                        <button class="clear-checkbox-tags">Clear All</button>
                     </div>
                     <div class="job-list-section list-layout-block-card">
 						<?php

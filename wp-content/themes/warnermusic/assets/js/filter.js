@@ -78,19 +78,25 @@ function dropdownCheckbox() {
     function () {
       var label = $(this).next("label").text();
       if ($(this).is(":checked")) {
-        $(".checkbox-tags").append(
-          `<span class="checkbox-tag">
-                ${label}
-                <button class="remove-checkbox-tag" data-label="${label}">x</button>
-            </span>
-            `
-        );
-        toggleClearButton();
+        if ($(".checkbox-tags").children().length === 0) {
+          $(".checkbox-tags").append(
+            `<span class="checkbox-tag">
+                  ${label}
+                  <button class="remove-checkbox-tag" title="Remove" data-label="${label}"><i class="fa fa-times"></i></button>
+              </span>`
+          );
+        } else {
+          $(".checkbox-tags .checkbox-tag:first").before(
+            `<span class="checkbox-tag">
+                  ${label}
+                  <button class="remove-checkbox-tag" title="Remove" data-label="${label}"><i class="fa fa-times"></i></button>
+              </span>`
+          );
+        }
       } else {
         $(".checkbox-tags .checkbox-tag:contains(" + label + ")").remove();
-        toggleClearButton();
       }
-      $("html,body").animate({ scrollTop: 0 }, 700);
+      toggleClearButton();
     }
   );
 
