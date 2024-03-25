@@ -31,8 +31,13 @@ $jobTypes     = get_field_object( 'field_65f6cd346cdfd' );
                         <label for="search-job-opening">
                             <input class="custom-search-input" data-id="jobs" id="search-job-opening" type="search"
                                     placeholder="What job are you looking for ?">
-                            <div id="search-results"></div>
+                            <span class="icon-search">
+                                <img width="18" src="<?= DF_IMAGE ."/icon/search.svg";?>" alt="icon-search">
+                            </span>
                         </label>
+                        <div class="group-search-results hidden">
+                            <div id="search-results" class="search-results"></div>
+                        </div>
                     </div>
                     <div class="filter-section">
                         <div class="dropdown-multi-checkbox">

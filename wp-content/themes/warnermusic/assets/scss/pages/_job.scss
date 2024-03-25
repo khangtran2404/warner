@@ -14,6 +14,9 @@
     @include desktop {
       margin-left: 0;
     }
+    @include mobile {
+      max-width: 100%;
+    }
   }
   .col-sticky {
     padding-bottom: 50px;
@@ -257,8 +260,10 @@
     width: fit-content;
     align-items: center;
     white-space: nowrap;
+    animation: show_block 1s forwards;
   }
   .remove-checkbox-tag {
+    animation: show_block 1s forwards;
     padding: 0;
     border: none;
     background-color: $color__light !important;
@@ -294,5 +299,78 @@
     color: $color__main;
     text-decoration: underline;
     text-underline-offset: 2px;
+  }
+}
+
+.search-section {
+  width: 100%;
+  max-width: 254px;
+  position: relative;
+  margin-bottom: 16px;
+  @include mobile {
+    max-width: 100%;
+  }
+  .group-search-results {
+    position: absolute;
+    width: 100%;
+    background-color: $color__light;
+    z-index: 110;
+    border-radius: 10px;
+    padding: 15px 0;
+    animation: show_block 0.3s ease-in-out;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    .search-results {
+      height: auto;
+      min-height: 0;
+      max-height: 162px;
+      overflow-y: auto;
+    }
+    .search-result {
+      line-height: 1.2;
+      padding: 4px 25px;
+      a {
+        font-size: 13px;
+        color: #a49c97 !important;
+        font-weight: 300;
+        &:hover {
+          color: $color__main-bold !important;
+        }
+      }
+    }
+  }
+  label {
+    width: 100%;
+    margin-bottom: 4px;
+    position: relative;
+    .icon-search {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      content: "";
+      width: 44.4px;
+      height: 100%;
+      border-radius: 50%;
+      background-color: $color__gray-6;
+      right: 0;
+      top: 0;
+      img {
+        filter: invert(1) brightness(1);
+      }
+    }
+  }
+  .custom-search-input {
+    width: 100% !important;
+    margin: 0;
+    padding: 12px 48px 12px 25px;
+    font-size: 12px;
+    border: none;
+    font-weight: 500;
+    color: $color__gray-6;
+    background-color: #edf3f8;
+    border-radius: 300px;
+    &:focus {
+      outline: none;
+    }
   }
 }
