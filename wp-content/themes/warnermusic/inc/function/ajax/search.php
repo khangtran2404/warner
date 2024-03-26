@@ -12,20 +12,28 @@ function custom_search_callback() {
 
 	$args = array(
 		'post_type' => $postTypeValue,
-		's' => sanitize_text_field($searchValue),
 	);
 
-	$postQuery = new WP_Query($args);
-
-	if ($postQuery->have_posts()) {
-		while ($postQuery->have_posts()) {
-			$postQuery->the_post();
-			$searchResult[] = [
-				'post_id' => get_the_ID(),
-				'title' => get_the_title(),
-				'url' => get_the_permalink()
-			];
+	$query = new WP_Query($args);
+	if ($query->have_posts()) {
+		while ($query->have_posts()) {
+			$query->the_post();
+			if (strstr(get_the_title(),$searchValue)){
+				$searchResult[] = [
+					'post_id' => get_the_ID(),
+					'title' => get_the_title(),
+					'url' => get_the_permalink()
+				];
+			}
 		}
+	}
+
+	if (empty($searchResult)){
+		$searchResult[] = [
+			'post_id' => 0,
+			'title' => 'No result',
+			'url' => '#'
+		];
 	}
 	echo json_encode( $searchResult, JSON_THROW_ON_ERROR );
 	wp_reset_postdata();

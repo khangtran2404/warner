@@ -3,6 +3,7 @@ $(document).ready(function () {
   const debouncedSearch = debounce(searchCustomPostType, 1000);
   let searchInput = $('.custom-search-input');
   searchInput.on('input',function () {
+    $('.group-search-results').addClass('hidden');
     let postType = $(this).attr('data-id');
     debouncedSearch(postType);
   })
@@ -28,6 +29,7 @@ function searchCustomPostType() {
         if (results.length > 0) {
           $.each(results, function(index, result) {
             $('#search-results').append('<div class="search-result"><a href="' + result.url + '">' + result.title + '</a></div>');
+            $('.group-search-results').removeClass('hidden');
           });
         }
       },

@@ -115,6 +115,7 @@ function dropdownCheckbox() {
       }
     });
     $(this).parent(".checkbox-tag").remove();
+    filterJob();
     toggleClearButton();
   });
 
