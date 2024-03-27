@@ -18,7 +18,7 @@ function custom_search_callback() {
 	if ($query->have_posts()) {
 		while ($query->have_posts()) {
 			$query->the_post();
-			if (strstr(get_the_title(),$searchValue)){
+			if (strstr(mb_strtolower(get_the_title()),mb_strtolower($searchValue))){
 				$searchResult[] = [
 					'post_id' => get_the_ID(),
 					'title' => get_the_title(),

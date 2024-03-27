@@ -47,8 +47,8 @@ if ( $args['counter-index'] <= 3 ) {
     </div>
 </div>
 <script>
-    var itemsPerPage = 4;
-    var $postList = $('.job-list-section');
+    var itemsPerPage = 5;
+    var $postList = jQuery('.job-list-section');
     var $postItems = $postList.children('.jobs-item');
     var totalItems = $postItems.length;
     var totalPages = Math.ceil(totalItems / itemsPerPage);
@@ -66,16 +66,16 @@ if ( $args['counter-index'] <= 3 ) {
             paginationHtml += '<a href="#" class="page-link">' + i + '</a>';
         }
         paginationHtml += '<a href="#" class="page-link">Next</a>';
-        $('#job-pagination').html(paginationHtml);
+        jQuery('#job-pagination').html(paginationHtml);
     }
 
     updatePagination();
 
     showPage(currentPage);
 
-    $('#job-pagination .page-link').click(function(e) {
+    jQuery('#job-pagination .page-link').click(function(e) {
         e.preventDefault();
-        var $this = $(this);
+        var $this = jQuery(this);
         var page = $this.text();
         if ($this.hasClass('page-link')) {
             if (page === 'Prev' && currentPage > 1) {
