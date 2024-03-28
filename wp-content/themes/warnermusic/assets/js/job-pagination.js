@@ -1,5 +1,5 @@
 $(document).ready(function (attributeName) {
-  var itemsPerPage = 1;
+  var itemsPerPage = 5;
   var $postList = $(".job-list-section");
   var $postItems = $postList.children(".jobs-item");
   var totalItems = $postItems.length;
