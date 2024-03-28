@@ -41,7 +41,12 @@ function filter_jobs_callback() {
 			echo get_template_part( 'inc/views/loop/job/list', 'jobs-item', array('counter-index' => $countIndex ));
 		}
 	} else {
-		echo '<div class="no-data">Post not found</div>';
+		?>
+		<script>
+            jQuery('.count-job').html(0);
+            jQuery('#job-pagination').hide();
+		</script>
+		<?php echo '<div class="no-data">Post not found</div>';
 	}
 	wp_reset_postdata();
 	wp_die();

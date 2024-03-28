@@ -57,7 +57,6 @@ if ( $args['counter-index'] <= 3 ) {
     function showPage(page) {
         var startIndex = (page - 1) * itemsPerPage;
         var endIndex = startIndex + itemsPerPage;
-        console.log(jQuery('#job-pagination .page-link'))
         jQuery('#job-pagination .page-link').each(function() {
             if ($(this).text().trim() == page) {
                 $('#job-pagination .page-link').removeClass('active');
@@ -93,6 +92,12 @@ if ( $args['counter-index'] <= 3 ) {
         if (totalPages != 1){
             paginationHtml += '<a href="#" class="page-link">Next</a>';
         }
+
+        if (totalPages == 1 || totalPages == 0 ){
+            paginationHtml = '';
+        } else {
+            $('#job-pagination').show();
+        }
         jQuery('#job-pagination').html(paginationHtml);
     }
 
@@ -117,4 +122,6 @@ if ( $args['counter-index'] <= 3 ) {
             showPage(currentPage);
         }
     });
+
+    jQuery('.count-job').html(<?= $args['counter-index'] ?>)
 </script>

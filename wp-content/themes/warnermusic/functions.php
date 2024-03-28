@@ -26,11 +26,12 @@ function warnermusic() {
 	wp_enqueue_style( 'main-style', THEME_URI . '/assets/css/main.css' );
 
 	// Add Main JS
+
 	wp_enqueue_script( 'main-script', THEME_URI . '/assets/js/main.js?' . $date, '', '', true );
+	wp_enqueue_script( 'job-pagination-script', THEME_URI . '/assets/js/job-pagination.js?' . $date, '', '', true );
 	wp_enqueue_script( 'homepage-script', THEME_URI . '/assets/js/homepage.js?' . $date, '', '', true );
 	wp_enqueue_script( 'filter-script', THEME_URI . '/assets/js/filter.js?' . $date, '', '', true );
 	wp_enqueue_script( 'pagination-script', THEME_URI . '/assets/js/pagination.js?' . $date, '', '', true );
-	wp_enqueue_script( 'job-pagination-script', THEME_URI . '/assets/js/job-pagination.js?' . $date, '', '', true );
 	wp_enqueue_script( 'search-script', THEME_URI . '/assets/js/search.js?' . $date, '', '', true );
 	wp_enqueue_script( 'video-popup-script', THEME_URI . '/assets/js/video-popup.js?' . $date, '', '', true );
 }

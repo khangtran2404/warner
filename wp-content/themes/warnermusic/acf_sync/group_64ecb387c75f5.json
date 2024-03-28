@@ -197,6 +197,38 @@
                         "id": ""
                     },
                     "return_format": "url"
+                },
+                {
+                    "key": "field_660595ea618bc",
+                    "label": "Youtube link",
+                    "name": "song_youtube_link",
+                    "aria-label": "",
+                    "type": "link",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "url"
+                },
+                {
+                    "key": "field_66059609618bd",
+                    "label": "Nhaccuatui",
+                    "name": "song_nhaccuatui_link",
+                    "aria-label": "",
+                    "type": "link",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "url"
                 }
             ]
         },
@@ -293,5 +325,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1696613830
+    "modified": 1711642188
 }

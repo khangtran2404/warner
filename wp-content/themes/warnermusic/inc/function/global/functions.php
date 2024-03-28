@@ -81,7 +81,7 @@ function getYoutubeVideoId($url) {
 }
 
 function custom_admin_css() {
-	$taxonomy = $_GET['taxonomy'];
+	$taxonomy = isset($_GET['taxonomy']) ? $_GET['taxonomy'] : '';
 	if ($taxonomy === 'artist'){
 		echo '<style>
         #parent{
