@@ -1,5 +1,5 @@
-$(document).ready(function () {
-  var itemsPerPage = 5;
+$(document).ready(function (attributeName) {
+  var itemsPerPage = 1;
   var $postList = $(".job-list-section");
   var $postItems = $postList.children(".jobs-item");
   var totalItems = $postItems.length;
@@ -9,20 +9,41 @@ $(document).ready(function () {
   function showPage(page) {
     var startIndex = (page - 1) * itemsPerPage;
     var endIndex = startIndex + itemsPerPage;
+    $('#job-pagination .page-link').each(function (attributeName) {
+      if ($(this).text().trim() == page) {
+        $('#job-pagination .page-link').removeClass('active');
+        $(this).addClass('active');
+      }
+      if ($(this).text().trim() == 'Prev'){
+        if (page == 1){
+          $(this).addClass('disabled');
+        } else {
+          $(this).removeClass('disabled');
+        }
+      }
+      if ($(this).text().trim() == 'Next'){
+        if (page == $('#job-pagination .page-link').length-2){
+          $(this).addClass('disabled');
+        } else {
+          $(this).removeClass('disabled');
+        }
+      }
+    });
     $postItems.hide().slice(startIndex, endIndex).show();
   }
 
   function updatePagination() {
-    var paginationHtml = '<a href="#" class="page-link disabled">Prev</a>';
+    let paginationHtml = '';
+    if (totalPages != 1){
+      paginationHtml = '<a href="#" class="page-link">Prev</a>';
+    }
     for (var i = 1; i <= totalPages; i++) {
       paginationHtml +=
-        '<a href="#" class="page-link ' +
-        (i == 1 ? "active" : "") +
-        '">' +
-        i +
-        "</a>";
+        '<a href="#" class="page-link">' + i + "</a>";
     }
-    paginationHtml += '<a href="#" class="page-link">Next</a>';
+    if (totalPages != 1){
+      paginationHtml += '<a href="#" class="page-link">Next</a>';
+    }
     $("#job-pagination").html(paginationHtml);
   }
 
