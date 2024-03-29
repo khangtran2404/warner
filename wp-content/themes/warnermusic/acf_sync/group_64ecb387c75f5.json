@@ -291,11 +291,11 @@
         },
         {
             "key": "field_6509c635a966f",
-            "label": "Video URL",
+            "label": "Video URL Embed",
             "name": "song_video_url",
             "aria-label": "",
             "type": "url",
-            "instructions": "",
+            "instructions": "URL embed: Your video in Youtube -> click share -> embed -> copy url in src of iframe.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -304,7 +304,7 @@
                 "id": ""
             },
             "default_value": "",
-            "placeholder": ""
+            "placeholder": "example: https:\/\/www.youtube.com\/embed\/ixdSsW5n2rI?si=bQV6itn7KCJaM3nx"
         }
     ],
     "location": [
@@ -325,5 +325,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1711642188
+    "modified": 1711679183
 }
