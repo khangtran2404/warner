@@ -540,6 +540,7 @@
           font-weight: 300;
           line-height: 1.2;
           text-transform: none;
+          height: 38.5px;
           -webkit-line-clamp: 2;
           font-family: $font__global;
           -webkit-box-orient: vertical;
@@ -548,6 +549,7 @@
           display: -webkit-box;
           @include small_screen {
             font-size: 15px;
+            height: 36px;
           }
         }
         .title {

@@ -78,6 +78,8 @@ if ( $args['counter-index'] <= 3 ) {
             }
         });
         $postItems.hide().slice(startIndex, endIndex).show();
+
+        jQuery('.count-job').html("("+ <?= $args['counter-index'] ?> +")");
     }
 
     function updatePagination() {
@@ -101,11 +103,8 @@ if ( $args['counter-index'] <= 3 ) {
         jQuery('#job-pagination').html(paginationHtml);
     }
 
-
     showPage(currentPage);
     updatePagination();
-
-
 
     jQuery('#job-pagination .page-link').click(function(e) {
         e.preventDefault();
@@ -122,6 +121,4 @@ if ( $args['counter-index'] <= 3 ) {
             showPage(currentPage);
         }
     });
-
-    jQuery('.count-job').html(<?= $args['counter-index'] ?>)
 </script>

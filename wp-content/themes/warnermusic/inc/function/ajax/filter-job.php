@@ -43,7 +43,7 @@ function filter_jobs_callback() {
 	} else {
 		?>
 		<script>
-            jQuery('.count-job').html(0);
+            jQuery('.count-job').html("("+ 0 +")");
             jQuery('#job-pagination').hide();
 		</script>
 		<?php echo '<div class="no-data">Post not found</div>';

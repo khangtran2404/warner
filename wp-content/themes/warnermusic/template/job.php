@@ -22,7 +22,7 @@ $jobTypes     = get_field_object( 'field_65f6cd346cdfd' );
         <div class="container">
             <h1 class="primary-title">
                 <span><?php echo get_the_title(); ?></span>
-                <span class="count-job">( <?= $jobsList->post_count ?> )</span>
+                <span class="count-job">(<?= $jobsList->post_count ?>)</span>
             </h1>
             <div class="main-content"><?php the_content(); ?></div>
             <div class="row">
