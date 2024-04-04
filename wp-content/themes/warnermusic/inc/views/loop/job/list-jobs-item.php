@@ -14,7 +14,7 @@ if ( $jobTeams ) {
 }
 if ( isset( get_field( 'job_type' )['value'] ) ) {
 	$jobClassStr .= ' type-' . get_field( 'job_type' )['value'];
-	$typeLabel   = get_field( 'job_type' )['value'];
+	$typeLabel   = get_field( 'job_type' )['label'];
 }
 if ( $args['counter-index'] <= 3 ) {
 	$jobClassStr .= ' new';
