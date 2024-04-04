@@ -123,6 +123,10 @@
     background-size: 130px auto !important;
     background-image: url("../images/icon/youtube_music.svg") !important;
   }
+  .btn-youtube {
+    background-size: 84px auto !important;
+    background-image: url("../images/icon/youtube.svg") !important;
+  }
   .btn-amazon_music {
     background-color: $color__primary-7 !important;
     background-size: 130px auto !important;
@@ -135,6 +139,10 @@
   .btn-deezer {
     background-color: $color__primary-8 !important;
     background-image: url("../images/icon/deezer.svg") !important;
+  }
+  .btn-nhaccuatui {
+    background-color: $color__light !important;
+    background-image: url("../images/icon/nhaccuatui.webp") !important;
   }
   .infor-head {
     width: 100%;
