@@ -423,8 +423,7 @@
       }
     }
     .apply-job-section {
-      display: flex;
-      justify-content: center;
+      text-align: center;
       margin-bottom: 25px;
       .btn-apply-job {
         border: none;
@@ -436,9 +435,17 @@
         border-radius: 300px;
         line-height: 1;
         @include transition(all 0.3s ease-in-out);
-        &:hover {
+        &:hover,
+        &:focus,
+        &:visited,
+        &.applied {
           background-color: $color__main;
         }
+      }
+      .status-success-apply {
+        margin-top: 12px;
+        font-size: 14px;
+        color: $color__main-bold;
       }
     }
   }
@@ -496,6 +503,11 @@
   margin: 0 !important;
   padding: 0 !important;
   z-index: 1000000;
+  .wpcf7-form.sent {
+    .wpcf7-response-output {
+      display: none;
+    }
+  }
   .modal-header {
     padding: 30px 25px;
     border-bottom-color: transparent !important;
@@ -638,9 +650,21 @@
   .modal-footer {
     border-top-color: transparent !important;
     padding: 0 25px 30px;
+    flex-wrap: nowrap !important;
     .btn-modal {
       p {
         margin: 0 !important;
+      }
+    }
+    @media screen and (max-width: 575px) {
+      justify-content: space-between;
+      .btn-modal {
+        &:first-child {
+          margin-left: 0 !important;
+        }
+        &:last-child {
+          margin-right: 0 !important;
+        }
       }
     }
     .btn-cancel {
@@ -655,6 +679,13 @@
         text-transform: uppercase;
         border-radius: 50vh !important;
         @include transition(all 0.3s ease-in-out);
+        @media screen and (max-width: 575px) {
+          padding: 12px 40px;
+        }
+        @include small_screen {
+          padding: 10px 35px;
+          font-size: 13px !important;
+        }
         &:hover {
           color: $color__text !important;
           background: $color__main !important;
@@ -668,12 +699,28 @@
         padding: 12px 60px;
         font-size: 15px !important;
       }
+      @media screen and (max-width: 575px) {
+        margin-left: 0;
+        input {
+          padding: 12px 40px;
+        }
+      }
+      @include small_screen {
+        input {
+          font-size: 13px !important;
+          padding: 10px 35px;
+        }
+      }
       .wpcf7-spinner {
         margin: 0;
         position: absolute;
         top: 10px;
         right: 10px;
         left: unset;
+        @include small_screen {
+          top: 8px;
+          right: 7px;
+        }
       }
     }
   }

@@ -30,6 +30,7 @@ while ( have_posts() ) :
                     <button type="button" class="btn-apply-job" data-bs-toggle="modal" data-bs-target="#applyJobModal">
                         <?= __( "Apply" ) ?>
                     </button>
+                    <div class="status-success-apply hidden"></div>
                 </div>
             </div>
         </div>
@@ -141,6 +142,19 @@ while ( have_posts() ) :
                                 jQuery(".input-group-modal-file .support-format-and-value .support-cont").show();
                                 jQuery(".input-group-modal-file .name-file").remove();
                                 jQuery('.custom-error-input-file').remove();
+                                setTimeout(function() {
+                                    if (jQuery('.wpcf7-form').hasClass('sent')) {
+                                        let success = jQuery('.wpcf7-form.sent .wpcf7-response-output').text();
+                                        jQuery(".status-success-apply").html(success);
+                                        jQuery(".status-success-apply").removeClass("hidden");
+                                        jQuery(".btn-apply-job").html("Applied");
+                                        jQuery(".btn-apply-job").addClass("applied");
+                                        jQuery('#applyJobModal').modal('hide');
+                                        jQuery('.wpcf7-form').removeClass('sent');
+                                        jQuery('.wpcf7-form').addClass('init');
+                                        jQuery('.wpcf7-form').attr('data-status','init');
+                                    }
+                                }, 1000);
                             }, false );
                             
                             document.addEventListener('wpcf7mailfailed', function(event) {
