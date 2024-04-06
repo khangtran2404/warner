@@ -127,15 +127,13 @@ body {
   }
   // tags
   p {
-    color: $color__light !important;
     font-size: 16px;
     font-family: $font__global;
     font-weight: 200;
     margin-bottom: 20px !important;
   }
   a {
-    color: $color__light !important;
-    font-family: $font__global !important;
+    font-family: $font__global;
     @include transition(all 0.3s ease-in-out);
     &:-webkit-any-link:focus {
       outline-offset: unset;
@@ -160,6 +158,12 @@ body {
   }
   li {
     font-family: $font__global !important;
+  }
+  p,
+  li,
+  ul,
+  a {
+    color: $color__gray-2;
   }
 
   //variable class and ID main content
@@ -229,6 +233,9 @@ body {
     float: right;
   }
   // Special class
+  .text-justify {
+    text-align: justify !important;
+  }
   .separator-left-warner,
   .separator-right-warner,
   .separator-center-warner {

@@ -267,6 +267,7 @@
       margin-bottom: 15px;
     }
     a {
+      color: $color__light;
       display: flex;
       &:hover {
         text-decoration: none !important;
@@ -307,6 +308,7 @@
     a {
       width: 100%;
       display: block;
+      color: $color__light;
       &:hover {
         img {
           @include scale(1.1);
@@ -348,10 +350,6 @@
     }
   }
   .main-content {
-    p,
-    li {
-      color: $color__gray-2 !important;
-    }
     p {
       text-align: justify;
     }
