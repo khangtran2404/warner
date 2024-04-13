@@ -223,6 +223,40 @@
             "max_size": "",
             "mime_types": "",
             "preview_size": "medium"
+        },
+        {
+            "key": "field_661ac76dcaf68",
+            "label": "Merchandise Url",
+            "name": "artist_merchandise_url",
+            "aria-label": "",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_661ac783caf69",
+            "label": "Merchandise Base",
+            "name": "artist_merchandise_base",
+            "aria-label": "",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "https:\/\/lpclub.vn",
+            "placeholder": ""
         }
     ],
     "location": [
@@ -250,5 +284,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1697938332
+    "modified": 1713031101
 }

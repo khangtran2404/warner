@@ -148,6 +148,48 @@ $mainImg  = get_field( 'artist_image', 'artist_' . $termData->term_id );
 					?>
                 </div>
             </div>
+            <div class="group-artist-merchandise">
+                <h2 class="small-title font-global"><?= __( 'Merchandise' ) ?></h2>
+                <?php
+                $merchandiseURl     = get_field('artist_merchandise_url','artist_' . $termData->term_id);
+                $merchandiseBaseURl     = get_field('artist_merchandise_base','artist_' . $termData->term_id);
+                if ($merchandiseBaseURl && $merchandiseURl){
+                    $ch                 = curl_init();
+                    curl_setopt( $ch, CURLOPT_URL, $merchandiseURl );
+                    curl_setopt( $ch, CURLOPT_RETURNTRANSFER, 1 ); // Trả về kết quả thay vì in ra
+                    $html = curl_exec( $ch );
+                    curl_close( $ch );
+                    $html         = str_get_html( $html );
+                    $baseUrl      = '' . $merchandiseBaseURl . '';
+                    $items        = $html->find( '.item-inner' );
+
+                    for ( $i = 0; $i < 4; $i ++ ):
+                        $item = $items[ $i ];
+                        $title    = $item->find( '.productname', 0 )->plaintext;
+                        $link     = $baseUrl . $item->find( '.thumb-wrapper a', 0 )->href;
+                        $category = $item->find( '.xx', 0 )->plaintext;
+                        $image    = 'https:' . $item->find( '.product-wrapper img', 0 )->src;
+                        $price    = $item->find( '.price', 0 )->plaintext;
+                        ?>
+                        <div class="merchandise-item">
+                            <div class="content-box">
+                                <div class="group-content">
+                                    <a class="link-box" href="<?= $link ?>" title="<?= $title; ?>(<?= $category; ?>)" target="_blank"></a>
+                                    <div class="image-feature"><img src="<?= $image ?>" alt=""></div>
+                                </div>
+                            </div>
+                        </div>
+                    <?php endfor;
+                    $html->clear();
+                }
+                ?>
+            </div>
+            <div class="group-artist-events">
+                <h2 class="small-title font-global"><?= __('Event') ?></h2>
+                <div>
+                    <?= get_template_part('inc/views/loop/artist/artist', 'event-list',['artist_id' => $termData->term_id]); ?>
+                </div>
+            </div>
         </div>
     </div>
 <?php
