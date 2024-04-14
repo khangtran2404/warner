@@ -469,15 +469,15 @@
   }
 }
 
-.archive {
+.tax-artist {
   .group-events-item {
     .group-text {
       @include desktop {
-        padding-left: 0;
+        padding-left: 0 !important;
       }
     }
     .date {
-      font-size: 22px;
+      font-size: 22px !important;
     }
   }
 }
