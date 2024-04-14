@@ -469,6 +469,19 @@
   }
 }
 
+.archive {
+  .group-events-item {
+    .group-text {
+      @include desktop {
+        padding-left: 0;
+      }
+    }
+    .date {
+      font-size: 22px;
+    }
+  }
+}
+
 .group-title-button {
   display: flex;
   justify-content: space-between;
