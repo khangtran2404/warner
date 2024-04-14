@@ -148,13 +148,14 @@ $mainImg  = get_field( 'artist_image', 'artist_' . $termData->term_id );
 					?>
                 </div>
             </div>
+            <?php
+            $merchandiseURl     = get_field('artist_merchandise_url','artist_' . $termData->term_id);
+            $merchandiseBaseURl     = get_field('artist_merchandise_base','artist_' . $termData->term_id);?>
+            <?php if($merchandiseURl && $merchandiseURl):?>
             <div class="group-artist-merchandise merchandise margin-bottom-section">
                 <h2 class="small-title font-global"><?= __( 'Merchandise' ) ?></h2>
                 <div class="list-merchandise list-layout-warner-4">
-                    <?php
-                    $merchandiseURl     = get_field('artist_merchandise_url','artist_' . $termData->term_id);
-                    $merchandiseBaseURl     = get_field('artist_merchandise_base','artist_' . $termData->term_id);
-                    if ($merchandiseBaseURl && $merchandiseURl) {
+                    <?php if ($merchandiseBaseURl && $merchandiseURl) {
                         $ch                 = curl_init();
                         curl_setopt( $ch, CURLOPT_URL, $merchandiseURl );
                         curl_setopt( $ch, CURLOPT_RETURNTRANSFER, 1 ); // Trả về kết quả thay vì in ra
@@ -184,6 +185,7 @@ $mainImg  = get_field( 'artist_image', 'artist_' . $termData->term_id );
                     } ?>
                 </div>
             </div>
+            <?php endif;?>
             <div class="group-artist-events">
                 <h2 class="small-title font-global"><?= __('Event') ?></h2>
                 <div class="group-events-item">
