@@ -82,10 +82,53 @@ $mainImg = get_field('artist_image', 'artist_' . $termData->term_id);
             if ($artistEmbedLinkData): ?>
                 <div class="group-artist-embed-link margin-bottom-section">
                     <h2 class="small-title font-global"><?= $artistEmbedLinkData['header_title'] ?: '' ?></h2>
-                    <a href="<?= $artistEmbedLinkData['embed_href'] ?: ''?>">
-                        <img src="<?= $artistEmbedLinkData['thumbnail'] ?: '' ?>" alt="artist-embed-link-thumbnail">
-                        <div class="title"><?= $artistEmbedLinkData['title'] ?: ''?></div>
-                    </a>
+                    <div class="list-artist-embed list-videos">
+                        <div class="embed-item">
+                            <div class="cont-box">
+                                <a href="<?= $artistEmbedLinkData['embed_href'] ?: ''?>" target="_blank" class="link-overlay">Link overlay</a>
+                                <div class="cont-img aspect-ratio-warner aspect-ratio-2-3-video">
+                                    <img src="<?= $artistEmbedLinkData['thumbnail'] ?: '' ?>" alt="artist-embed-link-thumbnail">
+                                </div>
+                                <div class="cont-text"><?= $artistEmbedLinkData['title'] ?: ''?></div>
+                            </div>
+                        </div>
+                        <div class="embed-item">
+                            <div class="cont-box">
+                                <a href="<?= $artistEmbedLinkData['embed_href'] ?: ''?>" target="_blank" class="link-overlay">Link overlay</a>
+                                <div class="cont-img aspect-ratio-warner aspect-ratio-2-3-video">
+                                    <img src="<?= $artistEmbedLinkData['thumbnail'] ?: '' ?>" alt="artist-embed-link-thumbnail">
+                                </div>
+                                <div class="cont-text"><?= $artistEmbedLinkData['title'] ?: ''?></div>
+                            </div>
+                        </div>
+                        <div class="embed-item">
+                            <div class="cont-box">
+                                <a href="<?= $artistEmbedLinkData['embed_href'] ?: ''?>" target="_blank" class="link-overlay">Link overlay</a>
+                                <div class="cont-img aspect-ratio-warner aspect-ratio-2-3-video">
+                                    <img src="<?= $artistEmbedLinkData['thumbnail'] ?: '' ?>" alt="artist-embed-link-thumbnail">
+                                </div>
+                                <div class="cont-text"><?= $artistEmbedLinkData['title'] ?: ''?></div>
+                            </div>
+                        </div>
+                        <div class="embed-item">
+                            <div class="cont-box">
+                                <a href="<?= $artistEmbedLinkData['embed_href'] ?: ''?>" target="_blank" class="link-overlay">Link overlay</a>
+                                <div class="cont-img aspect-ratio-warner aspect-ratio-2-3-video">
+                                    <img src="<?= $artistEmbedLinkData['thumbnail'] ?: '' ?>" alt="artist-embed-link-thumbnail">
+                                </div>
+                                <div class="cont-text"><?= $artistEmbedLinkData['title'] ?: ''?></div>
+                            </div>
+                        </div>
+                        <div class="embed-item">
+                            <div class="cont-box">
+                                <a href="<?= $artistEmbedLinkData['embed_href'] ?: ''?>" target="_blank" class="link-overlay">Link overlay</a>
+                                <div class="cont-img aspect-ratio-warner aspect-ratio-2-3-video">
+                                    <img src="<?= $artistEmbedLinkData['thumbnail'] ?: '' ?>" alt="artist-embed-link-thumbnail">
+                                </div>
+                                <div class="cont-text">Hoàng Dũng</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             <?php endif ?>
             <div class="group-artist-playlists playlists margin-bottom-section">

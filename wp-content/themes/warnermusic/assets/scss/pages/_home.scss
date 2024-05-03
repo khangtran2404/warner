@@ -850,3 +850,48 @@
     margin: 15px auto 0 auto;
   }
 }
+.list-artist-embed {
+  .slick-track {
+    display: flex !important;
+    .slick-slide {
+      height: initial !important;
+    }
+    .embed-item {
+      height: 100%;
+      padding: 0 10px;
+    }
+  }
+  .cont-box {
+    height: 100%;
+    background-color: $color__light;
+    position: relative;
+    .link-overlay {
+      position: absolute;
+      width: calc(100% - 20px);
+      height: 100%;
+      display: block;
+      left: 50%;
+      opacity: 0;
+      right: 0;
+      @include translate(-50%, 0);
+      z-index: 3;
+    }
+    .cont-text {
+      display: flex;
+      align-items: center;
+      color: $color__text;
+      background-color: $color__light;
+      padding: 16px 12px 15px 12px;
+      font-weight: 600;
+      @include transition(all 0.3s ease-in-out);
+    }
+    &:hover {
+      .cont-text {
+        text-decoration: underline;
+        text-underline-offset: 2px;
+        text-decoration-thickness: 1;
+        color: $color__main-bold;
+      }
+    }
+  }
+}
