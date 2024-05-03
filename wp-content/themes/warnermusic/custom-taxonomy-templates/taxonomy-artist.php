@@ -77,6 +77,17 @@ $mainImg = get_field('artist_image', 'artist_' . $termData->term_id);
                     </div>
                 </div>
             </div>
+            <?php
+            $artistEmbedLinkData = get_field('artist_embed_link','artist_' . $termData->term_id);
+            if ($artistEmbedLinkData): ?>
+                <div class="group-artist-embed-link margin-bottom-section">
+                    <h2 class="small-title font-global"><?= $artistEmbedLinkData['header_title'] ?: '' ?></h2>
+                    <a href="<?= $artistEmbedLinkData['embed_href'] ?: ''?>">
+                        <img src="<?= $artistEmbedLinkData['thumbnail'] ?: '' ?>" alt="artist-embed-link-thumbnail">
+                        <div class="title"><?= $artistEmbedLinkData['title'] ?: ''?></div>
+                    </a>
+                </div>
+            <?php endif ?>
             <div class="group-artist-playlists playlists margin-bottom-section">
                 <h2 class="small-title font-global"><?= __('Playlists') ?></h2>
                 <div class="list-playlist">
@@ -150,11 +161,12 @@ $mainImg = get_field('artist_image', 'artist_' . $termData->term_id);
             </div>
             <?php
             $mainUrl = get_field('artist_merchandise_url', 'artist_' . $termData->term_id);
-            $merchandiseURl = searchStringToReplace( $mainUrl) ;
+            $merchandiseURl = searchStringToReplace($mainUrl);
             $merchandiseBaseURl = get_field('artist_merchandise_base', 'artist_' . $termData->term_id); ?>
             <?php if ($merchandiseURl && $merchandiseBaseURl): ?>
                 <div class="group-artist-merchandise merchandise margin-bottom-section">
-                    <h2 class="small-title font-global"><a target="_blank" href="<?= $mainUrl ?>"><?= __('Merchandise') ?></a></h2>
+                    <h2 class="small-title font-global"><a target="_blank"
+                                                           href="<?= $mainUrl ?>"><?= __('Merchandise') ?></a></h2>
                     <div class="list-merchandise list-layout-warner-4">
                         <?php if ($merchandiseBaseURl && $merchandiseURl) {
                             $ch = curl_init();
@@ -195,7 +207,8 @@ $mainImg = get_field('artist_image', 'artist_' . $termData->term_id);
         </div>
     </div>
 <?php
-function searchStringToReplace($url){
+function searchStringToReplace($url)
+{
     $start_str = 'https://lpclub.vn/';
     $end_str = '?q=';
 
@@ -204,7 +217,8 @@ function searchStringToReplace($url){
 
     if ($start_pos !== false && $end_pos !== false) {
         $start_pos += strlen($start_str);
-        return  str_replace(substr($url, $start_pos, $end_pos - $start_pos),'search',$url);
+        return str_replace(substr($url, $start_pos, $end_pos - $start_pos), 'search', $url);
     }
 }
+
 get_footer();
