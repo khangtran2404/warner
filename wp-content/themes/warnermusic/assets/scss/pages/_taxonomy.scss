@@ -84,8 +84,11 @@
       top: -2px;
     }
   }
-  .group-artist-videos {
-    .list-videos {
+  .group-artist-videos,
+  .group-artist-playlists,
+  .group-artist-embed-link {
+    .list-videos,
+    .list-playlist {
       .slick-track {
         margin-left: 0;
       }

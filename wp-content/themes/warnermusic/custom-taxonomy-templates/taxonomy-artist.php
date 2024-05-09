@@ -93,7 +93,9 @@ $mainImg = get_field('artist_image', 'artist_' . $termData->term_id);
                                         <img src="<?= $embedLinkData['thumbnail'] ?: '' ?>"
                                              alt="artist-embed-link-thumbnail">
                                     </div>
-                                    <div class="cont-text"><?= $embedLinkData['title'] ?: '' ?></div>
+                                    <div class="cont-text">
+                                        <div class="name"><?= $embedLinkData['title'] ?: '' ?></div>
+                                    </div>
                                 </div>
                             </div>
                         <?php endforeach; ?>
