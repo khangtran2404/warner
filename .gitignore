@@ -14,6 +14,7 @@ wp-content/backup-db/*
 wp-content/wp-rocket-config/*
 wp-content/backups/*
 wp-content/updraft
+wp-content/.DS_Store
 #upload and upgrade files
 wp-content/uploads/*
 wp-content/upgrade/*
