@@ -1,8 +1,8 @@
 let $ = jQuery;
 
 $(window).load(function () {
-  $(".loader").delay(500).fadeOut("slow");
-  $("#overlayer").delay(500).fadeOut("slow");
+  $(".loader").delay(30).fadeOut(300);
+  $("#overlayer").delay(30).fadeOut(300);
 });
 
 $(window).resize(function () {
