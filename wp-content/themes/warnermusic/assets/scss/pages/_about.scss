@@ -1,76 +1,71 @@
 .group-list-gallery {
-    width: 100%;
-    max-width: 950px;
-    margin: 0 auto 40px auto;
-    padding: 0 15px;
-    @include desktop {
-        padding: 0 5px;
+  width: 100%;
+  max-width: 950px;
+  margin: 0 auto 40px auto;
+  padding: 0 15px;
+  @include desktop {
+    padding: 0 5px;
+  }
+  .gird-item-no-square {
+    .group-content {
+      .name {
+        font-size: 15px;
+      }
     }
-    .gird-item-no-square {
-        .group-content {
-            .name {
-                font-size: 15px;
-            }
-        }
-    }
+  }
 }
 .main-content-after {
-    margin-bottom: 40px;
-    p {
-        width: 100%;
-        max-width: 720px;
-        margin-right: auto;
-    }
+  margin-bottom: 40px;
 }
 
 .contact-form-section {
-    p {
-        margin-bottom: 16px;
+  p {
+    margin-bottom: 16px;
+  }
+  a {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  .col-left {
+    padding-right: 50px;
+    @include desktop {
+      margin-top: 50px;
+      order: 2;
+      padding-right: 15px;
+    }
+  }
+  .list-item-socials {
+    display: flex;
+    align-items: center;
+    margin: 30px 0 0 0;
+    padding: 0;
+    list-style: none;
+    .item-social {
+      margin: 0 4px;
+      &:last-child {
+        margin-right: 0;
+      }
     }
     a {
-        &:hover {
-            text-decoration: underline;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 25px;
+      height: 25px;
+      background-color: $color__bg;
+      border-radius: 4px;
+      i {
+        font-size: 18px;
+        margin-top: 1px;
+      }
+      &:hover,
+      &:focus {
+        text-decoration: none;
+        i {
+          text-decoration: none;
         }
+      }
     }
-    .col-left {
-        padding-right: 50px;
-        @include desktop {
-            margin-top: 50px;
-            order: 2;
-            padding-right: 15px;
-        }
-    }
-    .list-item-socials {
-        display: flex;
-        align-items: center;
-        margin: 30px 0 0 0;
-        padding: 0;
-        list-style: none;
-        .item-social {
-            margin: 0 4px;
-            &:last-child {
-                margin-right: 0;
-            }
-        }
-        a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 25px;
-            height: 25px;
-            background-color: $color__bg;
-            border-radius: 4px;
-            i {
-                font-size: 18px;
-                margin-top: 1px;
-            }
-            &:hover,
-            &:focus {
-                text-decoration: none;
-                i {
-                    text-decoration: none;
-                }
-            }
-        }
-    }
+  }
 }

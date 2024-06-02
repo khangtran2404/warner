@@ -9,6 +9,9 @@ get_header();
     <div class="container">
         <?php the_title( '<h1 class="main-title">', '</h1>' );?>
         <div class="main-content"><?php the_content();?></div>
+        <?php if(get_field('section_content_before_gallery')):?>
+            <div class="main-content-before" style="padding-bottom: 10px"><?= get_field('section_content_before_gallery')?></div>
+        <?php endif;?>
         <div class="group-list-gallery">
             <div class="about-gallery-list list-layout-warner-1">
                 <?php
