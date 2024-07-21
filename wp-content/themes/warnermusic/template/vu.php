@@ -25,7 +25,7 @@ get_header();
         <?php endif; ?>
     </div>
     <div class="container">
-        <div class="ticket-box-section flex-wn flex-wn--col2">
+        <div class="ticket-box-section flex-wn flex-wn--col2 section-margin">
             <?php
             $ticketBoxGroup = get_field('ticket_box');
             if ($ticketBoxGroup):
@@ -56,7 +56,7 @@ get_header();
             endif;
             ?>
         </div>
-        <div class="video-slider-section">
+        <div class="video-slider-section section-margin">
             <?php
             $videoSliderGroup = get_field('video_slider');
             if ($videoSliderGroup):
@@ -64,14 +64,17 @@ get_header();
                 $videoSliderList = $videoSliderGroup['video_list'] ?: []; ?>
                 <?php
                 if (!empty($videoSliderList)): ?>
-                    <div class="main-label"><h3><?= $videoSliderLabel ?></h3></div>
+                    <h2 class="title-landing title-h2">
+                        <small><strong><?= $videoSliderLabel ?></strong></small>
+                    </h2>
+                    <div class="list-video-youtube list-layout-warner-4">
                     <?php
                     foreach ($videoSliderList as $item):
                         $youtubeLink = $item['youtube_link'] ?: '#';
                         $videoId = getYoutubeVideoId($youtubeLink);
                         $videoThumbnail = '';
                         if ($videoId != '#') {
-                            $videoThumbnail = 'https://img.youtube.com/vi/' . $videoId . '/0.jpg';
+                            $videoThumbnail = 'https://img.youtube.com/vi/' . $videoId . '/maxresdefault.jpg';
                         }
                         ?>
                         <div class="youtube-video-item">
@@ -80,11 +83,12 @@ get_header();
                             </a>
                         </div>
                     <?php endforeach; ?>
+                    </div>
                 <?php endif; ?>
             <?php endif;
             ?>
         </div>
-        <div class="contact-form-section">
+        <div class="contact-form-section section-margin">
             <?php
             $contactFormGroup = get_field('contact_form');
             if ($contactFormGroup):
@@ -99,7 +103,7 @@ get_header();
             <?php endif;
             ?>
         </div>
-        <div class="coming-soon-section">
+        <div class="coming-soon-section section-margin">
             <?php
             $comingSoonGroup = get_field('coming_soon');
             if ($comingSoonGroup):

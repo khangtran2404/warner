@@ -112,6 +112,12 @@
   .site-has-addverstising {
     padding-top: 0;
   }
+  .section-margin {
+    margin-bottom: 90px;
+    @include tablet {
+      margin-bottom: 70px;
+    }
+  }
   #masthead {
     background-color: transparent;
     background: transparent;
@@ -230,6 +236,23 @@
       }
       @include mobile {
         margin-bottom: 100px;
+      }
+    }
+  }
+  .video-slider-section {
+    h2 {
+      margin-bottom: 20px;
+    }
+    .list-video-youtube {
+      margin: 0 -10px;
+    }
+    .youtube-video-item {
+      border-radius: 8px;
+      margin: 0 10px;
+      overflow: hidden;
+      img {
+        width: 100%;
+        height: auto;
       }
     }
   }
