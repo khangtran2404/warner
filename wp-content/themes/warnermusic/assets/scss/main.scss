@@ -15,7 +15,10 @@
 @import "pages/events";
 @import "pages/news";
 @import "pages/404";
-@import "pages/default-page.scss";
+@import "pages/default-page";
 @import "pages/single";
 @import "pages/taxonomy";
 @import "pages/job";
+
+/* Landing page */
+@import "pages/landing-page";

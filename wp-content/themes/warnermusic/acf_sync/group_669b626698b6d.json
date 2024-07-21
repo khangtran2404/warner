@@ -121,6 +121,32 @@
                     "rows_per_page": 20,
                     "sub_fields": [
                         {
+                            "key": "field_669b696704d54",
+                            "label": "Thumbnail",
+                            "name": "thumbnail",
+                            "aria-label": "",
+                            "type": "image",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "url",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": "",
+                            "preview_size": "medium",
+                            "parent_repeater": "field_669b6383aa4f5"
+                        },
+                        {
                             "key": "field_669b6393aa4f6",
                             "label": "Place",
                             "name": "place",
@@ -179,32 +205,6 @@
                             "rows": "",
                             "placeholder": "",
                             "new_lines": "",
-                            "parent_repeater": "field_669b6383aa4f5"
-                        },
-                        {
-                            "key": "field_669b696704d54",
-                            "label": "Thumbnail",
-                            "name": "thumbnail",
-                            "aria-label": "",
-                            "type": "image",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "return_format": "url",
-                            "library": "all",
-                            "min_width": "",
-                            "min_height": "",
-                            "min_size": "",
-                            "max_width": "",
-                            "max_height": "",
-                            "max_size": "",
-                            "mime_types": "",
-                            "preview_size": "medium",
                             "parent_repeater": "field_669b6383aa4f5"
                         },
                         {
@@ -614,5 +614,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1721463461
+    "modified": 1721491103
 }
