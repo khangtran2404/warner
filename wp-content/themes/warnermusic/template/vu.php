@@ -5,6 +5,7 @@
 
 get_header();
 ?>
+<div class="overlay-landing-page"></div>
 <div id="site-vu-page" class="site-vu-page">
     <div class="banner-section">
         <?php
@@ -25,7 +26,7 @@ get_header();
         <?php endif; ?>
     </div>
     <div class="container">
-        <div class="ticket-box-section flex-wn flex-wn--col2 section-margin">
+        <div class="ticket-box-section flex-wn flex-wn--col2 section-padding">
             <?php
             $ticketBoxGroup = get_field('ticket_box');
             if ($ticketBoxGroup):
@@ -56,7 +57,7 @@ get_header();
             endif;
             ?>
         </div>
-        <div class="video-slider-section section-margin">
+        <div class="video-slider-section section-padding">
             <?php
             $videoSliderGroup = get_field('video_slider');
             if ($videoSliderGroup):
@@ -88,7 +89,7 @@ get_header();
             <?php endif;
             ?>
         </div>
-        <div class="contact-form-section section-margin">
+        <div class="contact-form-section">
             <?php
             $contactFormGroup = get_field('contact_form');
             if ($contactFormGroup):
@@ -96,14 +97,16 @@ get_header();
                 $contactFormShortCode = $contactFormGroup['shortcode'] ?: ''; ?>
                 <?php
                 if (!empty($contactFormShortCode)): ?>
-                    <div class="contact-form-label"><h3><?= $contactFormLabel ?></h3></div>
+                    <h2 class="title-landing title-h2">
+                        <small><strong><?= $contactFormLabel ?></strong></small>
+                    </h2>
                     <div class="contact-form-content"><?= do_shortcode($contactFormShortCode) ?></div>
                 <?php endif;
                 ?>
             <?php endif;
             ?>
         </div>
-        <div class="coming-soon-section section-margin">
+        <div class="coming-soon-section section-padding">
             <?php
             $comingSoonGroup = get_field('coming_soon');
             if ($comingSoonGroup):
@@ -112,10 +115,12 @@ get_header();
                 $comingSoonImage = $comingSoonGroup['thumbnail']; ?>
                 <?php
                 if ($comingSoonEmbedLink != '#'): ?>
-                    <div class="coming-soon-label"><h3><?= $comingSoonLabel ?></h3></div>
-                    <div class="coming-soon-link">
-                        <a href="<?= $comingSoonEmbedLink ?>">
-                            <img src="<?= $comingSoonImage ?>" alt="coming-soon-image">
+                    <h2 class="title-landing title-h2 text-align-center">
+                        <strong><?= $comingSoonLabel ?></strong>
+                    </h2>
+                    <div class="coming-soon-link text-align-center">
+                        <a href="<?= $comingSoonEmbedLink ?>" target="_blank">
+                            <img class="img-coming-soon" src="<?= $comingSoonImage ?>" alt="coming-soon-image">
                         </a>
                     </div>
                 <?php endif;
@@ -123,7 +128,7 @@ get_header();
             <?php endif;
             ?>
         </div>
-        <div class="support-section">
+        <div class="support-section section-padding">
             <?php
             $supportGroup = get_field('support');
             if ($supportGroup):
@@ -131,17 +136,21 @@ get_header();
                 $supportItems = $supportGroup['support_item_repeater'] ?: []; ?>
                 <?php
                 if (!empty($supportItems)): ?>
-                    <div class="support-label"><h3><?= $supportLabel ?></h3></div>
+                    <h2 class="title-landing title-h2">
+                        <small><strong><?= $supportLabel ?></strong></small>
+                    </h2>
+                    <div class="list-item-support">
                     <?php foreach ($supportItems as $supportItem):
                         $label = $supportItem['label'];
                         $icon = $supportItem['icon'];
                         $url = $supportItem['url'] ?: '#'; ?>
                         <div class="support-item">
-                            <a href="<?= $url ?>">
+                            <a href="<?= $url ?>" target="_blank">
                                 <img src="<?= $icon ?>" alt="<?= $label ?>">
                             </a>
                         </div>
                     <?php endforeach; ?>
+                    </div>
                 <?php endif;
                 ?>
             <?php endif;
@@ -149,5 +158,36 @@ get_header();
         </div>
     </div>
 </div>
+<style>
+<?php
+$global_background = get_field("global_background_page");
+if($global_background):
+    $global_background_img     = $global_background["background_image_global"];
+    $global_background_color   = $global_background["background_color"];
+    $global_background_opacity = str_replace(",",".",$global_background["opacity_overlay"]);?>
+    <?php if($global_background_img):?>
+        .page-template-vu {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background: url('<?php echo esc_attr($global_background_img );?>') no-repeat center center fixed;
+            background-size: cover;
+        }
+        .page-template-vu .overlay-landing-page {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: <?php echo esc_attr($global_background_color );?>;
+            opacity: <?php echo esc_attr($global_background_opacity );?>;
+        }
+    <?php else:?>
+        .page-template-vu {
+            background-color: <?php echo esc_attr($global_background_color );?> !important;
+        }
+    <?php endif;?>
+<?php endif;?>
+</style>
 <?php
 get_footer();
