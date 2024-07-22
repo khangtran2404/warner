@@ -26,7 +26,7 @@ get_header();
         <?php endif; ?>
     </div>
     <div class="container">
-        <div class="ticket-box-section flex-wn flex-wn--col2 section-padding">
+        <div class="ticket-box-section flex-wn flex-wn--col2">
             <?php
             $ticketBoxGroup = get_field('ticket_box');
             if ($ticketBoxGroup):

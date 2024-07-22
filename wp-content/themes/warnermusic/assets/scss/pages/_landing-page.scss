@@ -201,9 +201,8 @@
     }
   }
   .ticket-box-section {
-    justify-content: center;
-    gap: 120px;
     padding-top: 70px;
+    flex-wrap: wrap;
     @include tablet {
       padding-top: 50px;
     }
@@ -217,11 +216,12 @@
     }
     .col-wn {
       position: relative;
+      margin-bottom: 70px;
       &::after {
         position: absolute;
         top: 50%;
         @include translate(0, -50%);
-        right: -64px;
+        right: -4px;
         content: "";
         width: 8px;
         height: 78%;
@@ -242,6 +242,10 @@
         }
       }
       &:nth-child(even) {
+        padding-left: 60px;
+        @include desktop {
+          padding-left: 0;
+        }
         &::after {
           display: none;
           @include desktop {
@@ -249,11 +253,22 @@
           }
         }
       }
+      &:nth-child(odd) {
+        padding-right: 60px;
+        @include desktop {
+          padding-right: 0;
+        }
+      }
+      &:last-child {
+        &::after {
+          display: none !important;
+        }
+      }
       @include desktop {
         text-align: center;
         margin-bottom: 140px;
         &:last-child {
-          margin-bottom: 0;
+          margin-bottom: 50px;
           &::after {
             display: none;
           }
