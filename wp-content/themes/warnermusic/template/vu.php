@@ -19,7 +19,7 @@ get_header();
                 <img class="banner-image" src="<?= $bannerImageUrl;?>" alt="banner-image">
             <?php endif;
             if ($bannerButtonUrl != '#'): ?>
-            <a class="button-landing" href="<?= $bannerButtonUrl;?>">
+            <a class="button-landing" href="<?= $bannerButtonUrl;?>" target="_blank">
                 <?= $bannerButtonLabel ;?>
             </a>
             <?php endif; ?>
@@ -49,7 +49,7 @@ get_header();
                                 <img class="thumbnail" src="<?= $thumbnail ?>" alt="ticket-box-thumbnail">
                             </div>
                         </div>
-                        <a class="button-landing buy-ticket-link" href="<?= $buttonUrl ?>">
+                        <a class="button-landing buy-ticket-link" href="<?= $buttonUrl ?>" target="_blank">
                             <?= $buttonLabel ?>
                         </a>
                     </div>
