@@ -264,8 +264,8 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "display_format": "d\/m\/Y",
-                            "return_format": "d\/m\/Y",
+                            "display_format": "d.m.Y",
+                            "return_format": "d.m.Y",
                             "first_day": 1,
                             "parent_repeater": "field_669b6383aa4f5"
                         },
@@ -287,7 +287,7 @@
                             "maxlength": "",
                             "rows": "",
                             "placeholder": "",
-                            "new_lines": "",
+                            "new_lines": "br",
                             "parent_repeater": "field_669b6383aa4f5"
                         },
                         {
@@ -697,5 +697,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1721627923
+    "modified": 1723824266
 }

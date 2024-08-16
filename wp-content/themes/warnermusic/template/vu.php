@@ -41,11 +41,11 @@ get_header();
                     $buttonUrl   = $ticketBoxItem['button_link'] ?: '#';
                     $count++; ?>
                     <div class="col-wn ticket-box-item-<?= $count ?>">
-                        <h2 class="place title-landing title-h2"><?= $place ?></h2>
-                        <div class="date sub-title-landing"><?= $date ?></div>
-                        <div class="description"><?= $description ?></div>
+                        <h2 class="place title-landing title-h2 text-align-center"><?= $place ?></h2>
+                        <div class="date sub-title-landing text-align-center"><?= __('Thời gian: ')?><?= $date ?></div>
+                        <div class="description text-align-center"><?= $description ?></div>
                         <div class="content-image-padding">
-                            <div class="ratio-cont-img ratio-cont-img--56">
+                            <div class="ratio-cont-img ratio-cont-img--square">
                                 <img class="thumbnail" src="<?= $thumbnail ?>" alt="ticket-box-thumbnail">
                             </div>
                         </div>
