@@ -92,6 +92,36 @@ $color__gray-6: #979797;
   font-style: normal;
 }
 
+@font-face {
+  font-family: "helve-bd";
+  src: url("../fonts/helvetica/helvetica-bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "helve-neue-reg";
+  src: url("../fonts/helvetica-neue/helvetica-neue-regular.ttf")
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "helve-neue-md";
+  src: url("../fonts/helvetica-neue/helvetica-neue-medium.ttf")
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "helve-neue-bd";
+  src: url("../fonts/helvetica-neue/helvetica-neue-bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 $font__global: "Be Vietnam Pro", sans-serif;
 $font_head_reg: "wmg-reg", sans-serif;
 $font_head_bd: "wmg-bd", sans-serif;
@@ -99,3 +129,7 @@ $font_head_semi: "wmg-semi", sans-serif;
 
 /* Landing page */
 $font__monsterrat: "Montserrat", sans-serif;
+$font__helvetica_bd: "helve-bd", sans-serif;
+$font__helvetica_neue_reg: "helve-neue-reg", sans-serif;
+$font__helvetica_neue_md: "helve-neue-md", sans-serif;
+$font__helvetica_neue_bd: "helve-neue-bd", sans-serif;

@@ -136,8 +136,8 @@ get_header();
                 $supportItems = $supportGroup['support_item_repeater'] ?: []; ?>
                 <?php
                 if (!empty($supportItems)): ?>
-                    <h2 class="title-landing title-h2">
-                        <small><strong><?= $supportLabel ?></strong></small>
+                    <h2 class="title-landing title-h2 small-title">
+                        <?= $supportLabel ?>
                     </h2>
                     <div class="list-item-support">
                     <?php foreach ($supportItems as $supportItem):

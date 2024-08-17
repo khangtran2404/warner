@@ -3,12 +3,10 @@
   padding-top: 0 !important;
   color: $color__light !important;
   font-size: 16px !important;
-  font-family: $font__monsterrat !important;
-  font-optical-sizing: auto;
+  font-family: $font__helvetica_neue_reg !important;
   font-weight: 400 !important;
   p {
-    font-family: $font__monsterrat !important;
-    font-optical-sizing: auto;
+    font-family: $font__helvetica_neue_reg !important;
     font-weight: 400;
   }
   .site-vu-page {
@@ -120,13 +118,11 @@
       object-fit: cover;
     }
   }
-  .title-landing,
-  .sub-title-landing {
-    font-family: $font__monsterrat !important;
-    font-optical-sizing: auto;
-    word-spacing: -0.2rem;
+  .title-landing {
+    font-family: $font__helvetica_bd !important;
   }
   .sub-title-landing {
+    font-family: $font__helvetica_neue_md;
     font-size: 30px;
     @include desktop {
       font-size: 25px;
@@ -140,6 +136,10 @@
     font-weight: 800;
     margin-bottom: 15px;
     word-spacing: -0.2rem;
+    &.small-title {
+      font-family: $font__helvetica_neue_bd !important;
+      font-size: 24px !important;
+    }
     @include desktop {
       font-size: 38px;
     }
@@ -247,11 +247,12 @@
       margin-bottom: 10px;
     }
     .date {
-      font-weight: 600;
+      font-weight: 500;
       margin-bottom: 12px;
     }
     .description {
       font-weight: 500;
+      font-family: $font__helvetica_neue_md !important;
       @media screen and (max-width: 575px) {
         br {
           display: none;
@@ -352,7 +353,7 @@
       margin-bottom: 5px;
       p {
         font-size: 16px;
-        font-family: $font__monsterrat !important;
+        font-family: $font__helvetica_neue_md !important;
         font-optical-sizing: auto;
         font-weight: 500;
         color: $color__light;
@@ -367,11 +368,15 @@
       margin-bottom: 15px;
       p {
         font-size: 16px;
-        font-family: $font__monsterrat !important;
+        font-family: $font__helvetica_neue_md !important;
         font-optical-sizing: auto;
         font-weight: 500;
         color: $color__light;
         margin-bottom: 0 !important;
+      }
+      input {
+        font-family: $font__helvetica_neue_reg;
+        font-weight: 400;
       }
     }
     .submit-form {
@@ -394,6 +399,7 @@
       border: none;
       width: 100%;
       font-size: 16px !important;
+      font-weight: 400 !important;
     }
     input[type="submit"] {
       background-color: $color__light !important;
@@ -426,7 +432,7 @@
   }
   .coming-soon-section {
     h2 {
-      margin-bottom: 50px;
+      margin-bottom: 20px;
     }
     .img-coming-soon {
       aspect-ratio: 1;
@@ -436,17 +442,23 @@
     }
   }
   .support-section {
+    display: flex;
+    align-items: center;
+    h2 {
+      margin: 0 21px 20px 0;
+      @include mobile {
+        margin-bottom: 15px;
+      }
+    }
     .list-item-support {
       display: flex;
-      margin-top: 20px;
       flex-wrap: wrap;
       .support-item {
-        width: 70px;
-        margin-right: 60px;
+        width: 40px;
+        margin-right: 20px;
         margin-bottom: 20px;
         @include mobile {
-          width: 60px;
-          margin: 0 30px 20px 0;
+          margin: 0 15px 15px 0;
         }
         &:last-child {
           margin-right: 0;
