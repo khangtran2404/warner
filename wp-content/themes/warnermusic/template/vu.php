@@ -42,7 +42,7 @@ get_header();
                     $count++; ?>
                     <div class="col-wn ticket-box-item-<?= $count ?>">
                         <h2 class="place title-landing title-h2 text-align-center"><?= $place ?></h2>
-                        <div class="date sub-title-landing text-align-center"><?= __('Thời gian: ')?><?= $date ?></div>
+                        <div class="date sub-title-landing text-align-center"><?= $date ?></div>
                         <div class="description text-align-center"><?= $description ?></div>
                         <div class="content-image-padding">
                             <div class="ratio-cont-img ratio-cont-img--square">
@@ -94,12 +94,16 @@ get_header();
             $contactFormGroup = get_field('contact_form');
             if ($contactFormGroup):
                 $contactFormLabel = $contactFormGroup['label'] ?: __('Contact');
+                $contactFormDes = $contactFormGroup['description'];
                 $contactFormShortCode = $contactFormGroup['shortcode'] ?: ''; ?>
                 <?php
                 if (!empty($contactFormShortCode)): ?>
                     <h2 class="title-landing title-h2">
                         <small><strong><?= $contactFormLabel ?></strong></small>
                     </h2>
+                    <?php if(!empty($contactFormDes)): ?>
+                    <div class="description-from"><?= $contactFormDes;?></div>
+                    <?php endif;?>
                     <div class="contact-form-content"><?= do_shortcode($contactFormShortCode) ?></div>
                 <?php endif;
                 ?>

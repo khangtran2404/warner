@@ -40,7 +40,7 @@
                 "fulltime": "Full-time",
                 "parttime": "Part-time",
                 "fresher": "Fresher",
-                "intership": "Internship & Collaboration"
+                "intership": "Internship & collaborator"
             },
             "default_value": "",
             "return_format": "array",
@@ -86,5 +86,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1710753009
+    "modified": 1724171322
 }
