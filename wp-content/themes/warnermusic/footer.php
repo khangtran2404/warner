@@ -61,7 +61,9 @@
 			<div class="container">
 				<div class="group-content-copyright">
 					<div class="col-copyright">
-						<div class="copyright"><?= __('© 2023 Warner Music Vietnam. All Rights Reserved.','warnermusic');?></div>
+						<div class="copyright">
+							© <?php echo gmdate( 'Y' ); ?> Warner Music Vietnam. All Rights Reserved.
+						</div>
 					</div>
 					<div class="col-social-icon">
 						<ul class="list-item-socials">
