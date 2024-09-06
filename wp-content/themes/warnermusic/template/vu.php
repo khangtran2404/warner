@@ -132,6 +132,76 @@ get_header();
             <?php endif;
             ?>
         </div>
+
+        <?php
+        $merchandiseGroup = get_field('merchandise');
+        if ($merchandiseGroup) {
+            $mainUrl = $merchandiseGroup['artist_merchandise_url'] ?: 'https://lpclub.vn/warner-music-vietnam?q=collections:3002213%20AND%20vendor:(V%C5%A9.)';
+            $merchandiseURl = searchStringToReplace($mainUrl);
+            $merchandiseBaseURl = $merchandiseGroup['artist_merchandise_base'] ?: 'https://lpclub.vn' ?>
+            <?php if ($merchandiseURl && $merchandiseBaseURl): ?>
+                <div class="group-artist-merchandise merchandise margin-bottom-section">
+                    <h2 class="small-title font-global"><a target="_blank"
+                                                           href="<?= $mainUrl ?>"><?= __('Merchandise') ?></a></h2>
+                    <div class="list-merchandise list-layout-warner-4">
+                        <?php if ($merchandiseBaseURl && $merchandiseURl) {
+                            $ch = curl_init();
+                            curl_setopt($ch, CURLOPT_URL, $merchandiseURl);
+                            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+                            $html = curl_exec($ch);
+                            curl_close($ch);
+                            $html = str_get_html($html);
+                            $baseUrl = '' . $merchandiseBaseURl . '';
+                            $items = $html->find('.item-inner');
+                            if (!empty($items)):
+                                for ($i = 0; $i < 4; $i++):
+                                    if (isset($items[$i])):
+                                        $item = $items[$i];
+                                        $title = $item->find('.productname', 0)->plaintext;
+                                        $link = $baseUrl . $item->find('.thumb-wrapper a', 0)->href;
+                                        $category = $item->find('.xx', 0)->plaintext;
+                                        $image = 'https:' . $item->find('.product-wrapper img', 0)->src;
+                                        $price = $item->find('.price', 0)->plaintext;
+                                        ?>
+                                        <div class="merchandise-item gird-item-no-square">
+                                            <div class="content-box">
+                                                <div class="group-content">
+                                                    <a class="link-box" href="<?= $link ?>"
+                                                       title="<?= $title; ?>(<?= $category; ?>)"
+                                                       target="_blank"></a>
+                                                    <div class="image-feature"><img src="<?= $image ?>" alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <?php else: break; endif; endfor;
+                            endif;
+                            $html->clear();
+                        } ?>
+                    </div>
+                </div>
+            <?php endif;
+        }
+        ?>
+
+        <?php
+        $playlistGroup = get_field('playlist');
+        if ($comingSoonGroup):
+            $playlistLabel = __("Playlist");
+            ?>
+            <h2 class="title-landing title-h2 text-align-center">
+                <strong><?= $playlistLabel ?></strong>
+            </h2>
+            <?php
+            for ($i = 1; $i <= 6; $i++) {
+                if (isset($playlistGroup['playlist_embed_code_' . $i])) {
+                    echo $playlistGroup['playlist_embed_code_' . $i];
+                }
+            }
+            ?>
+        <?php endif;
+        ?>
+
         <div class="support-section section-padding">
             <?php
             $supportGroup = get_field('support');
