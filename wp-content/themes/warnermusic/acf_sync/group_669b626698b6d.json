@@ -99,7 +99,7 @@
                 "class": "",
                 "id": ""
             },
-            "layout": "table",
+            "layout": "block",
             "sub_fields": [
                 {
                     "key": "field_669b627caa4f1",
@@ -264,8 +264,8 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "display_format": "d.m.Y",
-                            "return_format": "d.m.Y",
+                            "display_format": "d\/m\/Y",
+                            "return_format": "d\/m\/Y",
                             "first_day": 1,
                             "parent_repeater": "field_669b6383aa4f5"
                         },
@@ -287,7 +287,33 @@
                             "maxlength": "",
                             "rows": "",
                             "placeholder": "",
-                            "new_lines": "br",
+                            "new_lines": "",
+                            "parent_repeater": "field_669b6383aa4f5"
+                        },
+                        {
+                            "key": "field_669b696704d54",
+                            "label": "Thumbnail",
+                            "name": "thumbnail",
+                            "aria-label": "",
+                            "type": "image",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "url",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": "",
+                            "preview_size": "medium",
                             "parent_repeater": "field_669b6383aa4f5"
                         },
                         {
@@ -697,6 +723,196 @@
                     ]
                 }
             ]
+        },
+        {
+            "key": "field_66da9f94a66dd",
+            "label": "Merchandise",
+            "name": "merchandise",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_66da9fa2a66de",
+                    "label": "Base Url",
+                    "name": "artist_merchandise_base",
+                    "aria-label": "",
+                    "type": "url",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_66da9fc0a66df",
+                    "label": "Merchandise Url",
+                    "name": "artist_merchandise_url",
+                    "aria-label": "",
+                    "type": "url",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": ""
+                }
+            ]
+        },
+        {
+            "key": "field_66daa03da66e0",
+            "label": "Playlist",
+            "name": "playlist",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_66daa04aa66e1",
+                    "label": "Playlist Embed Code 1",
+                    "name": "playlist_embed_code_1",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "rows": "",
+                    "placeholder": "",
+                    "new_lines": ""
+                },
+                {
+                    "key": "field_66daa1b31956c",
+                    "label": "Playlist Embed Code 2",
+                    "name": "playlist_embed_code_2",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "rows": "",
+                    "placeholder": "",
+                    "new_lines": ""
+                },
+                {
+                    "key": "field_66daa1b51956d",
+                    "label": "Playlist Embed Code 3",
+                    "name": "playlist_embed_code_3",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "rows": "",
+                    "placeholder": "",
+                    "new_lines": ""
+                },
+                {
+                    "key": "field_66daa1b61956e",
+                    "label": "Playlist Embed Code 4",
+                    "name": "playlist_embed_code_4",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "rows": "",
+                    "placeholder": "",
+                    "new_lines": ""
+                },
+                {
+                    "key": "field_66daa1b71956f",
+                    "label": "Playlist Embed Code 5",
+                    "name": "playlist_embed_code_5",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "rows": "",
+                    "placeholder": "",
+                    "new_lines": ""
+                },
+                {
+                    "key": "field_66daa1b919570",
+                    "label": "Playlist Embed Code 6",
+                    "name": "playlist_embed_code_6",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "rows": "",
+                    "placeholder": "",
+                    "new_lines": ""
+                }
+            ]
         }
     ],
     "location": [
@@ -717,5 +933,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1724170476
+    "modified": 1725604284
 }
