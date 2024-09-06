@@ -221,18 +221,5 @@ $mainImg = get_field('artist_image', 'artist_' . $termData->term_id);
         </div>
     </div>
 <?php
-function searchStringToReplace($url)
-{
-    $start_str = 'https://lpclub.vn/';
-    $end_str = '?q=';
-
-    $start_pos = strpos($url, $start_str);
-    $end_pos = strpos($url, $end_str);
-
-    if ($start_pos !== false && $end_pos !== false) {
-        $start_pos += strlen($start_str);
-        return str_replace(substr($url, $start_pos, $end_pos - $start_pos), 'search', $url);
-    }
-}
 
 get_footer();

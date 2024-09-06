@@ -40,3 +40,4 @@ staging/*
 *.txt
 /date,
 /DESC,
+.DS_Store
