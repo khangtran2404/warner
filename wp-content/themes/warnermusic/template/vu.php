@@ -137,8 +137,8 @@ get_header();
         $merchandiseGroup = get_field('merchandise');
         if ($merchandiseGroup) {
             $mainUrl = $merchandiseGroup['artist_merchandise_url'] ?: 'https://lpclub.vn/warner-music-vietnam?q=collections:3002213%20AND%20vendor:(V%C5%A9.)';
-            // $merchandiseURl = searchStringToReplace($mainUrl);
-            $merchandiseURl = "https://lpclub.vn/warner-music-vietnam?q=collections:3002213%20AND%20vendor:(V%C5%A9.)";
+             $merchandiseURl = searchStringToReplace($mainUrl);
+//            $merchandiseURl = "https://lpclub.vn/warner-music-vietnam?q=collections:3002213%20AND%20vendor:(V%C5%A9.)";
             $merchandiseBaseURl = $merchandiseGroup['artist_merchandise_base'] ?: 'https://lpclub.vn';
             ?>
             <?php if ($merchandiseURl && $merchandiseBaseURl): ?>
@@ -216,7 +216,7 @@ get_header();
                             <?php
                         }
                     }
-                    
+
                 ?>
                 </div>
             </div>
