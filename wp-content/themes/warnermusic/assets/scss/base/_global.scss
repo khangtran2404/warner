@@ -401,6 +401,7 @@ body {
     border: none;
     font-size: 18px;
     padding: 0 10px;
+    color: $color__light;
     @include tablet {
       font-size: 16px;
       padding: 0 8px;

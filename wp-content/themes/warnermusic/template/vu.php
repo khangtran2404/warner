@@ -137,12 +137,22 @@ get_header();
         $merchandiseGroup = get_field('merchandise');
         if ($merchandiseGroup) {
             $mainUrl = $merchandiseGroup['artist_merchandise_url'] ?: 'https://lpclub.vn/warner-music-vietnam?q=collections:3002213%20AND%20vendor:(V%C5%A9.)';
-            $merchandiseURl = searchStringToReplace($mainUrl);
-            $merchandiseBaseURl = $merchandiseGroup['artist_merchandise_base'] ?: 'https://lpclub.vn' ?>
+            // $merchandiseURl = searchStringToReplace($mainUrl);
+            $merchandiseURl = "https://lpclub.vn/warner-music-vietnam?q=collections:3002213%20AND%20vendor:(V%C5%A9.)";
+            $merchandiseBaseURl = $merchandiseGroup['artist_merchandise_base'] ?: 'https://lpclub.vn';
+            ?>
             <?php if ($merchandiseURl && $merchandiseBaseURl): ?>
-                <div class="group-artist-merchandise merchandise margin-bottom-section">
-                    <h2 class="small-title font-global"><a target="_blank"
-                                                           href="<?= $mainUrl ?>"><?= __('Merchandise') ?></a></h2>
+            <div class="section-merchandise-vu section-padding">
+                <div class="group-artist-merchandise merchandise">
+                    <div class="group-title-button">
+                        <h2 class="small-title font-global" style="margin-bottom: 0;"><?= __('Merchandise') ?></h2>
+                        <div class="button-link-warner">
+                            <a class="button-landing"
+                                href="https://lpclub.vn/warner-music-vietnam?q=collections:3002213%20AND%20vendor:(V%C5%A9.)"
+                                target="_blank"><?= __( "Xem thêm" ) ?>
+                            </a>
+                        </div>
+                    </div>
                     <div class="list-merchandise list-layout-warner-4">
                         <?php if ($merchandiseBaseURl && $merchandiseURl) {
                             $ch = curl_init();
@@ -180,27 +190,37 @@ get_header();
                         } ?>
                     </div>
                 </div>
+            </div>
             <?php endif;
         }
         ?>
 
         <?php
         $playlistGroup = get_field('playlist');
-        if ($comingSoonGroup):
-            $playlistLabel = __("Playlist");
-            ?>
-            <h2 class="title-landing title-h2 text-align-center">
-                <strong><?= $playlistLabel ?></strong>
-            </h2>
-            <?php
-            for ($i = 1; $i <= 6; $i++) {
-                if (isset($playlistGroup['playlist_embed_code_' . $i])) {
-                    echo $playlistGroup['playlist_embed_code_' . $i];
-                }
-            }
-            ?>
-        <?php endif;
-        ?>
+        if ($comingSoonGroup):?>
+            <div class="section-play-list playlists section-padding" style="margin-bottom: 0; padding-bottom:30px;">
+                <h2 class="small-title font-global">
+                   <?= __("Playlist"); ?>
+                </h2>
+                <div class="list-playlist">
+                <?php
+                    for ($i = 1; $i <= 6; $i++) {
+                        $embedCodeStr = $playlistGroup['playlist_embed_code_' . $i];
+                        if(isset($embedCodeStr) && $embedCodeStr !== '') {
+                            ?>
+                                <div class="playlist-item">
+                                    <div class="content-box">
+                                        <?php echo $playlistGroup['playlist_embed_code_' . $i];?>
+                                    </div>
+                                </div>
+                            <?php
+                        }
+                    }
+                    
+                ?>
+                </div>
+            </div>
+        <?php endif;?>
 
         <div class="support-section section-padding">
             <?php
