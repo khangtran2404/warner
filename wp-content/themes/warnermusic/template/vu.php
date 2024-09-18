@@ -133,7 +133,94 @@ get_header();
             ?>
         </div>
 
+        <?php
+        $merchandiseGroup = get_field('merchandise');
+        if ($merchandiseGroup) {
+            $mainUrl = $merchandiseGroup['artist_merchandise_url'] ?: 'https://lpclub.vn/warner-music-vietnam?q=collections:3002213%20AND%20vendor:(V%C5%A9.)';
+             $merchandiseURl = searchStringToReplace($mainUrl);
+//            $merchandiseURl = "https://lpclub.vn/warner-music-vietnam?q=collections:3002213%20AND%20vendor:(V%C5%A9.)";
+            $merchandiseBaseURl = $merchandiseGroup['artist_merchandise_base'] ?: 'https://lpclub.vn';
+            ?>
+            <?php if ($merchandiseURl && $merchandiseBaseURl): ?>
+            <div class="section-merchandise-vu section-padding">
+                <div class="group-artist-merchandise merchandise">
+                    <div class="group-title-button">
+                        <h2 class="small-title font-global" style="margin-bottom: 0;"><?= __('Merchandise') ?></h2>
+                        <div class="button-link-warner">
+                            <a class="button-landing"
+                                href="https://lpclub.vn/warner-music-vietnam?q=collections:3002213%20AND%20vendor:(V%C5%A9.)"
+                                target="_blank"><?= __( "Xem thêm" ) ?>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="list-merchandise list-layout-warner-4">
+                        <?php if ($merchandiseBaseURl && $merchandiseURl) {
+                            $ch = curl_init();
+                            curl_setopt($ch, CURLOPT_URL, $merchandiseURl);
+                            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+                            $html = curl_exec($ch);
+                            curl_close($ch);
+                            $html = str_get_html($html);
+                            $baseUrl = '' . $merchandiseBaseURl . '';
+                            $items = $html->find('.item-inner');
+                            if (!empty($items)):
+                                for ($i = 0; $i < 4; $i++):
+                                    if (isset($items[$i])):
+                                        $item = $items[$i];
+                                        $title = $item->find('.productname', 0)->plaintext;
+                                        $link = $baseUrl . $item->find('.thumb-wrapper a', 0)->href;
+                                        $category = $item->find('.xx', 0)->plaintext;
+                                        $image = 'https:' . $item->find('.product-wrapper img', 0)->src;
+                                        $price = $item->find('.price', 0)->plaintext;
+                                        ?>
+                                        <div class="merchandise-item gird-item-no-square">
+                                            <div class="content-box">
+                                                <div class="group-content">
+                                                    <a class="link-box" href="<?= $link ?>"
+                                                       title="<?= $title; ?>(<?= $category; ?>)"
+                                                       target="_blank"></a>
+                                                    <div class="image-feature"><img src="<?= $image ?>" alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <?php else: break; endif; endfor;
+                            endif;
+                            $html->clear();
+                        } ?>
+                    </div>
+                </div>
+            </div>
+            <?php endif;
+        }
+        ?>
 
+        <?php
+        $playlistGroup = get_field('playlist');
+        if ($comingSoonGroup):?>
+            <div class="section-play-list playlists section-padding" style="margin-bottom: 0; padding-bottom:30px;">
+                <h2 class="small-title font-global">
+                   <?= __("Playlist"); ?>
+                </h2>
+                <div class="list-playlist">
+                <?php
+                    for ($i = 1; $i <= 6; $i++) {
+                        $embedCodeStr = $playlistGroup['playlist_embed_code_' . $i];
+                        if(isset($embedCodeStr) && $embedCodeStr !== '') {
+                            ?>
+                                <div class="playlist-item">
+                                    <div class="content-box">
+                                        <?php echo $playlistGroup['playlist_embed_code_' . $i];?>
+                                    </div>
+                                </div>
+                            <?php
+                        }
+                    }
+
+                ?>
+                </div>
+            </div>
+        <?php endif;?>
 
         <div class="support-section section-padding">
             <?php
