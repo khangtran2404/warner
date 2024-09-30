@@ -145,7 +145,7 @@ get_header();
             <div class="section-merchandise-vu section-padding">
                 <div class="group-artist-merchandise merchandise">
                     <div class="group-title-button">
-                        <h2 class="small-title font-global" style="margin-bottom: 0;"><?= __('Merchandise') ?></h2>
+                        <h2 class="small-title font-global" style="margin-bottom: 0;"><?= __('CD Album & Merchandise') ?></h2>
                         <div class="button-link-warner">
                             <a class="button-landing"
                                 href="https://lpclub.vn/warner-music-vietnam?q=collections:3002213%20AND%20vendor:(V%C5%A9.)"
